@@ -1,0 +1,10 @@
+
+.venv/
+
+.cursor/mcp.json
+
+.ipynb_checkpoints/
+
+.DS_Store
+
+*.code-workspace
