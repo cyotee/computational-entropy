@@ -150,6 +150,7 @@ Combining methods provides probabilistic ranges.
 ### Comprehensive Analysis
 
 #### Weighing Problem Context
+
 For 12 coins (24 scenarios), initial entropy is $\log_2 24 \approx 4.585 \, \text{bits}$, resolved in 3 weighings ($\log_2 3 \approx 1.585 \, \text{bits}$). Without $H_0$, results suggest $N \leq 27$, with Method 5 estimating $H_0 \approx 4.755 \, \text{bits}$. Lambda model:
 
 $$M = \lambda \text{state}.\lambda \text{weighing}.\text{filter}(\text{state}, \text{weighing})$$
