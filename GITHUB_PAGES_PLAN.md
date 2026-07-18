@@ -1,6 +1,7 @@
 # GitHub Pages Publishing Plan
 
-**Status:** Plan only (2026-07-17) — not yet implemented  
+**Status:** Implemented (2026-07-18) — live at https://cyotee.github.io/computational-entropy/  
+
 **Repo:** `cyotee/computational-entropy`  
 **Expected site URL:** `https://cyotee.github.io/computational-entropy/`  
 **Related:** [PLAN.md](PLAN.md) (research reorg), [papers/06-synthesis/PUBLISHING.md](papers/06-synthesis/PUBLISHING.md) (standalone paper notes)
@@ -516,11 +517,11 @@ docs/_generated/   # if using a generated subdirectory
 
 | Decision | Choice | Date |
 |----------|--------|------|
-| SSG | MkDocs Material (planned) | |
-| Deploy method | GitHub Actions + Pages artifact (planned) | |
-| Sync style | S1 allowlist copy (planned) | |
-| Primary paper on site | TBD: FINAL / PUBLISHABLE / both | |
-| Public PROGRESS_REPORT | Full vs trimmed | |
+| SSG | MkDocs Material | 2026-07-18 |
+| Deploy method | GitHub Actions + Pages artifact | 2026-07-18 |
+| Sync style | S1 allowlist copy (`scripts/sync_site_docs.py`) | 2026-07-18 |
+| Primary paper on site | Both FINAL + PUBLISHABLE | 2026-07-18 |
+| Public PROGRESS_REPORT | Full (synced) | 2026-07-18 |
 
 ---
 
