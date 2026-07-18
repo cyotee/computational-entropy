@@ -3,11 +3,15 @@
 
 Fail loudly if any allowlisted source is missing. Never copies denylisted trees
 (drafts/, archive/, external PDFs, agent bootstrap). Run before `mkdocs build`.
+
+Also normalizes TeX delimiters for pymdownx.arithmatex + MathJax:
+- same-line $$...$$ → blank-line block form (required for display math)
+- $  expr  $ → $expr$ (smart_dollar-safe; also fine with smart_dollar: false)
 """
 
 from __future__ import annotations
 
-import shutil
+import re
 import sys
 from pathlib import Path
 
@@ -46,6 +50,29 @@ DENY_MARKERS = (
     "external-docs/",
 )
 
+# Same-line display math: $$ ... $$ (non-greedy, no nested newlines required)
+_SAME_LINE_DISPLAY = re.compile(r"\$\$(.+?)\$\$", re.DOTALL)
+# Inline $ ... $ with optional padding spaces (not $$)
+_PADDED_INLINE = re.compile(r"(?<!\$)\$([ \t]+)([^\$]+?)([ \t]+)\$(?!\$)")
+
+
+def normalize_math(text: str) -> str:
+    """Make research markdown play well with Arithmatex + MathJax."""
+
+    def display_repl(match: re.Match[str]) -> str:
+        body = match.group(1).strip("\n")
+        # Keep multi-line bodies indented content intact; strip only outer blank lines
+        body = body.strip()
+        return f"\n\n$$\n{body}\n$$\n\n"
+
+    # Display first so we do not mangle $$ as two single-dollar wraps
+    text = _SAME_LINE_DISPLAY.sub(display_repl, text)
+    # Collapse padding around inline math: "$  p_Y  $" -> "$p_Y$"
+    text = _PADDED_INLINE.sub(r"$\2$", text)
+    # Tidy excess blank lines introduced around displays
+    text = re.sub(r"\n{4,}", "\n\n\n", text)
+    return text
+
 
 def main() -> int:
     missing: list[str] = []
@@ -58,7 +85,8 @@ def main() -> int:
             missing.append(src_rel)
             continue
         dst.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(src, dst)
+        raw = src.read_text(encoding="utf-8")
+        dst.write_text(normalize_math(raw), encoding="utf-8")
         copied.append(f"{src_rel} -> docs/{dst_rel}")
 
     if missing:

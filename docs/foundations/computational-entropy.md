@@ -30,16 +30,31 @@ Computational entropy is an information-theoretic measure that depends solely on
 
 ## General Case (All Types of Functions)
 
-For any map $  f  $ — deterministic, probabilistic (stochastic), or quantum channel — that takes an input random variable $  X  $ (with distribution $  p_X  $) and produces an output random variable $  Y  $, the computational entropy is the entropy of the induced marginal output distribution $  p_Y  $:
+For any map $f$ — deterministic, probabilistic (stochastic), or quantum channel — that takes an input random variable $X$ (with distribution $p_X$) and produces an output random variable $Y$, the computational entropy is the entropy of the induced marginal output distribution $p_Y$:
 
 - Classical discrete case: Shannon entropy of the output probability mass function
-$$H_c(f; p_X) := H(Y) = -\sum_y p_Y(y) \log_2 p_Y(y)$$
+
+
+$$
+H_c(f; p_X) := H(Y) = -\sum_y p_Y(y) \log_2 p_Y(y)
+$$
+
 
 - Classical continuous case: Differential Shannon entropy of the output probability density function
-$$H_c(f; p_X) := h(Y) = -\int f_Y(y) \log_2 f_Y(y) \, dy$$
+
+
+$$
+H_c(f; p_X) := h(Y) = -\int f_Y(y) \log_2 f_Y(y) \, dy
+$$
+
 
 - Quantum case: Von Neumann entropy of the output state of a quantum channel
-$$S_c(\Phi; \rho_X) := S(\rho_Y) = -\operatorname{Tr}\bigl(\Phi(\rho_X) \log_2 \Phi(\rho_X)\bigr)$$
+
+
+$$
+S_c(\Phi; \rho_X) := S(\rho_Y) = -\operatorname{Tr}\bigl(\Phi(\rho_X) \log_2 \Phi(\rho_X)\bigr)
+$$
+
 
 ## Key Property
 
@@ -50,49 +65,68 @@ The internal mechanics (algorithm, randomness, or quantum operations) do not mat
 
 ### Deterministic functions with identical outputs
 
-Consider two genuinely different functions on uniform random variables $  U, U_1, U_2 \sim \text{Uniform}[0,1]  $:
+Consider two genuinely different functions on uniform random variables $U, U_1, U_2 \sim \text{Uniform}[0,1]$:
 
-- Function 1: $  Y_1 = \sqrt{U}  $ (square root of one uniform)
-- Function 2: $  Y_2 = \max(U_1, U_2)  $ (maximum of two independent uniforms)
+- Function 1: $Y_1 = \sqrt{U}$ (square root of one uniform)
+- Function 2: $Y_2 = \max(U_1, U_2)$ (maximum of two independent uniforms)
 
 Both have the identical output PDF on [0,1]:
 
-$$f(y) = 2y$$
+
+$$
+f(y) = 2y
+$$
+
 
 The computational entropy is the differential Shannon entropy:
 
-$$H_c(Y) = -\int_0^1 2y \log_2 (2y) \, dy = -1 + \frac{1}{2 \ln 2} \approx -0.27865 \text{ bits}.$$
+
+$$
+H_c(Y) = -\int_0^1 2y \log_2 (2y) \, dy = -1 + \frac{1}{2 \ln 2} \approx -0.27865 \text{ bits}.
+$$
+
 
 Explicit derivation (for both functions):
 
-$$\log_2(2y) = 1 + \log_2 y$$
 
-$$H_c = -\int_0^1 2y(1 + \log_2 y) \, dy = -1 - \int_0^1 2y \log_2 y \, dy.$$
+$$
+\log_2(2y) = 1 + \log_2 y
+$$
 
-The integral $  \int_0^1 2y \log_2 y \, dy = -1/(2 \ln 2)  $, so
 
-$$H_c = -1 + \frac{1}{2 \ln 2} \approx -0.27865 \text{ bits}.$$
+$$
+H_c = -\int_0^1 2y(1 + \log_2 y) \, dy = -1 - \int_0^1 2y \log_2 y \, dy.
+$$
 
-(The same result holds for the reflected case $  Y_3 = \min(U_1, U_2)  $ because differential entropy is invariant under the substitution $  z = 1 - y  $.)
 
-Thus, despite completely different internal operations, all three functions are informationally equivalent: any probability-based prediction (e.g., $  P(Y > 0.7)  $, expected value, variance) is identical for all three.
+The integral $\int_0^1 2y \log_2 y \, dy = -1/(2 \ln 2)$, so
+
+
+$$
+H_c = -1 + \frac{1}{2 \ln 2} \approx -0.27865 \text{ bits}.
+$$
+
+
+(The same result holds for the reflected case $Y_3 = \min(U_1, U_2)$ because differential entropy is invariant under the substitution $z = 1 - y$.)
+
+Thus, despite completely different internal operations, all three functions are informationally equivalent: any probability-based prediction (e.g., $P(Y > 0.7)$, expected value, variance) is identical for all three.
 This is the exact property that makes computational entropy a powerful unifying measure.
 
 ### Probabilistic (stochastic) extension
 
-A stochastic map that outputs according to a conditional probability distribution $  p(Y|X)  $ still has a well-defined marginal output distribution $  p_Y  $.
+A stochastic map that outputs according to a conditional probability distribution $p(Y|X)$ still has a well-defined marginal output distribution $p_Y$.
 Its computational entropy is simply the Shannon (or differential) entropy of that marginal.
-Different stochastic mechanisms that produce the same $  p_Y  $ are informationally equivalent.
+Different stochastic mechanisms that produce the same $p_Y$ are informationally equivalent.
 
 ### Quantum Generalization
 
-When the computation is a quantum channel $  \Phi  $ acting on an input density operator $  \rho_X  $, we use von Neumann entropy of the output state.
+When the computation is a quantum channel $\Phi$ acting on an input density operator $\rho_X$, we use von Neumann entropy of the output state.
 
 This is the direct quantum analogue: it reduces exactly to differential Shannon entropy in the semiclassical limit and is the standard measure of output uncertainty in quantum information theory.
 It is already used in gravitational physics (Ryu–Takayanagi formula, Page curve) to quantify processed information.
 
 This definition is therefore fully general — it applies uniformly to deterministic classical functions, probabilistic classical maps, and quantum channels — while remaining grounded in standard information theory.
-It provides the rigorous classical foundation for our gravitational channel $  \Phi_g  $ and the subsequent master equation.
+It provides the rigorous classical foundation for our gravitational channel $\Phi_g$ and the subsequent master equation.
 
 ## Global Conservation and Local Entropy Transfer
 
@@ -101,11 +135,11 @@ Our framework resolves this cleanly through global conservation with local trans
 
 ### Classical Example (Irreversible AND Gate)
 
-Two independent fair bits $  X_1, X_2  $: total input entropy $  H(X_1, X_2) = 2  $ bits.
+Two independent fair bits $X_1, X_2$: total input entropy $H(X_1, X_2) = 2$ bits.
 
-Computation: $  Y = X_1 \land X_2  $.
+Computation: $Y = X_1 \land X_2$.
 
-Output entropy: $  H(Y) \approx 0.811  $ bits (apparent local reduction).
+Output entropy: $H(Y) \approx 0.811$ bits (apparent local reduction).
 
 The “missing” entropy (~1.189 bits) is accounted for by the irreversible loss of distinguishability between input paths.
 Globally, total entropy (system + environment) remains exactly 2 bits — it is conserved.
@@ -113,14 +147,14 @@ The computation did not create or destroy information; it transferred it from th
 
 ## In Our Framework
 
-The gravitational channel $  \Phi_g  $ performs the same process on quantum microstates.
+The gravitational channel $\Phi_g$ performs the same process on quantum microstates.
 Each step overwrites prior information, exporting entropy to the environment (or holographic screen) while realizing a lower-entropy output pattern locally.
 
-The computational load $  L  $ quantifies this demand and enforces proper-time slowing when needed.
+The computational load $L$ quantifies this demand and enforces proper-time slowing when needed.
 Globally, total fine-grained entropy is conserved (unitary or CPTP evolution); locally, observers see an apparent reduction because fine-grained prior details are lost.
 
 This realizes the original intuition: entropy is constant globally across time, with directed local transfer from future potential (high-entropy input possibilities) to past reality (lower-entropy realized outputs).
-The master equation and load parameter $  L  $ make this transfer explicit and quantifiable.
+The master equation and load parameter $L$ make this transfer explicit and quantifiable.
 
 This classical grounding (Shannon/differential entropy of the output) carries over unchanged to the quantum case, where von Neumann entropy of the output state of the gravitational channel plays the analogous role.
 The definition is therefore both rigorous and consistent across classical and quantum regimes.

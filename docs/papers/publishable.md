@@ -4,7 +4,7 @@
 **Version:** 1.0 (2026-07-15) · Preliminary research  
 **Status:** Standalone draft for human review / possible arXiv or journal submission  
 
-**Type safety:** Load $L$ is a dimensionless scalar; structure-induced $G$ is a metric (or edgewise cousin). **$L 
+**Type safety:** Load $L$is a dimensionless scalar; structure-induced$G$ is a metric (or edgewise cousin). **$L 
 eq G$**. Nothing herein has GR-level certainty.
 
 **How to read:** Results → §§1–8 → Appendices. External results appear as **citations**; internal constructive ledgers are summarized in the text and detailed in **Appendix A**. Future research avenues are listed in **Appendix C**, not as unfinished obligations of this report.
@@ -13,9 +13,9 @@ eq G$**. Nothing herein has GR-level certainty.
 
 ## Abstract
 
-Computational entropy is defined as the entropy of a map or channel’s **output** distribution: classical Shannon (or differential) $H_c$, and quantum/gravity von Neumann $S_c$. In this program, gravity is modeled as a CPTP channel $\Phi_g$ whose instantaneous demand is a dimensionless **load** $L$ that reparameterizes proper time via $d\tau=dt/(1+\alpha L)$. Newtonian Poisson is recovered only through **Path J/M** (Clausius on local horizons → Einstein → weak-field GR, with on-shell load-clock calibration $\alpha\beta=4\pi G/c^4$), not a withdrawn pointwise Laplacian identity. A constructive Euclidean dual (**ACD-EW**) links Bianconi’s Gravity-from-Entropy **warm-up** (induced structure metric $G[\phi]$, Perona–Malik flow) to an observation channel with split load and load clock; residual dual of PM versus heat is **time-windowed** (T1′ / unified pure window $U_\star$), and joint toys serve as **pattern witnesses**, not continuum gravity confirmation. Weak-field contact with continuum GfE is a **WEAK PASS** on shared Poisson and a **FAIL** of framework identity (M6/M6b).
+Computational entropy is defined as the entropy of a map or channel’s **output** distribution: classical Shannon (or differential) $H_c$, and quantum/gravity von Neumann $S_c$. In this program, gravity is modeled as a CPTP channel $\Phi_g$whose instantaneous demand is a dimensionless **load**$L$that reparameterizes proper time via$d\tau=dt/(1+\alpha L)$. Newtonian Poisson is recovered only through **Path J/M** (Clausius on local horizons → Einstein → weak-field GR, with on-shell load-clock calibration $\alpha\beta=4\pi G/c^4$), not a withdrawn pointwise Laplacian identity. A constructive Euclidean dual (**ACD-EW**) links Bianconi’s Gravity-from-Entropy **warm-up** (induced structure metric $G[\phi]$, Perona–Malik flow) to an observation channel with split load and load clock; residual dual of PM versus heat is **time-windowed** (T1′ / unified pure window $U_\star$), and joint toys serve as **pattern witnesses**, not continuum gravity confirmation. Weak-field contact with continuum GfE is a **WEAK PASS** on shared Poisson and a **FAIL** of framework identity (M6/M6b).
 
-This document is an honest **program report**: it freezes settled claims, marks rigor labels (constructive / structural / semantic / calibration / external theorem), and states explicit non-claims. Classical IDEM/decay machinery is connected by a design dictionary plus constructive discrete ledgers (Phase 1 AND-gate; Phase 2 multi-step Boolean, tiny SKI, minimal shoe). Relationship witnesses (D13) include **path-dependent** cumulative export cost $\sum L_S$ under circuit composition (Direct $\sum L_S\approx 1.189$ vs Circuit $\approx 2.189$, same final $H(Z)$) and **Landauer contact** in which single-shot $L_S=H(X\mid Y)$ is the bit-count bounded by heat $Q\ge k_B T\ln 2\cdot H(X\mid Y)$. Discrete load $L^{\mathrm{disc}}$ is **not** continuum $L$; scalar $L$ is **not** metric $G$; the master equation is **not** continuum GfE.
+This document is an honest **program report**: it freezes settled claims, marks rigor labels (constructive / structural / semantic / calibration / external theorem), and states explicit non-claims. Classical IDEM/decay machinery is connected by a design dictionary plus constructive discrete ledgers (Phase 1 AND-gate; Phase 2 multi-step Boolean, tiny SKI, minimal shoe). Relationship witnesses (D13) include **path-dependent** cumulative export cost $\sum L_S$under circuit composition (Direct$\sum L_S\approx 1.189$vs Circuit$\approx 2.189$, same final $H(Z)$) and **Landauer contact** in which single-shot $L_S=H(X\mid Y)$is the bit-count bounded by heat$Q\ge k_B T\ln 2\cdot H(X\mid Y)$. Discrete load $L^{\mathrm{disc}}$is **not** continuum$L$; scalar $L$is **not** metric$G$; the master equation is **not** continuum GfE.
 
 **Keywords:** computational entropy; CPTP channel; computational load; thermodynamic gravity; Jacobson Clausius; Gravity from Entropy; Perona–Malik; action–channel duality; IDEM; Landauer principle; information export
 
@@ -25,17 +25,17 @@ This document is an honest **program report**: it freezes settled claims, marks 
 
 This report is **preliminary research**. Constructions and numerical ledgers are real; **nothing has GR-level certainty**. Do **not** read the body as asserting any of the following without new work:
 
-1. Master equation $\Leftrightarrow$ Bianconi continuum Gravity-from-Entropy (GfE).  
-2. $L \equiv G$, $S_c \equiv \operatorname{Tr} g\ln G^{-1}$, or continuum load coefficients identified with Bianconi’s.  
-3. Residual dual domination for all $t\in(0,t_\star]$ (use T1′ / $U_\star$ instead).  
-4. Pure T1′ with no soft hypotheses (PCRH$_b$ remains ensemble-certified).  
-5. Newton from pointwise $\Phi\propto\rho$ Laplacian (**withdrawn**).  
-6. Next-order load terms $\gamma_L,\delta_L$ equal GfE extras $D_{\mu\nu},\Lambda_G$.  
+1. Master equation $\Leftrightarrow$Bianconi continuum Gravity-from-Entropy (GfE).  
+2.$L \equiv G$, $S_c \equiv \operatorname{Tr} g\ln G^{-1}$, or continuum load coefficients identified with Bianconi’s.  
+3. Residual dual domination for all $t\in(0,t_\star]$(use T1′ /$U_\star$ instead).  
+4. Pure T1′ with no soft hypotheses (PCRH$_b$remains ensemble-certified).  
+5. Newton from pointwise$\Phi\propto\rho$Laplacian (**withdrawn**).  
+6. Next-order load terms$\gamma_L,\delta_L$equal GfE extras$D_{\mu\nu},\Lambda_G$.  
 7. Lattice denoising as empirical gravity.  
 8. External GfE papers established on par with GR.  
-9. IDEM/decay fully constructs continuum $L$ or metric $G$.
+9. IDEM/decay fully constructs continuum $L$or metric$G$.
 
-**Type safety (locked throughout):** load $L$ is a **dimensionless scalar**; structure-induced $G$ is a **metric** (or edgewise cousin). **$L \neq G$**. Discrete three-slot ledgers $L^{\mathrm{disc}}$ are **not** numerically equal to continuum $L(\rho,g)$. Entropy objects are tagged when ambiguous (M10: map $H_c$, $S_c$, $H_c^{\mathrm{toy}}$, $H_c^{\mathrm{game}}$, $H_c^{\mathrm{disc}}$).
+**Type safety (locked throughout):** load $L$is a **dimensionless scalar**; structure-induced$G$ is a **metric** (or edgewise cousin). **$L \neq G$**. Discrete three-slot ledgers $L^{\mathrm{disc}}$are **not** numerically equal to continuum$L(\rho,g)$. Entropy objects are tagged when ambiguous (M10: map $H_c$, $S_c$, $H_c^{\mathrm{toy}}$, $H_c^{\mathrm{game}}$, $H_c^{\mathrm{disc}}$).
 
 ---
 
@@ -53,30 +53,30 @@ Aligned with Results section and Appendix B. One-line forms; body sections carry
 |----|------------------------|-------|---------|
 | **P1** | Computational entropy is **output** entropy: classical $H_c(f;p_X):=H(Y)$; quantum/gravity $S_c(\Phi;\rho):=S(\Phi(\rho))$. | constructive (def.) | §1.1–1.2 |
 | **P2** | Local entropy drop is **export**, not destruction: chain rule $H(X)=H(Y)+H(X\mid Y)$; AND export $\approx 1.189$. | constructive | §1.4, §2.4 · T1 |
-| **P3** | Protocol R: $L_S^{\mathrm{disc}}:=H(X\mid Y)$ is the Landauer bit-count; $Q\ge k_B T\ln 2\cdot H(X\mid Y)$. | constructive + external Landauer | §2.8 · T4 · Appendix A.3 |
-| **P4** | $\sum L_S$ is **path-dependent**: Direct $\approx 1.189$ vs Circuit $\approx 2.189$ at same final $H(Z)$. | constructive | §2.7 · T3 · Appendix A.2 |
-| **P5** | Three load **axes** required: $L_E$ (work), $L_S$ (export flux), $L_B$ (capacity); monist $L\propto H_c^{\mathrm{disc}}$ fails on AND. | structural bookkeeping | §2.3, §2.9 · M11/M11c |
-| **P6** | Continuum $L(\rho,g)$ is **role-motivated** by $L^{\mathrm{disc}}$, **not identified** with it; $L\neq G$. | structural motivation | §2.9–2.10, §3.2 · M11c |
-| **P7** | Newton only via **Path J/M** (Clausius→Einstein→Poisson; $\alpha\beta=4\pi G/c^4$ calibration); pointwise Laplacian **withdrawn**. | external thm + assumption / calibration | §4 · C9–C10 |
-| **P8** | ACD-EW Euclidean dual constructive; residual dual **time-windowed** $U_\star=[1.36,2.40]$ (PCRH$_b$ soft); toys **6/6** pattern only. | constructive + analytic + hybrid | §5 · C1–C5 · M1g |
-| **P9** | Layer W: PM descends matched warm-up energy (M5c); residual dual stays Layer D — not ME $\Leftrightarrow$ GfE. | external lit + constructive | §5.5 · M5c |
+| **P3** | Protocol R: $L_S^{\mathrm{disc}}:=H(X\mid Y)$is the Landauer bit-count;$Q\ge k_B T\ln 2\cdot H(X\mid Y)$. | constructive + external Landauer | §2.8 · T4 · Appendix A.3 |
+| **P4** | $\sum L_S$is **path-dependent**: Direct$\approx 1.189$vs Circuit$\approx 2.189$at same final$H(Z)$. | constructive | §2.7 · T3 · Appendix A.2 |
+| **P5** | Three load **axes** required: $L_E$(work),$L_S$(export flux),$L_B$(capacity); monist$L\propto H_c^{\mathrm{disc}}$fails on AND. | structural bookkeeping | §2.3, §2.9 · M11/M11c |
+| **P6** | Continuum$L(\rho,g)$is **role-motivated** by$L^{\mathrm{disc}}$, **not identified** with it; $L\neq G$. | structural motivation | §2.9–2.10, §3.2 · M11c |
+| **P7** | Newton only via **Path J/M** (Clausius→Einstein→Poisson; $\alpha\beta=4\pi G/c^4$calibration); pointwise Laplacian **withdrawn**. | external thm + assumption / calibration | §4 · C9–C10 |
+| **P8** | ACD-EW Euclidean dual constructive; residual dual **time-windowed**$U_\star=[1.36,2.40]$ (PCRH$_b$soft); toys **6/6** pattern only. | constructive + analytic + hybrid | §5 · C1–C5 · M1g |
+| **P9** | Layer W: PM descends matched warm-up energy (M5c); residual dual stays Layer D — not ME$\Leftrightarrow$GfE. | external lit + constructive | §5.5 · M5c |
 | **P10** | M6: **WEAK PASS** shared Poisson via Einstein/GR; **FAIL** framework identity (M6b next-order structural FAIL). | WEAK PASS / FAIL | §6 · C11–C13 |
-| **P11** | **R4a:** next-order $\gamma_L,\delta_L$ vs $D_{\mu\nu},\Lambda_G$ is a **promotion no-go** without extra structure. | structural no-go | §6.4, §8 · m6d |
+| **P11** | **R4a:** next-order$\gamma_L,\delta_L$vs$D_{\mu\nu},\Lambda_G$is a **promotion no-go** without extra structure. | structural no-go | §6.4, §8 · m6d |
 
-**Supporting freezes (CURRENT_CLAIMS):** C14 high-flux $L$ reading underwrites P5–P6; load-PM mild time-change dual (**C8**) sits under P8.
+**Supporting freezes (CURRENT_CLAIMS):** C14 high-flux$L$reading underwrites P5–P6; load-PM mild time-change dual (**C8**) sits under P8.
 
 ### Refuted / withdrawn (W1–W6)
 
 | ID | Item | Status |
 |----|------|--------|
-| **W1** | Pointwise $\Phi\propto\rho\Rightarrow\nabla^2$ Newtonian Poisson | **Withdrawn** (invalid; Path J/M only) |
-| **W2** | Residual dual for all $t\in(0,t_\star]$ (raw T1) | **False**; use T1′ / $U_\star$ |
-| **W3** | $L\equiv G$ or $S_c\equiv\operatorname{Tr} g\ln G^{-1}$ | **Refused** (type safety / N2) |
-| **W4** | Master equation $\Leftrightarrow$ continuum GfE | **Refused** (N1; M6 FAIL identity) |
-| **W5** | IDEM/Phase 1–2 **constructs** continuum $L$ or $G$ | **Refused** (N9; P6 non-identity) |
+| **W1** | Pointwise$\Phi\propto\rho\Rightarrow\nabla^2$Newtonian Poisson | **Withdrawn** (invalid; Path J/M only) |
+| **W2** | Residual dual for all$t\in(0,t_\star]$(raw T1) | **False**; use T1′ /$U_\star$|
+| **W3** |$L\equiv G$or$S_c\equiv\operatorname{Tr} g\ln G^{-1}$| **Refused** (type safety / N2) |
+| **W4** | Master equation$\Leftrightarrow$continuum GfE | **Refused** (N1; M6 FAIL identity) |
+| **W5** | IDEM/Phase 1–2 **constructs** continuum$L$or$G$| **Refused** (N9; P6 non-identity) |
 | **W6** | Lattice denoising / dual toys = empirical gravity | **Non-claim** (N7; Layer D pattern only) |
 
-Also frozen (not W-ids): pure T1′ with no soft hypotheses (N4); $\gamma_L,\delta_L=D_{\mu\nu},\Lambda_G$ without promotion (N6 / P11); GfE as GR-peer foundation (N8); primary load as idle identity stockpile (rejected C14 reading).
+Also frozen (not W-ids): pure T1′ with no soft hypotheses (N4);$\gamma_L,\delta_L=D_{\mu\nu},\Lambda_G$without promotion (N6 / P11); GfE as GR-peer foundation (N8); primary load as idle identity stockpile (rejected C14 reading).
 
 **Pointer.** Full spine (P/W/O + external inputs): Results section and Appendix B. Claims freeze: Results section and Appendix B. Claim gate: Results section and Appendix B.
 
@@ -90,50 +90,53 @@ The program’s primary classical and quantum objects are standard information-t
 
 **Premise.** Any map that transforms random inputs induces a marginal distribution on outputs. The predictability of that output law is an entropy. Computational entropy quantifies the statistical pattern of possible results of a computation, independent of the internal mechanics that produced it.
 
-**General case.** For any map $f$ — deterministic, stochastic, or quantum channel — taking input $X\sim p_X$ and producing output $Y$, computational entropy is the entropy of the induced marginal $p_Y$:
+**General case.** For any map$f$— deterministic, stochastic, or quantum channel — taking input$X\sim p_X$and producing output$Y$, computational entropy is the entropy of the induced marginal $p_Y$:
 
 - **Classical discrete** (Tag **A** when unambiguous; Tag **E** on finite M11 maps): Shannon entropy of the output mass function  
   
+
+
 $$
-  H_c(f; p_X) := H(Y) = -\sum_y p_Y(y)\,\log_2 p_Y(y).
-  
+H_c(f; p_X) := H(Y) = -\sum_y p_Y(y)\,\log_2 p_Y(y).
 $$
 
 
 - **Classical continuous:** differential Shannon entropy of the output density  
   
+
+
 $$
-  H_c(f; p_X) := h(Y) = -\int f_Y(y)\,\log_2 f_Y(y)\,dy.
-  
+H_c(f; p_X) := h(Y) = -\int f_Y(y)\,\log_2 f_Y(y)\,dy.
 $$
 
 
 - **Quantum / gravity channel** (Tag **B**): von Neumann entropy of the channel output  
   
+
+
 $$
-  S_c(\Phi;\rho_X) := S\bigl(\Phi(\rho_X)\bigr) = -\operatorname{Tr}\bigl(\Phi(\rho_X)\log_2\Phi(\rho_X)\bigr).
-  
+S_c(\Phi;\rho_X) := S\bigl(\Phi(\rho_X)\bigr) = -\operatorname{Tr}\bigl(\Phi(\rho_X)\log_2\Phi(\rho_X)\bigr).
 $$
 
 
-In the gravity thread, the gravitational channel $\Phi_g$ acts on a local density operator $\rho$, and $S_c = S(\Phi_g(\rho))$ is the corresponding output entropy (canonical master-equation side: Eq.\ (\ref{eq:load}) family below). Classical $H_c$ and quantum $S_c$ share the **role** “entropy of what the channel emits,” not a free symbolic identity of every repository object named $H_c$.
+In the gravity thread, the gravitational channel $\Phi_g$acts on a local density operator$\rho$, and $S_c = S(\Phi_g(\rho))$is the corresponding output entropy (canonical master-equation side: Eq.\ (\ref{eq:load}) family below). Classical$H_c$and quantum$S_c$share the **role** “entropy of what the channel emits,” not a free symbolic identity of every repository object named$H_c$.
 
-**Rigor:** definitions are **constructive** in the sense of standard Shannon/von Neumann theory on finite alphabets and density operators; the program’s use of $S_c$ on $\Phi_g$ is framework-canonical, not a new information-theory theorem.
+**Rigor:** definitions are **constructive** in the sense of standard Shannon/von Neumann theory on finite alphabets and density operators; the program’s use of $S_c$on$\Phi_g$is framework-canonical, not a new information-theory theorem.
 
 ## 1.2 Informational equivalence of maps
 
 **Key property.** Two or more different maps — whether deterministic, probabilistic, or quantum — are **informationally equivalent** if they induce output distributions with the same computational entropy. The internal mechanics (algorithm, intermediate randomness, or quantum circuit layout) do not enter the definition; only the final statistical pattern of possible outputs does.
 
-This property is what makes computational entropy a unifying measure across classical gates, lambda reduction, games-as-maps, and CPTP channels: any probability-based prediction that depends only on $p_Y$ is shared by all maps with that $p_Y$.
+This property is what makes computational entropy a unifying measure across classical gates, lambda reduction, games-as-maps, and CPTP channels: any probability-based prediction that depends only on$p_Y$is shared by all maps with that$p_Y$.
 
-## 1.3 Worked continuous example: $\sqrt{U}$ versus $\max(U_1,U_2)$
+## 1.3 Worked continuous example: $\sqrt{U}$versus$\max(U_1,U_2)$
 
 Consider two genuinely different functions on independent uniforms $U,U_1,U_2\sim\mathrm{Uniform}[0,1]$:
 
-- Function 1: $Y_1=\sqrt{U}$ (square root of one uniform).  
-- Function 2: $Y_2=\max(U_1,U_2)$ (maximum of two independent uniforms).
+- Function 1: $Y_1=\sqrt{U}$(square root of one uniform).  
+- Function 2:$Y_2=\max(U_1,U_2)$(maximum of two independent uniforms).
 
-Both induce the **same** output PDF on $[0,1]$,
+Both induce the **same** output PDF on$[0,1]$,
 
 
 $$
@@ -149,15 +152,15 @@ H_c(Y)=-\int_0^1 2y\log_2(2y)\,dy = -1+\frac{1}{2\ln 2}\approx -0.27865\ \mathrm
 $$
 
 
-(The reflected map $Y_3=\min(U_1,U_2)$ is informationally equivalent under the substitution $z=1-y$.) Despite completely different internal operations, any prediction that depends only on the law of $Y$ — e.g. $\mathbb{P}(Y>0.7)$, mean, variance — is identical. This is the exact content of informational equivalence for continuous classical maps (Section 1.1).
+(The reflected map $Y_3=\min(U_1,U_2)$is informationally equivalent under the substitution$z=1-y$.) Despite completely different internal operations, any prediction that depends only on the law of $Y$— e.g.$\mathbb{P}(Y>0.7)$, mean, variance — is identical. This is the exact content of informational equivalence for continuous classical maps (Section 1.1).
 
 ## 1.4 Global conservation and local transfer: the AND-gate ledger
 
-A common apparent paradox is that a computation can **reduce** local entropy (high-entropy random inputs → lower-entropy structured outputs), seemingly violating the second law. The framework resolves this by **global conservation with local transfer**: entropy is not destroyed; it is exported from the declared system output into environment / preimage registers that an observer of $Y$ alone does not hold.
+A common apparent paradox is that a computation can **reduce** local entropy (high-entropy random inputs → lower-entropy structured outputs), seemingly violating the second law. The framework resolves this by **global conservation with local transfer**: entropy is not destroyed; it is exported from the declared system output into environment / preimage registers that an observer of $Y$alone does not hold.
 
 ### Classical irreversible AND (constructive)
 
-Let $X=(X_1,X_2)$ be i.i.d. fair bits, so $H(X)=2$ bits. Let $Y=X_1\land X_2$. Then
+Let$X=(X_1,X_2)$be i.i.d. fair bits, so$H(X)=2$bits. Let$Y=X_1\land X_2$. Then
 
 
 $$
@@ -189,14 +192,14 @@ H(X)=H(Y)+H(X\mid Y),
 $$
 
 
-verified to machine precision ($<10^{-12}$) in the Phase 1 ledger (Appendix A.1). Rounding for exposition: **output $\approx 0.811$ bits**, **export $\approx 1.189$ bits**, total $2$.
+verified to machine precision ($<10^{-12}$) in the Phase 1 ledger (Appendix A.1). Rounding for exposition: **output $\approx 0.811$bits**, **export$\approx 1.189$bits**, total$2$.
 
 Branch-wise, the export is concentrated on the ambiguous output:
 
-| $Y$ | $P(Y)$ | Preimage size | $H(X\mid Y=y)$ |
+| $Y$|$P(Y)$| Preimage size |$H(X\mid Y=y)$|
 |-------|----------|---------------|------------------|
-| $1$ | $1/4$  | $1$         | $0$            |
-| $0$ | $3/4$  | $3$         | $\log_2 3\approx 1.585$ |
+|$1$|$1/4$|$1$|$0$|
+|$0$|$3/4$|$3$|$\log_2 3\approx 1.585$ |
 
 
 $$
@@ -204,7 +207,7 @@ H(X\mid Y)=\tfrac34\log_2 3\approx 1.188722.
 $$
 
 
-**Program reading.** Local observers of $Y$ see an apparent reduction; globally, system + environment entropy is accounted by the chain rule. In the gravity narrative, $\Phi_g$ plays the analogous role of overwriting prior micro-details while exporting distinguishability; continuum load $L$ quantifies demand of that process (preview in later parts; definition in Eq.\ (\ref{eq:load}) family below). That narrative does **not** by itself prove Einstein equations or continuum GfE.
+**Program reading.** Local observers of $Y$see an apparent reduction; globally, system + environment entropy is accounted by the chain rule. In the gravity narrative,$\Phi_g$plays the analogous role of overwriting prior micro-details while exporting distinguishability; continuum load$L$quantifies demand of that process (preview in later parts; definition in Eq.\ (\ref{eq:load}) family below). That narrative does **not** by itself prove Einstein equations or continuum GfE.
 
 **Rigor:** finite classical chain-rule accounting is **constructive**; holographic / gravitational language for the environment register remains **semantic** until an explicit continuum map is built (explicitly not claimed here).
 
@@ -227,50 +230,50 @@ STAGE 3 — Continuum GfE (macro target)
   Relative entropy of metrics → modified Einstein, Λ_G, G-field
 ```
 
-**Discipline.** Stage-1 constructive bookkeeping (AND ledgers, composition laws, Landauer contact) **motivates** Stage-2/3 language structurally; it does **not** construct continuum $L$ or $G$. Euclidean dual results (ACD-EW, residual T1′) live on a warm-up lattice and are **not** continuum gravitational equivalence. Continuum GfE contact is treated later as shared weak-field Poisson (**WEAK PASS**) without framework identity (**FAIL**).
+**Discipline.** Stage-1 constructive bookkeeping (AND ledgers, composition laws, Landauer contact) **motivates** Stage-2/3 language structurally; it does **not** construct continuum$L$or$G$. Euclidean dual results (ACD-EW, residual T1′) live on a warm-up lattice and are **not** continuum gravitational equivalence. Continuum GfE contact is treated later as shared weak-field Poisson (**WEAK PASS**) without framework identity (**FAIL**).
 
 ## 1.6 Notation and type-safety table
 
 | Symbol | Meaning | Type / hygiene |
 |--------|---------|----------------|
-| $H_c(f;p_X)$ | Classical computational entropy of map output | Scalar (bits); Tag **A** (foundations); Tag **E** on M11 finite maps |
-| $S_c(\Phi;\rho)$ | Quantum/gravity computational entropy | Von Neumann of channel output; Tag **B** |
-| $H_c^{\mathrm{toy}}$ | Dual-toy residual + edge score | Tag **C** — **not** map $H(Y)$ |
-| $H_c^{\mathrm{game}}$ | Predictive game Shannon given filtration | Tag **D** — **not** belief-field dual residual |
-| $H_c^{\mathrm{disc}}$ | Finite map / IDEM ledger $H(Y)$ | Tag **E** (M11) |
-| $\Phi_g$ | Gravitational CPTP channel | Map on density operators |
-| $L$ / $L(\rho,g)$ | Continuum **computational load** (demand) | **Dimensionless scalar**; clocks $d\tau$ |
-| $L^{\mathrm{disc}}$ | Discrete three-slot load ledger | Scalar bookkeeping; $L^{\mathrm{disc}}\neq L(\rho,g)$ |
-| $G$ | Structure-/matter-induced **metric** (GfE / ACD-EW) | Metric (or edgewise cousin); **$L\neq G$** |
-| $G_{\mathrm{Newton}}$ | Newton’s constant | Distinct from metric $G$; appear only in Path M calibration language |
+| $H_c(f;p_X)$| Classical computational entropy of map output | Scalar (bits); Tag **A** (foundations); Tag **E** on M11 finite maps |
+|$S_c(\Phi;\rho)$| Quantum/gravity computational entropy | Von Neumann of channel output; Tag **B** |
+|$H_c^{\mathrm{toy}}$| Dual-toy residual + edge score | Tag **C** — **not** map$H(Y)$|
+|$H_c^{\mathrm{game}}$| Predictive game Shannon given filtration | Tag **D** — **not** belief-field dual residual |
+|$H_c^{\mathrm{disc}}$| Finite map / IDEM ledger$H(Y)$| Tag **E** (M11) |
+|$\Phi_g$| Gravitational CPTP channel | Map on density operators |
+|$L$/$L(\rho,g)$| Continuum **computational load** (demand) | **Dimensionless scalar**; clocks$d\tau$|
+|$L^{\mathrm{disc}}$| Discrete three-slot load ledger | Scalar bookkeeping;$L^{\mathrm{disc}}\neq L(\rho,g)$|
+|$G$ | Structure-/matter-induced **metric** (GfE / ACD-EW) | Metric (or edgewise cousin); **$L\neq G$** |
+| $G_{\mathrm{Newton}}$| Newton’s constant | Distinct from metric$G$; appear only in Path M calibration language |
 | IDEM | Expanded identity + metadata | Result + arity, decay vector, $d_f$, AST metrics |
-| $\mathbf{d}$ | Decay / recoverability flags | $\{0,1\}^n$ or soft $[0,1]^n$ |
-| $d_f$ | Function unidentifiability | $[0,1]$ |
+| $\mathbf{d}$| Decay / recoverability flags |$\{0,1\}^n$or soft$[0,1]^n$|
+|$d_f$| Function unidentifiability |$[0,1]$ |
 | GfE | Gravity from Entropy (Bianconi) | Continuum macro target; peer literature, not GR-peer foundation |
 | ACD-EW | Action–Channel Duality (Euclidean warm-up) | Constructive dual on warm-up layer only |
 
 **Locked type-safety rules.**
 
-1. **$L$ is a dimensionless scalar.** **$G$ is a metric.** Never write $L\equiv G$.  
-2. **$H_c$ / $S_c$ are entropies of declared outputs**, not internal AST size alone (AST size may enter **energy-like** load proxies).  
-3. **$L^{\mathrm{disc}}\neq L(\rho,g)$** and discrete bookkeeping weights $\beta',\gamma',\delta'$ are not Newton-calibrated $\alpha\beta=4\pi G/c^4$.  
-4. Dual-toy lattice field $\phi$ is a **test signal**, not spacetime geometry and not the M11 microstate of continuum $\rho$.
+1. **$L$ is a dimensionless scalar.** **$G$is a metric.** Never write$L\equiv G$.  
+2. **$H_c$/$S_c$ are entropies of declared outputs**, not internal AST size alone (AST size may enter **energy-like** load proxies).  
+3. **$L^{\mathrm{disc}}\neq L(\rho,g)$** and discrete bookkeeping weights $\beta',\gamma',\delta'$are not Newton-calibrated$\alpha\beta=4\pi G/c^4$.  
+4. Dual-toy lattice field $\phi$is a **test signal**, not spacetime geometry and not the M11 microstate of continuum$\rho$.
 
 ## 1.7 Entropy object tags (M10, brief)
 
-Earlier drafts historically overloaded the token “$H_c$.” M10 freezes five tags so that load rates $|\Delta H_c|$ cannot be mixed across layers (Section 1.7):
+Earlier drafts historically overloaded the token “$H_c$.” M10 freezes five tags so that load rates $|\Delta H_c|$cannot be mixed across layers (Section 1.7):
 
 | Tag | Symbol | Object |
 |-----|--------|--------|
-| **A** | $H_c(f;p_X)$ | Classical **map** output Shannon / differential entropy (foundations) |
-| **B** | $S_c(\Phi;\rho)$ | Von Neumann entropy of **channel** output $\Phi(\rho)$ |
-| **C** | $H_c^{\mathrm{toy}}$ | Dual-toy residual + edge entropy (ACD-EW scorecards); supervised residual quality, not unsupervised $H(Y)$ alone |
-| **D** | $H_c^{\mathrm{game}}$ | Predictive game Shannon $H(Y_k\mid\mathcal{F}_{k-1})$ |
-| **E** | $H_c^{\mathrm{disc}}$ | Finite map / IDEM / M11 ledger $H(Y)$ |
+| **A** |$H_c(f;p_X)$| Classical **map** output Shannon / differential entropy (foundations) |
+| **B** |$S_c(\Phi;\rho)$| Von Neumann entropy of **channel** output$\Phi(\rho)$|
+| **C** |$H_c^{\mathrm{toy}}$| Dual-toy residual + edge entropy (ACD-EW scorecards); supervised residual quality, not unsupervised$H(Y)$alone |
+| **D** |$H_c^{\mathrm{game}}$| Predictive game Shannon$H(Y_k\mid\mathcal{F}_{k-1})$|
+| **E** |$H_c^{\mathrm{disc}}$| Finite map / IDEM / M11 ledger$H(Y)$|
 
-**Non-identities (do not assert):** $H_c^{\mathrm{toy}}\not\equiv S_c$; $H_c^{\mathrm{disc}}\not\equiv S_c$; $H_c^{\mathrm{game}}\not\equiv H_c^{\mathrm{toy}}$; $H_c\not\equiv S_{\mathrm{GfE}}$. House style: bare $H_c$ only for Tag **A** when unambiguous; theory claims mixing layers must tag.
+**Non-identities (do not assert):**$H_c^{\mathrm{toy}}\not\equiv S_c$; $H_c^{\mathrm{disc}}\not\equiv S_c$; $H_c^{\mathrm{game}}\not\equiv H_c^{\mathrm{toy}}$; $H_c\not\equiv S_{\mathrm{GfE}}$. House style: bare $H_c$only for Tag **A** when unambiguous; theory claims mixing layers must tag.
 
-**Semantic preview of demand (C14).** Prefer reading continuum load $L$ as demand from the **scale and rate of channel outcomes** — energy-like work, entropy flux / export, and boundary or distinguishability budget — so that active scrambling and high export raise $L$. That reading is a **semantic** program convention until continuum matching exists; it is the same polarity that discrete ledgers enforce by construction in §2.
+**Semantic preview of demand (C14).** Prefer reading continuum load$L$as demand from the **scale and rate of channel outcomes** — energy-like work, entropy flux / export, and boundary or distinguishability budget — so that active scrambling and high export raise$L$. That reading is a **semantic** program convention until continuum matching exists; it is the same polarity that discrete ledgers enforce by construction in §2.
 
 ---
 
@@ -299,19 +302,19 @@ implemented as pure bookkeeping on finite classical models — **without** inven
 
 An **IDEM** (expanded identity) pairs a map result with metadata: arity, result dimension, decay vector $\mathbf{d}$, function unidentifiability $d_f$, and optional AST complexity metrics. In recoverability models:
 
-- $d_i=0$: input $x_i$ is recoverable from the declared output under the model;  
-- $d_i=1$: that input information is **lost** to an observer of $Y$ alone;  
-- Soft variants use $d_i\in[0,1]$ (e.g. $1-1/|\mathrm{preimage}|$).
+- $d_i=0$: input $x_i$is recoverable from the declared output under the model;  
+-$d_i=1$: that input information is **lost** to an observer of $Y$alone;  
+- Soft variants use$d_i\in[0,1]$(e.g.$1-1/|\mathrm{preimage}|$).
 
-For fair-bit AND, output $Y=1$ has a unique preimage $(1,1)$, while $Y=0$ has three preimages; recoverability fails on the latter branch, matching the large conditional entropy $H(X\mid Y)$. Decay flips $0\to 1$ are the classical image of **irreversible overwrite**; M11 feeds the **rate** of export or soft decay into the entropy-rate load slot, not an idle “identity stockpile.”
+For fair-bit AND, output $Y=1$has a unique preimage$(1,1)$, while $Y=0$has three preimages; recoverability fails on the latter branch, matching the large conditional entropy$H(X\mid Y)$. Decay flips $0\to 1$are the classical image of **irreversible overwrite**; M11 feeds the **rate** of export or soft decay into the entropy-rate load slot, not an idle “identity stockpile.”
 
 **Rigor:** IDEM ontology and decay semantics are **semantic/structural** classical design. Concrete finite Shannon numbers below are **constructive**. Mapping decay to holographic screen degrees of freedom remains **analogical**, not a theorem.
 
-## 2.3 Operational $H_c^{\mathrm{disc}}$ and three-slot discrete load
+## 2.3 Operational$H_c^{\mathrm{disc}}$and three-slot discrete load
 
 **Operational rule.** Computational entropy on a discrete model is the Shannon entropy of the **declared public output**, not residual dual-toy scores, not internal AST size alone, and not blackjack bankroll EV.
 
-Continuum load has three **roles** (energy-like density, entropy-rate / export, boundary/capacity). M11 defines matching **proxies** with bookkeeping weights $\beta',\gamma',\delta'$ (default $1$), **not** continuum calibrations:
+Continuum load has three **roles** (energy-like density, entropy-rate / export, boundary/capacity). M11 defines matching **proxies** with bookkeeping weights$\beta',\gamma',\delta'$(default$1$), **not** continuum calibrations:
 
 
 $$
@@ -327,13 +330,13 @@ $$
 
 | Continuum role (master eq) | Discrete proxy | Locked reading |
 |----------------------------|----------------|----------------|
-| Energy-like work | $L_E$: ops / redexes / active evaluations this step | Idle identity $\Rightarrow$ low $L_E$; active work $\Rightarrow$ high |
-| Entropy-rate / export flux | $L_S$: $H(X\mid Y)$ single-shot, or $|\Delta H_c^{\mathrm{disc}}|$ multi-step, or soft decay-flip rate | High flux / overwrite $\Rightarrow$ **high** $L_S$ even when $H(Y)$ falls |
-| Boundary / capacity | $L_B$: mean soft lost-recoverability mass; residual ensemble entropy ratio; open redex fraction | Open distinguishability budget $\Rightarrow$ high $L_B$ |
+| Energy-like work | $L_E$: ops / redexes / active evaluations this step | Idle identity $\Rightarrow$low$L_E$; active work $\Rightarrow$high |
+| Entropy-rate / export flux |$L_S$: $H(X\mid Y)$single-shot, or$|\Delta H_c^{\mathrm{disc}}|$multi-step, or soft decay-flip rate | High flux / overwrite$\Rightarrow$**high**$L_S$even when$H(Y)$falls |
+| Boundary / capacity |$L_B$: mean soft lost-recoverability mass; residual ensemble entropy ratio; open redex fraction | Open distinguishability budget $\Rightarrow$high$L_B$|
 
-**Locked $L$ reading (C14).** Prefer demand from **scale and rate of possible channel outcomes**. Reject as primary story: “how much unreduced identity stockpile remains.” High entropy flux, many open results, and active scrambling raise load; fully reduced idle maps have low load.
+**Locked$L$reading (C14).** Prefer demand from **scale and rate of possible channel outcomes**. Reject as primary story: “how much unreduced identity stockpile remains.” High entropy flux, many open results, and active scrambling raise load; fully reduced idle maps have low load.
 
-**Type safety.** The three discrete slots share **roles** with continuum $L(\rho,g)$. They do **not** equal continuum coefficients, Newton’s $G$, or the structure metric $G$. Same three axes of demand; different mathematical objects.
+**Type safety.** The three discrete slots share **roles** with continuum$L(\rho,g)$. They do **not** equal continuum coefficients, Newton’s $G$, or the structure metric $G$. Same three axes of demand; different mathematical objects.
 
 ## 2.4 Phase 1 — AND-gate pure ledger (constructive)
 
@@ -341,33 +344,33 @@ Artifact: Appendix A.1.
 
 | Quantity | Value (fair bits) | Role |
 |----------|-------------------|------|
-| $H(X)$ | $2$ bits | Input possibility mass |
-| $H_c^{\mathrm{disc}}=H(Y)$ | $h_2(1/4)\approx 0.811278$ | Declared output entropy (Tag **E**) |
-| Export $H(X\mid Y)$ | $\approx 1.188722$ | Preimage / environment ledger |
-| $L_E^{\mathrm{disc}}$ | $1$ (one gate op) | Active work |
-| $L_S^{\mathrm{disc}}$ | $:=H(X\mid Y)\approx 1.188722$ | Single-shot export flux |
-| $L_B^{\mathrm{disc}}$ | $0.5$ (mean soft lost-recoverability mass) | Open distinguishability after map |
-| $L^{\mathrm{disc}}$ (weights $1$) | $\approx 2.689$ | Sum of independent role proxies |
+| $H(X)$|$2$bits | Input possibility mass |
+|$H_c^{\mathrm{disc}}=H(Y)$|$h_2(1/4)\approx 0.811278$| Declared output entropy (Tag **E**) |
+| Export$H(X\mid Y)$|$\approx 1.188722$| Preimage / environment ledger |
+|$L_E^{\mathrm{disc}}$|$1$(one gate op) | Active work |
+|$L_S^{\mathrm{disc}}$|$:=H(X\mid Y)\approx 1.188722$| Single-shot export flux |
+|$L_B^{\mathrm{disc}}$|$0.5$(mean soft lost-recoverability mass) | Open distinguishability after map |
+|$L^{\mathrm{disc}}$(weights$1$) | $\approx 2.689$| Sum of independent role proxies |
 
-**Observation.** Output $H_c^{\mathrm{disc}}$ **drops** ($\approx 2\to 0.811$) while demand **rises**. Any monist load proportional to residual output entropy alone would report *low* demand precisely when irreversible overwrite is *expensive* — opposite of the locked reading. Three independent axes appear simultaneously: work ($L_E$), export flux ($L_S$), and residual recoverability mass ($L_B$).
+**Observation.** Output$H_c^{\mathrm{disc}}$ **drops** ($\approx 2\to 0.811$) while demand **rises**. Any monist load proportional to residual output entropy alone would report *low* demand precisely when irreversible overwrite is *expensive* — opposite of the locked reading. Three independent axes appear simultaneously: work ($L_E$), export flux ($L_S$), and residual recoverability mass ($L_B$).
 
-Chain rule residual on the ledger is $<10^{-12}$. **Rigor:** $H_c^{\mathrm{disc}}$ and export **constructive**; three-slot assignment **structural bookkeeping**, not continuum $L$ ($L^{\mathrm{disc}}\neq L(\rho,g)$).
+Chain rule residual on the ledger is $<10^{-12}$. **Rigor:** $H_c^{\mathrm{disc}}$and export **constructive**; three-slot assignment **structural bookkeeping**, not continuum$L$ ($L^{\mathrm{disc}}\neq L(\rho,g)$).
 
 ## 2.5 Phase 2 — multi-step Boolean, tiny SKI, minimal shoe (brief)
 
 Phase-2 multi-step, SKI, and shoe ledgers are summarized in Appendix A.
 
-**Multi-step Boolean.** An identity baseline on $(X_1,X_2,X_3)$ has $L_E=L_S=L_B=0$ (idle). An AND step spikes export ($L_S\approx 1.189$); a subsequent OR-type step has **lower** export than AND. Ordering is asserted under the locked reading: larger export $\Rightarrow$ larger $L_S$. An optional discrete load-clock diagnostic $k_{\mathrm{eff}}=\sum 1/(1+\alpha' L^{\mathrm{disc}})$ with conventional $\alpha'=0.1$ is printed only as bookkeeping — **not** continuum proper time.
+**Multi-step Boolean.** An identity baseline on $(X_1,X_2,X_3)$has$L_E=L_S=L_B=0$ (idle). An AND step spikes export ($L_S\approx 1.189$); a subsequent OR-type step has **lower** export than AND. Ordering is asserted under the locked reading: larger export $\Rightarrow$larger$L_S$. An optional discrete load-clock diagnostic $k_{\mathrm{eff}}=\sum 1/(1+\alpha' L^{\mathrm{disc}})$with conventional$\alpha'=0.1$is printed only as bookkeeping — **not** continuum proper time.
 
-**Tiny SKI ensemble.** Fixed finite combinator terms under normal-order redex steps: $L_E=$ mean redex count pre-step; $L_S=|\Delta H_c^{\mathrm{disc}}|$ under reduction; $H_c^{\mathrm{disc}}$ drops as term-shape classes concentrate under reduction. Exact Shannon on a finite ensemble; no continuum constants.
+**Tiny SKI ensemble.** Fixed finite combinator terms under normal-order redex steps:$L_E=$mean redex count pre-step;$L_S=|\Delta H_c^{\mathrm{disc}}|$under reduction;$H_c^{\mathrm{disc}}$drops as term-shape classes concentrate under reduction. Exact Shannon on a finite ensemble; no continuum constants.
 
-**Minimal R/B shoe.** Fixed-sequence multiset (e.g. 6 red + 6 black residual shoe): predictive $H_c^{\mathrm{game}}$-adjacent combinatorial entropy of next color; $L_E=1$ per count-bucket update; $L_S=|\Delta H_c^{\mathrm{game}}|$ spikes when predictive entropy jumps; $L_B=H_{\mathrm{seq}}(\Omega_k)/H_{\mathrm{seq}}(\Omega_0)$ residual order-entropy ratio as capacity-like pressure. Honesty: **not** bankroll EV, **not** ACD-EW residual dual $H_c^{\mathrm{toy}}$, and not multi-deck strategy science (M12 deferred).
+**Minimal R/B shoe.** Fixed-sequence multiset (e.g. 6 red + 6 black residual shoe): predictive$H_c^{\mathrm{game}}$-adjacent combinatorial entropy of next color; $L_E=1$per count-bucket update;$L_S=|\Delta H_c^{\mathrm{game}}|$spikes when predictive entropy jumps;$L_B=H_{\mathrm{seq}}(\Omega_k)/H_{\mathrm{seq}}(\Omega_0)$residual order-entropy ratio as capacity-like pressure. Honesty: **not** bankroll EV, **not** ACD-EW residual dual$H_c^{\mathrm{toy}}$, and not multi-deck strategy science (M12 deferred).
 
 **Rigor:** Phase 2 ledgers are **constructive** finite accounting with **structural** continuum role alignment only.
 
 ## 2.6 Coupled regions (one paragraph)
 
-A two-region product ledger (Appendix A) places independent fair-bit pairs on regions $A$ and $B$, runs local ANDs, then a coupling XOR “screen” that redistributes shared information. The experiment shows: global chain-rule conservation on the product alphabet; local high export $\Rightarrow$ high local $L_S$ while an idle baseline region stays low; coupling redistributes / screens information without magical destruction; optional per-region diagnostic $k_{\mathrm{eff}}$. Product regions are **not** spacetime patches, **not** continuum $\rho$, and **not** a derivation of local energy density fields. They make multi-site classical conservation **constructive** before any hydrodynamic aspiration (Section 2.9 / Appendix A §5–6).
+A two-region product ledger (Appendix A) places independent fair-bit pairs on regions $A$and$B$, runs local ANDs, then a coupling XOR “screen” that redistributes shared information. The experiment shows: global chain-rule conservation on the product alphabet; local high export $\Rightarrow$high local$L_S$while an idle baseline region stays low; coupling redistributes / screens information without magical destruction; optional per-region diagnostic$k_{\mathrm{eff}}$. Product regions are **not** spacetime patches, **not** continuum $\rho$, and **not** a derivation of local energy density fields. They make multi-site classical conservation **constructive** before any hydrodynamic aspiration (Section 2.9 / Appendix A §5–6).
 
 ## 2.7 Composition path dependence (D13 / Appendix A.2)
 
@@ -377,23 +380,23 @@ A two-region product ledger (Appendix A) places independent fair-bit pairs on re
 
 | Model | Definition |
 |-------|------------|
-| **Pure cascade** | $Y=f(X)$, $Z=g(Y)$ — next stage sees only $Y$ |
+| **Pure cascade** | $Y=f(X)$, $Z=g(Y)$— next stage sees only$Y$|
 | **Circuit** | Later stages may still read residual input wires + intermediates |
 
 Standard lemmas (finite classical):
 
-- **Lemma A (chain rule):** $H(X)=H(Y)+H(X\mid Y)$ for deterministic $Y=f(X)$.  
+- **Lemma A (chain rule):**$H(X)=H(Y)+H(X\mid Y)$for deterministic$Y=f(X)$.  
 - **Lemma B (export additivity on pure cascade):** $H(X\mid Z)=H(X\mid Y)+H(Y\mid Z)$.  
 - **Lemma C (DPI):** $H(g(Y))\le H(Y)$.  
-- **Lemma D:** path $L_E$ is additive by counting ops.  
-- **Lemma E (path dependence of cumulative $L_S$):** $\sum L_S$ is **not** a function of the final map alone.
+- **Lemma D:** path $L_E$is additive by counting ops.  
+- **Lemma E (path dependence of cumulative$L_S$):** $\sum L_S$is **not** a function of the final map alone.
 
-**Explicit Direct vs Circuit witness (fair bits $X=(X_1,X_2)$).**
+**Explicit Direct vs Circuit witness (fair bits$X=(X_1,X_2)$).**
 
-| Path | Stages | Final $Z$ | $H(Z)$ | $\sum L_S$ (stage exports) |
+| Path | Stages | Final $Z$|$H(Z)$|$\sum L_S$(stage exports) |
 |------|--------|-------------|----------|------------------------------|
-| **Direct $D$** | $Z=X_1\land X_2$ | AND law | $\approx 0.811278$ | $H(X\mid Z)\approx 1.188722$ |
-| **Circuit $C$** | $Y=X_1$, then $Z=Y\land X_2$ (wire $X_2$ retained) | same AND law | $\approx 0.811278$ | $H(X\mid Y)+H(X\mid Z)=1+1.188722=2.188722$ |
+| **Direct$D$** | $Z=X_1\land X_2$| AND law |$\approx 0.811278$|$H(X\mid Z)\approx 1.188722$|
+| **Circuit$C$** | $Y=X_1$, then $Z=Y\land X_2$(wire$X_2$retained) | same AND law |$\approx 0.811278$|$H(X\mid Y)+H(X\mid Z)=1+1.188722=2.188722$ |
 
 Thus, in rounded form used for program citation:
 
@@ -412,15 +415,15 @@ H(X|Z)           — property of the final I/O pair (path-independent for fixed 
 Σ_s L_S^(s)      — property of the pipeline (path-dependent under circuit stages)
 ```
 
-Paying for an intermediate publish/export that is later re-used in an irreversible gate **raises demand along the path**, even when the final output law is unchanged. Load is not “final $H_c^{\mathrm{disc}}$ alone.” Soft-recoverability $L_B$ is likewise **not** freely additive under regional sums or stage sums without a fixed global coordinate convention (Lemma F counterexamples).
+Paying for an intermediate publish/export that is later re-used in an irreversible gate **raises demand along the path**, even when the final output law is unchanged. Load is not “final $H_c^{\mathrm{disc}}$alone.” Soft-recoverability$L_B$is likewise **not** freely additive under regional sums or stage sums without a fixed global coordinate convention (Lemma F counterexamples).
 
-**Rigor:** Lemmas A–C and the Direct/Circuit numbers are **constructive**; continuum composition of $L(\rho,g)$ is **not claimed**.
+**Rigor:** Lemmas A–C and the Direct/Circuit numbers are **constructive**; continuum composition of$L(\rho,g)$is **not claimed**.
 
-## 2.8 Landauer contact for export and $L_S$ (D13 / Appendix A.3)
+## 2.8 Landauer contact for export and$L_S$(D13 / Appendix A.3)
 
 **Evidence:** Appendix A.3.
 
-On the same finite AND model, fix an explicit **Protocol R** (reset after AND): compute $Y=f(X)$, keep only $Y$ as public system output, and thermalize residual input registers conditional on $Y$. The average number of erased bits is the export
+On the same finite AND model, fix an explicit **Protocol R** (reset after AND): compute$Y=f(X)$, keep only $Y$as public system output, and thermalize residual input registers conditional on$Y$. The average number of erased bits is the export
 
 
 $$
@@ -450,52 +453,57 @@ $$
 
 | Quantity | Fair-bit AND |
 |----------|----------------|
-| $H(Y)=H_c^{\mathrm{disc}}$ | $\approx 0.811278$ |
-| Export $H(X\mid Y)$ | $\approx 1.188722$ |
-| Landauer $Q_{\min}/(k_B T\ln 2)$ | $=H(X\mid Y)\approx 1.188722$ |
-| $L_S^{\mathrm{disc}}$ | $=$ export by definition |
+| $H(Y)=H_c^{\mathrm{disc}}$|$\approx 0.811278$|
+| Export$H(X\mid Y)$|$\approx 1.188722$|
+| Landauer$Q_{\min}/(k_B T\ln 2)$|$=H(X\mid Y)\approx 1.188722$|
+|$L_S^{\mathrm{disc}}$|$=$export by definition |
 
-**Optional reversible dilation (Bennett-style, structural).** A reversible embedding can park preimage information in **garbage** $G$; public $H(Y)$ may match the irreversible case, but eventual erasure of $G$ still costs $\ge H(X\mid Y)$. Export does not vanish under reversible accounting; it is deferred until garbage reset.
+**Optional reversible dilation (Bennett-style, structural).** A reversible embedding can park preimage information in **garbage**$G$; public $H(Y)$may match the irreversible case, but eventual erasure of$G$still costs$\ge H(X\mid Y)$. Export does not vanish under reversible accounting; it is deferred until garbage reset.
 
 **What this contact is and is not.**
 
 | Allowed | Forbidden from Appendix A.3 alone |
 |---------|---------------------------|
-| Export $H(X\mid Y)$ is the average erased-bit count under Protocol R | Newton $G$ or Path J/M calibration from Landauer |
-| $L_S^{\mathrm{disc}}$ is that information object | $\hbar$, holography, or $S_{\mathrm{BH}}=A/4G\hbar$ from AND heat |
-| Thermodynamic bookkeeping contact only | Continuum $L_S$ density = GR/GfE heat flux |
-| | $L\equiv G$ or $L^{\mathrm{disc}}\equiv L(\rho,g)$ |
+| Export $H(X\mid Y)$is the average erased-bit count under Protocol R | Newton$G$or Path J/M calibration from Landauer |
+|$L_S^{\mathrm{disc}}$is that information object |$\hbar$, holography, or $S_{\mathrm{BH}}=A/4G\hbar$from AND heat |
+| Thermodynamic bookkeeping contact only | Continuum$L_S$density = GR/GfE heat flux |
+| |$L\equiv G$or$L^{\mathrm{disc}}\equiv L(\rho,g)$|
 
-**Rigor:** finite Shannon identities **constructive**; Landauer inequality **external theorem**; identification of $L_S$ with the Landauer bit-count **structural contact**. Conversion factor $k_B T\ln 2$ is standard thermodynamics, **not** fitted to gravity scales.
+**Rigor:** finite Shannon identities **constructive**; Landauer inequality **external theorem**; identification of$L_S$with the Landauer bit-count **structural contact**. Conversion factor$k_B T\ln 2$is standard thermodynamics, **not** fitted to gravity scales.
 
 ### Numbered Stage-1 theorems (finite classical)
 
-The following are **finite classical** statements on declared I/O cuts (entropy Tag **E**). They are **constructive** on finite alphabets and ledgers unless labeled otherwise. They do **not** transfer to continuum $L(\rho,g)$, $\Phi_g$, Path J/M, dual residual $H_c^{\mathrm{toy}}$, or GfE without a new map. Sources: Appendix A.2, Appendix A.3; witnesses Appendix A.2, Appendix A.3, Appendix A.1.
+The following are **finite classical** statements on declared I/O cuts (entropy Tag **E**). They are **constructive** on finite alphabets and ledgers unless labeled otherwise. They do **not** transfer to continuum$L(\rho,g)$, $\Phi_g$, Path J/M, dual residual $H_c^{\mathrm{toy}}$, or GfE without a new map. Sources: Appendix A.2, Appendix A.3; witnesses Appendix A.2, Appendix A.3, Appendix A.1.
 
 **Theorem T1 (chain rule / export for deterministic maps).**  
-Let $X$ be a finite-alphabet random variable and $Y=f(X)$ a deterministic map. Then
+Let $X$be a finite-alphabet random variable and$Y=f(X)$ a deterministic map. Then
+
 
 $$
 H(X)=H(Y)+H(X\mid Y).
 $$
 
-**Reading:** $H(X\mid Y)$ is **export** (preimage / environment register), not destruction of information. Single-shot $L_S^{\mathrm{disc}}:=H(X\mid Y)$ is a structural export-flux proxy (M11).  
-**Rigor:** **constructive** (Shannon chain rule; Phase 1 AND residual $<10^{-12}$).  
+
+**Reading:** $H(X\mid Y)$is **export** (preimage / environment register), not destruction of information. Single-shot$L_S^{\mathrm{disc}}:=H(X\mid Y)$is a structural export-flux proxy (M11).  
+**Rigor:** **constructive** (Shannon chain rule; Phase 1 AND residual$<10^{-12}$).  
 **Cite:** Appendix A.2 Lemma A · §1.4 · §2.4.
 
 **Theorem T2 (Markov cascade export additivity).**  
-Let $Y=f(X)$ and $Z=g(Y)$ be deterministic with pure cascade (second stage sees only $Y$). Then
+Let $Y=f(X)$and$Z=g(Y)$be deterministic with pure cascade (second stage sees only$Y$). Then
+
 
 $$
 H(X\mid Z)=H(X\mid Y)+H(Y\mid Z).
 $$
+
 
 **Warning:** Circuit stages that re-read residual input wires need not obey this identity in the cascade form.  
 **Rigor:** **constructive** (proof + ledger witness; e.g. AND then NOT).  
 **Cite:** Appendix A.2 Lemma B · §2.7.
 
 **Theorem T3 (path dependence of cumulative $\sum L_S$).**  
-There exist finite models and two pipelines realizing the **same** final map $X\mapsto Z$ (same law, same $H(Z)$) such that cumulative stage export costs differ. Explicit fair-bit witness:
+There exist finite models and two pipelines realizing the **same** final map $X\mapsto Z$(same law, same$H(Z)$) such that cumulative stage export costs differ. Explicit fair-bit witness:
+
 
 $$
 \sum L_S(\mathrm{Direct})\approx 1.188722,\qquad
@@ -503,35 +511,38 @@ $$
 H(Z)\approx 0.811278\ \text{on both paths}
 $$
 
-(rounded **1.189** vs **2.189**). Thus $\sum L_S$ is **not** a function of the final map alone; final residual $H(X\mid Z)$ remains path-independent for fixed $(X,Z)$.  
+
+(rounded **1.189** vs **2.189**). Thus $\sum L_S$is **not** a function of the final map alone; final residual$H(X\mid Z)$remains path-independent for fixed$(X,Z)$.  
 **Rigor:** **constructive** (closed form + composition ledger).  
 **See:** Theorem T3; Appendix A.2; Results P4.
 
-**Theorem T4 (Landauer identification of $L_S$ under Protocol R).**  
-On Protocol R for a finite deterministic map (compute $Y=f(X)$, keep public $Y$, thermalize residual input registers conditional on $Y$), the average erased-bit count is $H(X\mid Y)$. Landauer’s principle (external) supplies
+**Theorem T4 (Landauer identification of $L_S$under Protocol R).**  
+On Protocol R for a finite deterministic map (compute$Y=f(X)$, keep public $Y$, thermalize residual input registers conditional on $Y$), the average erased-bit count is $H(X\mid Y)$. Landauer’s principle (external) supplies
+
 
 $$
 Q\ge k_B T\ln 2\cdot H(X\mid Y).
 $$
 
-M11 single-shot $L_S^{\mathrm{disc}}:=H(X\mid Y)$ is that same information object, so $Q\ge k_B T\ln 2\cdot L_S^{\mathrm{disc}}$. On fair-bit AND, export $=$ Landauer bit-count $\approx 1.188722$.  
-**Rigor:** finite Shannon **constructive**; Landauer inequality **external theorem**; $L_S$ identification **structural contact**. Not Newton, not continuum $L$, not $L\equiv G$.  
+
+M11 single-shot $L_S^{\mathrm{disc}}:=H(X\mid Y)$is that same information object, so$Q\ge k_B T\ln 2\cdot L_S^{\mathrm{disc}}$. On fair-bit AND, export $=$Landauer bit-count$\approx 1.188722$.  
+**Rigor:** finite Shannon **constructive**; Landauer inequality **external theorem**; $L_S$identification **structural contact**. Not Newton, not continuum$L$, not $L\equiv G$.  
 **See:** Theorem T4; Appendix A.3; Results P3.
 
-**Proposition T5 ($L_B$ non-additivity witness).**  
-Mean soft-recoverability $L_B$ is **not** freely additive under (i) regional sum vs joint mean on product systems, or (ii) sum of stage $L_B$ vs $L_B$ of a direct map. Explicit product witness: two independent AND regions with $L_B(A)=L_B(B)=0.5$ give sum $1.0$ but joint mean $L_B(G)=0.5$.  
-**Rigor:** **constructive counterexamples** (not a uniqueness theorem for every possible $L_B$ formula).  
+**Proposition T5 ($L_B$non-additivity witness).**  
+Mean soft-recoverability$L_B$is **not** freely additive under (i) regional sum vs joint mean on product systems, or (ii) sum of stage$L_B$vs$L_B$of a direct map. Explicit product witness: two independent AND regions with$L_B(A)=L_B(B)=0.5$give sum$1.0$but joint mean$L_B(G)=0.5$.  
+**Rigor:** **constructive counterexamples** (not a uniqueness theorem for every possible $L_B$formula).  
 **See:** Proposition T5; Appendix A.2.
 
 | ID | Statement | Rigor |
 |----|-----------|-------|
-| **T1** | $H(X)=H(Y)+H(X\mid Y)$ (deterministic) | constructive |
-| **T2** | Pure-cascade export additivity $H(X\mid Z)=H(X\mid Y)+H(Y\mid Z)$ | constructive |
-| **T3** | $\sum L_S$ path-dependent (Direct $\approx 1.189$ vs Circuit $\approx 2.189$) | constructive |
-| **T4** | $L_S=H(X\mid Y)$ Landauer bit-count under Protocol R | constructive + external |
-| **T5** | Mean soft $L_B$ non-additive (product / stage witnesses) | constructive counterexamples |
+| **T1** |$H(X)=H(Y)+H(X\mid Y)$(deterministic) | constructive |
+| **T2** | Pure-cascade export additivity$H(X\mid Z)=H(X\mid Y)+H(Y\mid Z)$| constructive |
+| **T3** |$\sum L_S$path-dependent (Direct$\approx 1.189$vs Circuit$\approx 2.189$) | constructive |
+| **T4** | $L_S=H(X\mid Y)$Landauer bit-count under Protocol R | constructive + external |
+| **T5** | Mean soft$L_B$non-additive (product / stage witnesses) | constructive counterexamples |
 
-**Non-claims for T1–T5.** Continuum composition of $L(\rho,g)$; Einstein from Boolean cascades; $\sum L_S$ as gravitational redshift; dual-toy residual $=$ gate export.
+**Non-claims for T1–T5.** Continuum composition of$L(\rho,g)$; Einstein from Boolean cascades; $\sum L_S$as gravitational redshift; dual-toy residual$=$ gate export.
 
 ## 2.9 Why three load terms? (structural motivation)
 
@@ -541,24 +552,24 @@ Discrete evidence simultaneously requires three independent **axes of demand** (
 2. **How fast is possibility being realized / exported?** ($L_S$)  
 3. **How much distinguishability budget remains open versus capacity?** ($L_B$)
 
-A monist load $L\propto H_c^{\mathrm{disc}}$ alone fails on irreversible AND (output entropy low, export high). A monist “remaining AST size” fails the locked reading when the stockpile is idle. Shoe dynamics separate nearly constant update cost ($L_E$), flux spikes ($L_S$), and smoothly shrinking residual multiset capacity ($L_B$). Continuum three-term $L$ is the **same role split** at continuum language level — **structural motivation**, not uniqueness, and not a hydrodynamic limit of IDEM.
+A monist load $L\propto H_c^{\mathrm{disc}}$ alone fails on irreversible AND (output entropy low, export high). A monist “remaining AST size” fails the locked reading when the stockpile is idle. Shoe dynamics separate nearly constant update cost ($L_E$), flux spikes ($L_S$), and smoothly shrinking residual multiset capacity ($L_B$). Continuum three-term $L$is the **same role split** at continuum language level — **structural motivation**, not uniqueness, and not a hydrodynamic limit of IDEM.
 
 ## 2.10 Section non-claims
 
 Do **not** assert from M11 Phase 1–2, composition, Landauer contact, or coupled-region ledgers:
 
-1. Master equation $\Leftrightarrow$ continuum GfE.  
-2. $L\equiv G$, $L^{\mathrm{disc}}\equiv L(\rho,g)$, or $S_c\equiv\operatorname{Tr} g\ln G^{-1}$.  
-3. IDEM/decay **constructs** continuum $L$ or metric $G$ (PROGRESS non-claim §2.3.9).  
+1. Master equation$\Leftrightarrow$continuum GfE.  
+2.$L\equiv G$, $L^{\mathrm{disc}}\equiv L(\rho,g)$, or $S_c\equiv\operatorname{Tr} g\ln G^{-1}$.  
+3. IDEM/decay **constructs** continuum $L$or metric$G$(PROGRESS non-claim §2.3.9).  
 4. Newton / Einstein recovery from gates, SKI terms, shoes, or Landauer heat.  
-5. Lattice dual toys or blackjack-belief dual **are** gravity or **are** true game predictive $H_c^{\mathrm{game}}$.  
-6. Path J/M calibration constants $\alpha,\beta,\gamma,\delta,\epsilon_0$ are fixed by discrete proxies.  
+5. Lattice dual toys or blackjack-belief dual **are** gravity or **are** true game predictive$H_c^{\mathrm{game}}$.  
+6. Path J/M calibration constants $\alpha,\beta,\gamma,\delta,\epsilon_0$are fixed by discrete proxies.  
 7. Decay vector components **are** Hawking radiation degrees of freedom.  
 8. Primary load = idle remaining identity stockpile.  
-9. Continuum composition laws of $L(\rho,g)$ or $\lvert dS_c/d\tau\rvert$ from finite Boolean cascades.  
-10. Dual-toy residual $H_c^{\mathrm{toy}}$ equals gate export or Landauer bits.
+9. Continuum composition laws of$L(\rho,g)$or$\lvert dS_c/d\tau\rvert$from finite Boolean cascades.  
+10. Dual-toy residual$H_c^{\mathrm{toy}}$equals gate export or Landauer bits.
 
-**Allowed claim form (program-level).** On finite classical models $\mathcal{M}$, we define constructive $H_c^{\mathrm{disc}}$ and a three-term discrete load ledger whose terms play the same *roles* as master-equation load slots under the locked high-flux reading; cumulative stage export $\sum L_S$ is path-dependent under circuits even when final $H(Z)$ is fixed; and single-shot $L_S=H(X\mid Y)$ is the information object bounded by Landauer heat under Protocol R. Continuum gravity remains deferred.
+**Allowed claim form (program-level).** On finite classical models$\mathcal{M}$, we define constructive $H_c^{\mathrm{disc}}$and a three-term discrete load ledger whose terms play the same *roles* as master-equation load slots under the locked high-flux reading; cumulative stage export$\sum L_S$is path-dependent under circuits even when final$H(Z)$is fixed; and single-shot$L_S=H(X\mid Y)$is the information object bounded by Landauer heat under Protocol R. Continuum gravity remains deferred.
 
 ---
 
@@ -566,12 +577,12 @@ Do **not** assert from M11 Phase 1–2, composition, Landauer contact, or couple
 
 | Topic | Canonical / primary path |
 |-------|--------------------------|
-| $H_c$ / $S_c$ definitions | Section 1 |
+|$H_c$/$S_c$definitions | Section 1 |
 | Claims freeze C1–C14, non-claims | Results section and Appendix B |
 | M11 design + Phase 1–2 | Appendix A · Appendix A |
 | Continuum role motivation | Appendix A |
-| Composition / path $\sum L_S$ | Appendix A.2 |
-| Landauer / $L_S$ | Appendix A.3 |
+| Composition / path$\sum L_S$| Appendix A.2 |
+| Landauer /$L_S$| Appendix A.3 |
 | Entropy tags A–E | Appendix A · Appendix A |
 | Outline / product form | Appendix A |
 
@@ -579,9 +590,9 @@ Do **not** assert from M11 Phase 1–2, composition, Landauer contact, or couple
 
 # §3. Gravitational channel, computational load, and master equation
 
-This section states the continuum **program definitions** of the gravitational channel $\Phi_g$, computational entropy $S_c$, dimensionless load $L$, load clock, and master equation (layer **M**). Formulas are the program’s continuum definitions; we do not re-derive them at length here, and we do not claim symbolic identity of this layer with continuum Gravity-from-Entropy (GfE; layer **G**). Rigor for the dynamical law itself is **canonical/program**. The Clausius constraint on the generator is stated as setup for Path J (Part 4); the import of Jacobson’s theorem is **external theorem + modeling assumption**, not re-proved here.
+This section states the continuum **program definitions** of the gravitational channel$\Phi_g$, computational entropy $S_c$, dimensionless load $L$, load clock, and master equation (layer **M**). Formulas are the program’s continuum definitions; we do not re-derive them at length here, and we do not claim symbolic identity of this layer with continuum Gravity-from-Entropy (GfE; layer **G**). Rigor for the dynamical law itself is **canonical/program**. The Clausius constraint on the generator is stated as setup for Path J (Part 4); the import of Jacobson’s theorem is **external theorem + modeling assumption**, not re-proved here.
 
-### 3.1 Gravitational channel $\Phi_g$ and computational entropy $S_c$
+### 3.1 Gravitational channel $\Phi_g$and computational entropy$S_c$
 
 We model gravity as an effective **gravitational channel** $\Phi_g$: a completely positive, trace-preserving (CPTP) map acting on the density operator $\rho$ of local quantum microstates. In schematic form,
 
@@ -607,9 +618,9 @@ S\bigl(\Phi_g(\rho)\bigr)
 $$
 
 
-This is the direct quantum/gravity counterpart of classical computational entropy $H_c(f;p_X)=H(Y)$ for $Y=f(X)$: entropy of the **realized output distribution**, independent of the internal mechanics of the map. Informational equivalence of channels that produce the same output entropy remains the foundational reading from Part 1; $\Phi_g$ is simply the channel whose output statistics we treat as the gravitational computational process.
+This is the direct quantum/gravity counterpart of classical computational entropy $H_c(f;p_X)=H(Y)$for$Y=f(X)$: entropy of the **realized output distribution**, independent of the internal mechanics of the map. Informational equivalence of channels that produce the same output entropy remains the foundational reading from Part 1; $\Phi_g$is simply the channel whose output statistics we treat as the gravitational computational process.
 
-### 3.2 Computational load $L$
+### 3.2 Computational load$L$
 
 Instantaneous information-processing **demand** is quantified by a dimensionless **computational load** $L(\rho,g)$. The canonical three-term formula is (Eq.\ (\ref{eq:load}) family below):
 
@@ -625,21 +636,21 @@ L(\rho,g)
 $$
 
 
-where $E[\rho]=\operatorname{Tr}(\rho H)$ is local energy, $\epsilon_0$ is a reference (Planck-scale) energy density for dimensional bookkeeping, $\lvert dS_c/d\tau\rvert_{\mathrm{reg}}$ is a regularized rate of computational-entropy production (averaged over a short Margolus–Levitin window to avoid circularity with the load clock), $S_{\mathrm{boundary}}(\rho)$ is von Neumann entropy on a holographic screen of area $A$, and $S_{\mathrm{BH}}(A)=A/(4G\hbar)$ is the Bekenstein–Hawking entropy of that screen. The weights $\beta,\gamma,\delta$ and the reference $\epsilon_0$ are fixed, in the gravitational program, by matching conditions in the Newtonian weak-field limit and by saturation bookkeeping for the Bekenstein bound—not by free first-principles prediction of Newton’s $G$ (see Part 4, Path M / C10).
+where $E[\rho]=\operatorname{Tr}(\rho H)$is local energy,$\epsilon_0$is a reference (Planck-scale) energy density for dimensional bookkeeping,$\lvert dS_c/d\tau\rvert_{\mathrm{reg}}$is a regularized rate of computational-entropy production (averaged over a short Margolus–Levitin window to avoid circularity with the load clock),$S_{\mathrm{boundary}}(\rho)$is von Neumann entropy on a holographic screen of area$A$, and $S_{\mathrm{BH}}(A)=A/(4G\hbar)$is the Bekenstein–Hawking entropy of that screen. The weights$\beta,\gamma,\delta$and the reference$\epsilon_0$are fixed, in the gravitational program, by matching conditions in the Newtonian weak-field limit and by saturation bookkeeping for the Bekenstein bound—not by free first-principles prediction of Newton’s$G$(see Part 4, Path M / C10).
 
-**Semantic reading (C14).** Prefer reading $L$ as demand arising from the **scale and rate of possible channel outcomes**: energy-like work density, entropy-production / export flux, and boundary / distinguishability pressure against capacity. Active scrambling, high flux, and many open residual results imply **higher** $L$. The program **rejects** as primary story an “idle identity stockpile” reading in which load tracks unreduced complexity while the machine is idle. This reading is a **semantic / program convention** until continuum matching is complete; it is frozen at claim C14.
+**Semantic reading (C14).** Prefer reading$L$as demand arising from the **scale and rate of possible channel outcomes**: energy-like work density, entropy-production / export flux, and boundary / distinguishability pressure against capacity. Active scrambling, high flux, and many open residual results imply **higher**$L$. The program **rejects** as primary story an “idle identity stockpile” reading in which load tracks unreduced complexity while the machine is idle. This reading is a **semantic / program convention** until continuum matching is complete; it is frozen at claim C14.
 
-**Three-term roles and discrete microstructure (structural only).** Classical three-slot discrete ledgers $L^{\mathrm{disc}}=L_E^{\mathrm{disc}}+L_S^{\mathrm{disc}}+L_B^{\mathrm{disc}}$ (M11 Phase 1–2; continuum motivation in Appendix A) align with the continuum terms by **role**, not by numerical equality:
+**Three-term roles and discrete microstructure (structural only).** Classical three-slot discrete ledgers $L^{\mathrm{disc}}=L_E^{\mathrm{disc}}+L_S^{\mathrm{disc}}+L_B^{\mathrm{disc}}$(M11 Phase 1–2; continuum motivation in Appendix A) align with the continuum terms by **role**, not by numerical equality:
 
 | Continuum term | Role | Discrete role alignment |
 |----------------|------|-------------------------|
-| $\beta E[\rho]/(V\epsilon_0)$ | Active **work** / energy-like density | Ops, redexes, evaluations ($L_E^{\mathrm{disc}}$) |
-| $\gamma\lvert dS_c/d\tau\rvert_{\mathrm{reg}}$ | **Export current** / entropy-rate flux | $H(X\mid Y)$, $\lvert\Delta H_c^{\mathrm{disc}}\rvert$, decay flips ($L_S^{\mathrm{disc}}$) |
-| $\delta S_{\mathrm{boundary}}/S_{\mathrm{BH}}$ | **Open budget** vs capacity | Residual recoverability, $d_f$, residual ensemble entropy ratio ($L_B^{\mathrm{disc}}$) |
+|$\beta E[\rho]/(V\epsilon_0)$ | Active **work** / energy-like density | Ops, redexes, evaluations ($L_E^{\mathrm{disc}}$) |
+| $\gamma\lvert dS_c/d\tau\rvert_{\mathrm{reg}}$| **Export current** / entropy-rate flux |$H(X\mid Y)$, $\lvert\Delta H_c^{\mathrm{disc}}\rvert$, decay flips ($L_S^{\mathrm{disc}}$) |
+| $\delta S_{\mathrm{boundary}}/S_{\mathrm{BH}}$| **Open budget** vs capacity | Residual recoverability,$d_f$, residual ensemble entropy ratio ($L_B^{\mathrm{disc}}$) |
 
-**Rigor label:** **structural** role alignment grounded in constructive discrete bookkeeping. We do **not** claim $L^{\mathrm{disc}}=L(\rho,g)$, do **not** fit $\alpha,\beta,\gamma,\delta,\epsilon_0$ from gates or shoes, and do **not** assert a hydrodynamic limit of IDEM maps to continuum load (non-claim: IDEM/decay does not fully construct continuum $L$ or $G$).
+**Rigor label:** **structural** role alignment grounded in constructive discrete bookkeeping. We do **not** claim $L^{\mathrm{disc}}=L(\rho,g)$, do **not** fit $\alpha,\beta,\gamma,\delta,\epsilon_0$from gates or shoes, and do **not** assert a hydrodynamic limit of IDEM maps to continuum load (non-claim: IDEM/decay does not fully construct continuum$L$or$G$).
 
-A monist load (e.g.\ proportional to output entropy alone) fails the locked reading: irreversible maps can **lower** $H_c^{\mathrm{disc}}$ while **raising** export and work demand. The three axes—how hard the machine is working, how fast possibility is being exported, and how much distinguishability budget remains open—are independently motivated by classical microstructure; continuum $L$ inherits that **role split** at continuum language level only ($L^{\mathrm{disc}}\neq L(\rho,g)$).
+A monist load (e.g.\ proportional to output entropy alone) fails the locked reading: irreversible maps can **lower** $H_c^{\mathrm{disc}}$while **raising** export and work demand. The three axes—how hard the machine is working, how fast possibility is being exported, and how much distinguishability budget remains open—are independently motivated by classical microstructure; continuum$L$ inherits that **role split** at continuum language level only ($L^{\mathrm{disc}}\neq L(\rho,g)$).
 
 ### 3.3 Load clock and master equation
 
@@ -673,11 +684,11 @@ $$
 $$
 
 
-where $\mathcal{L}_g$ is the Liouvillian generator of the channel $\Phi_g$. High load slows the effective evolution rate in $t$, unifying (at the level of bookkeeping) gravitational and kinematic forms of time dilation under a single dimensionless demand scalar.
+where $\mathcal{L}_g$is the Liouvillian generator of the channel$\Phi_g$. High load slows the effective evolution rate in $t$, unifying (at the level of bookkeeping) gravitational and kinematic forms of time dilation under a single dimensionless demand scalar.
 
-### 3.4 Clausius constraint on $\mathcal{L}_g$ (setup for Path J)
+### 3.4 Clausius constraint on $\mathcal{L}_g$(setup for Path J)
 
-The generator $\mathcal{L}_g$ is required to satisfy the Clausius relation
+The generator$\mathcal{L}_g$ is required to satisfy the Clausius relation
 
 
 $$
@@ -687,11 +698,11 @@ $$
 
 on every local horizon (Jacobson 1995). This is a **modeling assumption** of the framework: thermodynamic consistency of the channel generator on local Rindler horizons. We state it here as the continuum content that Path J will import; we do **not** re-prove Jacobson’s theorem in this program report. Under that assumption, Einstein dynamics become available as an equation of state of the underlying thermodynamics, and Newtonian Poisson follows by standard weak-field GR (Part 4).
 
-Canonical master-equation prose sometimes says Einstein equations “emerge automatically” from the Clausius constraint. The honest program reading is: **if** $\mathcal{L}_g$ is constrained by Clausius in Jacobson’s sense, **then** Einstein is imported as external continuum content of that constraint. That is Path J’s first half—not an independent derivation of Einstein from bits or from load alone.
+Canonical master-equation prose sometimes says Einstein equations “emerge automatically” from the Clausius constraint. The honest program reading is: **if** $\mathcal{L}_g$is constrained by Clausius in Jacobson’s sense, **then** Einstein is imported as external continuum content of that constraint. That is Path J’s first half—not an independent derivation of Einstein from bits or from load alone.
 
-### 3.5 Type safety: $L$ scalar versus metric $G$ / $g_{\mu\nu}$
+### 3.5 Type safety:$L$scalar versus metric$G$/$g_{\mu\nu}$
 
-Load $L$ is a **dimensionless scalar** (or, locally, a scalar field of demand). It clocks proper time and modulates the rate of $\rho$-evolution. It is **not** a metric.
+Load $L$is a **dimensionless scalar** (or, locally, a scalar field of demand). It clocks proper time and modulates the rate of$\rho$-evolution. It is **not** a metric.
 
 - Spacetime geometry in the master equation is written $g_{\mu\nu}(\rho)$.  
 - In continuum GfE, structure-induced metric objects are denoted $G$ (matter- or structure-induced; Bianconi program).  
@@ -699,7 +710,7 @@ Load $L$ is a **dimensionless scalar** (or, locally, a scalar field of demand). 
 
 Self-consistency of the framework is circular at the level of ontology by design: microstates determine load and (via the Clausius/Einstein content of $\mathcal{L}_g$) geometry; geometry modulates $\Phi_g$. That circularity does **not** license collapsing Stage-1 computational induction, Stage-2 geometric imprint, and Stage-3 continuum GfE into a single symbolic identity of master equation and Bianconi relative-entropy action. In particular:
 
-**Non-claims at this layer.** We do **not** assert master equation $\Leftrightarrow$ continuum GfE; $L\equiv G$; $S_c\equiv\operatorname{Tr} g\ln G^{-1}$; or $\alpha_L\beta_L\equiv\alpha_B/\beta_B$.
+**Non-claims at this layer.** We do **not** assert master equation $\Leftrightarrow$continuum GfE;$L\equiv G$; $S_c\equiv\operatorname{Tr} g\ln G^{-1}$; or $\alpha_L\beta_L\equiv\alpha_B/\beta_B$.
 
 ---
 
@@ -712,12 +723,12 @@ Newtonian gravity is recovered as a **calibrated low-load regime** of the master
 | Claim piece | Status / rigor |
 |-------------|----------------|
 | Master equation + load definitions | Canonical (Part 3) |
-| Clausius on $\mathcal{L}_g$ $\Rightarrow$ Einstein (Jacobson 1995) | **External theorem + modeling assumption** |
-| Einstein weak field $\Rightarrow$ $\nabla^2\Phi=4\pi G\rho_m$ | Standard GR |
-| Matching $\alpha\beta=4\pi G/c^4$ so load clock agrees with Newtonian $\Phi$ **on shell** | **Calibration** (Path M; **C10**) |
-| Pointwise $\Phi\propto\rho_m\Rightarrow\nabla^2\Phi\propto\nabla^2\rho_m\Rightarrow$ Poisson | **Invalid / withdrawn** |
+| Clausius on $\mathcal{L}_g$ $\Rightarrow$Einstein (Jacobson 1995) | **External theorem + modeling assumption** |
+| Einstein weak field$\Rightarrow$ $\nabla^2\Phi=4\pi G\rho_m$| Standard GR |
+| Matching$\alpha\beta=4\pi G/c^4$so load clock agrees with Newtonian$\Phi$**on shell** | **Calibration** (Path M; **C10**) |
+| Pointwise$\Phi\propto\rho_m\Rightarrow\nabla^2\Phi\propto\nabla^2\rho_m\Rightarrow$Poisson | **Invalid / withdrawn** |
 
-**What is not claimed.** We do not derive Newton independently of Jacobson/Einstein input. We do not claim free derivation of Newton’s constant $G$ from load bookkeeping alone. We do not claim that $\gamma=\delta=0$ is proved—only that those contributions are modeled as subdominant in the leading weak-field regime.
+**What is not claimed.** We do not derive Newton independently of Jacobson/Einstein input. We do not claim free derivation of Newton’s constant$G$from load bookkeeping alone. We do not claim that$\gamma=\delta=0$is proved—only that those contributions are modeled as subdominant in the leading weak-field regime.
 
 Canonical recovery is Path J/M as stated in this section; the historical pointwise Laplacian route is withdrawn (Section 4.5).
 
@@ -727,10 +738,10 @@ Under the master equation and load of Part 3, the Newtonian analysis uses:
 
 | # | Assumption |
 |---|------------|
-| L1 | $\alpha L\ll 1$ |
-| L2 | Curvature small; $v\ll c$ |
-| L3 | Entropy-production and holographic terms **subdominant**: $\gamma,\delta$ contributions $\ll$ energy-density term (modeling assumption; not quantified) |
-| L4 | $\mathcal{L}_g$ obeys $\delta Q=T\,dS_c$ on every local Rindler horizon (Jacobson consistency) |
+| L1 |$\alpha L\ll 1$|
+| L2 | Curvature small;$v\ll c$|
+| L3 | Entropy-production and holographic terms **subdominant**:$\gamma,\delta$contributions$\ll$energy-density term (modeling assumption; not quantified) |
+| L4 |$\mathcal{L}_g$obeys$\delta Q=T\,dS_c$ on every local Rindler horizon (Jacobson consistency) |
 
 Under L1–L3,
 
@@ -769,11 +780,11 @@ g_{00} \approx -\bigl(1+2\Phi/c^2\bigr),
 $$
 
 
-**Conclusion of Path J.** Newtonian Poisson is available as the weak-field limit of the Einstein thermodynamics already built into $\mathcal{L}_g$ under L4. No Laplacian of $\rho_m$ is required. The nonlocal structure of $\Phi$ (inverse-square forces from compact sources) is inherited from GR, not invented by load algebra.
+**Conclusion of Path J.** Newtonian Poisson is available as the weak-field limit of the Einstein thermodynamics already built into $\mathcal{L}_g$under L4. No Laplacian of$\rho_m$is required. The nonlocal structure of$\Phi$(inverse-square forces from compact sources) is inherited from GR, not invented by load algebra.
 
 ### 4.4 Path M — Load-clock calibration (matching, not derivation)
 
-Path J yields a metric with Newtonian potential $\Phi[\rho_m]$. Path M fixes how the **load reparameterization** tracks the same $\Phi$. Rigor: **calibration**, conditional on Path J (**C10**).
+Path J yields a metric with Newtonian potential$\Phi[\rho_m]$. Path M fixes how the **load reparameterization** tracks the same $\Phi$. Rigor: **calibration**, conditional on Path J (**C10**).
 
 **Step M1 — Proper-time expansion.** For $\alpha L\ll 1$,
 
@@ -802,11 +813,11 @@ $$
 
 
 **Step M3 — On-shell matching (not pointwise $\Phi\propto\rho_m$).**  
-Do **not** identify $\Phi/c^2=-\alpha\beta\rho_m c^2/\epsilon_0$ as a **local algebraic law**. That identification would give $\Phi\propto\rho_m$ pointwise, which is not Newtonian gravity.
+Do **not** identify $\Phi/c^2=-\alpha\beta\rho_m c^2/\epsilon_0$as a **local algebraic law**. That identification would give$\Phi\propto\rho_m$pointwise, which is not Newtonian gravity.
 
-Instead: for solutions of Poisson with the same $\rho_m$, require the **leading linear response** of the load clock to agree with the Newtonian redshift **on shell**.
+Instead: for solutions of Poisson with the same$\rho_m$, require the **leading linear response** of the load clock to agree with the Newtonian redshift **on shell**.
 
-*Worked example (uniform ball).* For constant density $\rho_m$ in a ball of radius $R$, the interior potential is
+*Worked example (uniform ball).* For constant density $\rho_m$in a ball of radius$R$, the interior potential is
 
 
 $$
@@ -817,7 +828,7 @@ $$
 $$
 
 
-At the center, $\Phi_{\mathrm{in}}(0)/c^2=-2\pi G\rho_m R^2/c^2$. The load expansion at the center gives $d\tau/dt-1\approx-\alpha\beta\rho_m c^2/\epsilon_0$. Matching order of magnitude for a characteristic scale $R\sim R_\star$ (or equating coefficients after fixing a reference geometry where $\Phi$ is proportional to $\rho_m R^2$) calibrates $\alpha\beta$ relative to $\epsilon_0$. The **standard product used in this program**
+At the center, $\Phi_{\mathrm{in}}(0)/c^2=-2\pi G\rho_m R^2/c^2$. The load expansion at the center gives $d\tau/dt-1\approx-\alpha\beta\rho_m c^2/\epsilon_0$. Matching order of magnitude for a characteristic scale $R\sim R_\star$(or equating coefficients after fixing a reference geometry where$\Phi$is proportional to$\rho_m R^2$) calibrates $\alpha\beta$relative to$\epsilon_0$. The **standard product used in this program**
 
 
 $$
@@ -825,20 +836,20 @@ $$
 $$
 
 
-is the convention that absorbs $\epsilon_0$ and geometric scale into the definitions of $\beta$ and $\epsilon_0$ so that $\alpha\cdot\beta\cdot c^2/\epsilon_0$ reproduces $\lvert\Phi\rvert/c^2$ **for the calibrated family of solutions**, not for arbitrary pointwise $\rho_m$.
+is the convention that absorbs $\epsilon_0$and geometric scale into the definitions of$\beta$and$\epsilon_0$so that$\alpha\cdot\beta\cdot c^2/\epsilon_0$reproduces$\lvert\Phi\rvert/c^2$**for the calibrated family of solutions**, not for arbitrary pointwise$\rho_m$.
 
-**Honest reading of $\alpha\beta=4\pi G/c^4$:** it is a **matching condition** between load bookkeeping and Newtonian $\Phi$, **conditional on Path J already supplying Poisson**. It is **not** a free derivation of $G$ from first principles independent of Newton/GR (**C10**).
+**Honest reading of $\alpha\beta=4\pi G/c^4$:** it is a **matching condition** between load bookkeeping and Newtonian $\Phi$, **conditional on Path J already supplying Poisson**. It is **not** a free derivation of $G$from first principles independent of Newton/GR (**C10**).
 
-**Step M4 — What the load clock then means.** With Path J + M: geometry / $\Phi$ is fixed by Einstein thermodynamics (Jacobson) + weak field; $L\approx\beta\rho_m c^2/\epsilon_0$ raises demand where energy density is high; $d\tau=dt/(1+\alpha L)$ **tracks** the same slowing of clocks that GR encodes in $g_{00}$, once $\alpha\beta$ is calibrated; Newtonian force $\mathbf{F}=-m\nabla\Phi$ remains the effective description for slow massive probes—no extra force postulate beyond Path J’s Einstein/Poisson content.
+**Step M4 — What the load clock then means.** With Path J + M: geometry /$\Phi$is fixed by Einstein thermodynamics (Jacobson) + weak field;$L\approx\beta\rho_m c^2/\epsilon_0$raises demand where energy density is high;$d\tau=dt/(1+\alpha L)$**tracks** the same slowing of clocks that GR encodes in$g_{00}$, once $\alpha\beta$is calibrated; Newtonian force$\mathbf{F}=-m\nabla\Phi$remains the effective description for slow massive probes—no extra force postulate beyond Path J’s Einstein/Poisson content.
 
 ### 4.5 Withdrawn path (do not revive)
 
 The following chain is **not** a valid recovery of Newtonian gravity (historical drafts; documented in M8; **withdrawn**):
 
-1. Postulate $d\tau/dt=1/(1+\alpha L)$ with $L=\beta\rho_m c^2/\epsilon_0$.  
+1. Postulate$d\tau/dt=1/(1+\alpha L)$with$L=\beta\rho_m c^2/\epsilon_0$.  
 2. Set $d\tau/dt=1+\Phi/c^2$.  
-3. Conclude $\Phi=-\alpha\beta c^4\rho_m/\epsilon_0$ **pointwise**.  
-4. Take $\nabla^2$ and “match” to $4\pi G\rho_m$.
+3. Conclude $\Phi=-\alpha\beta c^4\rho_m/\epsilon_0$**pointwise**.  
+4. Take$\nabla^2$and “match” to$4\pi G\rho_m$.
 
 **Why it fails.** Newtonian $\Phi$ is **nonlocal** ($\Phi=-G\int\rho_m/|x-x'|\,dV'$). Pointwise $\Phi\propto\rho_m$ does not produce inverse-square forces from compact sources. Algebraically,
 
@@ -852,9 +863,9 @@ $$
 
 is **not** Poisson unless $\nabla^2\rho_m\propto-\rho_m$.
 
-> **Disallowed one-liner:** “Taking the Laplacian of $\Phi\propto\rho$ yields $\nabla^2\Phi=4\pi G\rho$.”
+> **Disallowed one-liner:** “Taking the Laplacian of $\Phi\propto\rho$yields$\nabla^2\Phi=4\pi G\rho$.”
 
-> **Allowed one-liner:** In the low-load regime the energy-density term dominates $L$. With $\mathcal{L}_g$ constrained by the Clausius relation, the Einstein equation (Jacobson) and its weak-field Poisson limit are available; matching the load-induced proper-time factor to the Newtonian potential fixes $\alpha\beta=4\pi G/c^4$. Newtonian gravity is thus a **calibrated low-load regime** of the framework.
+> **Allowed one-liner:** In the low-load regime the energy-density term dominates $L$. With $\mathcal{L}_g$constrained by the Clausius relation, the Einstein equation (Jacobson) and its weak-field Poisson limit are available; matching the load-induced proper-time factor to the Newtonian potential fixes$\alpha\beta=4\pi G/c^4$. Newtonian gravity is thus a **calibrated low-load regime** of the framework.
 
 ### 4.6 Recovery chain (allowed language)
 
@@ -872,11 +883,11 @@ Clausius on L_g  ──(Jacobson)──►  Einstein equation
                     on shell  ⇒  αβ = 4πG/c⁴     (Path M)
 ```
 
-**Role of coefficients at leading Newton.** $\epsilon_0$ is reference energy density making $L$ dimensionless (absorbed into $\beta$ bookkeeping under Path M). The product $\alpha\beta$ (with $\epsilon_0$) is fixed by Path M. Weights $\gamma$ and $\delta$ are **dropped** at leading Newton under L3; they re-enter next-order / nonequilibrium / near-horizon regimes and must not be silently equated with GfE extras $D_{\mu\nu},\Lambda_G$ (that identification is a **structural FAIL** at next order—Part 6 / M6b; not claimed here).
+**Role of coefficients at leading Newton.** $\epsilon_0$is reference energy density making$L$dimensionless (absorbed into$\beta$bookkeeping under Path M). The product$\alpha\beta$(with$\epsilon_0$) is fixed by Path M. Weights $\gamma$and$\delta$are **dropped** at leading Newton under L3; they re-enter next-order / nonequilibrium / near-horizon regimes and must not be silently equated with GfE extras$D_{\mu\nu},\Lambda_G$(that identification is a **structural FAIL** at next order—Part 6 / M6b; not claimed here).
 
 ### 4.7 Other recoveries — status only (deferred)
 
-Black-hole horizons, cosmological expansion (including inflation narratives), Lloyd-type ultimate computational capacity, and unified accounts of gravitational and kinematic time dilation appear in historical and outline form under Appendix A and legacy Appendix A drafts. Those regimes are **not** presented here as settled at Path J/M rigor. High-load / horizon physics elevates the boundary term $\delta$; cosmology elevates boundary growth and expansion bookkeeping; capacity bounds touch Lloyd-type limits. Each requires the same honesty pass as Newton: explicit assumptions, external theorems labeled as such, calibration distinguished from free derivation, and no revival of withdrawn algebraic shortcuts. Until that pass is complete, the program’s **settled** gravitational recovery claim remains **Path J/M Newtonian Poisson only** (**C9**, **C10**). Cross-framework weak-field contact with continuum GfE (shared Poisson via GR, **not** framework identity) is deferred to Part 6 (M6 WEAK PASS / FAIL).
+Black-hole horizons, cosmological expansion (including inflation narratives), Lloyd-type ultimate computational capacity, and unified accounts of gravitational and kinematic time dilation appear in historical and outline form under Appendix A and legacy Appendix A drafts. Those regimes are **not** presented here as settled at Path J/M rigor. High-load / horizon physics elevates the boundary term$\delta$; cosmology elevates boundary growth and expansion bookkeeping; capacity bounds touch Lloyd-type limits. Each requires the same honesty pass as Newton: explicit assumptions, external theorems labeled as such, calibration distinguished from free derivation, and no revival of withdrawn algebraic shortcuts. Until that pass is complete, the program’s **settled** gravitational recovery claim remains **Path J/M Newtonian Poisson only** (**C9**, **C10**). Cross-framework weak-field contact with continuum GfE (shared Poisson via GR, **not** framework identity) is deferred to Part 6 (M6 WEAK PASS / FAIL).
 
 ---
 
@@ -885,12 +896,12 @@ Black-hole horizons, cosmological expansion (including inflation narratives), Ll
 | ID | Statement used | Where | Rigor |
 |----|----------------|-------|-------|
 | **C9** | Newton recovery = Path J/M only (Clausius → Einstein → Poisson; load-clock on-shell match) | §4 | Path J: external thm + assumption; Path M: calibration |
-| **C10** | $\alpha\beta=4\pi G/c^4$ is on-shell calibration, not free derivation of $G$ | §3.3 preview; §4.4 | **calibration** |
-| **C14** | Prefer $L$ as demand from scale/rate of channel outcomes (energy + entropy flux + boundary); active scrambling → higher $L$ | §3.2 | **semantic** (program convention) |
+| **C10** | $\alpha\beta=4\pi G/c^4$is on-shell calibration, not free derivation of$G$| §3.3 preview; §4.4 | **calibration** |
+| **C14** | Prefer$L$as demand from scale/rate of channel outcomes (energy + entropy flux + boundary); active scrambling → higher$L$| §3.2 | **semantic** (program convention) |
 
-**Structural (not claim-ID frozen as C-number):** three-term continuum $L$ **roles** align with discrete $L_E,L_S,L_B$ (M11c)—**not** continuum equality.
+**Structural (not claim-ID frozen as C-number):** three-term continuum$L$**roles** align with discrete$L_E,L_S,L_B$(M11c)—**not** continuum equality.
 
-**Explicit non-claims touched:** ME $\Leftrightarrow$ GfE; $L\equiv G$; free derivation of $G$; Newton from pointwise $\Phi\propto\rho$ Laplacian (**withdrawn**); IDEM/decay fully constructs continuum $L$ or $G$; other recoveries settled at Path J/M rigor.
+**Explicit non-claims touched:** ME$\Leftrightarrow$GfE;$L\equiv G$; free derivation of $G$; Newton from pointwise $\Phi\propto\rho$Laplacian (**withdrawn**); IDEM/decay fully constructs continuum$L$or$G$; other recoveries settled at Path J/M rigor.
 
 ---
 
@@ -926,19 +937,19 @@ G[\phi] \;=\; 1 + \alpha_G\,(\nabla\phi)^2
 $$
 
 
-enters a relative-entropy / logarithmic action density $\mathcal{L}=-\ln G$ (edgewise on a lattice). In continuum language (external literature; not re-derived here), the $L^2$-gradient flow of the associated energy is classical Perona–Malik (PM) anisotropic diffusion; isotropic heat is the special case of unit conductivity. Discrete toys implement explicit-Euler PM (and a Catte-style lift in 2D) on a lattice field $\phi$. Layer W is about **action/energy and PM flow**, not about residual dual scorecards and not about Lorentzian GfE field equations.
+enters a relative-entropy / logarithmic action density $\mathcal{L}=-\ln G$(edgewise on a lattice). In continuum language (external literature; not re-derived here), the$L^2$-gradient flow of the associated energy is classical Perona–Malik (PM) anisotropic diffusion; isotropic heat is the special case of unit conductivity. Discrete toys implement explicit-Euler PM (and a Catte-style lift in 2D) on a lattice field $\phi$. Layer W is about **action/energy and PM flow**, not about residual dual scorecards and not about Lorentzian GfE field equations.
 
-**Layer D (dual).** Action–Channel Duality, Euclidean Warm-Up (**ACD-EW**) pairs that warm-up geometry with an **observation channel**: a hidden field $\phi_\star$ is observed as $y=\phi_\star+\eta$, reconstructed by heat, PM, or load-gated PM, scored by a residual/edge entropy proxy $H_c^{\mathrm{toy}}$, and summarized by a split scalar load that can reparameterize the reconstruction clock. Layer D is about **channel residual, load clock, and residual dual windows**. It does **not** automatically transfer to continuum GfE (**G**) or to the gravitational master equation (**M**).
+**Layer D (dual).** Action–Channel Duality, Euclidean Warm-Up (**ACD-EW**) pairs that warm-up geometry with an **observation channel**: a hidden field $\phi_\star$is observed as$y=\phi_\star+\eta$, reconstructed by heat, PM, or load-gated PM, scored by a residual/edge entropy proxy $H_c^{\mathrm{toy}}$, and summarized by a split scalar load that can reparameterize the reconstruction clock. Layer D is about **channel residual, load clock, and residual dual windows**. It does **not** automatically transfer to continuum GfE (**G**) or to the gravitational master equation (**M**).
 
-**Type safety.** Load $L$ (and toy $L_{\mathrm{clock}}$) is a **dimensionless scalar** demand. Structure-induced $G$ is a **metric** (or edgewise cousin). **$L\neq G$**. Results proved or scorecarded only on W or D must not be cited as G or M theorems. In particular: lattice denoising is **not** empirical gravity; residual dual is **not** master-equation $\Leftrightarrow$ continuum GfE.
+**Type safety.** Load $L$(and toy$L_{\mathrm{clock}}$) is a **dimensionless scalar** demand. Structure-induced $G$ is a **metric** (or edgewise cousin). **$L\neq G$**. Results proved or scorecarded only on W or D must not be cited as G or M theorems. In particular: lattice denoising is **not** empirical gravity; residual dual is **not** master-equation $\Leftrightarrow$continuum GfE.
 
 ---
 
 ### 5.2 ACD-EW construction
 
-**Support and state (1D primary toy).** Sites $i=0,\ldots,N-1$ (default $N=192$, spacing $h=1$); support metric $g_i\equiv 1$; scalar field $\phi\in\mathbb{R}^N$; edge gradients $(\nabla\phi)_i=\phi_{i+1}-\phi_i$.
+**Support and state (1D primary toy).** Sites$i=0,\ldots,N-1$(default$N=192$, spacing $h=1$); support metric $g_i\equiv 1$; scalar field $\phi\in\mathbb{R}^N$; edge gradients $(\nabla\phi)_i=\phi_{i+1}-\phi_i$.
 
-**Stage 2 — shared geometric object.** The induced edgewise metric $G_i[\phi]=1+\alpha_G(\nabla\phi)_i^2$ is simultaneously (i) the GfE warm-up second metric (Bianconi Stage 2–3 input) and (ii) the geometric imprint of local reconstructed structure in our workflow. Duality **hinges** on this shared Stage-2 object: both readings act on the same $G[\hat\phi]$.
+**Stage 2 — shared geometric object.** The induced edgewise metric $G_i[\phi]=1+\alpha_G(\nabla\phi)_i^2$is simultaneously (i) the GfE warm-up second metric (Bianconi Stage 2–3 input) and (ii) the geometric imprint of local reconstructed structure in our workflow. Duality **hinges** on this shared Stage-2 object: both readings act on the same$G[\hat\phi]$.
 
 **Stage 3 — warm-up action and PM flow.** Edgewise warm-up density $\mathcal{L}_i^{\mathrm{GfE}}=-\ln G_i[\phi]$; total action $S_{\mathrm{GfE}}[\phi]=\sum_i\mathcal{L}_i^{\mathrm{GfE}}$. Dynamics on the GfE side are gradient flow implemented as Perona–Malik conductivity
 
@@ -949,9 +960,9 @@ $$
 $$
 
 
-with $K$ of order the observation noise scale. External literature (Bianconi, *Beyond holography*) identifies continuum PM with the Euclidean GfE warm-up gradient flow; this program treats that identification as **literature structure for Layer W**, not as a re-proof of the continuum variational identity.
+with $K$of order the observation noise scale. External literature (Bianconi, *Beyond holography*) identifies continuum PM with the Euclidean GfE warm-up gradient flow; this program treats that identification as **literature structure for Layer W**, not as a re-proof of the continuum variational identity.
 
-**Stage 1 — observation channel.** Hidden structure $\phi_\star$; observation $y=\phi_\star+\eta$ with i.i.d. Gaussian noise $\eta\sim\mathcal{N}(0,\sigma^2 I)$ (default $\sigma=0.12$); reconstructor $\mathcal{C}_t:y\mapsto\hat\phi(t)$ given by heat, PM, or load-gated PM with $\hat\phi(0)=y$. Residual energy $R=\mathrm{mean}_i(\hat\phi_i-\phi_{\star,i})^2$; residual entropy proxy $H_R=\log(1+R/\sigma_{\mathrm{ref}}^2)$; edge-location entropy $H_{\mathrm{edge}}=-\sum_i p_i\log_2 p_i$ with $p\propto|\nabla\hat\phi|$. The dual **channel score** is
+**Stage 1 — observation channel.** Hidden structure$\phi_\star$; observation $y=\phi_\star+\eta$with i.i.d. Gaussian noise$\eta\sim\mathcal{N}(0,\sigma^2 I)$(default$\sigma=0.12$); reconstructor $\mathcal{C}_t:y\mapsto\hat\phi(t)$given by heat, PM, or load-gated PM with$\hat\phi(0)=y$. Residual energy $R=\mathrm{mean}_i(\hat\phi_i-\phi_{\star,i})^2$; residual entropy proxy $H_R=\log(1+R/\sigma_{\mathrm{ref}}^2)$; edge-location entropy $H_{\mathrm{edge}}=-\sum_i p_i\log_2 p_i$with$p\propto|\nabla\hat\phi|$. The dual **channel score** is
 
 
 $$
@@ -959,21 +970,21 @@ H_c^{\mathrm{toy}}(\hat\phi\mid\phi_\star) \;=\; H_R + \lambda_e H_{\mathrm{edge
 $$
 
 
-(tag **C** in the M10 object dictionary). Lower $H_c^{\mathrm{toy}}$ means better reconstruction / more localized edge mass. This is a **supervised residual score**, not Shannon entropy of a generic map output and not von Neumann $S_c$.
+(tag **C** in the M10 object dictionary). Lower $H_c^{\mathrm{toy}}$means better reconstruction / more localized edge mass. This is a **supervised residual score**, not Shannon entropy of a generic map output and not von Neumann$S_c$.
 
-**Stage 1 — split load.** $L_E=c_E\mathbb{E}[(\nabla\hat\phi)^2]$ tracks induction intensity (and $\mathbb{E}[G-1]$); $L_S=c_S|\Delta H_c^{\mathrm{toy}}|/\Delta t$ tracks rate of channel-score change; $L_B$ is a capacity-like edge saturation not used in the v2 clock; $L_{\mathrm{clock}}=L_E+L_S$. Load-gated dynamics use the same PM vector field with $dt_{\mathrm{eff}}=dt/(1+\alpha_L L_{\mathrm{clock}})$, a discrete analogue of $d\tau=dt/(1+\alpha L)$.
+**Stage 1 — split load.** $L_E=c_E\mathbb{E}[(\nabla\hat\phi)^2]$tracks induction intensity (and$\mathbb{E}[G-1]$); $L_S=c_S|\Delta H_c^{\mathrm{toy}}|/\Delta t$tracks rate of channel-score change;$L_B$is a capacity-like edge saturation not used in the v2 clock;$L_{\mathrm{clock}}=L_E+L_S$. Load-gated dynamics use the same PM vector field with $dt_{\mathrm{eff}}=dt/(1+\alpha_L L_{\mathrm{clock}})$, a discrete analogue of $d\tau=dt/(1+\alpha L)$.
 
-**Duality statement (ACD-EW).** On this Euclidean special case: (A) $G[\hat\phi]$ is shared Stage 2; (B) PM is a structure-preserving reconstructor that reduces residual relative to isotropic heat on jump-like $\phi_\star$ with noise; (C) $L_E$ associates with induction intensity and load-gating slows mid-run evolution without erasing PM’s residual/edge advantages; (D) dynamics admit dual language (maximize / flow $S_{\mathrm{GfE}}$ $\leftrightarrow$ run structure-preserving channel $\mathcal{C}^{\mathrm{GfE}}$). **Rigor for the existence of this dual construction: constructive** (definitions + implemented toys), with residual dual theorems hybrid/soft as in §5.3.
+**Duality statement (ACD-EW).** On this Euclidean special case: (A) $G[\hat\phi]$is shared Stage 2; (B) PM is a structure-preserving reconstructor that reduces residual relative to isotropic heat on jump-like$\phi_\star$with noise; (C)$L_E$associates with induction intensity and load-gating slows mid-run evolution without erasing PM’s residual/edge advantages; (D) dynamics admit dual language (maximize / flow$S_{\mathrm{GfE}}$ $\leftrightarrow$run structure-preserving channel$\mathcal{C}^{\mathrm{GfE}}$). **Rigor for the existence of this dual construction: constructive** (definitions + implemented toys), with residual dual theorems hybrid/soft as in §5.3.
 
-**What ACD-EW does not claim.** Equivalence of full Lorentzian GfE (curvature-in-$G$, G-field, $\Lambda_G$) to the gravitational master equation; numeric identity $H_c^{\mathrm{toy}}\equiv S_{\mathrm{GfE}}$ or $H_c^{\mathrm{toy}}\equiv S_c$; identity $L\equiv G$; continuum gravity confirmation from lattice denoising.
+**What ACD-EW does not claim.** Equivalence of full Lorentzian GfE (curvature-in-$G$, G-field, $\Lambda_G$) to the gravitational master equation; numeric identity $H_c^{\mathrm{toy}}\equiv S_{\mathrm{GfE}}$or$H_c^{\mathrm{toy}}\equiv S_c$; identity $L\equiv G$; continuum gravity confirmation from lattice denoising.
 
 ---
 
 ### 5.3 Claims A–D (T1′ residual dual)
 
-Primary analytic setting (T1′ write-up): unit step $\phi_\star=\mathbf{1}_{i\ge N/2}$, $\sigma=0.12$, $K=0.15$, explicit Euler $dt=0.08$. Residual $R=N^{-1}\|\hat\phi-\phi_\star\|_2^2$. The residual dual is **time-windowed (T1′)**, not residual domination for all $t\in(0,t_\star]$ (**C4**).
+Primary analytic setting (T1′ write-up): unit step $\phi_\star=\mathbf{1}_{i\ge N/2}$, $\sigma=0.12$, $K=0.15$, explicit Euler $dt=0.08$. Residual $R=N^{-1}\|\hat\phi-\phi_\star\|_2^2$. The residual dual is **time-windowed (T1′)**, not residual domination for all $t\in(0,t_\star]$(**C4**).
 
-#### Claim A — Unified pure residual window $U_\star$ (**C5**)
+#### Claim A — Unified pure residual window$U_\star$ (**C5**)
 
 On the unified pure window
 
@@ -991,13 +1002,13 @@ $$
 $$
 
 
-PCRH$_b$ is an **ensemble residual majorant** (large-MC certificate): **soft**. The unified pure argument covers the former hybrid intermediate grid $I_\star$ and the former pure-late band $[2.0,2.4]$ in one window. The short-time crossover $t\approx 1.2$ remains **outside** $U_\star$.
+PCRH$_b$is an **ensemble residual majorant** (large-MC certificate): **soft**. The unified pure argument covers the former hybrid intermediate grid$I_\star$and the former pure-late band$[2.0,2.4]$in one window. The short-time crossover$t\approx 1.2$remains **outside**$U_\star$.
 
-**Rigor:** analytic majorant + identity machinery, with **soft** PCRH$_b$ input.
+**Rigor:** analytic majorant + identity machinery, with **soft** PCRH$_b$input.
 
 #### Claim B — Edge persistence (**C6**)
 
-With probability $\gtrsim 0.87$, initial true jump height $H^0\ge 0.80$. On that high-probability event, for all $t\le T_{\mathrm{pers}}^\sharp\approx 1.67$,
+With probability$\gtrsim 0.87$, initial true jump height $H^0\ge 0.80$. On that high-probability event, for all $t\le T_{\mathrm{pers}}^\sharp\approx 1.67$,
 
 
 $$
@@ -1009,9 +1020,9 @@ $$
 
 **Rigor:** **analytic** (flux ODE bound + Gaussian concentration).
 
-#### Claim C — Short-$t$ heat win as noise race (**C7**)
+#### Claim C — Short-$t$heat win as noise race (**C7**)
 
-For $t\lesssim 1.2$, heat can win residual because noise reduction dominates jump blur. This is **not** dual failure. The identity
+For$t\lesssim 1.2$, heat can win residual because noise reduction dominates jump blur. This is **not** dual failure. The identity
 
 
 $$
@@ -1019,19 +1030,19 @@ $$
 $$
 
 
-holds to numerical precision; crossover when $R_{\mathrm{blur}}=\Delta_{\mathrm{noise}}$ near $t\sim 1.2$. Mechanism in brief: heat must blur the unit jump on scale $\sqrt{t}$ (deterministic residual $\Theta(\sqrt{t}/N)$); PM freezes the true edge and plateaus but freezes some noise gradients too (noise-race tax $\Delta_{\mathrm{noise}}$); residual dual holds when blur exceeds that tax.
+holds to numerical precision; crossover when $R_{\mathrm{blur}}=\Delta_{\mathrm{noise}}$near$t\sim 1.2$. Mechanism in brief: heat must blur the unit jump on scale $\sqrt{t}$(deterministic residual$\Theta(\sqrt{t}/N)$); PM freezes the true edge and plateaus but freezes some noise gradients too (noise-race tax $\Delta_{\mathrm{noise}}$); residual dual holds when blur exceeds that tax.
 
 **Rigor:** **analytic identity** + **hybrid-experimental** accounting.
 
 #### Claim D — Load-PM as mild time change (**C8**)
 
-Load-PM is a monotone time change of pure PM: internal time $\tau(t)=\int_0^t(1+\alpha_L L_{\mathrm{clock}})^{-1}\,ds\le t$. Empirically $\tau/t\sim 0.95$–$0.98$ on the dual window. Residual dual of load-PM versus heat is supported experimentally on the same window (high Monte Carlo pathwise fractions on $I_\star$ / $U_\star$).
+Load-PM is a monotone time change of pure PM: internal time $\tau(t)=\int_0^t(1+\alpha_L L_{\mathrm{clock}})^{-1}\,ds\le t$. Empirically $\tau/t\sim 0.95$–$0.98$on the dual window. Residual dual of load-PM versus heat is supported experimentally on the same window (high Monte Carlo pathwise fractions on$I_\star$/$U_\star$).
 
 **Rigor:** time-change definition **constructive**; residual dual vs heat **hybrid-experimental**.
 
 #### Soft spot: PCRH$_b$
 
-PCRH$_b$ (with $\rho_b=0.42$) is **ensemble-certified** for the toy class. A full pathwise Dirichlet-form proof without certificate remains **open**. Do not assert pure T1′ with **no** soft hypotheses. Further pure-proof polishing is optional paper depth, not a main program crisis: the residual dual program is **settled enough** at T1′ / $U_\star$.
+PCRH$_b$(with$\rho_b=0.42$) is **ensemble-certified** for the toy class. A full pathwise Dirichlet-form proof without certificate remains **open**. Do not assert pure T1′ with **no** soft hypotheses. Further pure-proof polishing is optional paper depth, not a main program crisis: the residual dual program is **settled enough** at T1′ / $U_\star$.
 
 **Paste-ready citation sentence.** *In a 1D lattice observation model with a single noisy jump, PM residual domination over isotropic heat holds on an intermediate window $U_\star=[1.36,2.40]$ (T1′; PCRH$_b$, $\rho_b=0.42$), with analytic edge persistence and noise-versus-blur accounting; load reparameterization preserves the dual experimentally as a slower clock. This supports constructive Euclidean ACD-EW, not continuum gravitational equivalence.*
 
@@ -1045,9 +1056,9 @@ Beyond the residual-window analysis, joint toys implement the full ACD-EW specia
 |-----|------|---------|
 | 1D joint toy | Noisy step / two-bumps / ramp; heat vs PM vs load-PM | **6/6 SUPPORT** |
 | 2D joint toy | Catte-style PM lift on planar lattice | **6/6 SUPPORT** |
-| Blackjack-belief dual | Game-motivated field $\phi$ (belief geometry) | **6/6 SUPPORT**, **pattern only** |
+| Blackjack-belief dual | Game-motivated field $\phi$(belief geometry) | **6/6 SUPPORT**, **pattern only** |
 
-**Interpretation (C2–C3).** Six-of-six SUPPORT means the Euclidean dual **pattern** is robust under these IC classes: PM residual better than heat on primary edged ICs; edge retention; no staircase on weak-gradient ramps; $L_E$ tracks $\mathbb{E}[G-1]$; load-gating slows mid-run evolution. That PM outperforms heat on edged structure is **expected** dual success, not a theory bug. Blackjack-belief is **not** blackjack EV, strategy ROI, or predictive card-channel $H_c^{\mathrm{game}}$.
+**Interpretation (C2–C3).** Six-of-six SUPPORT means the Euclidean dual **pattern** is robust under these IC classes: PM residual better than heat on primary edged ICs; edge retention; no staircase on weak-gradient ramps;$L_E$tracks$\mathbb{E}[G-1]$; load-gating slows mid-run evolution. That PM outperforms heat on edged structure is **expected** dual success, not a theory bug. Blackjack-belief is **not** blackjack EV, strategy ROI, or predictive card-channel $H_c^{\mathrm{game}}$.
 
 **Non-claims for toys.** Lattice denoising is not empirical gravity. Scorecard success does not lift residual dual to continuum SPDE residual domination, multi-jump theorem-level domination, or 2D theorem-level residual dual. Toys witness **Layer D pattern**, not Layer G/M equivalence.
 
@@ -1059,23 +1070,23 @@ Beyond the residual-window analysis, joint toys implement the full ACD-EW specia
 
 Layer W continuum hygiene and Layer D residual dual must not be conflated.
 
-**M5b (smooth action limit — conditional lemma).** Under hypotheses H1–H4 (fixed $C^3$ periodic field, point sampling, fixed $\alpha>0$, mesh $h\to 0$), the mesh-weighted discrete Euclidean warm-up action $S_h[\phi|_{\mathrm{grid}}]=h\sum_i -\ln\bigl(1+\alpha(D_h\phi)_i^2\bigr)$ approximates the continuum integral $S[\phi]=\int -\ln\bigl(1+\alpha|\phi'|^2\bigr)\,dx$ with error at most $C(\alpha,\|\phi'\|_\infty,\|\phi''\|_\infty,\|\phi'''\|_\infty)\,h$; the argument is Taylor consistency of forward differences, global Lipschitz continuity of $z\mapsto -\ln(1+\alpha z^2)$, and a standard Riemann-sum estimate (see Appendix A.5). This is a **conditional smooth lemma** (Layer **W** action consistency), **not** Γ-convergence, not a BV/jump theorem, not residual dual continuum, and not Lorentzian GfE or master-equation contact.
+**M5b (smooth action limit — conditional lemma).** Under hypotheses H1–H4 (fixed $C^3$periodic field, point sampling, fixed$\alpha>0$, mesh $h\to 0$), the mesh-weighted discrete Euclidean warm-up action $S_h[\phi|_{\mathrm{grid}}]=h\sum_i -\ln\bigl(1+\alpha(D_h\phi)_i^2\bigr)$approximates the continuum integral$S[\phi]=\int -\ln\bigl(1+\alpha|\phi'|^2\bigr)\,dx$with error at most$C(\alpha,\|\phi'\|_\infty,\|\phi''\|_\infty,\|\phi'''\|_\infty)\,h$; the argument is Taylor consistency of forward differences, global Lipschitz continuity of $z\mapsto -\ln(1+\alpha z^2)$, and a standard Riemann-sum estimate (see Appendix A.5). This is a **conditional smooth lemma** (Layer **W** action consistency), **not** Γ-convergence, not a BV/jump theorem, not residual dual continuum, and not Lorentzian GfE or master-equation contact.
 
-**M5c (PM energy descent, Layer W).** Continuum literature identifies PM with the gradient flow of the Euclidean warm-up energy/action (matched coupling $\alpha=1/K^2$ equates energy descent with action ascent up to a positive factor). On the discrete side, joint-toy explicit-Euler PM is consistent with **discrete gradient descent** of an edge energy whose conductivity matches the toy flux (under stated hypotheses; not a full scheme-convergence theorem). Optional numerical witnesses check energy descent along PM trajectories.
+**M5c (PM energy descent, Layer W).** Continuum literature identifies PM with the gradient flow of the Euclidean warm-up energy/action (matched coupling $\alpha=1/K^2$equates energy descent with action ascent up to a positive factor). On the discrete side, joint-toy explicit-Euler PM is consistent with **discrete gradient descent** of an edge energy whose conductivity matches the toy flux (under stated hypotheses; not a full scheme-convergence theorem). Optional numerical witnesses check energy descent along PM trajectories.
 
-**Relationship to residual dual.** M5c lives on **Layer W**: action/energy and PM flux. Residual dual $H_c^{\mathrm{toy}}$ and T1′ / $U_\star$ live on **Layer D**. Discrete energy descent of the warm-up does **not** identify residual dual with continuum relative entropy of metrics, nor with von Neumann $S_c$. Continuum PM well-posedness / Catte regularization as $h\to 0$ and full T4 (Γ-limit + BV + residual dual continuum) remain **open**. The dual residual program and the warm-up continuum program are **siblings under ACD-EW**, not the same theorem.
+**Relationship to residual dual.** M5c lives on **Layer W**: action/energy and PM flux. Residual dual$H_c^{\mathrm{toy}}$and T1′ /$U_\star$live on **Layer D**. Discrete energy descent of the warm-up does **not** identify residual dual with continuum relative entropy of metrics, nor with von Neumann$S_c$. Continuum PM well-posedness / Catte regularization as $h\to 0$and full T4 (Γ-limit + BV + residual dual continuum) remain **open**. The dual residual program and the warm-up continuum program are **siblings under ACD-EW**, not the same theorem.
 
 ---
 
 ### 5.6 M10 P1: non-identity of entropy objects
 
-ACD-EW uses $H_c^{\mathrm{toy}}$ (tag **C**). Foundations computational entropy $H_c(f;p_X)=H(Y)$ is map-output Shannon (tag **A**). Gravity uses $S_c(\Phi;\rho)=S(\Phi(\rho))$ (tag **B**). These must not be silently identified.
+ACD-EW uses$H_c^{\mathrm{toy}}$(tag **C**). Foundations computational entropy$H_c(f;p_X)=H(Y)$is map-output Shannon (tag **A**). Gravity uses$S_c(\Phi;\rho)=S(\Phi(\rho))$(tag **B**). These must not be silently identified.
 
-**M10 P1** (hybrid-experimental) measures both $H_c^{\mathrm{toy}}$ and ensemble Shannon $H(Z)$ of coarsened reconstructor observables $Z(\hat\phi)$ (binary edge-location cut; 8-bin argmax of $|\nabla\hat\phi|$) on the standard 1D dual at times in / near $U_\star$. On that grid, MC means of $H_c^{\mathrm{toy}}$ sit near **$\sim 1.1$–$1.3$**, while ensemble $H(Z_{\mathrm{bin}})$ and $H(Z_8)$ are **$\approx 0$** (or at most $\mathcal{O}(0.1)$ on one heat row): residual dual quality and unsupervised coarsened Shannon of declared edge location are **not the same measured object**.
+**M10 P1** (hybrid-experimental) measures both$H_c^{\mathrm{toy}}$and ensemble Shannon$H(Z)$of coarsened reconstructor observables$Z(\hat\phi)$(binary edge-location cut; 8-bin argmax of$|\nabla\hat\phi|$) on the standard 1D dual at times in / near $U_\star$. On that grid, MC means of $H_c^{\mathrm{toy}}$ sit near **$\sim 1.1$–$1.3$**, while ensemble $H(Z_{\mathrm{bin}})$and$H(Z_8)$ are **$\approx 0$** (or at most $\mathcal{O}(0.1)$on one heat row): residual dual quality and unsupervised coarsened Shannon of declared edge location are **not the same measured object**.
 
-Structural reasons (definitional, no MC needed): $H_c^{\mathrm{toy}}$ is a **per-sample supervised score** using oracle $\phi_\star$ via residual $R$; $H(Z)$ is **across-sample Shannon** of a declared coarse alphabet without residual supervision. Aggregation, edge role (soft within-field entropy vs hard argmax location), and units differ. Residual dual ($R_{\mathrm{PM}}<R_{\mathrm{heat}}$) can hold while $H(Z)\approx 0$.
+Structural reasons (definitional, no MC needed):$H_c^{\mathrm{toy}}$is a **per-sample supervised score** using oracle$\phi_\star$via residual$R$; $H(Z)$ is **across-sample Shannon** of a declared coarse alphabet without residual supervision. Aggregation, edge role (soft within-field entropy vs hard argmax location), and units differ. Residual dual ($R_{\mathrm{PM}}<R_{\mathrm{heat}}$) can hold while $H(Z)\approx 0$.
 
-**Non-claims.** Not $S_c$; not continuum GfE; not $H_c^{\mathrm{toy}}\equiv H(Y)$ for the full field $\hat\phi\in\mathbb{R}^N$; not a proof that no other $Z$ ever co-moves. House style: tag $H_c^{\mathrm{toy}}$ on dual residual; reserve bare $H_c$ for unambiguous Tag A; never write $H_c^{\mathrm{toy}}=S_c$.
+**Non-claims.** Not $S_c$; not continuum GfE; not $H_c^{\mathrm{toy}}\equiv H(Y)$for the full field$\hat\phi\in\mathbb{R}^N$; not a proof that no other $Z$ever co-moves. House style: tag$H_c^{\mathrm{toy}}$on dual residual; reserve bare$H_c$for unambiguous Tag A; never write$H_c^{\mathrm{toy}}=S_c$.
 
 ---
 
@@ -1086,10 +1097,10 @@ Structural reasons (definitional, no MC needed): $H_c^{\mathrm{toy}}$ is a **per
 | **C1** | ACD-EW constructive Euclidean dual (warm-up $G[\phi]$, PM, observation channel, split load, load clock) | constructive (+ toys hybrid) |
 | **C2** | Joint toys 6/6 SUPPORT: dual **pattern** robust | hybrid-experimental |
 | **C3** | PM > heat on edged structure is expected dual success | structural |
-| **C4** | Residual dual is time-windowed T1′, not all $t\in(0,t_\star]$ | analytic + hybrid |
-| **C5** | $U_\star=[1.36,2.40]$, $\rho_b=0.42$, PCRH$_b$ soft | analytic + soft |
-| **C6** | Edge persistence $H_{\mathrm{floor}}=0.25>K$ through $T_{\mathrm{pers}}^\sharp\approx 1.67$ | analytic |
-| **C7** | Short-$t$ noise race; identity $R_{\mathrm{blur}}-\Delta_{\mathrm{noise}}$; crossover $\sim 1.2$ | analytic identity + hybrid |
+| **C4** | Residual dual is time-windowed T1′, not all $t\in(0,t_\star]$| analytic + hybrid |
+| **C5** |$U_\star=[1.36,2.40]$, $\rho_b=0.42$, PCRH$_b$soft | analytic + soft |
+| **C6** | Edge persistence$H_{\mathrm{floor}}=0.25>K$through$T_{\mathrm{pers}}^\sharp\approx 1.67$ | analytic |
+| **C7** | Short-$t$noise race; identity$R_{\mathrm{blur}}-\Delta_{\mathrm{noise}}$; crossover $\sim 1.2$| analytic identity + hybrid |
 | **C8** | Load-PM mild time change; residual dual vs heat on window | hybrid-experimental |
 
 ---
@@ -1098,11 +1109,11 @@ Structural reasons (definitional, no MC needed): $H_c^{\mathrm{toy}}$ is a **per
 
 ### 6.1 Shared weak-field problem
 
-Parts 3–4 recover Newtonian Poisson on **our** side (layer **M**) via **Path J/M** only (Clausius → Einstein → weak-field GR; load-clock on-shell calibration $\alpha\beta=4\pi G/c^4$). Continuum Bianconi GfE (layer **G**) is a **different** upper theory: relative entropy of metrics, low-coupling Einstein–Hilbert limit, and modified equations with $\Lambda_G$, $D_{\mu\nu}$, dressed $R^G$ away from strict low coupling. M6 asks only whether the two frameworks agree on a **shared weak-field problem**, not whether they are the same theory. Layers **W** / **D** dual success does not transfer automatically to **G** or **M**.
+Parts 3–4 recover Newtonian Poisson on **our** side (layer **M**) via **Path J/M** only (Clausius → Einstein → weak-field GR; load-clock on-shell calibration$\alpha\beta=4\pi G/c^4$). Continuum Bianconi GfE (layer **G**) is a **different** upper theory: relative entropy of metrics, low-coupling Einstein–Hilbert limit, and modified equations with $\Lambda_G$, $D_{\mu\nu}$, dressed $R^G$away from strict low coupling. M6 asks only whether the two frameworks agree on a **shared weak-field problem**, not whether they are the same theory. Layers **W** / **D** dual success does not transfer automatically to **G** or **M**.
 
-**Shared problem (static weak field).** Background Minkowski plus static Newtonian potential $\Phi\ll c^2$; classical mass density $\rho_m(\mathbf{x})$ (perfect fluid at rest, $T_{00}\approx\rho_m c^2$). Ask for the **leading** equation determining $\Phi$.
+**Shared problem (static weak field).** Background Minkowski plus static Newtonian potential$\Phi\ll c^2$; classical mass density $\rho_m(\mathbf{x})$(perfect fluid at rest,$T_{00}\approx\rho_m c^2$). Ask for the **leading** equation determining $\Phi$.
 
-**Side A — ours (Path J/M).** Assume $\mathcal{L}_g$ satisfies Clausius on local horizons so that the Einstein equation holds (Jacobson 1995 imported), or take Einstein as the thermodynamic fixed point of the channel generator. Weak-field GR yields $\nabla^2\Phi=4\pi G\rho_m$. Load $L\approx\beta_L\rho_m c^2/\epsilon_0$ calibrates the proper-time factor to the same $\Phi$ via on-shell matching $\alpha_L\beta_L=4\pi G/c^4$ (**Path M calibration**), not via the withdrawn pointwise Laplacian identity $\Phi\propto\rho\Rightarrow\nabla^2\Phi\propto\nabla^2\rho$.
+**Side A — ours (Path J/M).** Assume $\mathcal{L}_g$satisfies Clausius on local horizons so that the Einstein equation holds (Jacobson 1995 imported), or take Einstein as the thermodynamic fixed point of the channel generator. Weak-field GR yields$\nabla^2\Phi=4\pi G\rho_m$. Load $L\approx\beta_L\rho_m c^2/\epsilon_0$calibrates the proper-time factor to the same$\Phi$via on-shell matching$\alpha_L\beta_L=4\pi G/c^4$(**Path M calibration**), not via the withdrawn pointwise Laplacian identity$\Phi\propto\rho\Rightarrow\nabla^2\Phi\propto\nabla^2\rho$.
 
 **Side B — Bianconi GfE (documented low coupling).** At low coupling the entropic action reduces to Einstein–Hilbert with zero cosmological constant (external paper claim). Standard GR weak-field linearization on that EH theory again yields $\nabla^2\Phi=4\pi G\rho_m$. Newton here is **via GR**, not via a load clock. Away from strict low coupling, modified equations involve $\Lambda_G(\tilde{\mathcal{G}})$, dressed $R^G$, and $D_{\mu\nu}$.
 
@@ -1112,9 +1123,9 @@ Parts 3–4 recover Newtonian Poisson on **our** side (layer **M**) via **Path J
 
 | Item | Ours (Path J/M) | GfE low coupling |
 |------|-----------------|------------------|
-| Leading PDE for $\Phi$ | $\nabla^2\Phi=4\pi G\rho_m$ | $\nabla^2\Phi=4\pi G\rho_m$ |
+| Leading PDE for $\Phi$|$\nabla^2\Phi=4\pi G\rho_m$|$\nabla^2\Phi=4\pi G\rho_m$|
 | Mechanism | Clausius/Einstein + load calibration | Relative-entropy action → EH → GR linearization |
-| Extra fields at leading Newton | None if $\gamma_L,\delta_L$ dropped | None if $\tilde{\mathcal{G}}=\tilde I$, $\Lambda_G=0$ |
+| Extra fields at leading Newton | None if$\gamma_L,\delta_L$dropped | None if$\tilde{\mathcal{G}}=\tilde I$, $\Lambda_G=0$|
 
 **Outcome:** **WEAK PASS** — same leading Poisson equation. Equations agree at this order. The agreement is **real** and **expected** if both frameworks embed Einstein gravity at low demand. It is **supporting circumstantial evidence** that they sit in the same phenomenological class as GR — **not** evidence that load dynamics equal Bianconi’s relative-entropy Euler–Lagrange equations.
 
@@ -1126,14 +1137,14 @@ Parts 3–4 recover Newtonian Poisson on **our** side (layer **M**) via **Path J
 
 | Criterion | Outcome |
 |-----------|---------|
-| Same leading Poisson $\nabla^2\Phi=4\pi G\rho_m$ | **WEAK PASS** |
+| Same leading Poisson$\nabla^2\Phi=4\pi G\rho_m$| **WEAK PASS** |
 | Same upper derivation mechanism | **FAIL** |
-| Identifiable $(\alpha_L,\beta_L)=(\alpha_B,\beta_B)$ | **FAIL / refused** (M7) |
-| Continuum GfE $\Leftrightarrow$ master equation | **FAIL** — do not claim |
+| Identifiable$(\alpha_L,\beta_L)=(\alpha_B,\beta_B)$| **FAIL / refused** (M7) |
+| Continuum GfE$\Leftrightarrow$master equation | **FAIL** — do not claim |
 
 **Mechanisms differ.** Ours: Clausius constraint on a channel generator, Einstein as fixed point, load as scalar demand clock. GfE: relative entropy of metrics as primary action, low-coupling EH, then GR. Shared Poisson is shared **GR linearization**, not shared primary entropy object.
 
-**Constant refusal.** Do **not** assert $\alpha_L\beta_L=\alpha_B/\beta_B$ (or $\alpha_L\beta_L\equiv\alpha_B/\beta_B$). The product $\alpha_L\beta_L$ is an **on-shell calibration** of our load clock to Newtonian redshift (Path M). The ratio $\alpha_B/\beta_B$ is a **coupling constant in Bianconi’s field equations** (schematic $\kappa=\alpha_B/\beta_B$). Different roles; identification is refused without a new OPEN_MATH decision and an explicit continuum map. Also refuse $L\equiv G$ and $S_c\equiv\operatorname{Tr} g\ln G^{-1}$.
+**Constant refusal.** Do **not** assert$\alpha_L\beta_L=\alpha_B/\beta_B$(or$\alpha_L\beta_L\equiv\alpha_B/\beta_B$). The product $\alpha_L\beta_L$is an **on-shell calibration** of our load clock to Newtonian redshift (Path M). The ratio$\alpha_B/\beta_B$is a **coupling constant in Bianconi’s field equations** (schematic$\kappa=\alpha_B/\beta_B$). Different roles; identification is refused without a new OPEN_MATH decision and an explicit continuum map. Also refuse $L\equiv G$and$S_c\equiv\operatorname{Tr} g\ln G^{-1}$.
 
 ---
 
@@ -1149,20 +1160,20 @@ L \;=\; \beta_L\frac{\rho_m c^2}{\epsilon_0} + \gamma_L\left|\frac{dS_c}{d\tau}\
 $$
 
 
-with clock expansion $d\tau/dt=1/(1+\alpha_L L)=1-\alpha_L L+\alpha_L^2 L^2-\cdots$. In a static weak field, $\gamma_L L_S$ vanishes in strict equilibrium and $\delta_L L_\partial$ is a screen term; nonlinear $\alpha_L^2 L_E^2$ is PPN-like bookkeeping only if carefully mapped. Crucially: under Path J the **metric** is primarily Einstein-sourced. Default reading of $\gamma_L,\delta_L$ is **additive scalar corrections to the clock**, not automatic modifications of $\nabla^2\Phi=4\pi G\rho_m$, unless a dynamical rule promotes $L_S,L_\partial$ into effective stress.
+with clock expansion $d\tau/dt=1/(1+\alpha_L L)=1-\alpha_L L+\alpha_L^2 L^2-\cdots$. In a static weak field, $\gamma_L L_S$vanishes in strict equilibrium and$\delta_L L_\partial$is a screen term; nonlinear$\alpha_L^2 L_E^2$is PPN-like bookkeeping only if carefully mapped. Crucially: under Path J the **metric** is primarily Einstein-sourced. Default reading of$\gamma_L,\delta_L$is **additive scalar corrections to the clock**, not automatic modifications of$\nabla^2\Phi=4\pi G\rho_m$, unless a dynamical rule promotes $L_S,L_\partial$into effective stress.
 
-**GfE next-order candidates.** Schematic modified sector: $R^G_{(\mu\nu)}-\frac12 g_{\mu\nu}(R_G-2\Lambda_G)+D_{(\mu\nu)}=\kappa T_{(\mu\nu)}$ with $\Lambda_G\ge 0$ from the G-field functional and $D_{\mu\nu}$ from G-field derivatives. Linearized deformations of Poisson may involve Yukawa/scalar modes, effective $G_N$ renormalization, or emergent cosmological terms — **structurally inside the metric field equations**.
+**GfE next-order candidates.** Schematic modified sector:$R^G_{(\mu\nu)}-\frac12 g_{\mu\nu}(R_G-2\Lambda_G)+D_{(\mu\nu)}=\kappa T_{(\mu\nu)}$with$\Lambda_G\ge 0$from the G-field functional and$D_{\mu\nu}$from G-field derivatives. Linearized deformations of Poisson may involve Yukawa/scalar modes, effective$G_N$renormalization, or emergent cosmological terms — **structurally inside the metric field equations**.
 
 **Primary structural conclusion.** Next-order extras **do not match as the same object class**:
 
 | Ours (next order) | GfE (next order) | Label |
 |-------------------|------------------|-------|
-| $\gamma_L\|dS_c/d\tau\|$ in load **clock** | $D_{\mu\nu}$ in metric EOM | type mismatch unless a map is built |
-| $\delta_L S_{\partial}/S_{\mathrm{BH}}$ screen ratio | not primary as holographic screen term in GfE action | does not map cleanly |
-| load reparam only (no new Poisson source by default) | $\Lambda_G$, $D_{\mu\nu}$ **do** enter metric EOM | **structural divergence** |
-| no intrinsic $\Lambda$ from load at low order | $\Lambda_G\ge 0$ from G-field alone | **structural divergence** |
+|$\gamma_L\|dS_c/d\tau\|$in load **clock** |$D_{\mu\nu}$in metric EOM | type mismatch unless a map is built |
+|$\delta_L S_{\partial}/S_{\mathrm{BH}}$screen ratio | not primary as holographic screen term in GfE action | does not map cleanly |
+| load reparam only (no new Poisson source by default) |$\Lambda_G$, $D_{\mu\nu}$**do** enter metric EOM | **structural divergence** |
+| no intrinsic$\Lambda$from load at low order |$\Lambda_G\ge 0$from G-field alone | **structural divergence** |
 
-**Outcome:** **structural FAIL** of next-order match (**C13**). Coefficient-level PPN / Yukawa comparison is **not established** (needs explicit Bianconi linearization). Do **not** assert $\gamma_L,\delta_L=D_{\mu\nu},\Lambda_G$.
+**Outcome:** **structural FAIL** of next-order match (**C13**). Coefficient-level PPN / Yukawa comparison is **not established** (needs explicit Bianconi linearization). Do **not** assert$\gamma_L,\delta_L=D_{\mu\nu},\Lambda_G$.
 
 ---
 
@@ -1170,14 +1181,14 @@ with clock expansion $d\tau/dt=1/(1+\alpha_L L)=1-\alpha_L L+\alpha_L^2 L^2-\cdo
 
 M6’s honest reading is **co-class membership** with general relativity at low demand, not framework identity:
 
-1. Both sides can recover $\nabla^2\Phi=4\pi G\rho_m$ because both (under stated assumptions) sit on the Einstein/GR weak-field track at leading order.
+1. Both sides can recover $\nabla^2\Phi=4\pi G\rho_m$because both (under stated assumptions) sit on the Einstein/GR weak-field track at leading order.
 2. Upper mechanisms differ: channel + load clock versus relative entropy of metrics.
 3. Next-order structures live in different slots: **clock factors** versus **metric EOM extras**.
-4. Therefore Poisson agreement is **not** evidence that continuum load dynamics equal Bianconi EL equations, and **not** evidence that master equation $\Leftrightarrow$ continuum GfE.
+4. Therefore Poisson agreement is **not** evidence that continuum load dynamics equal Bianconi EL equations, and **not** evidence that master equation$\Leftrightarrow$continuum GfE.
 
-**Where the interesting dual remains.** The constructive dual that is **settled enough** in this program is **ACD-EW on Layers W and D** (Part 5): shared Stage-2 $G[\phi]$, PM as reconstructor, residual dual T1′ / $U_\star$, load as mild time change. That dual is a **different mathematical layer** from M6’s Lorentzian weak-field plug-test. Euclidean residual dual does **not** lift automatically to Poisson agreement; Poisson agreement does **not** lift residual dual to continuum gravity. Stage-1 / Stage-2 / Stage-3 of the program mental model must not be collapsed into symbolic identity of master equation and GfE action.
+**Where the interesting dual remains.** The constructive dual that is **settled enough** in this program is **ACD-EW on Layers W and D** (Part 5): shared Stage-2$G[\phi]$, PM as reconstructor, residual dual T1′ / $U_\star$, load as mild time change. That dual is a **different mathematical layer** from M6’s Lorentzian weak-field plug-test. Euclidean residual dual does **not** lift automatically to Poisson agreement; Poisson agreement does **not** lift residual dual to continuum gravity. Stage-1 / Stage-2 / Stage-3 of the program mental model must not be collapsed into symbolic identity of master equation and GfE action.
 
-**Non-claims (M6 block).** No numerical solution of Bianconi field equations; no derivation of $\alpha_L\beta_L$ from $\alpha_B,\beta_B$; no master equation $\Leftrightarrow$ GfE; no next-order $\gamma_L,\delta_L=D_{\mu\nu},\Lambda_G$; WEAK PASS does not confer GR-level certainty; Path J still imports Jacobson/Einstein.
+**Non-claims (M6 block).** No numerical solution of Bianconi field equations; no derivation of $\alpha_L\beta_L$from$\alpha_B,\beta_B$; no master equation $\Leftrightarrow$GfE; no next-order$\gamma_L,\delta_L=D_{\mu\nu},\Lambda_G$; WEAK PASS does not confer GR-level certainty; Path J still imports Jacobson/Einstein.
 
 ---
 
@@ -1185,9 +1196,9 @@ M6’s honest reading is **co-class membership** with general relativity at low 
 
 | ID | One-line | Rigor |
 |----|----------|-------|
-| **C11** | M6: both frameworks → $\nabla^2\Phi=4\pi G\rho_m$ via Einstein/GR at leading weak field | **WEAK PASS** |
-| **C12** | M6: not framework equivalence; mechanisms diverge; refuse $(\alpha_L,\beta_L)=(\alpha_B,\beta_B)$ | **FAIL identity** |
-| **C13** | M6b: GfE extras in metric EOM; $\gamma_L,\delta_L$ in load clock unless promoted | **structural FAIL** |
+| **C11** | M6: both frameworks → $\nabla^2\Phi=4\pi G\rho_m$via Einstein/GR at leading weak field | **WEAK PASS** |
+| **C12** | M6: not framework equivalence; mechanisms diverge; refuse$(\alpha_L,\beta_L)=(\alpha_B,\beta_B)$| **FAIL identity** |
+| **C13** | M6b: GfE extras in metric EOM;$\gamma_L,\delta_L$in load clock unless promoted | **structural FAIL** |
 
 ---
 
@@ -1199,7 +1210,7 @@ M6’s honest reading is **co-class membership** with general relativity at low 
 | Claim gate / layers W D G M | Results section and Appendix B |
 | ACD-EW formal dual | Appendix A |
 | T1′ claims A–D | Appendix A |
-| $U_\star$, $\rho_b$, PCRH$_b$ | Appendix A |
+|$U_\star$, $\rho_b$, PCRH$_b$| Appendix A |
 | Load M2 / Claim D | Appendix A |
 | M5b smooth action | Appendix A.5 |
 | M5c PM / Layer W | Appendix A.4 |
@@ -1236,7 +1247,7 @@ STAGE 3 — Continuum GfE (macro target)
 
 | Stage | What is settled enough for a program report | What remains open |
 |-------|---------------------------------------------|-------------------|
-| **1** | Output-entropy definitions; master-equation form; Path J/M Newton; M11 discrete $H_c^{\mathrm{disc}}$ and three-slot $L^{\mathrm{disc}}$; D13 composition / Landauer relationships | Continuum $L$ limit from IDEM; full $S_c$ identity path; multi-region lattice export currents |
+| **1** | Output-entropy definitions; master-equation form; Path J/M Newton; M11 discrete$H_c^{\mathrm{disc}}$and three-slot$L^{\mathrm{disc}}$; D13 composition / Landauer relationships | Continuum $L$limit from IDEM; full$S_c$identity path; multi-region lattice export currents |
 | **2** | ACD-EW Euclidean dual (constructive + toys as pattern witnesses); transfer dictionary with explicit non-maps | Lorentzian lift; continuum SPDE residual dual; promotion of load into metric sector |
 | **3** | Shared weak-field Poisson (M6 WEAK PASS via GR); next-order structural FAIL (M6b) | Full GfE linearization / PPN; symbolic identity of actions and master equations (**refused** unless a new map is built) |
 
@@ -1250,26 +1261,26 @@ The following are **program-level freezes**. They may be asserted with the rigor
 
 Heat-vs-PM residual dual work is **settled enough to stop as the default open problem**. Settled content includes:
 
-- **C1–C8:** ACD-EW constructive Euclidean dual; joint toys **6/6 SUPPORT** as dual *pattern* (not continuum gravity); PM > heat on edges expected; residual dual **time-windowed (T1′)**; unified pure window $U_\star=[1.36,2.40]$ under PCRH$_b$ ($\rho_b=0.42$); edge persistence and short-$t$ noise race; load-PM as mild time change dual (hybrid).
-- Soft spot retained honestly: PCRH$_b$ remains **ensemble-certified**; full pathwise Dirichlet-form proof is optional paper depth, not crisis response.
+- **C1–C8:** ACD-EW constructive Euclidean dual; joint toys **6/6 SUPPORT** as dual *pattern* (not continuum gravity); PM > heat on edges expected; residual dual **time-windowed (T1′)**; unified pure window$U_\star=[1.36,2.40]$ under PCRH$_b$ ($\rho_b=0.42$); edge persistence and short-$t$ noise race; load-PM as mild time change dual (hybrid).
+- Soft spot retained honestly: PCRH$_b$remains **ensemble-certified**; full pathwise Dirichlet-form proof is optional paper depth, not crisis response.
 - **Decision D9 / dual close:** do not restart residual dual scorecards as main science track.
 
 #### Path J/M Newton and calibration
 
-- **C9–C10:** Newtonian Poisson only via **Path J** (Clausius → import Jacobson → Einstein → weak-field GR) and **Path M** (on-shell load-clock match; $\alpha\beta=4\pi G/c^4$ calibration). Pointwise $\Phi\propto\rho\Rightarrow\nabla^2$ is **withdrawn**.
+- **C9–C10:** Newtonian Poisson only via **Path J** (Clausius → import Jacobson → Einstein → weak-field GR) and **Path M** (on-shell load-clock match;$\alpha\beta=4\pi G/c^4$calibration). Pointwise$\Phi\propto\rho\Rightarrow\nabla^2$is **withdrawn**.
 
 #### M6 / M6b continuum contact
 
-- **C11–C13:** Leading shared $\nabla^2\Phi=4\pi G\rho_m$ is a **WEAK PASS** (both via Einstein/GR). Framework identity **FAIL**. Next-order: GfE extras ($D_{\mu\nu}$, $\Lambda_G$) live in **metric EOM**; our $\gamma_L,\delta_L$ live in the load **clock** unless promoted — **structural FAIL**. Optional promotion analysis: m6d-promotion-nogo.md (R4a).
+- **C11–C13:** Leading shared$\nabla^2\Phi=4\pi G\rho_m$ is a **WEAK PASS** (both via Einstein/GR). Framework identity **FAIL**. Next-order: GfE extras ($D_{\mu\nu}$, $\Lambda_G$) live in **metric EOM**; our $\gamma_L,\delta_L$live in the load **clock** unless promoted — **structural FAIL**. Optional promotion analysis: m6d-promotion-nogo.md (R4a).
 
 #### M11 microstructure and D13 relationships
 
 | Freeze | Content | Rigor |
 |--------|---------|--------|
-| **M11 design** | IDEM → operational $H_c^{\mathrm{disc}}$; three-slot $L^{\mathrm{disc}}=L_E^{\mathrm{disc}}+L_S^{\mathrm{disc}}+L_B^{\mathrm{disc}}$ aligned to continuum *roles* only | design + structural role map |
+| **M11 design** | IDEM → operational$H_c^{\mathrm{disc}}$; three-slot $L^{\mathrm{disc}}=L_E^{\mathrm{disc}}+L_S^{\mathrm{disc}}+L_B^{\mathrm{disc}}$aligned to continuum *roles* only | design + structural role map |
 | **Phase 1–2** | AND ledger; multi-step Boolean; tiny SKI; minimal R/B shoe; coupled regions | constructive discrete accounting |
-| **C14** | $L$ = demand from scale/rate of channel outcomes; scrambling ⇒ higher $L$ | semantic (program convention) |
-| **D13 / R1** | Composition: Markov export; path-dependent $\sum L_S$ (same final $H_c^{\mathrm{disc}}$, different circuit cost) | constructive Stage-1 |
+| **C14** |$L$= demand from scale/rate of channel outcomes; scrambling ⇒ higher$L$| semantic (program convention) |
+| **D13 / R1** | Composition: Markov export; path-dependent$\sum L_S$(same final$H_c^{\mathrm{disc}}$, different circuit cost) | constructive Stage-1 |
 | **D13 / R2** | Landauer: single-shot $L_S=H(X\mid Y)$ (bit units) bounds erasure heat | constructive Stage-1 |
 | **D13 / R3a** | Layer W: discrete PM descends matched warm-up energy; residual dual stays Layer D | constructive warm-up, not ME⇔GfE |
 
@@ -1279,10 +1290,10 @@ Heat-vs-PM residual dual work is **settled enough to stop as the default open pr
 
 | Track | Status | Comment |
 |-------|--------|---------|
-| **M9** Lorentzian / curvature-in-$G$ lift | Deferred | High cost; requires clear M6/M7 posture (already FAIL identity) |
-| **M5 full $\Gamma$-limit** | Open | Hygiene + smooth $O(h)$ sketch exist; Γ-convergence **not** claimed |
-| **M10 $S_c$ identity path** | Open beyond P1 | Dictionary + hybrid **non-identity** of $H_c^{\mathrm{toy}}$ vs coarsened objects; no $H_c^{\mathrm{toy}}\equiv S_c$ |
-| **Continuum $L$ limit from IDEM** | Open / deferred | Discrete ledgers ≠ continuum $L(\rho,g)$; non-claim N9 |
+| **M9** Lorentzian / curvature-in-$G$lift | Deferred | High cost; requires clear M6/M7 posture (already FAIL identity) |
+| **M5 full$\Gamma$-limit** | Open | Hygiene + smooth $O(h)$sketch exist; Γ-convergence **not** claimed |
+| **M10$S_c$identity path** | Open beyond P1 | Dictionary + hybrid **non-identity** of$H_c^{\mathrm{toy}}$vs coarsened objects; no$H_c^{\mathrm{toy}}\equiv S_c$|
+| **Continuum$L$limit from IDEM** | Open / deferred | Discrete ledgers ≠ continuum$L(\rho,g)$; non-claim N9 |
 | **M3–M4** Lyapunov / pure reparam | Deferred | After identity score if needed |
 | **M12** true game channel $H_c^{\mathrm{game}}$ | Deferred | Belief dual is ACD-EW pattern only, not EV/ROI |
 | **Optional PCRH$_b$ harden** | Optional | Pure math note depth only |
@@ -1293,8 +1304,8 @@ Heat-vs-PM residual dual work is **settled enough to stop as the default open pr
 
 **Optional future cycles only (not required for this freeze):**
 
-1. Pure PCRH$_b$ for dual SI (dual already program-closed).  
-2. Multi-region lattice / continuum $L^{\mathrm{disc}}$ limit (opens O1 — new cycle).  
+1. Pure PCRH$_b$for dual SI (dual already program-closed).  
+2. Multi-region lattice / continuum$L^{\mathrm{disc}}$limit (opens O1 — new cycle).  
 3. Editorial LaTeX extraction of this report.
 
 ### 7.5 Deprioritize
@@ -1302,10 +1313,10 @@ Heat-vs-PM residual dual work is **settled enough to stop as the default open pr
 | Deprioritized | Why |
 |---------------|-----|
 | More dual scorecards (new ICs only) | Pattern already 6/6×3; diminishing returns |
-| Residual dual “crisis” restart | Program closed at T1′ / $U_\star$ honesty |
-| Equating $\alpha_L\beta_L$ with Bianconi $\alpha_B/\beta_B$ | M7 refusal; different roles |
-| Continuum $L$ or $G$ fits from AND Phase 1–2 | Non-claim N9; roles ≠ equalities |
-| Equating $H_c^{\mathrm{toy}}$ with $S_c$ or $S_{\mathrm{GfE}}$ | M10 non-identity |
+| Residual dual “crisis” restart | Program closed at T1′ /$U_\star$honesty |
+| Equating$\alpha_L\beta_L$with Bianconi$\alpha_B/\beta_B$| M7 refusal; different roles |
+| Continuum$L$or$G$fits from AND Phase 1–2 | Non-claim N9; roles ≠ equalities |
+| Equating$H_c^{\mathrm{toy}}$with$S_c$or$S_{\mathrm{GfE}}$ | M10 non-identity |
 
 ### 7.6 Open-board snapshot (M1–M12)
 
@@ -1314,12 +1325,12 @@ Heat-vs-PM residual dual work is **settled enough to stop as the default open pr
 | **M1** residual dual | Program-level settled ($U_\star$) | Do not default-chase |
 | **M2** load dual | Hybrid done | Optional pure |
 | **M3–M4** Lyapunov / reparam | Deferred | After identity score if needed |
-| **M5** warm-up continuum | Hygiene + smooth sketch; $\Gamma$ open | Program-report cite |
+| **M5** warm-up continuum | Hygiene + smooth sketch; $\Gamma$open | Program-report cite |
 | **M6–M8** gravity contact | Done as analysis | Optional PPN; optional R4a |
 | **M9** Lorentzian GfE lift | Deferred | High cost |
-| **M10** $S_c$ vs $H_c^{\mathrm{toy}}$ | Dictionary + P1 non-identity | Identity path open |
-| **M11** IDEM → $H_c^{\mathrm{disc}}$ / $L^{\mathrm{disc}}$ | P1–2 + coupled + motivation | Optional multi-region lattice |
-| **M12** true game $H_c^{\mathrm{game}}$ | Deferred | Classical depth |
+| **M10**$S_c$vs$H_c^{\mathrm{toy}}$| Dictionary + P1 non-identity | Identity path open |
+| **M11** IDEM →$H_c^{\mathrm{disc}}$/$L^{\mathrm{disc}}$| P1–2 + coupled + motivation | Optional multi-region lattice |
+| **M12** true game$H_c^{\mathrm{game}}$| Deferred | Classical depth |
 
 ---
 
@@ -1329,9 +1340,9 @@ Heat-vs-PM residual dual work is **settled enough to stop as the default open pr
 
 This report freezes a **program**, not a derivation of Einstein from bits alone.
 
-**Under-claimed thesis.** Computational entropy is the entropy of a map or channel’s **output** distribution (classical $H_c$, quantum/gravity $S_c$). Gravity is modeled as a CPTP channel $\Phi_g$ whose instantaneous demand is a dimensionless **load** $L$ that reparameterizes proper time via $d\tau=dt/(1+\alpha L)$. Newtonian Poisson is recovered only via **Path J/M** (Clausius → Einstein → weak-field GR, then on-shell load-clock calibration $\alpha\beta=4\pi G/c^4$), not a withdrawn pointwise Laplacian identity. A **constructive Euclidean dual (ACD-EW)** links Bianconi’s GfE **warm-up** (induced $G[\phi]$, Perona–Malik flow) to an observation channel with split load and load clock; residual dual of PM vs heat is **time-windowed (T1′ / $U_\star$)**, with joint toys as **pattern witnesses**, not continuum gravity. Weak-field contact with continuum GfE is a **WEAK PASS** on shared Poisson and a **FAIL** of framework identity (M6/M6b), reinforced by a next-order **promotion no-go** (R4a). Classical IDEM/decay machinery is connected by a **design dictionary** plus **constructive discrete ledgers** (Phase 1–2; T1–T5 composition and Landauer theorems) for $H_c^{\mathrm{disc}}$ and three-slot $L^{\mathrm{disc}}$ — **not** a continuum derivation of $L$ or metric $G$.
+**Under-claimed thesis.** Computational entropy is the entropy of a map or channel’s **output** distribution (classical$H_c$, quantum/gravity $S_c$). Gravity is modeled as a CPTP channel $\Phi_g$whose instantaneous demand is a dimensionless **load**$L$that reparameterizes proper time via$d\tau=dt/(1+\alpha L)$. Newtonian Poisson is recovered only via **Path J/M** (Clausius → Einstein → weak-field GR, then on-shell load-clock calibration $\alpha\beta=4\pi G/c^4$), not a withdrawn pointwise Laplacian identity. A **constructive Euclidean dual (ACD-EW)** links Bianconi’s GfE **warm-up** (induced $G[\phi]$, Perona–Malik flow) to an observation channel with split load and load clock; residual dual of PM vs heat is **time-windowed (T1′ / $U_\star$)**, with joint toys as **pattern witnesses**, not continuum gravity. Weak-field contact with continuum GfE is a **WEAK PASS** on shared Poisson and a **FAIL** of framework identity (M6/M6b), reinforced by a next-order **promotion no-go** (R4a). Classical IDEM/decay machinery is connected by a **design dictionary** plus **constructive discrete ledgers** (Phase 1–2; T1–T5 composition and Landauer theorems) for $H_c^{\mathrm{disc}}$and three-slot$L^{\mathrm{disc}}$— **not** a continuum derivation of$L$or metric$G$.
 
-Nothing in this conclusion upgrades the stance above preliminary research. Type safety remains locked: **$L\neq G$** and $L^{\mathrm{disc}}\neq L(\rho,g)$. Master equation $\Leftrightarrow$ continuum GfE is **not** asserted.
+Nothing in this conclusion upgrades the stance above preliminary research. Type safety remains locked: **$L\neq G$** and $L^{\mathrm{disc}}\neq L(\rho,g)$. Master equation $\Leftrightarrow$continuum GfE is **not** asserted.
 
 ### 8.2 Positive conclusions P1–P11 (summary)
 
@@ -1339,19 +1350,19 @@ Full statements and sources: front **Results** section and Results section and A
 
 | ID | One-line freeze |
 |----|-----------------|
-| **P1** | Output entropy: $H_c=H(Y)$, $S_c=S(\Phi(\rho))$. |
+| **P1** | Output entropy:$H_c=H(Y)$, $S_c=S(\Phi(\rho))$. |
 | **P2** | Export chain rule; local drop is export (AND $\approx 1.189$). |
-| **P3** | Landauer: Protocol R identifies $L_S=H(X\mid Y)$ with erasure bit-count. |
-| **P4** | Path-dependent $\sum L_S$ (Direct $\approx 1.189$ vs Circuit $\approx 2.189$). |
-| **P5** | Three load axes $L_E,L_S,L_B$; monist $L\propto H_c^{\mathrm{disc}}$ fails. |
-| **P6** | Continuum $L$ **motivated**, not equal to $L^{\mathrm{disc}}$; $L\neq G$. |
+| **P3** | Landauer: Protocol R identifies $L_S=H(X\mid Y)$with erasure bit-count. |
+| **P4** | Path-dependent$\sum L_S$(Direct$\approx 1.189$vs Circuit$\approx 2.189$). |
+| **P5** | Three load axes $L_E,L_S,L_B$; monist $L\propto H_c^{\mathrm{disc}}$fails. |
+| **P6** | Continuum$L$**motivated**, not equal to$L^{\mathrm{disc}}$; $L\neq G$. |
 | **P7** | Newton = Path J/M only; pointwise Laplacian **withdrawn**. |
 | **P8** | ACD-EW dual + time-windowed residual $U_\star$; toys pattern only. |
 | **P9** | PM warm-up energy descent (Layer W); residual dual stays Layer D. |
 | **P10** | M6 WEAK PASS Poisson / FAIL framework identity. |
 | **P11** | R4a: promotion no-go for next-order slot identity. |
 
-**Finite Stage-1 theorems (constructive):** T1 chain rule; T2 cascade export additivity; T3 path-dependent $\sum L_S$; T4 Landauer/$L_S$ under Protocol R; T5 $L_B$ non-additivity — §2 (Numbered Stage-1 theorems).
+**Finite Stage-1 theorems (constructive):** T1 chain rule; T2 cascade export additivity; T3 path-dependent $\sum L_S$; T4 Landauer/$L_S$under Protocol R; T5$L_B$non-additivity — §2 (Numbered Stage-1 theorems).
 
 **Claims inventory C1–C14** (dual A–D detail, calibration honesty, M6 WEAK PASS/FAIL) remains the operational freeze sheet: Results section and Appendix B. Dual residual program: **settled enough to stop as main open crisis**.
 
@@ -1361,28 +1372,28 @@ Do **not** assert without new work (mirror banner + CURRENT_CLAIMS §3):
 
 | ID | Non-claim |
 |----|-----------|
-| **N1** | Master equation $\Leftrightarrow$ Bianconi continuum GfE. |
-| **N2** | $L \equiv G$, $S_c \equiv \operatorname{Tr} g\ln G^{-1}$, $\alpha_L\beta_L \equiv \alpha_B/\beta_B$. |
-| **N3** | T1 residual domination for all $t\in(0,t_\star]$ (false; use T1′ / $U_\star$). |
-| **N4** | Pure T1′ with **no** soft hypotheses (PCRH$_b$ still ensemble-certified). |
-| **N5** | Newton from pointwise $\Phi\propto\rho$ Laplacian (**withdrawn**). |
-| **N6** | Next-order $\gamma_L,\delta_L$ equal GfE $D_{\mu\nu},\Lambda_G$. |
+| **N1** | Master equation$\Leftrightarrow$Bianconi continuum GfE. |
+| **N2** |$L \equiv G$, $S_c \equiv \operatorname{Tr} g\ln G^{-1}$, $\alpha_L\beta_L \equiv \alpha_B/\beta_B$. |
+| **N3** | T1 residual domination for all $t\in(0,t_\star]$(false; use T1′ /$U_\star$). |
+| **N4** | Pure T1′ with **no** soft hypotheses (PCRH$_b$still ensemble-certified). |
+| **N5** | Newton from pointwise$\Phi\propto\rho$Laplacian (**withdrawn**). |
+| **N6** | Next-order$\gamma_L,\delta_L$equal GfE$D_{\mu\nu},\Lambda_G$. |
 | **N7** | Lattice denoising = empirical gravity. |
 | **N8** | External GfE papers established on par with GR. |
-| **N9** | IDEM/decay fully constructs continuum $L$ or $G$ (open / deferred). |
+| **N9** | IDEM/decay fully constructs continuum $L$or$G$(open / deferred). |
 
 **Also (dual / M10 / M11 / M6 honesty):**
 
 - No theorem-level multi-jump / 2D / continuum SPDE residual domination.  
-- Toy residual $H_c^{\mathrm{toy}}$ $\neq$ von Neumann $S_c$ identity.  
-- M11 discrete accounting $\neq$ continuum derivation; no Einstein from AND / SKI / shoe ledgers.  
+- Toy residual$H_c^{\mathrm{toy}}$ $\neq$von Neumann$S_c$identity.  
+- M11 discrete accounting$\neq$ continuum derivation; no Einstein from AND / SKI / shoe ledgers.  
 - WEAK PASS does not upgrade either theory to GR-level certainty; Path J still imports Jacobson/Einstein.  
 - Shared Poisson is co-class contact with GR at low demand, not evidence that load dynamics equal relative-entropy EL equations.  
-- Refuted spine **W1–W6**: pointwise Newton path; raw T1-all-$t$; $L\equiv G$; ME $\Leftrightarrow$ GfE; IDEM constructs continuum $L$/$G$; lattice = empirical gravity.
+- Refuted spine **W1–W6**: pointwise Newton path; raw T1-all-$t$; $L\equiv G$; ME $\Leftrightarrow$GfE; IDEM constructs continuum$L$/$G$; lattice = empirical gravity.
 
 ### 8.4 R4a — promotion no-go (one paragraph)
 
-**R4a / M6d** (Appendix A.7) strengthens the next-order **FAIL** without reopening dual residual work or claiming GfE is wrong. At leading weak field both frameworks can share $\nabla^2\Phi=4\pi G\rho_m$ via Einstein/GR (**WEAK PASS**). At next order the extras live in **different slots**: GfE’s $\Lambda_G$, $D_{\mu\nu}$, dressed curvature sit in **metric field equations**; our $\gamma_L|dS_c/d\tau|$, $\delta_L S_{\partial}/S_{\mathrm{BH}}$, and nonlinear $\alpha_L L$ sit in the **load clock** $d\tau=dt/(1+\alpha L)$ and do not automatically rewrite Poisson. Identifying those structures as the *same* correction requires an extra **promotion rule** (e.g. load into effective stress, load into metric ansatz, collapse of GfE extras to pure reparameterization, or a shared continuum action) that the **present** master equation does not supply. Coefficient retuning alone is a type error (scalar clock $\neq$ tensor EOM). Therefore framework equivalence at next order is **structurally blocked** inside the current formulation — this is **P11**, reaffirms **N1/N2/N6**, and is **not** a PPN calculation or a refutation of Bianconi GfE.
+**R4a / M6d** (Appendix A.7) strengthens the next-order **FAIL** without reopening dual residual work or claiming GfE is wrong. At leading weak field both frameworks can share $\nabla^2\Phi=4\pi G\rho_m$via Einstein/GR (**WEAK PASS**). At next order the extras live in **different slots**: GfE’s$\Lambda_G$, $D_{\mu\nu}$, dressed curvature sit in **metric field equations**; our $\gamma_L|dS_c/d\tau|$, $\delta_L S_{\partial}/S_{\mathrm{BH}}$, and nonlinear $\alpha_L L$sit in the **load clock**$d\tau=dt/(1+\alpha L)$and do not automatically rewrite Poisson. Identifying those structures as the *same* correction requires an extra **promotion rule** (e.g. load into effective stress, load into metric ansatz, collapse of GfE extras to pure reparameterization, or a shared continuum action) that the **present** master equation does not supply. Coefficient retuning alone is a type error (scalar clock$\neq$tensor EOM). Therefore framework equivalence at next order is **structurally blocked** inside the current formulation — this is **P11**, reaffirms **N1/N2/N6**, and is **not** a PPN calculation or a refutation of Bianconi GfE.
 
 ### 8.5 What is not concluded without experiment (or heavy new theory)
 
@@ -1392,15 +1403,15 @@ The following remain **open** (PROGRAM_CONCLUSIONS O1–O5). They are not hidden
 
 | Open | Needs (bucket) |
 |------|----------------|
-| Continuum / hydrodynamic $L^{\mathrm{disc}}\to L(\rho,g)$ or IDEM $\to G$ | **New theory:** scale-separation / limit theorem (not more AND scorecards) |
-| M5 full warm-up $\Gamma$-limit / BV / residual dual continuum | **New theory:** heavy analysis; smooth $O(h)$ sketch is not Γ |
-| Constructive continuum $S_c$ dynamics beyond M10 dictionary | **New theory:** positive channel construction; no $H_c^{\mathrm{toy}}\equiv S_c$ |
+| Continuum / hydrodynamic$L^{\mathrm{disc}}\to L(\rho,g)$or IDEM$\to G$| **New theory:** scale-separation / limit theorem (not more AND scorecards) |
+| M5 full warm-up$\Gamma$-limit / BV / residual dual continuum | **New theory:** heavy analysis; smooth $O(h)$sketch is not Γ |
+| Constructive continuum$S_c$dynamics beyond M10 dictionary | **New theory:** positive channel construction; no$H_c^{\mathrm{toy}}\equiv S_c$ |
 | Lorentzian / curvature-in-$G$ GfE lift | **New theory** (high cost); optional experiment only after a prediction |
 | Pathwise PCRH$_b$; true game $H_c^{\mathrm{game}}$; BH/cosmology at Path J/M honesty | **New theory** (optional dual SI / recoveries) |
 
-**Not open as crisis:** heat/PM residual dual as default main track (closed at T1′ / $U_\star$ honesty).
+**Not open as crisis:** heat/PM residual dual as default main track (closed at T1′ / $U_\star$honesty).
 
-**Without laboratory or astronomical experiment,** this program does **not** conclude empirical gravity, measured $\alpha\beta$, or observational discrimination of load-clock vs GfE next-order corrections. Constructive “experiments” in this program are **finite ledgers and lattice dual toys** — constructive/hybrid witnesses under stated models, not gravity detections.
+**Without laboratory or astronomical experiment,** this program does **not** conclude empirical gravity, measured$\alpha\beta$, or observational discrimination of load-clock vs GfE next-order corrections. Constructive “experiments” in this program are **finite ledgers and lattice dual toys** — constructive/hybrid witnesses under stated models, not gravity detections.
 
 ### 8.6 Data availability (optional)
 
@@ -1413,9 +1424,9 @@ This report is self-contained: definitions, theorems, numerical witnesses, and n
 
 ### 8.8 Closing: claim freeze closes the program cycle
 
-Under its own axioms and the external inputs listed in PROGRAM_CONCLUSIONS (Shannon, Landauer, Jacobson, weak-field GR, Bianconi warm-up literature), the program may assert: **output-entropy** foundations; **export** accounting and **Landauer** contact for single-shot $L_S$; multi-axial, **path-dependent** discrete demand that only **motivates** continuum load; a load-gated channel with **Path J/M** Newton; a constructive **Euclidean warm-up dual** with **windowed** residual honesty; and weak-field **co-class** contact with continuum GfE that **fails** as theory identity, with next-order identity **blocked** without promotion. Continuum construction of $L$ or $G$ from IDEM, Lorentzian GfE lift, full $\Gamma$-limits, and master-equation $\Leftrightarrow$ GfE remain **open or refused**, not hidden gaps.
+Under its own axioms and the external inputs listed in PROGRAM_CONCLUSIONS (Shannon, Landauer, Jacobson, weak-field GR, Bianconi warm-up literature), the program may assert: **output-entropy** foundations; **export** accounting and **Landauer** contact for single-shot $L_S$; multi-axial, **path-dependent** discrete demand that only **motivates** continuum load; a load-gated channel with **Path J/M** Newton; a constructive **Euclidean warm-up dual** with **windowed** residual honesty; and weak-field **co-class** contact with continuum GfE that **fails** as theory identity, with next-order identity **blocked** without promotion. Continuum construction of $L$or$G$from IDEM, Lorentzian GfE lift, full$\Gamma$-limits, and master-equation $\Leftrightarrow$GfE remain **open or refused**, not hidden gaps.
 
-**This draft freezes those conclusions under CLAIM_GATE.** The research cycle for claim establishment is closed at the present rigor levels: further default work is **paper polish and optional pure-depth notes**, not reopening residual dual as crisis, not equating $L$ with $G$, and not asserting ME $\Leftrightarrow$ GfE without a new constructive map.
+**This draft freezes those conclusions under CLAIM_GATE.** The research cycle for claim establishment is closed at the present rigor levels: further default work is **paper polish and optional pure-depth notes**, not reopening residual dual as crisis, not equating$L$with$G$, and not asserting ME $\Leftrightarrow$GfE without a new constructive map.
 
 ---
 
@@ -1428,19 +1439,19 @@ Stubs only (no invented DOIs). Prefer local Appendix A PDFs where present; stand
 | G. Bianconi, *Gravity from entropy*, Phys. Rev. D (2025); arXiv:2408.14391 | Continuum GfE target; low-coupling Einstein–Hilbert contact |
 | G. Bianconi, *Beyond holography*, arXiv:2503.14048 | PM as Euclidean GfE warm-up gradient flow (Layer **W** literature structure) |
 | T. Jacobson, *Thermodynamics of spacetime: The Einstein equation of state*, Phys. Rev. Lett. **75**, 1260 (1995) | Path J external theorem (Clausius on local horizons → Einstein) |
-| R. Landauer, *Irreversibility and heat generation in the computing process*, IBM J. Res. Dev. **5**, 183 (1961) | External bound used in Appendix A.3 / P3 Landauer contact for $L_S^{\mathrm{disc}}$ |
-| C. E. Shannon, *A mathematical theory of communication*, Bell Syst. Tech. J. **27**, 379–423, 623–656 (1948) | Classical map-output entropy foundations for $H_c$ |
+| R. Landauer, *Irreversibility and heat generation in the computing process*, IBM J. Res. Dev. **5**, 183 (1961) | External bound used in Appendix A.3 / P3 Landauer contact for$L_S^{\mathrm{disc}}$|
+| C. E. Shannon, *A mathematical theory of communication*, Bell Syst. Tech. J. **27**, 379–423, 623–656 (1948) | Classical map-output entropy foundations for$H_c$|
 | T. M. Cover and J. A. Thomas, *Elements of Information Theory*, Wiley (textbook) | Classical Shannon / differential entropy reference |
-| M. A. Nielsen and I. L. Chuang, *Quantum Computation and Quantum Information*, Cambridge (textbook) | CPTP maps / von Neumann $S_c$ reference |
+| M. A. Nielsen and I. L. Chuang, *Quantum Computation and Quantum Information*, Cambridge (textbook) | CPTP maps / von Neumann$S_c$ reference |
 | P. Perona and J. Malik, *Scale-space and edge detection using anisotropic diffusion*, IEEE Trans. Pattern Anal. Mach. Intell. **12**, 629 (1990) | ACD-EW reconstructor (PM); Layer **W** / dual toys |
-| E. Verlinde, *On the origin of gravity and the laws of Newton*, JHEP **04**, 029 (2011) | Related entropic-gravity program (comparison peer, **not** identity with this load/$\Phi_g$ framework) |
+| E. Verlinde, *On the origin of gravity and the laws of Newton*, JHEP **04**, 029 (2011) | Related entropic-gravity program (comparison peer, **not** identity with this load/$\Phi_g$framework) |
 | A. Kumar, *Recovering the semiclassical Einstein equation from the generalized second law*, arXiv:2404.16912 (optional) | Adjacent entropic Einstein recovery; context only |
 
 Local peers (applications / notes, not GR-level foundations): Thattarampilly–Zheng inflation / spherical BH notes under Appendix A; Bianconi GfE reading notes in Appendix A.
 
 ---
 
-*Program report draft. Update when CURRENT_CLAIMS, $U_\star$, M6/M11 status, PROGRAM_CONCLUSIONS, or recommended next avenues change. Do not expand into new theorems here — link canonical sources.*
+*Program report draft. Update when CURRENT_CLAIMS,$U_\star$, M6/M11 status, PROGRAM_CONCLUSIONS, or recommended next avenues change. Do not expand into new theorems here — link canonical sources.*
 
 ---
 
@@ -1457,32 +1468,32 @@ Chain rule residual $<10^{-12}$.
 
 ## A.2 Composition / path dependence
 
-Same final AND law $H(Z)\approx 0.811278$ and same residual export $H(X\mid Z)\approx 1.188722$, but cumulative stage cost differs:
+Same final AND law $H(Z)\approx 0.811278$and same residual export$H(X\mid Z)\approx 1.188722$, but cumulative stage cost differs:
 - Direct AND: $\sum L_S \approx 1.188722$, $\sum L_E=1$
 - Circuit (publish wire then AND): $\sum L_S \approx 2.188722$, $\sum L_E=2$
-Markov cascade $Y=\mathrm{AND}$, $Z=\mathrm{NOT}(Y)$: $H(X\mid Z)=H(X\mid Y)+H(Y\mid Z)$ exactly.
+Markov cascade $Y=\mathrm{AND}$, $Z=\mathrm{NOT}(Y)$: $H(X\mid Z)=H(X\mid Y)+H(Y\mid Z)$exactly.
 
 ## A.3 Landauer contact (Protocol R)
 
-After AND, keep $Y$, reset residual input conditional on $Y$. Landauer (external) gives
-$Q \ge k_B T\ln 2 \cdot H(X\mid Y)$. In units of $k_B T\ln 2$, $Q_{\min}/(k_B T\ln 2)=H(X\mid Y)=L_S$ for this single-shot assignment. Reversible dilation parks the same entropy as garbage until erased.
+After AND, keep$Y$, reset residual input conditional on $Y$. Landauer (external) gives
+$Q \ge k_B T\ln 2 \cdot H(X\mid Y)$. In units of $k_B T\ln 2$, $Q_{\min}/(k_B T\ln 2)=H(X\mid Y)=L_S$for this single-shot assignment. Reversible dilation parks the same entropy as garbage until erased.
 
 ## A.4 Discrete PM energy descent (Layer W)
 
-On the 1D noisy-step dual protocol, explicit-Euler Perona–Malik with matched edge energy $E_h$ is non-increasing along the trajectory; with matched coupling, $E_h=-(K^2/2)S_{\mathrm{matched}}$. This is Layer W (warm-up energy), not residual dual (Layer D).
+On the 1D noisy-step dual protocol, explicit-Euler Perona–Malik with matched edge energy$E_h$is non-increasing along the trajectory; with matched coupling,$E_h=-(K^2/2)S_{\mathrm{matched}}$. This is Layer W (warm-up energy), not residual dual (Layer D).
 
 ## A.5 Smooth warm-up action (conditional)
 
-Under $C^3$ periodic $\phi$, fixed $\alpha>0$, mesh $h\to 0$,
-$S_h=h\sum_i -\ln(1+\alpha(D_h\phi)_i^2)$ approximates $\int -\ln(1+\alpha|\phi'|^2)\,dx$ at rate $O(h)$ (Taylor + Lipschitz + Riemann sum). Not $\Gamma$-convergence; not BV/jumps.
+Under $C^3$periodic$\phi$, fixed $\alpha>0$, mesh $h\to 0$,
+$S_h=h\sum_i -\ln(1+\alpha(D_h\phi)_i^2)$approximates$\int -\ln(1+\alpha|\phi'|^2)\,dx$at rate$O(h)$(Taylor + Lipschitz + Riemann sum). Not$\Gamma$-convergence; not BV/jumps.
 
 ## A.6 Entropy-object non-identity (dual toys)
 
-On dual times in $U_\star$, MC-mean residual dual score $H_c^{\mathrm{toy}}\sim 1.1$–$1.3$ while ensemble Shannon $H(Z)$ of coarsened edge location is $\approx 0$. Objects are not identical.
+On dual times in $U_\star$, MC-mean residual dual score $H_c^{\mathrm{toy}}\sim 1.1$–$1.3$while ensemble Shannon$H(Z)$of coarsened edge location is$\approx 0$. Objects are not identical.
 
 ## A.7 Next-order promotion no-go (summary)
 
-GfE next-order extras ($D_{\mu\nu}$, $\Lambda_G$) live in metric EOM; load $\gamma_L,\delta_L$ live in the clock $d\tau=dt/(1+\alpha L)$. Identifying them requires an extra promotion rule not supplied by the present master equation (structural no-go, not a PPN calculation).
+GfE next-order extras ($D_{\mu\nu}$, $\Lambda_G$) live in metric EOM; load $\gamma_L,\delta_L$live in the clock$d\tau=dt/(1+\alpha L)$. Identifying them requires an extra promotion rule not supplied by the present master equation (structural no-go, not a PPN calculation).
 
 ## A.8 Euclidean dual toys (pattern witnesses)
 
@@ -1492,9 +1503,9 @@ GfE next-order extras ($D_{\mu\nu}$, $\Lambda_G$) live in metric EOM; load $\gam
 
 # Appendix B. Claim and non-claim checklist (standalone)
 
-**May assert (program-level):** P1–P11 as in Results (output entropy; export; Landauer contact; path-dependent $\sum L_S$; three load roles; continuum $L$ motivated not identified; Path J/M Newton; Euclidean dual $U_\star$; warm-up PM descent; M6 WEAK PASS/FAIL identity; promotion no-go).
+**May assert (program-level):** P1–P11 as in Results (output entropy; export; Landauer contact; path-dependent $\sum L_S$; three load roles; continuum $L$motivated not identified; Path J/M Newton; Euclidean dual$U_\star$; warm-up PM descent; M6 WEAK PASS/FAIL identity; promotion no-go).
 
-**Must not assert:** master equation $\Leftrightarrow$ continuum GfE; $L\equiv G$; residual dual for all $t\in(0,t_\star]$; pure T1$'$ with no soft hypotheses; Newton from pointwise $\Phi\propto\rho$; $\gamma_L,\delta_L=D_{\mu\nu},\Lambda_G$ without promotion; lattice denoising = empirical gravity; GfE literature as GR-peer foundation; IDEM constructs continuum $L$ or $G$.
+**Must not assert:** master equation $\Leftrightarrow$continuum GfE;$L\equiv G$; residual dual for all $t\in(0,t_\star]$; pure T1$'$with no soft hypotheses; Newton from pointwise$\Phi\propto\rho$; $\gamma_L,\delta_L=D_{\mu\nu},\Lambda_G$without promotion; lattice denoising = empirical gravity; GfE literature as GR-peer foundation; IDEM constructs continuum$L$or$G$.
 
 ---
 
@@ -1502,9 +1513,9 @@ GfE next-order extras ($D_{\mu\nu}$, $\Lambda_G$) live in metric EOM; load $\gam
 
 | ID | Missing work (theory) | Not fixed by |
 |----|----------------------|--------------|
-| O1 | Scale limit $L^{\mathrm{disc}}\to L(\rho,g)$ (or obstruction) | More dual scorecards |
-| O2 | $\Gamma$-limit / BV continuum warm-up | Smooth $O(h)$ sketch alone |
-| O3 | Positive continuum $S_c$ construction | Equating dual residual scores by fiat |
+| O1 | Scale limit $L^{\mathrm{disc}}\to L(\rho,g)$(or obstruction) | More dual scorecards |
+| O2 |$\Gamma$-limit / BV continuum warm-up | Smooth $O(h)$sketch alone |
+| O3 | Positive continuum$S_c$ construction | Equating dual residual scores by fiat |
 | O4 | Lorentzian GfE lift / true continuum dual | Euclidean toys alone |
 | O5 | Optional pure PCRH$_b$; true game channels; honest BH/cosmo recoveries | Dual IC farming |
 

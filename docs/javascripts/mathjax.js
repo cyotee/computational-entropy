@@ -1,7 +1,10 @@
+/* MathJax config for Material + pymdownx.arithmatex (generic: true).
+ * Arithmatex wraps math as \(...\) / \[...\]; MathJax only processes .arithmatex.
+ */
 window.MathJax = {
   tex: {
-    inlineMath: [["\\(", "\\)"], ["$", "$"]],
-    displayMath: [["\\[", "\\]"], ["$$", "$$"]],
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
     processEscapes: true,
     processEnvironments: true
   },

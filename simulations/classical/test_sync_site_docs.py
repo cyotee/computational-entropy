@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import importlib.util
 import subprocess
 import sys
 from pathlib import Path
@@ -22,6 +23,14 @@ EXPECTED_PAGES = [
     "glossary.md",
     "progress.md",
 ]
+
+
+def _load_sync_module():
+    spec = importlib.util.spec_from_file_location("sync_site_docs", SYNC)
+    assert spec and spec.loader
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
 
 
 def test_sync_script_exits_zero_and_writes_allowlist():
@@ -59,7 +68,49 @@ def test_denylisted_paths_not_under_docs_from_sync():
             assert "archive" not in path.parts
 
 
+def test_normalize_math_fixes_spaced_inline_and_same_line_display():
+    """Spaced $  expr  $ and same-line $$...$$ must become Arithmatex-friendly."""
+    mod = _load_sync_module()
+    raw = (
+        "A stochastic map $  p(Y|X)  $ and $  p_Y  $.\n"
+        "$$H_c(f; p_X) := H(Y)$$\n"
+    )
+    out = mod.normalize_math(raw)
+    assert "$p(Y|X)$" in out, out
+    assert "$p_Y$" in out, out
+    assert "$$H_c" not in out.replace("$$\nH_c", "")  # not same-line
+    assert "$$\nH_c(f; p_X) := H(Y)\n$$" in out, out
+
+
+def test_built_foundations_page_wraps_stochastic_math():
+    """After sync+mkdocs, p(Y|X) must be inside arithmatex, not raw $...$."""
+    subprocess.run([sys.executable, str(SYNC)], cwd=REPO, check=True)
+    build = subprocess.run(
+        [sys.executable, "-m", "mkdocs", "build", "-q"],
+        cwd=REPO,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    assert build.returncode == 0, build.stderr
+    html = (REPO / "site/foundations/computational-entropy/index.html").read_text(
+        encoding="utf-8"
+    )
+    assert "stochastic map" in html
+    # Must not leave the classic broken raw form
+    assert "$  p(Y|X)  $" not in html
+    assert "$p(Y|X)$" not in html or "arithmatex" in html
+    assert 'class="arithmatex"' in html
+    assert "p(Y|X)" in html
+    # Prefer wrapped form
+    assert "\\(p(Y|X)\\)" in html or "\\( p(Y|X) \\)" in html or (
+        'class="arithmatex"' in html and "p(Y|X)" in html
+    )
+
+
 if __name__ == "__main__":
+    test_normalize_math_fixes_spaced_inline_and_same_line_display()
     test_sync_script_exits_zero_and_writes_allowlist()
     test_denylisted_paths_not_under_docs_from_sync()
+    test_built_foundations_page_wraps_stochastic_math()
     print("OK: sync_site_docs tests passed")
