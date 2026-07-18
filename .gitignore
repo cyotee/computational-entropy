@@ -8,3 +8,16 @@
 .DS_Store
 
 *.code-workspace
+
+# MkDocs build output (deployed by CI artifact, not committed)
+site/
+
+# LaTeX intermediates (keep sources / intentional PDFs)
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.toc
+*.xdv
+*.out
+*.synctex.gz

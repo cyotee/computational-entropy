@@ -1,118 +1,47 @@
 # Computational Entropy
 
-This project collects research into a computational property we are naming Computational Entropy.
+**Preliminary research.** Supporting constructions and numerical ledgers are real; **nothing here has GR-level certainty.**
 
-## Premise
+Research program on **computational entropy** (entropy of a map/channel’s **output** distribution), the gravitational channel \(\Phi_g\) with dimensionless **load** \(L\), and a staged bridge to continuum Gravity-from-Entropy (GfE) — without claiming master-equation \(\Leftrightarrow\) full continuum GfE or \(L \equiv G\).
 
-Entropy can be measured as a lack of order, or more appropriately, the predictability of a state.
-Shannon Entropy calculates exactly this for a signal being transmitted over a channel.
-But in that case, the inputs are expected to be non-random, or they are ignored. It does not measure the effect of a computation on random inputs.
+## Live documentation site
 
-Any function (or map) that transforms inputs will result in a probabilistic distribution of outputs.
-This means that for any set of random inputs, there is a matching set of non-random outputs.
-Meaning the predictability has been altered. And that implies that the entropy has been reduced.
-Meaning information was imparted by the function on the inputs to produce the outputs.
+**[https://cyotee.github.io/computational-entropy/](https://cyotee.github.io/computational-entropy/)**
 
-This project aims to define and quantify how computing a function imparts this implicit information as a means of entropy transfer.
-We will term this measure of entropy transfer as Computational Entropy.
+Curated public pages (definitions, master equation, frozen claims/non-claims, program report). Built with MkDocs from an allowlist — not a dump of drafts or agent notes.
 
-## Definition
+## Quick map (repository)
 
-Computational entropy is an information-theoretic measure that depends solely on the statistical pattern of the output distribution produced by a computation, independent of its internal mechanics or algorithm.
+| Role | Path |
+|------|------|
+| Canonical \(H_c\) / \(S_c\) | [`foundations/computational-entropy/definition.md`](foundations/computational-entropy/definition.md) |
+| \(\Phi_g\), load, master equation | [`emergent-gravity/master-equation.md`](emergent-gravity/master-equation.md) |
+| Frozen claims / non-claims | [`synthesis/CURRENT_CLAIMS.md`](synthesis/CURRENT_CLAIMS.md) |
+| Program conclusions | [`synthesis/PROGRAM_CONCLUSIONS.md`](synthesis/PROGRAM_CONCLUSIONS.md) |
+| Final freeze report | [`papers/06-synthesis/FINAL.md`](papers/06-synthesis/FINAL.md) |
+| Session bootstrap | [`PROGRESS_REPORT.md`](PROGRESS_REPORT.md) |
+| Site plan | [`GITHUB_PAGES_PLAN.md`](GITHUB_PAGES_PLAN.md) |
 
-## General Case (All Types of Functions)
+**Type safety:** load \(L\) is a dimensionless **scalar**; structure metric \(G\) is a **metric**. \(L \neq G\).
 
-For any map $  f  $ — deterministic, probabilistic (stochastic), or quantum channel — that takes an input random variable $  X  $ (with distribution $  p_X  $) and produces an output random variable $  Y  $, the computational entropy is the entropy of the induced marginal output distribution $  p_Y  $:
+## Local site preview
 
-- Classical discrete case: Shannon entropy of the output probability mass function
-$$H_c(f; p_X) := H(Y) = -\sum_y p_Y(y) \log_2 p_Y(y)$$
+```bash
+.venv/bin/pip install -r requirements-docs.txt
+.venv/bin/python scripts/sync_site_docs.py
+.venv/bin/python -m mkdocs serve
+```
 
-- Classical continuous case: Differential Shannon entropy of the output probability density function
-$$H_c(f; p_X) := h(Y) = -\int f_Y(y) \log_2 f_Y(y) \, dy$$
+Or: `bash scripts/build_site.sh` then open `site/index.html`.
 
-- Quantum case: Von Neumann entropy of the output state of a quantum channel
-$$S_c(\Phi; \rho_X) := S(\rho_Y) = -\operatorname{Tr}\bigl(\Phi(\rho_X) \log_2 \Phi(\rho_X)\bigr)$$
+## Premise (one paragraph)
 
-## Key Property
+Any map that transforms inputs induces an output distribution. **Computational entropy** measures that output entropy (Shannon / differential \(H_c\), or von Neumann \(S_c\) for channels), independent of internal algorithm. Two maps with the same output entropy are informationally equivalent for that measure. Gravity work in this repo models demand via load \(L\) and a master equation with load-gated proper time \(d\tau = dt/(1+\alpha L)\). See the [canonical definition](foundations/computational-entropy/definition.md) and [master equation](emergent-gravity/master-equation.md) rather than historical root drafts.
 
-Two (or more) different maps — whether deterministic, probabilistic, or quantum — are informationally equivalent if they induce output distributions with the same computational entropy.
-The internal mechanics (algorithm, randomness, or quantum operations) do not matter; only the final statistical pattern of possible outputs does.
+## Non-claims (summary)
 
-## Classical Examples (Demonstrating the General Definition)
+Do not assert without new work: master equation \(\Leftrightarrow\) continuum GfE; \(L \equiv G\); residual dual for all \(t\); pointwise Laplacian Newton (withdrawn); lattice denoising as empirical gravity; IDEM fully constructing continuum \(L\) or \(G\). Full list on the site: [Non-claims](https://cyotee.github.io/computational-entropy/non-claims/).
 
-### Deterministic functions with identical outputs
+## License
 
-Consider two genuinely different functions on uniform random variables $  U, U_1, U_2 \sim \text{Uniform}[0,1]  $:
-
-- Function 1: $  Y_1 = \sqrt{U}  $ (square root of one uniform)
-- Function 2: $  Y_2 = \max(U_1, U_2)  $ (maximum of two independent uniforms)
-
-Both have the identical output PDF on [0,1]:
-
-$$f(y) = 2y$$
-
-The computational entropy is the differential Shannon entropy:
-
-$$H_c(Y) = -\int_0^1 2y \log_2 (2y) \, dy = -1 + \frac{1}{2 \ln 2} \approx -0.27865 \text{ bits}.$$
-
-Explicit derivation (for both functions):
-
-$$\log_2(2y) = 1 + \log_2 y$$
-
-$$H_c = -\int_0^1 2y(1 + \log_2 y) \, dy = -1 - \int_0^1 2y \log_2 y \, dy.$$
-
-The integral $  \int_0^1 2y \log_2 y \, dy = -1/(2 \ln 2)  $, so
-
-$$H_c = -1 + \frac{1}{2 \ln 2} \approx -0.27865 \text{ bits}.$$
-
-(The same result holds for the reflected case $  Y_3 = \min(U_1, U_2)  $ because differential entropy is invariant under the substitution $  z = 1 - y  $.)
-
-Thus, despite completely different internal operations, all three functions are informationally equivalent: any probability-based prediction (e.g., $  P(Y > 0.7)  $, expected value, variance) is identical for all three.
-This is the exact property that makes computational entropy a powerful unifying measure.
-
-### Probabilistic (stochastic) extension
-
-A stochastic map that outputs according to a conditional probability distribution $  p(Y|X)  $ still has a well-defined marginal output distribution $  p_Y  $.
-Its computational entropy is simply the Shannon (or differential) entropy of that marginal.
-Different stochastic mechanisms that produce the same $  p_Y  $ are informationally equivalent.
-
-### Quantum Generalization
-
-When the computation is a quantum channel $  \Phi  $ acting on an input density operator $  \rho_X  $, we use von Neumann entropy of the output state.
-
-This is the direct quantum analogue: it reduces exactly to differential Shannon entropy in the semiclassical limit and is the standard measure of output uncertainty in quantum information theory.
-It is already used in gravitational physics (Ryu–Takayanagi formula, Page curve) to quantify processed information.
-
-This definition is therefore fully general — it applies uniformly to deterministic classical functions, probabilistic classical maps, and quantum channels — while remaining grounded in standard information theory.
-It provides the rigorous classical foundation for our gravitational channel $  \Phi_g  $ and the subsequent master equation.
-
-## Global Conservation and Local Entropy Transfer
-
-A common apparent paradox is that a computation can reduce local entropy (turning high-entropy random inputs into lower-entropy structured outputs), seemingly violating the second law.
-Our framework resolves this cleanly through global conservation with local transfer.
-
-### Classical Example (Irreversible AND Gate)
-
-Two independent fair bits $  X_1, X_2  $: total input entropy $  H(X_1, X_2) = 2  $ bits.
-
-Computation: $  Y = X_1 \land X_2  $.
-
-Output entropy: $  H(Y) \approx 0.811  $ bits (apparent local reduction).
-
-The “missing” entropy (~1.189 bits) is accounted for by the irreversible loss of distinguishability between input paths.
-Globally, total entropy (system + environment) remains exactly 2 bits — it is conserved.
-The computation did not create or destroy information; it transferred it from the system to the environment.
-
-## In Our Framework
-
-The gravitational channel $  \Phi_g  $ performs the same process on quantum microstates.
-Each step overwrites prior information, exporting entropy to the environment (or holographic screen) while realizing a lower-entropy output pattern locally.
-
-The computational load $  L  $ quantifies this demand and enforces proper-time slowing when needed.
-Globally, total fine-grained entropy is conserved (unitary or CPTP evolution); locally, observers see an apparent reduction because fine-grained prior details are lost.
-
-This realizes the original intuition: entropy is constant globally across time, with directed local transfer from future potential (high-entropy input possibilities) to past reality (lower-entropy realized outputs).
-The master equation and load parameter $  L  $ make this transfer explicit and quantifiable.
-
-This classical grounding (Shannon/differential entropy of the output) carries over unchanged to the quantum case, where von Neumann entropy of the output state of the gravitational channel plays the analogous role.
-The definition is therefore both rigorous and consistent across classical and quantum regimes.
+See [LICENSE.md](LICENSE.md).

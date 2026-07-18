@@ -1,0 +1,73 @@
+site_name: Computational Entropy
+site_description: Computational entropy, load, and emergent-gravity research (preliminary)
+site_url: https://cyotee.github.io/computational-entropy/
+repo_url: https://github.com/cyotee/computational-entropy
+repo_name: cyotee/computational-entropy
+# Synced pages are generated copies; edit canons in the research tree instead
+edit_uri: ""
+
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+markdown_extensions:
+  - admonition
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+plugins:
+  - search
+
+nav:
+  - Home: index.md
+  - How to read: how-to-read.md
+  - Non-claims: non-claims.md
+  - Foundations:
+      - Computational entropy: foundations/computational-entropy.md
+  - Emergent gravity:
+      - Master equation: emergent-gravity/master-equation.md
+      - Newtonian recovery: emergent-gravity/newtonian-recovery.md
+  - Synthesis:
+      - Claims: synthesis/claims.md
+      - Conclusions: synthesis/conclusions.md
+      - Open avenues: synthesis/open-avenues.md
+  - Papers:
+      - Final program report: papers/final-report.md
+      - Publishable draft: papers/publishable.md
+  - Glossary: glossary.md
+  - Progress: progress.md

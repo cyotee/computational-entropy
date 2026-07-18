@@ -1,0 +1,2 @@
+# Documentation site (MkDocs + Material) — used by local preview and CI Pages build
+mkdocs-material>=9.5.0
