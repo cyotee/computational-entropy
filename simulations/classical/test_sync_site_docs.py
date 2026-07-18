@@ -20,8 +20,17 @@ EXPECTED_PAGES = [
     "synthesis/open-avenues.md",
     "papers/final-report.md",
     "papers/publishable.md",
+    "papers/paper-full.md",
     "glossary.md",
     "progress.md",
+]
+
+EXPECTED_PAPER_CHAPTERS = [
+    "papers/chapters/00-front-matter.md",
+    "papers/chapters/01-introduction.md",
+    "papers/chapters/06-channel-load-master-equation.md",
+    "papers/chapters/11-conclusions.md",
+    "papers/chapters/references.md",
 ]
 
 
@@ -68,18 +77,42 @@ def test_denylisted_paths_not_under_docs_from_sync():
             assert "archive" not in path.parts
 
 
-def test_normalize_math_fixes_spaced_inline_and_same_line_display():
-    """Spaced $  expr  $ and same-line $$...$$ must become Arithmatex-friendly."""
+def test_normalize_math_fixes_same_line_display_without_eating_inline_spaces():
+    """Same-line $$...$$ → block form; do not glue adjacent $...$ expressions."""
     mod = _load_sync_module()
     raw = (
         "A stochastic map $  p(Y|X)  $ and $  p_Y  $.\n"
+        "Channel $\\Phi_g$ and entropy $S_c$.\n"
         "$$H_c(f; p_X) := H(Y)$$\n"
     )
     out = mod.normalize_math(raw)
-    assert "$p(Y|X)$" in out, out
-    assert "$p_Y$" in out, out
-    assert "$$H_c" not in out.replace("$$\nH_c", "")  # not same-line
+    # Spaced inline left for smart_dollar: false
+    assert "$  p(Y|X)  $" in out, out
+    assert "$  p_Y  $" in out, out
+    # Must not eat the space between two math spans
+    assert r"$\Phi_g$ and entropy $S_c$" in out, out
+    assert r"$\Phi_g$and" not in out, out
     assert "$$\nH_c(f; p_X) := H(Y)\n$$" in out, out
+
+
+def test_paper_chapters_include_load_equation():
+    """Full paper must be split into chapters; §6 must contain L(ρ,g)."""
+    subprocess.run([sys.executable, str(SYNC)], cwd=REPO, check=True)
+    for rel in EXPECTED_PAPER_CHAPTERS:
+        path = DOCS / rel
+        assert path.is_file(), f"missing paper chapter {path}"
+        assert path.stat().st_size > 0
+    load_ch = (DOCS / "papers/chapters/06-channel-load-master-equation.md").read_text(
+        encoding="utf-8"
+    )
+    assert "Computational load" in load_ch or "computational load" in load_ch
+    assert "L(\\rho,g)" in load_ch or r"L(\rho,g)" in load_ch or "L(\\rho,g)" in load_ch
+    assert "E[\\rho]" in load_ch or r"E[\rho]" in load_ch or "E[" in load_ch
+    assert "master equation" in load_ch.lower()
+    full = (DOCS / "papers/paper-full.md").read_text(encoding="utf-8")
+    # Full paper should be substantial (entire manuscript)
+    assert len(full) > 50_000, f"paper-full too small: {len(full)}"
+    assert "Gravitational channel" in full or "gravitational channel" in full
 
 
 def test_built_foundations_page_wraps_stochastic_math():
@@ -92,7 +125,7 @@ def test_built_foundations_page_wraps_stochastic_math():
         text=True,
         check=False,
     )
-    assert build.returncode == 0, build.stderr
+    assert build.returncode == 0, build.stderr + build.stdout
     html = (REPO / "site/foundations/computational-entropy/index.html").read_text(
         encoding="utf-8"
     )
@@ -108,9 +141,28 @@ def test_built_foundations_page_wraps_stochastic_math():
     )
 
 
+def test_built_site_includes_paper_load_chapter():
+    """Built site must ship paper §6 HTML with load formula markup."""
+    load_html = REPO / "site/papers/chapters/06-channel-load-master-equation/index.html"
+    if not load_html.is_file():
+        subprocess.run([sys.executable, str(SYNC)], cwd=REPO, check=True)
+        subprocess.run(
+            [sys.executable, "-m", "mkdocs", "build", "-q"],
+            cwd=REPO,
+            check=True,
+        )
+    html = load_html.read_text(encoding="utf-8")
+    assert "arithmatex" in html
+    assert "Computational load" in html or "computational load" in html
+    # Energy term from L formula should appear in TeX body
+    assert "epsilon" in html or "epsilon_0" in html or "\\epsilon" in html
+
+
 if __name__ == "__main__":
-    test_normalize_math_fixes_spaced_inline_and_same_line_display()
+    test_normalize_math_fixes_same_line_display_without_eating_inline_spaces()
     test_sync_script_exits_zero_and_writes_allowlist()
     test_denylisted_paths_not_under_docs_from_sync()
+    test_paper_chapters_include_load_equation()
     test_built_foundations_page_wraps_stochastic_math()
+    test_built_site_includes_paper_load_chapter()
     print("OK: sync_site_docs tests passed")

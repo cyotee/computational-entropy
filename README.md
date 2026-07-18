@@ -8,12 +8,16 @@ Research program on **computational entropy** (entropy of a map/channel’s **ou
 
 **[https://cyotee.github.io/computational-entropy/](https://cyotee.github.io/computational-entropy/)**
 
-Curated public pages (definitions, master equation, frozen claims/non-claims, program report). Built with MkDocs from an allowlist — not a dump of drafts or agent notes.
+Hosts the **full integrated paper** (`papers/06-synthesis/PAPER.md`) as navigable chapters (including §6 load equation), plus short canonical reference pages. Built with MkDocs from an allowlist — not a dump of drafts or agent notes.
+
+Direct link to load / master equation on the site:  
+[§6. Channel, load & master equation](https://cyotee.github.io/computational-entropy/papers/chapters/06-channel-load-master-equation/)
 
 ## Quick map (repository)
 
 | Role | Path |
 |------|------|
+| **Integrated paper (source)** | [`papers/06-synthesis/PAPER.md`](papers/06-synthesis/PAPER.md) |
 | Canonical \(H_c\) / \(S_c\) | [`foundations/computational-entropy/definition.md`](foundations/computational-entropy/definition.md) |
 | \(\Phi_g\), load, master equation | [`emergent-gravity/master-equation.md`](emergent-gravity/master-equation.md) |
 | Frozen claims / non-claims | [`synthesis/CURRENT_CLAIMS.md`](synthesis/CURRENT_CLAIMS.md) |

@@ -2,50 +2,57 @@
 
 **Preliminary research.** Supporting constructions and numerical ledgers are real; **nothing here has GR-level certainty.**
 
-This site is a curated public presentation of the **computational entropy** program: entropy of a map or channel’s **output** distribution (\(H_c\) / \(S_c\)), a gravitational channel \(\Phi_g\) with dimensionless **load** \(L\), and a staged bridge toward continuum Gravity-from-Entropy (GfE) — without claiming framework identity.
+This site hosts the full integrated research paper **Computational Entropy and Emergent Gravity: From Output Distributions to Load-Gated Geometry**, plus short canonical reference pages.
 
-## Live site & repository
+## Read the paper
 
-| Resource | Link |
-|----------|------|
-| **This site** | [cyotee.github.io/computational-entropy](https://cyotee.github.io/computational-entropy/) |
-| **Source repository** | [github.com/cyotee/computational-entropy](https://github.com/cyotee/computational-entropy) |
+Start with the manuscript (every section is on this site):
 
-## Start here
+1. **[Title & abstract](papers/chapters/00-front-matter.md)**  
+2. **[§6. Channel, load & master equation](papers/chapters/06-channel-load-master-equation.md)** — includes the full **computational load** \(L(\rho,g)\) formula, load clock \(d\tau=dt/(1+\alpha L)\), and master equation  
+3. Or open the **[full paper (single page)](papers/paper-full.md)** and use the right-hand table of contents  
 
-1. **[Non-claims](non-claims.md)** — what this program does *not* assert  
-2. **[How to read](how-to-read.md)** — suggested order for visitors  
-3. **[Computational entropy](foundations/computational-entropy.md)** — canonical \(H_c\) / \(S_c\)  
-4. **[Master equation](emergent-gravity/master-equation.md)** — \(\Phi_g\), load \(L\), clock  
-5. **[Claims](synthesis/claims.md)** · **[Conclusions](synthesis/conclusions.md)**  
-6. **[Final program report](papers/final-report.md)** · **[Publishable draft](papers/publishable.md)**
+**All chapters** appear under **The paper** in the left navigation (Introduction through References and appendices).
 
-## Three-stage mental model
+## Load equation (preview)
 
-```text
-STAGE 1 — Computational induction
-  ρ, Φ_g, S_c / H_c, L, dτ = dt/(1+αL)
-        │
-        ▼
-STAGE 2 — Geometric imprint (bridge)
-  Structure-induced metric G  (or computational cousin)
-  Type safety: L is a scalar; G is a metric — L ≠ G
-        │
-        ▼
-STAGE 3 — Continuum GfE (macro target)
-  Relative entropy of metrics → modified Einstein, Λ_G
-```
+Dimensionless **computational load** (program definition; detail in [§6](papers/chapters/06-channel-load-master-equation.md)):
+
+$$
+L(\rho,g)
+=
+\beta \frac{E[\rho]}{V \epsilon_0}
++
+\gamma \left| \frac{d S_c}{d\tau} \right|_{\mathrm{reg}}
++
+\delta \frac{S_{\mathrm{boundary}}(\rho)}{S_{\mathrm{BH}}(A)}.
+$$
+
+Load clock and master equation:
+
+$$
+d\tau = \frac{dt}{1 + \alpha L(\rho,g)},
+\qquad
+\frac{d\rho}{dt}
+=
+\frac{1}{1 + \alpha L(\rho,g)}
+\,\mathcal{L}_g\bigl[\rho;\, g_{\mu\nu}(\rho)\bigr].
+$$
+
+Canonical short form (same equations): [Channel, load, master equation](emergent-gravity/master-equation.md).
+
+## Also on this site
+
+| Link | Role |
+|------|------|
+| [Non-claims](non-claims.md) | What this program does *not* assert |
+| [How to read](how-to-read.md) | Suggested paths for visitors |
+| [Claims](synthesis/claims.md) · [Conclusions](synthesis/conclusions.md) | Frozen may-assert spine |
+| [Final program report](papers/final-report.md) | In-repo freeze twin (with internal pointers) |
+| [Source repository](https://github.com/cyotee/computational-entropy) | Code, ledgers, full research tree |
 
 ## Type safety (locked)
 
 - **Load \(L\)** is a **dimensionless scalar** that clocks proper time.  
 - **Structure metric \(G\)** is a **metric** (or edgewise cousin).  
 - **\(L \neq G\)**. Discrete ledgers \(L^{\mathrm{disc}}\) are not continuum \(L\).
-
-## What this site is not
-
-- Not a dump of every draft, agent note, or historical root file  
-- Not a rehost of external literature PDFs (use arXiv / DOI links in the reports)  
-- Not confirmation of continuum gravity from lattice toys — duals are **pattern witnesses** under stated rigor labels  
-
-For status and open work, see **[Progress](progress.md)** and **[Open avenues](synthesis/open-avenues.md)**.

@@ -15,6 +15,8 @@ theme:
     - navigation.sections
     - navigation.expand
     - navigation.top
+    - navigation.tracking
+    - toc.follow
     - search.suggest
     - search.highlight
     - content.code.copy
@@ -38,6 +40,7 @@ markdown_extensions:
   - tables
   - toc:
       permalink: true
+      toc_depth: 3
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.arithmatex:
@@ -59,17 +62,34 @@ nav:
   - Home: index.md
   - How to read: how-to-read.md
   - Non-claims: non-claims.md
-  - Foundations:
+  - The paper:
+      - Title & abstract: papers/chapters/00-front-matter.md
+      - 1. Introduction: papers/chapters/01-introduction.md
+      - 2. Related work: papers/chapters/02-related-work.md
+      - 3. Results: papers/chapters/03-results.md
+      - 4. Foundations: papers/chapters/04-foundations.md
+      - 5. Classical microstructure: papers/chapters/05-classical-microstructure.md
+      - 6. Channel, load & master equation: papers/chapters/06-channel-load-master-equation.md
+      - 7. Newton recovery (Path J/M): papers/chapters/07-newton-recovery.md
+      - 8. Euclidean dual (ACD-EW): papers/chapters/08-euclidean-dual.md
+      - 9. Continuum GfE contact: papers/chapters/09-continuum-gfe.md
+      - 9.5 GfE applications: papers/chapters/09b-gfe-applications.md
+      - 10. Synthesis & open program: papers/chapters/10-synthesis.md
+      - 11. Final conclusions: papers/chapters/11-conclusions.md
+      - Appendix A. Witnesses: papers/chapters/appendix-a.md
+      - Appendix B. Claims checklist: papers/chapters/appendix-b.md
+      - Appendix C. Open avenues: papers/chapters/appendix-c.md
+      - References: papers/chapters/references.md
+      - Full paper (single page): papers/paper-full.md
+  - Quick reference:
       - Computational entropy: foundations/computational-entropy.md
-  - Emergent gravity:
-      - Master equation: emergent-gravity/master-equation.md
+      - Channel, load, master equation: emergent-gravity/master-equation.md
       - Newtonian recovery: emergent-gravity/newtonian-recovery.md
-  - Synthesis:
       - Claims: synthesis/claims.md
       - Conclusions: synthesis/conclusions.md
       - Open avenues: synthesis/open-avenues.md
-  - Papers:
+      - Glossary: glossary.md
+  - Supporting reports:
       - Final program report: papers/final-report.md
       - Publishable draft: papers/publishable.md
-  - Glossary: glossary.md
-  - Progress: progress.md
+      - Progress: progress.md
