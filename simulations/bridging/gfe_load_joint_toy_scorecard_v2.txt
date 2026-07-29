@@ -1,0 +1,15 @@
+================================================================
+GO / NO-GO SCORECARD v2 (P0–P2)
+================================================================
+[1] PM residual better than heat (step impro>0.05, bumps impro>0): SUPPORT improv={'noisy_step': 0.368, 'noisy_two_bumps': 0.018}
+[2] PM edge retention > heat*1.15 on step ICs: SUPPORT pm/heat≈[11.22, 10.81]
+[3] P0 ramp stability (pm max_grad ratio < 2.5): SUPPORT ratio≈0.051
+[4] corr(L_E, E[G-1]) > 0.85 on all PM runs: SUPPORT [1.0, 1.0, 1.0, 1.0]
+[5] Load-gating slows mid-run change vs PM: SUPPORT [True, True, True, True]
+[6] Channel residual PM better final + monotone on noisy_step: SUPPORT mono pm/heat≈1.00/0.17
+----------------------------------------------------------------
+TOTAL: 6/6 criteria SUPPORT
+VERDICT: PROMISING — formalize Action–Channel Duality for Euclidean warm-up; optional 2D next.
+================================================================
+Date: 2026-07-14 (deterministic seeds 101–104)
+Run: .venv/bin/python simulations/bridging/_joint_toy_v2_core.py

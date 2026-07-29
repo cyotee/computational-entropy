@@ -1,5 +1,8 @@
 # Computational Entropy
 
+> **⚠️ Historical / superseded** — See the canonical definition at  
+> [../../foundations/computational-entropy/definition.md](../../foundations/computational-entropy/definition.md)
+
 This project collects research into a computational property we are naming Computational Entropy.
 
 ## Premise

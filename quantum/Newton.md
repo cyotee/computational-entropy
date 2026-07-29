@@ -1,96 +1,135 @@
-**Detailed and Rigorous Explanation: Recovery of Newtonian Gravity (Weak-Field Limit)**
+**Recovery of Newtonian Gravity (Weak-Field / Low-Load Limit)**  
+**Path J/M rewrite (2026-07-14)** — replaces the invalid \(\Phi\propto\rho\Rightarrow\nabla^2\Phi\propto\nabla^2\rho\) chain.
 
-In our framework, Newtonian gravity emerges naturally as the **low-load, weak-field, non-relativistic limit** of the master equation. No additional postulates are required; the Poisson equation $\nabla^2 \Phi = 4\pi G \rho$ follows directly from the computational load $L$ and the proper-time reparameterization once the universal constants are fixed by matching.
+Canonical recovery note: [emergent-gravity/recoveries/newtonian/README.md](../emergent-gravity/recoveries/newtonian/README.md)  
+Master equation: [emergent-gravity/master-equation.md](../emergent-gravity/master-equation.md)  
+Audit: [synthesis/m8-newton-recovery-audit.md](../synthesis/m8-newton-recovery-audit.md)
 
-### Master Equation and Load in the Weak-Field Limit
+---
 
-The master equation is
+### Stance
 
-$$
-\frac{d\rho}{dt} = \frac{1}{1 + \alpha L(\rho,g)} \,\mathcal{L}_g\bigl[\rho;\, g_{\mu\nu}(\rho)\bigr],
-$$
+Newtonian gravity emerges as the **low-load, weak-field, non-relativistic regime** of the master equation **together with** the thermodynamic (Clausius) constraint on the channel generator. The Poisson equation \(\nabla^2\Phi=4\pi G\rho\) is **not** obtained by taking the Laplacian of a pointwise identification \(\Phi\propto\rho\). It comes from the Einstein equation of state (Jacobson) linearized about Minkowski; the load factor then **calibrates** proper-time bookkeeping to the same \(\Phi\).
 
-with proper-time reparameterization
+---
 
-$$
-d\tau = \frac{dt}{1 + \alpha L(\rho,g)}.
-$$
-
-In the weak-field, slow-motion, low-load regime the dominant contribution to the computational load is the normalized energy-density term:
+### Master equation and load
 
 $$
-L(\rho,g) \approx \beta \frac{E[\rho]}{V \epsilon_0} \approx \beta \frac{\rho c^2}{\epsilon_0},
+\frac{d\rho}{dt}
+=
+\frac{1}{1+\alpha L(\rho,g)}\,
+\mathcal{L}_g\bigl[\rho;\, g_{\mu\nu}(\rho)\bigr],
+\qquad
+d\tau
+=
+\frac{dt}{1+\alpha L(\rho,g)}.
 $$
 
-where $\rho$ is the local mass-energy density, $V$ is the proper volume, and $\epsilon_0$ is the reference energy density (chosen for dimensional consistency). The entropy-production and holographic boundary terms become negligible compared to the energy-density term when curvature is small and velocities are non-relativistic.
-
-### Proper-Time Reparameterization
-
-Substitute the dominant term into the proper-time factor:
-
 $$
-d\tau \approx \frac{dt}{1 + \alpha \beta \frac{\rho c^2}{\epsilon_0}}.
-$$
-
-For small load ($\alpha L \ll 1$) we expand to first order:
-
-$$
-d\tau \approx dt \left(1 - \alpha \beta \frac{\rho c^2}{\epsilon_0}\right).
+L(\rho,g)
+=
+\beta\frac{E[\rho]}{V\epsilon_0}
++
+\gamma\left|\frac{dS_c}{d\tau}\right|_{\mathrm{reg}}
++
+\delta\frac{S_{\mathrm{boundary}}(\rho)}{S_{\mathrm{BH}}(A)}.
 $$
 
-In the Newtonian limit the metric component $g_{00}$ is related to the gravitational potential $\Phi$ by
+**Low-load assumptions:** \(\alpha L\ll 1\); slow motion; curvature small; entropy-production and holographic terms **subdominant** relative to the energy-density term. Then
 
 $$
-\sqrt{-g_{00}} \approx 1 + \frac{\Phi}{c^2}, \quad \Phi \ll c^2.
+L
+\approx
+\beta\frac{E[\rho]}{V\epsilon_0}
+\approx
+\beta\frac{\rho_m c^2}{\epsilon_0},
 $$
 
-Comparing the two expressions gives the identification
+with \(\rho_m\) the classical mass density.
+
+---
+
+### Path J — Poisson from Clausius / Einstein (derivation of \(\nabla^2\Phi\))
+
+1. **Clausius constraint.** \(\mathcal{L}_g\) is required to satisfy \(\delta Q=T\,dS_c\) on every local Rindler horizon (Jacobson 1995 consistency condition in the canonical master-equation file).
+
+2. **Jacobson’s theorem.** That thermodynamic condition implies the **Einstein field equations** as an equation of state (external theorem; imported, not re-proved here).
+
+3. **Weak-field GR.** Linearizing Einstein about Minkowski for a static, non-relativistic perfect fluid yields the Newtonian Poisson equation and metric bookkeeping:
+   $$
+   \nabla^2\Phi = 4\pi G\,\rho_m,
+   \qquad
+   \sqrt{-g_{00}}\approx 1+\frac{\Phi}{c^2}.
+   $$
+
+No step of the form \(\nabla^2(\text{const}\cdot\rho_m)\) is used.
+
+---
+
+### Path M — Load clock calibration (matching, not derivation of Poisson)
+
+With Path J already supplying a Newtonian \(\Phi[\rho_m]\), expand the load reparameterization:
 
 $$
-\frac{\Phi}{c^2} \approx - \alpha \beta \frac{\rho c^2}{\epsilon_0}.
+d\tau
+\approx
+dt\Bigl(1-\alpha\beta\frac{\rho_m c^2}{\epsilon_0}\Bigr)
+\quad(\alpha L\ll 1).
 $$
 
-### Recovery of the Poisson Equation
+Static observers also have \(d\tau/dt=\sqrt{-g_{00}}\approx 1+\Phi/c^2\).
 
-Taking the Laplacian of both sides (and using the Newtonian continuity equation for mass density $\rho$):
-
-$$
-\nabla^2 \Phi = - \alpha \beta c^4 \nabla^2 \rho.
-$$
-
-The Newtonian Poisson equation is
+**On-shell matching:** require the load clock to track the Newtonian redshift **for the same \(\rho_m\) solutions** of Poisson (e.g. constant-density ball interior, where \(\Phi\) is quadratic and proportional to \(\rho_m R^2\)). This fixes the product used throughout the project,
 
 $$
-\nabla^2 \Phi = 4\pi G \rho.
+\alpha\beta = \frac{4\pi G}{c^4},
 $$
 
-Matching the two requires
+as a **calibration** between load bookkeeping \((\alpha,\beta,\epsilon_0)\) and Newtonian \(G\), **conditional on** Path J. It does **not** mean \(\Phi=-\alpha\beta c^4\rho_m/\epsilon_0\) holds as a local algebraic law at every point.
+
+---
+
+### What is withdrawn
+
+The previous draft wrote
 
 $$
-\alpha \beta = \frac{4\pi G}{c^4}.
+\frac{\Phi}{c^2}\approx -\alpha\beta\frac{\rho_m c^2}{\epsilon_0}
+\quad\Rightarrow\quad
+\nabla^2\Phi = -\alpha\beta c^4\nabla^2\rho_m
+\quad\text{“matched to”}\quad
+\nabla^2\Phi=4\pi G\rho_m.
 $$
 
-This is the calibration condition we have used throughout. With this single matching, the master equation reproduces the Newtonian gravitational potential and the Poisson equation exactly in the appropriate limit.
+That intermediate Laplacian step is **algebraically invalid** unless \(\nabla^2\rho_m\propto-\rho_m\). Pointwise \(\Phi\propto\rho_m\) is also **physically wrong** as Newtonian gravity (which is nonlocal). See [m8 audit](../synthesis/m8-newton-recovery-audit.md) gap N1.
 
-### Physical Interpretation in Our Model
+---
 
-In the low-load regime the computational demand is dominated by the local energy density. Higher mass-energy density raises $L$, which slows proper time via the reparameterization factor. This slowing is precisely what an observer experiences as the Newtonian gravitational potential $\Phi$. The geometry (via $g_{\mu\nu}$) emerges as the bookkeeping that keeps the evolution of $\rho$ within the information-processing bounds while the channel $\Phi_g$ realizes the next output distribution.
+### Physical interpretation
 
-No separate force term is needed. The Newtonian force $ \mathbf{F} = -m \nabla \Phi $ is the effective description of the load-dependent slowing of proper time for massive particles.
+In the low-load regime:
 
-### Consistency with Emergent-Gravity Approaches
+- Computational demand is dominated by local energy density.  
+- Higher \(\rho_m\) raises \(L\), which slows proper time via \(1/(1+\alpha L)\).  
+- That slowing is calibrated (Path M) to the same \(\Phi\) that Einstein thermodynamics produces (Path J).  
+- The Newtonian force \(\mathbf{F}=-m\nabla\Phi\) is the effective description for slow massive probes; no separate force law is postulated **beyond** the Einstein/Poisson content of Path J.
 
-- **Jacobson (1995)**: The thermodynamic Einstein equations emerge from the Clausius relation on local horizons. In the weak-field limit this reduces to Poisson’s equation, which our master equation recovers identically.
-- **Verlinde (2010)**: Gravity is an entropic force arising from holographic information gradients. Our energy-density term in $L$ is the computational analogue of Verlinde’s information gradient.
-- **Holographic duality**: The weak-field limit is the non-relativistic, low-curvature regime of the same holographic bookkeeping.
+---
 
-### Summary
+### Consistency with related approaches
 
-In the weak-field, low-load limit the master equation reduces to Newtonian gravity through the following chain:
+- **Jacobson (1995):** Einstein as equation of state from Clausius — **this is Path J**, not an optional analogy.  
+- **Verlinde (2010):** entropic-force narrative remains heuristic; our energy-density term in \(L\) is a computational analogue of information demand, not a second derivation of Poisson.  
+- **Bianconi GfE:** low coupling \(\to\) EH \(\to\) same Poisson via GR; shared Newtonian end is a **WEAK PASS** only — not framework equivalence ([m6](../synthesis/m6-weak-field-plugtest.md)).
 
-1. Dominant load term $\approx \beta \rho c^2 / \epsilon_0$.
-2. Proper-time reparameterization $d\tau \approx dt (1 - \alpha \beta \rho c^2 / \epsilon_0)$.
-3. Identification with the metric component $1 + \Phi/c^2$.
-4. Laplacian yields $\nabla^2 \Phi = 4\pi G \rho$ after fixing $\alpha\beta = 4\pi G / c^4$.
+---
 
-This recovery is exact in the appropriate limit and requires only the definitions of computational entropy, computational load, and the thermodynamic consistency condition on $\mathcal{L}_g$. It demonstrates that Newtonian gravity is a low-load regime of the same computational process that produces all other gravitational phenomena in our model.
+### Summary chain (allowed)
+
+1. Dominant load \(L\approx\beta\rho_m c^2/\epsilon_0\).  
+2. Clausius on \(\mathcal{L}_g\) \(\Rightarrow\) Einstein (Jacobson).  
+3. Weak field \(\Rightarrow\) \(\nabla^2\Phi=4\pi G\rho_m\).  
+4. Match load clock to \(1+\Phi/c^2\) on shell \(\Rightarrow\) \(\alpha\beta=4\pi G/c^4\).
+
+Newtonian gravity is a **calibrated low-load regime** of the same computational framework that targets other gravitational phenomena — with Poisson inherited from Einstein thermodynamics, not from an invalid Laplacian of \(\rho_m\).

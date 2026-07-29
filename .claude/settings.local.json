@@ -1,7 +1,14 @@
 {
   "permissions": {
     "allow": [
-      "Bash(python3 *)"
+      "Bash(python3 *)",
+      "Bash(.venv/bin/python simulations/classical/check_claim_hygiene.py)",
+      "Bash(echo \"---EXIT: $?---\")",
+      "Bash(.venv/bin/python simulations/classical/m11_and_gate_ledger.py)",
+      "Bash(awk '{print $2}')",
+      "Bash(grep -E '__pycache__|\\\\.pyc$|\\\\.DS_Store')",
+      "Bash(git reset *)",
+      "Bash(grep -E '__pycache__|\\\\.pyc$')"
     ]
   }
 }

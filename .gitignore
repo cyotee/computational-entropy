@@ -5,6 +5,10 @@
 
 .ipynb_checkpoints/
 
+# Python bytecode cache
+__pycache__/
+*.pyc
+
 .DS_Store
 
 *.code-workspace

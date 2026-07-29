@@ -1,0 +1,20 @@
+================================================================
+BLACKJACK BELIEF-FIELD DUAL — GO / NO-GO SCORECARD
+(ACD-EW pattern on game-motivated 1D belief / count-strength φ)
+================================================================
+[1] PM residual better than heat (high_count impro>0.05, two_windows impro>0): SUPPORT improv={'noisy_high_count': 0.421, 'noisy_two_windows': 0.018}
+[2] PM edge retention > heat*1.15 on high-count ICs: SUPPORT pm/heat=[10.95, 10.81]
+[3] Edge-ramp stability (pm max_grad ratio < 2.5): SUPPORT ratio=0.047
+[4] corr(L_E, E[G-1]) > 0.85 on all PM runs: SUPPORT [1.0, 1.0, 1.0, 1.0]
+[5] Load-gating slows mid-run change vs PM: SUPPORT [True, True, True, True]
+[6] Channel residual PM better final + monotone on noisy_high_count: SUPPORT mono pm/heat=0.83/0.08
+----------------------------------------------------------------
+TOTAL: 6/6 criteria SUPPORT
+VERDICT: PROMISING — same Euclidean dual pattern holds on game-motivated belief ICs; still ACD-EW toy only (not a blackjack edge or gravity proof).
+================================================================
+Honesty: Euclidean warm-up dual on a belief-shaped IC only.
+Not a full blackjack simulator; not a claim of player edge or gravity.
+Seeds: 201–204; N=192; noise_sigma=0.12.
+Date: 2026-07-14 (deterministic seeds 201–204)
+Run: .venv/bin/python simulations/bridging/blackjack_belief_dual.py
+Link: ACD-EW same dual pattern on game-motivated IC; see DESIGN_blackjack_belief_dual.md

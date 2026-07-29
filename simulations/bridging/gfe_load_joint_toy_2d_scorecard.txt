@@ -1,0 +1,13 @@
+================================================================
+GO / NO-GO SCORECARD 2D (ACD-EW lift)
+================================================================
+[1] residual dual (edge impro>0.05, disk impro>0): SUPPORT improv edge/disk=0.380/0.356
+[2] edge retention PM > heat*1.15: SUPPORT
+[3] smooth stability (pm max_grad ratio < 2.5): SUPPORT ratio=0.224
+[4] corr(L_E, E[G-1]) > 0.85: SUPPORT {'noisy_edge': 1.0, 'noisy_disk': 1.0, 'noisy_smooth': 1.0, 'clean_edge': 1.0}
+[5] load-gating slows: SUPPORT [True, True, True, True]
+[6] PM residual better than heat on noisy_edge: SUPPORT
+----------------------------------------------------------------
+TOTAL: 6/6 criteria SUPPORT
+VERDICT: PROMISING (2D) — Euclidean dual lifts off the line.
+================================================================

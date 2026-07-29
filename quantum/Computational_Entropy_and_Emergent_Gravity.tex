@@ -65,6 +65,10 @@ where \(\mathcal{L}_g\) is the Liouvillian generator of \(\Phi_g\) and satisfies
 \section{Theoretical Framework}
 
 \subsection{Computational Entropy}
+% ⚠️ Historical / superseded — See the canonical definition at
+% foundations/computational-entropy/definition.md
+% (This embedded copy should eventually be replaced with \input{...} or equivalent)
+
 This project collects research into a computational property we are naming Computational Entropy.
 
 \textbf{Premise.} Entropy can be measured as a lack of order, or more appropriately, the predictability of a state. Shannon Entropy calculates exactly this for a signal being transmitted over a channel. But in that case, the inputs are expected to be non-random, or they are ignored. It does not measure the effect of a computation on random inputs.
@@ -884,6 +888,11 @@ In our model, the holographic boundary term in $  L  $ and the master equation e
 Lloyd calculated that the observable universe has performed $  \approx 10^{120}  $ operations on $  \approx 10^{90}  $–$  10^{120}  $ bits.
 In our model, integrating the master equation over cosmic history gives exactly these numbers: total operations are bounded by the Margolus–Levitin term in $  L  $, and total bits are bounded by the Bekenstein-saturated $  S_c  $ integrated over the expanding holographic boundary. The inflationary phase (exponential boundary growth) is the concrete mechanism that allows the universe to approach this capacity.
 
+\subsubsection{Bianconi (2025) -- Gravity from Relative Entropy}
+Bianconi~\cite{Bianconi2025} derives modified Einstein equations from an entropic action: the quantum relative entropy between the spacetime metric (treated as a local quantum operator) and a matter-induced metric built from topological (Dirac--K\"ahler) bosonic fields and curvature. An auxiliary G-field yields a dressed Einstein--Hilbert action with an emergent small positive cosmological constant depending only on that field; the low-coupling limit recovers Einstein gravity with vanishing \(\Lambda\). This continuum construction lies in the same information-theoretic lineage as the present work (geometry co-determined with matter/information structure) but takes relative entropy of metrics-as-operators as primary, whereas we take computational entropy \(S_c = S(\Phi_g(\rho))\) of a channel output and a load-dependent master equation. The G-field, emergent \(\Lambda_G\), and discrete-network precursor of Bianconi are natural continuum targets for eventual variational or continuum-limit formulations of \(\Phi_g\) and \(L\).
+
+As a constructive intermediate step---not a derivation of the continuum field equations---we formulate an \emph{Action--Channel Duality} in the Euclidean warm-up of GfE~\cite{Bianconi2025BeyondHolography}. There the second metric induced by a scalar field is \(G = 1 + \alpha_G |\nabla\phi|^2\), and the GfE warm-up gradient flow coincides with Perona--Malik anisotropic diffusion. Interpreting that flow as an observation channel reconstructing a hidden structure \(\phi_\star\) from noisy data, computational entropy is measured by residual reconstruction error (and edge-location uncertainty), while a split load \(L_E+L_S\) tracks induction intensity \(\mathbb{E}[G-1]\) and reparameterizes reconstructor time analogously to \(d\tau = dt/(1+\alpha L)\). On a one-dimensional lattice joint toy this dual passes a six-criterion scorecard (structure-preserving residual reduction versus isotropic heat, edge retention, ramp stability, load--induction correlation, and load-gated slowing). The shared Stage-2 object is the induced metric \(G\); Stage-3 GfE/Perona--Malik supplies the reconstructor; Stage-1 supplies \(H_c\) and the clock. Extending the dual from this Euclidean warm-up to Lorentzian GfE and to the master equation remains open.
+
 \subsubsection{Summary of Equivalence}
 Our master equation, built around computational entropy $  S_c  $ and the load parameter $  L  $, is phenomenologically equivalent to the above theories in their respective domains. It recovers their central equations and predictions (Einstein equations, entropic forces, complexity growth, holographic bounds, cosmic capacity) as different limiting cases of one unified computational process. The constants in $  L  $ are fixed by matching to the Newtonian limit and Bekenstein bound, ensuring consistency.
 This demonstrates that our framework is not an alternative theory but a coherent reconciliation that makes the connections between these approaches explicit and dynamical.
@@ -935,6 +944,8 @@ All of the above behaviors emerge from the **same master equation** driven by th
 \section{Numerical Validation, Simulability, and Outlook}
 The master equation is directly simulatable via tensor-network or lattice discretizations of \(\Phi_g\). Low-load Newtonian and FLRW regimes are reproduced exactly in preliminary Python implementations (SymPy for analytic limits; numerical integration for cosmology). Strong-field and quantum simulations are ongoing.
 
+As a complementary, fully explicit discrete validation of the information-theoretic layer---rather than of curved spacetime itself---we implement a Euclidean joint toy in which Perona--Malik / GfE warm-up dynamics act as a reconstructor channel on noisy one- and two-dimensional signals, with load-gated time reparameterization. The one-dimensional suite satisfies a six-criterion Action--Channel Duality scorecard (residual reduction versus heat, edge retention, ramp stability, load--induction tracking, and clock slowing). This supports simulability of the channel/load bookkeeping independently of a full continuum gravity simulation.
+
 Novel predictions include load-dependent corrections to evaporation rates, modified inflationary spectra, and potential Lorentz-violating signatures at Planck-scale loads (to be quantified). Quantization of \(\Phi_g\) and full nonlinear EFE derivation from first principles are priority follow-ups.
 
 \section{Conclusion}
@@ -958,6 +969,8 @@ Placeholder for the remaining algebraic steps, Hafele--Keating numbers, and self
 \bibitem{SusskindCA2015} A. R. Brown et al., ``Complexity Equals Action,'' Phys. Rev. Lett. \textbf{116}, 191301 (2016); arXiv:1509.07876.
 \bibitem{Lloyd2000} S. Lloyd, ``Ultimate physical limits to computation,'' Nature \textbf{406}, 1047 (2000); arXiv:quant-ph/9908043.
 \bibitem{RyuTakayanagi2006} S. Ryu and T. Takayanagi, ``Holographic Derivation of Entanglement Entropy from AdS/CFT,'' Phys. Rev. Lett. \textbf{96}, 181602 (2006); arXiv:hep-th/0603001.
+\bibitem{Bianconi2025} G. Bianconi, ``Gravity from entropy,'' Phys. Rev. D \textbf{111}, 066001 (2025); arXiv:2408.14391.
+\bibitem{Bianconi2025BeyondHolography} G. Bianconi, ``Beyond holography: the entropic quantum gravity foundations of anisotropic diffusion,'' arXiv:2503.14048 (2025).
 % Additional references can be added here
 \end{thebibliography}
 
