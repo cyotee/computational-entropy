@@ -23,7 +23,7 @@ The plan is DONE when **all** of the following hold:
 - [x] **D-1** `papers/DELIVERY_SCOPE.md` exists and fixes the may-assert / must-not-assert boundary for Paper A and Paper B.
 - [x] **D-2** The one-page falsifiability analysis ("does `L` predict anything GR doesn't?") exists and its verdict is recorded. → `papers/FALSIFIABILITY_L_vs_GR.md`; **verdict: reformulation + flagged entropy-production candidate departure (term 2).**
 - [x] **D-3** Paper A drafted: self-contained, theorem-level, **no gravity claim**, reproducible ledgers as appendices. → `papers/01-foundations/PAPER_A_computational_entropy.md`
-- [ ] **D-4** Paper B drafted: emergent gravity stated explicitly as conjecture/reformulation, Path J/M honesty intact, falsifiability question central.
+- [x] **D-4** Paper B drafted: emergent gravity stated explicitly as conjecture/reformulation, Path J/M honesty intact, falsifiability question central. → `papers/04-gravitational-channel/PAPER_B_emergent_gravity_conjecture.md`
 - [ ] **D-5** Meta-apparatus consolidated into one results ledger; ACD-EW dual thread marked closed (archived, not deleted, with user sign-off).
 - [ ] **D-6** Bootstrap/living docs (`PROGRESS_REPORT.md`, `CURRENT_CLAIMS.md`, `THEORY.md`, `PACK_INDEX.md`, `CLAUDE.md` read-order) point at the new two-paper spine.
 
@@ -86,9 +86,9 @@ Write `papers/DELIVERY_SCOPE.md` fixing what each paper may/may not assert **bef
 
 ### Phase 4 — Draft Paper B (the conjecture)
 
-- [ ] Master equation stated as Jacobson-shaped postulate; Newton = Path J/M with calibration honestly flagged.
-- [ ] Fold in Phase 2's verdict as the central open question.
-- [ ] Optional constructive seed (**O1**): single-slot (`L_S`) continuum-limit sketch, presented as "first step / open," not closed.
+- [x] Master equation stated as Jacobson-shaped postulate; Newton = Path J/M with calibration honestly flagged. → §2–§3
+- [x] Fold in Phase 2's verdict as the central open question. → §6
+- [x] Optional constructive seed (**O1**): single-slot (`L_S`) continuum-limit sketch, presented as "first step / open," not closed. → §7
 
 **DoD:** D-4. Addresses your decision #3 (conjecture paper); the "close O1's first step" suggestion.
 
