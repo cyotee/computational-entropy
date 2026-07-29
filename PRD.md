@@ -8,6 +8,8 @@
 
 ---
 
+> **Positioning (2026-07-29):** The program is an **information-theoretic reformulation** of thermodynamic/entropic gravity — a *reformulation* unless and until a **falsifiable departure from GR** is constructed (currently **open**). Either outcome (reformulation or new theory) is acceptable; the research decides. Delivery is split into **Paper A** (solid core: computational entropy + Landauer-exact export ledger) and **Paper B** (emergent-gravity conjecture). See [papers/DELIVERY_PLAN.md](papers/DELIVERY_PLAN.md) and [papers/DELIVERY_SCOPE.md](papers/DELIVERY_SCOPE.md).
+
 ## 1. One-sentence mission
 
 Define **computational entropy** as the entropy of a map/channel’s **output distribution**, develop a **gravitational quantum channel** \(\Phi_g\) with **computational load** \(L\) that recovers known gravity phenomenology, and **bridge** that framework to continuum **Gravity-from-Entropy (GfE)** theories (Bianconi et al.) via an explicit staged workflow—not by forcing premature symbolic identity.
