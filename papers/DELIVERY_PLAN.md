@@ -22,7 +22,7 @@ The plan is DONE when **all** of the following hold:
 - [x] **D-0** No canonical file over-claims relative to `synthesis/CURRENT_CLAIMS.md`; `check_claim_hygiene.py` passes green.
 - [x] **D-1** `papers/DELIVERY_SCOPE.md` exists and fixes the may-assert / must-not-assert boundary for Paper A and Paper B.
 - [x] **D-2** The one-page falsifiability analysis ("does `L` predict anything GR doesn't?") exists and its verdict is recorded. → `papers/FALSIFIABILITY_L_vs_GR.md`; **verdict: reformulation + flagged entropy-production candidate departure (term 2).**
-- [ ] **D-3** Paper A drafted: self-contained, theorem-level, **no gravity claim**, reproducible ledgers as appendices.
+- [x] **D-3** Paper A drafted: self-contained, theorem-level, **no gravity claim**, reproducible ledgers as appendices. → `papers/01-foundations/PAPER_A_computational_entropy.md`
 - [ ] **D-4** Paper B drafted: emergent gravity stated explicitly as conjecture/reformulation, Path J/M honesty intact, falsifiability question central.
 - [ ] **D-5** Meta-apparatus consolidated into one results ledger; ACD-EW dual thread marked closed (archived, not deleted, with user sign-off).
 - [ ] **D-6** Bootstrap/living docs (`PROGRESS_REPORT.md`, `CURRENT_CLAIMS.md`, `THEORY.md`, `PACK_INDEX.md`, `CLAUDE.md` read-order) point at the new two-paper spine.
@@ -78,9 +78,9 @@ Write `papers/DELIVERY_SCOPE.md` fixing what each paper may/may not assert **bef
 
 ### Phase 3 — Draft Paper A (the part that's done)
 
-- [ ] Extract from `foundations/computational-entropy/definition.md` + M11 ledgers.
-- [ ] Tighten the continuous case: lead with **mutual information / relative entropy** as the coordinate-invariant carrier of "information imparted"; keep differential entropy illustrative only (fixes the negative-`H_c` interpretation gap).
-- [ ] Include executable ledgers (`m11_and_gate_ledger.py`, composition, Landauer) as reproducible appendices.
+- [x] Extract from `foundations/computational-entropy/definition.md` + M11 ledgers.
+- [x] Tighten the continuous case: lead with **mutual information / relative entropy** as the coordinate-invariant carrier of "information imparted"; keep differential entropy illustrative only (fixes the negative-`H_c` interpretation gap). → §6 + §1.1 caveat
+- [x] Include executable ledgers (`m11_and_gate_ledger.py`, composition, Landauer) as reproducible appendices. → Appendix R
 
 **DoD:** D-3. Addresses review point #6; your decision #3.
 
