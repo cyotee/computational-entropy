@@ -21,7 +21,7 @@ The plan is DONE when **all** of the following hold:
 
 - [x] **D-0** No canonical file over-claims relative to `synthesis/CURRENT_CLAIMS.md`; `check_claim_hygiene.py` passes green.
 - [x] **D-1** `papers/DELIVERY_SCOPE.md` exists and fixes the may-assert / must-not-assert boundary for Paper A and Paper B.
-- [ ] **D-2** The one-page falsifiability analysis ("does `L` predict anything GR doesn't?") exists and its verdict is recorded.
+- [x] **D-2** The one-page falsifiability analysis ("does `L` predict anything GR doesn't?") exists and its verdict is recorded. → `papers/FALSIFIABILITY_L_vs_GR.md`; **verdict: reformulation + flagged entropy-production candidate departure (term 2).**
 - [ ] **D-3** Paper A drafted: self-contained, theorem-level, **no gravity claim**, reproducible ledgers as appendices.
 - [ ] **D-4** Paper B drafted: emergent gravity stated explicitly as conjecture/reformulation, Path J/M honesty intact, falsifiability question central.
 - [ ] **D-5** Meta-apparatus consolidated into one results ledger; ACD-EW dual thread marked closed (archived, not deleted, with user sign-off).
@@ -71,10 +71,8 @@ Write `papers/DELIVERY_SCOPE.md` fixing what each paper may/may not assert **bef
 
 ### Phase 2 — Gating falsifiability analysis (one page)
 
-- [ ] Write "Does `L` predict anything GR doesn't?" (short).
-- [ ] Record verdict:
-  - **No measurable departure** → Paper B framed as reformulation (clean).
-  - **Candidate departure exists** → it becomes Paper B's headline conjecture + the one thing worth testing (bucket C).
+- [x] Write "Does `L` predict anything GR doesn't?" (short). → `FALSIFIABILITY_L_vs_GR.md`
+- [x] Record verdict: **REFORMULATION**, with the entropy-production term (2) flagged as the single candidate departure (bucket B→C); term (1) reproduces GR by calibration, term (3) only bites near horizons.
 
 **DoD:** D-2. Addresses review point #2; your decision #1 (either outcome acceptable).
 
