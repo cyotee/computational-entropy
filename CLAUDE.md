@@ -16,6 +16,9 @@ Research repository: **computational entropy** (\(H_c\)/\(S_c\)), **IDEM / lambd
 
 | Task | Start here |
 |------|------------|
+| **Two-paper spine (2026-07-29)** | `papers/DELIVERY_PLAN.md` + `papers/DELIVERY_SCOPE.md`; consolidated status `synthesis/RESULTS_LEDGER.md`; verdict `papers/FALSIFIABILITY_L_vs_GR.md` (**reformulation**) |
+| **Paper A (solid core)** | `papers/01-foundations/PAPER_A_computational_entropy.md` (output entropy + Landauer-exact export; no gravity) |
+| **Paper B (conjecture)** | `papers/04-gravitational-channel/PAPER_B_emergent_gravity_conjecture.md` (emergent gravity as reformulation) |
 | **Integrated research paper** | `papers/06-synthesis/PAPER.md` (standalone; literature + our theory) |
 | **In-repo freeze / conclusions** | `papers/06-synthesis/FINAL.md` · `synthesis/PROGRAM_CONCLUSIONS.md` |
 | **Post-freeze research avenues** | `synthesis/OPEN_AVENUES.md` (new theory vs experiment; O1–O5) |

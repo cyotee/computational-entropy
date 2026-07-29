@@ -24,8 +24,8 @@ The plan is DONE when **all** of the following hold:
 - [x] **D-2** The one-page falsifiability analysis ("does `L` predict anything GR doesn't?") exists and its verdict is recorded. → `papers/FALSIFIABILITY_L_vs_GR.md`; **verdict: reformulation + flagged entropy-production candidate departure (term 2).**
 - [x] **D-3** Paper A drafted: self-contained, theorem-level, **no gravity claim**, reproducible ledgers as appendices. → `papers/01-foundations/PAPER_A_computational_entropy.md`
 - [x] **D-4** Paper B drafted: emergent gravity stated explicitly as conjecture/reformulation, Path J/M honesty intact, falsifiability question central. → `papers/04-gravitational-channel/PAPER_B_emergent_gravity_conjecture.md`
-- [ ] **D-5** Meta-apparatus consolidated into one results ledger; ACD-EW dual thread marked closed (archived, not deleted, with user sign-off).
-- [ ] **D-6** Bootstrap/living docs (`PROGRESS_REPORT.md`, `CURRENT_CLAIMS.md`, `THEORY.md`, `PACK_INDEX.md`, `CLAUDE.md` read-order) point at the new two-paper spine.
+- [x] **D-5** Meta-apparatus consolidated into one results ledger (`synthesis/RESULTS_LEDGER.md`); ACD-EW dual thread marked closed **in docs**. ⏳ *Physical archive file-move pending user sign-off.*
+- [x] **D-6** Bootstrap/living docs (`PROGRESS_REPORT.md`, `CURRENT_CLAIMS.md`, `THEORY.md`, `PACK_INDEX.md`, `CLAUDE.md` read-order) point at the new two-paper spine.
 
 ---
 
@@ -96,9 +96,9 @@ Write `papers/DELIVERY_SCOPE.md` fixing what each paper may/may not assert **bef
 
 Only after A and B have mined the synthesis corpus.
 
-- [ ] Collapse parallel numbering (M/D/P/O/W, tags A–E) into **one results ledger**: *proved / rigor-label / open*.
-- [ ] Mark the ACD-EW / heat-vs-PM dual thread **closed** (Perona–Malik is prior art; gravity payoff is analogy). **Archive, do not delete — confirm with user before any bulk move** (per repo agent rule 7).
-- [ ] Update `PROGRESS_REPORT.md`, `CURRENT_CLAIMS.md`, `THEORY.md`, `PACK_INDEX.md`, and `CLAUDE.md` read-order to point at the two-paper spine.
+- [x] Collapse parallel numbering (M/D/P/O/W, tags A–E) into **one results ledger**: *proved / rigor-label / open*. → `synthesis/RESULTS_LEDGER.md`
+- [x] Mark the ACD-EW / heat-vs-PM dual thread **closed** in docs (RESULTS_LEDGER §4; Paper B §5). ⏳ **Physical archive move awaits user sign-off** (per repo agent rule 7) — no files moved yet.
+- [x] Update `PROGRESS_REPORT.md`, `CURRENT_CLAIMS.md`, `THEORY.md`, `PACK_INDEX.md`, and `CLAUDE.md` read-order to point at the two-paper spine.
 
 **DoD:** D-5, D-6. Addresses review points #4, #5.
 
@@ -117,5 +117,11 @@ Only after A and B have mined the synthesis corpus.
 | Date | Phase | Entry |
 |------|-------|-------|
 | 2026-07-29 | — | Plan created from review dialogue; stance fixed as reformulation-contingent-on-falsifiability. |
+| 2026-07-29 | 0 | Softened master-equation.md over-claim; positioning banners; hygiene OK. |
+| 2026-07-29 | 1 | DELIVERY_SCOPE.md two-paper contract (A1–A6 / B1–B7 / N1–N9). |
+| 2026-07-29 | 2 | FALSIFIABILITY_L_vs_GR.md — verdict: **reformulation** + entropy-production candidate. |
+| 2026-07-29 | 3 | Paper A drafted (export/Landauer/path-dep; invariant framing; reproducible). |
+| 2026-07-29 | 4 | Paper B drafted (conjecture; Path J/M; falsifiability central; O1 seed). |
+| 2026-07-29 | 5 | RESULTS_LEDGER.md; living docs repointed. ⏳ ACD-EW archive move awaits user sign-off. |
 
 *Update the checkboxes and this log as phases complete. The plan is DONE when all D-0…D-6 boxes are checked.*

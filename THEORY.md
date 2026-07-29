@@ -1,6 +1,8 @@
 # THEORY.md — Explicit Bridge Architecture and Cohesion Document
 
-**Status**: Living bridge architecture (seeded 2026-06-22; **Euclidean dual freeze 2026-07-15+**).
+**Status**: Living bridge architecture (seeded 2026-06-22; **Euclidean dual freeze 2026-07-15+**; **two-paper split 2026-07-29**).
+
+> **Positioning (2026-07-29):** The program is now split into **Paper A** (solid core: computational entropy + Landauer-exact export — [papers/01-foundations/PAPER_A_computational_entropy.md](papers/01-foundations/PAPER_A_computational_entropy.md)) and **Paper B** (emergent-gravity **conjecture** — [papers/04-gravitational-channel/PAPER_B_emergent_gravity_conjecture.md](papers/04-gravitational-channel/PAPER_B_emergent_gravity_conjecture.md)). Falsifiability verdict = **reformulation** with the entropy-production term flagged as the sole candidate departure ([papers/FALSIFIABILITY_L_vs_GR.md](papers/FALSIFIABILITY_L_vs_GR.md)). Consolidated status: [synthesis/RESULTS_LEDGER.md](synthesis/RESULTS_LEDGER.md).
 
 This is the living source of truth for the conceptual bridge between:
 - The **lambda calculus / computational models** thread (IDEM functions, decay vectors, output distribution entropy, games as models, etc.)

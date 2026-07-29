@@ -4,6 +4,7 @@
 **Purpose:** One place to open the parallel synthesis pack and see what each file settles, what it refuses, and what to read next.  
 **New context bootstrap:** **[../PROGRESS_REPORT.md](../PROGRESS_REPORT.md)** — settled claims, non-claims, file map, recommended next avenues.  
 **Claims freeze sheet:** **[CURRENT_CLAIMS.md](CURRENT_CLAIMS.md)**  
+**Consolidated status (2026-07-29):** **[RESULTS_LEDGER.md](RESULTS_LEDGER.md)** · **Two-paper spine:** [../papers/DELIVERY_SCOPE.md](../papers/DELIVERY_SCOPE.md) (A solid core · B conjecture)  
 **Paper outline:** **[../papers/06-synthesis/OUTLINE.md](../papers/06-synthesis/OUTLINE.md)**  
 **Stance:** All of this is **preliminary research**. External GfE literature and our dual are supporting constructions — **not** established physics on the order of general relativity. Prefer under-claiming.  
 **Dual residual program:** Settled at research-program level (\(U_\star\)); optional paper hardening only.  
