@@ -19,8 +19,8 @@ Restructure the program into a **publishable solid core** (Paper A: computationa
 
 The plan is DONE when **all** of the following hold:
 
-- [ ] **D-0** No canonical file over-claims relative to `synthesis/CURRENT_CLAIMS.md`; `check_claim_hygiene.py` passes green.
-- [ ] **D-1** `papers/DELIVERY_SCOPE.md` exists and fixes the may-assert / must-not-assert boundary for Paper A and Paper B.
+- [x] **D-0** No canonical file over-claims relative to `synthesis/CURRENT_CLAIMS.md`; `check_claim_hygiene.py` passes green.
+- [x] **D-1** `papers/DELIVERY_SCOPE.md` exists and fixes the may-assert / must-not-assert boundary for Paper A and Paper B.
 - [ ] **D-2** The one-page falsifiability analysis ("does `L` predict anything GR doesn't?") exists and its verdict is recorded.
 - [ ] **D-3** Paper A drafted: self-contained, theorem-level, **no gravity claim**, reproducible ledgers as appendices.
 - [ ] **D-4** Paper B drafted: emergent gravity stated explicitly as conjecture/reformulation, Path J/M honesty intact, falsifiability question central.
@@ -48,9 +48,9 @@ Phase 0 ──► Phase 1 ──► Phase 2 ──► Phase 3 (Paper A) ──�
 
 Mechanical, reversible, removes the one live inconsistency.
 
-- [ ] Soften the closing paragraph of `emergent-gravity/master-equation.md` ("recovers Newtonian gravity, Schwarzschild… inflation… unifies Jacobson, Verlinde, Susskind, Lloyd") to match `CURRENT_CLAIMS.md`: master equation is a **Jacobson-shaped postulate**; Newton via **Path J/M only**; everything else is aspiration, not recovery.
-- [ ] Add a one-line positioning banner to the canonical files + `PRD.md`: *"Reformulation unless/until a falsifiable departure from GR is constructed (open)."*
-- [ ] Re-run `.venv/bin/python simulations/classical/check_claim_hygiene.py` → OK.
+- [x] Soften the closing paragraph of `emergent-gravity/master-equation.md` ("recovers Newtonian gravity, Schwarzschild… inflation… unifies Jacobson, Verlinde, Susskind, Lloyd") to match `CURRENT_CLAIMS.md`: master equation is a **Jacobson-shaped postulate**; Newton via **Path J/M only**; everything else is aspiration, not recovery.
+- [x] Add a one-line positioning banner to the canonical files + `PRD.md`: *"Reformulation unless/until a falsifiable departure from GR is constructed (open)."*
+- [x] Re-run `.venv/bin/python simulations/classical/check_claim_hygiene.py` → OK.
 
 **DoD:** D-0. Addresses review points #2 (framing), #3.
 
@@ -65,7 +65,7 @@ Write `papers/DELIVERY_SCOPE.md` fixing what each paper may/may not assert **bef
 | Rigor | Theorem-level, self-contained, **no gravity claim** | Explicitly labeled conjecture/open; cites Paper A |
 | Status | Publishable now | Position paper / research programme |
 
-- [ ] `papers/DELIVERY_SCOPE.md` written and cross-linked.
+- [x] `papers/DELIVERY_SCOPE.md` written and cross-linked.
 
 **DoD:** D-1. Addresses your decision to segment; review point #1.
 
