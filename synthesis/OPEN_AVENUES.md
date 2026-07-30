@@ -67,9 +67,10 @@ Each row: **what we have**, **what we must not claim yet**, **missing theorem (s
 | | |
 |--|--|
 | **Have** | Finite \(L^{\mathrm{disc}}\); composition laws; m11c **role** motivation; coupled-region ledgers |
-| **Must not claim** | \(L^{\mathrm{disc}}=L(\rho,g)\); IDEM constructs continuum metric \(G\) |
+| **Have (2026-07-29 witness)** | **Fast-fail PASSED** (`simulations/classical/m11_lattice_export_density.py`): for coupled AND lattices the block export \(E(k)=H(X\mid Y)\) is **extensive** — linear in \(k\) with a well-defined bulk density (shared-input \(a\approx 0.301\) bits/site, residual \(\sim\!10^{-8}\); chained \(a\approx 0.999\), residual \(\sim\!10^{-4}\)). Publication-gauge / path-dependence surplus **saturates** to an \(O(1)\) boundary term (\(\approx 1.31\) bits), so per-site \(\to 0\) like \(1/k\). Discrete witness only — **not** a continuum-limit theorem. |
+| **Must not claim** | \(L^{\mathrm{disc}}=L(\rho,g)\); IDEM constructs continuum metric \(G\); that the witness above is the limit theorem |
 | **Missing theorem (target)** | *There exists a scaling limit* (graph → continuum, or many local maps → field \(\rho\)) *under which discrete work/export/capacity densities converge to the three continuum load terms*, with stated topology and rate—or a **precise obstruction** theorem. |
-| **Suggested first step** | Define a lattice of local maps with extensive export; prove extensivity + local continuum densities for **one** slot (e.g. \(L_S\) only) before full \(L\). |
+| **Suggested first step** | ~~Define a lattice of local maps with extensive export~~ **(done — witness above)**. Next: (a) swap AND → **IDEM map family** and check the decay vector predicts the density; (b) prove the extensivity witness as an entropy-rate limit theorem (stochastic-thermodynamics / hydrodynamic-limit toolkit). |
 | **Experiment?** | Only after a sharp continuum prediction exists. Pure limit theorem is **theory-only**. |
 
 ### O2 — Full warm-up continuum (Γ-limit, BV jumps, residual dual continuum)
@@ -198,6 +199,7 @@ DO NOT: dual IC churn; L≡G; ME⇔GfE; lattice=gravity
 | Date | Entry |
 |------|--------|
 | 2026-07-15 | Initial OPEN_AVENUES: buckets A/B/C; O1–O5 missing theorems; priority for next cycle |
+| 2026-07-29 | O1 fast-fail witness PASSED (`m11_lattice_export_density.py`): coupled-AND export extensive with well-defined bulk density; path-dependence saturates to O(1) boundary (per-site → 0). Reframed as reformulation. Next: IDEM map family + entropy-rate limit theorem. |
 
 ---
 
