@@ -108,6 +108,10 @@ For a deterministic \(f\), \(I(X;Y)=H(Y)=H_c\); the output entropy *is* the impa
 
 Per [../DELIVERY_SCOPE.md](../DELIVERY_SCOPE.md) §1′: no gravitational channel, load-as-time-dilation, master equation, or Gravity-from-Entropy content; no identification of toy \(H_c\) with the von Neumann entropy of any physical channel; no claim that differential entropy is itself invariant; no derivation of thermodynamics beyond the Landauer bound it instantiates.
 
+## 8. Continuation
+
+The export identity (Thm 1) and its path-dependence (Thm 3) are the seed of a follow-on classical paper. **Paper C — *The Decay Algebra: From Export Ledgers to a Continuum Entropy-Production Density*** ([../02-computational-models/PAPER_C_decay_algebra.md](../02-computational-models/PAPER_C_decay_algebra.md)) shows that a *coupled* lattice of local maps has a well-defined export **density**, computes it with a belief-transfer operator (proved for 1D and general window widths), and takes a hydrodynamic limit to a continuum density field \(\sigma(x)\). Paper C is also classical and makes no gravitational claim.
+
 ---
 
 ## Appendix R — Reproducibility
