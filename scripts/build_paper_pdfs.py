@@ -32,6 +32,10 @@ PAPERS: list[tuple[str, str]] = [
         "papers/04-gravitational-channel/PAPER_B_emergent_gravity_conjecture.md",
         "papers/04-gravitational-channel/PAPER_B_emergent_gravity_conjecture.pdf",
     ),
+    (
+        "papers/02-computational-models/PAPER_C_decay_algebra.md",
+        "papers/02-computational-models/PAPER_C_decay_algebra.pdf",
+    ),
 ]
 
 

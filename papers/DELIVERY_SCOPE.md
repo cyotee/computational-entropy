@@ -1,24 +1,24 @@
-# Delivery Scope — Two-Paper Contract
+# Delivery Scope — Three-Paper Contract
 
-**Status:** Scope contract (written 2026-07-29) · Preliminary research
-**Governs:** Paper A (solid core) and Paper B (conjecture)
-**Authority for claims:** [../synthesis/CURRENT_CLAIMS.md](../synthesis/CURRENT_CLAIMS.md) · **Plan:** [DELIVERY_PLAN.md](DELIVERY_PLAN.md)
+**Status:** Scope contract (written 2026-07-29; **Paper C added 2026-07-30**) · Preliminary research
+**Governs:** Paper A (solid core), Paper C (decay algebra), Paper B (conjecture)
+**Authority for claims:** [../synthesis/CURRENT_CLAIMS.md](../synthesis/CURRENT_CLAIMS.md) · **Plan:** [DELIVERY_PLAN.md](DELIVERY_PLAN.md) · [PRD_decay_algebra_update.md](PRD_decay_algebra_update.md)
 
 This file fixes, **before drafting**, what each paper **may assert** and **must not assert**. It is the boundary the drafts are checked against. If a draft needs to cross a boundary, amend this file first (with a changelog entry) — do not let scope drift silently.
 
 ---
 
-## 0. Why two papers
+## 0. Why three papers
 
-The program contains one part that is **done and defensible** (computational entropy as output-distribution entropy, plus a Landauer-exact export/load ledger) and one part that is **aspirational** (emergent gravity). Bundling them lets the speculative half contaminate the credibility of the solid half. Splitting them lets the solid core be published on its own terms and lets the gravity work be presented honestly as a conjecture/research programme.
+The program has a **defensible classical core** and an **aspirational gravity conjecture**; keeping them separate stops the speculative half from contaminating the solid half. The core is now two papers: **Paper A** (definitions + Landauer-exact export) and **Paper C** (the decay algebra: from the export ledger to a continuum entropy-production density). **Paper B** carries the gravity reformulation as an explicit conjecture that *cites* A and C but does not claim their density is a load term.
 
-| | **Paper A — solid core** | **Paper B — conjecture** |
-|---|---|---|
-| Working title | *Computational Entropy: Output-Distribution Entropy and Landauer-Exact Export* | *An Information-Theoretic Reformulation of Thermodynamic Gravity (Conjecture)* |
-| Genre | Technical / theorem-level | Position / programme paper |
-| Gravity content | **None** | Central, but explicitly conjectural |
-| Depends on | Standard information theory only | Paper A + imported GR/Jacobson |
-| Publishable | Now | As a research programme / preprint |
+| | **Paper A — solid core** | **Paper C — decay algebra** | **Paper B — conjecture** |
+|---|---|---|---|
+| Working title | *Computational Entropy: Output-Distribution Entropy and Landauer-Exact Export* | *The Decay Algebra: From Export Ledgers to a Continuum Entropy-Production Density* | *An Information-Theoretic Reformulation of Thermodynamic Gravity (Conjecture)* |
+| Genre | Technical / theorem-level | Technical / theorem-level | Position / programme paper |
+| Gravity content | **None** | **None** | Central, but explicitly conjectural |
+| Depends on | Standard information theory | Paper A + ergodic theory (Blackwell, renewal-reward) | Papers A, C + imported GR/Jacobson |
+| Publishable | Now | Now | As a research programme / preprint |
 
 ---
 
@@ -39,6 +39,22 @@ The program contains one part that is **done and defensible** (computational ent
 - No implication that the export ledger derives thermodynamics beyond the Landauer bound it instantiates.
 
 ---
+
+## 1.5 Paper C — may assert
+
+- **C1** Coupled export is **extensive** — a per-site density exists despite Paper A path-dependence/non-additivity (the latter saturate to an `O(1)` boundary). Verified: `m11_lattice_export_density.py`.
+- **C2** **Decay bound:** the IDEM hard decay vector upper-bounds `H(X∣Y)`, **exact iff product-preimage** ⇒ `O(N)` enumeration-free density for erasure lattices. Verified: `m11_idem_export_density.py`.
+- **C3** **1D density theorem** (proved): `a=1−h_Y=0.3007568`, `π★=(3−√5)/2`, via the run-length belief chain. `m11f` · `m11_decay_algebra.py`.
+- **C4** **General-`w` theorem** (proved): existence via `(w−1)`-dependence; Blackwell representation on the `2^{w-1}` boundary simplex; **reset gates regenerate ⇒ renewal-reward**; dichotomy `exact ⇔ reset`. `m11g` · `m11_decay_algebra_general.py`.
+- **C5** **2D strip transfer:** 2D density exists (finite-dependence); width-`W` transfer on the `2^W` row-cut; `2^W` wall. `m11h` · `m11_decay_algebra_2d.py`.
+- **C6** **Continuum embedding** (witnessed): local equilibrium ⇒ `σ(x)=a(θ(x))=h_2(θ)−h_Y(θ)` at `O(1/N)`; `∫σ=0.29937`. `m11i` · `m11_continuum_embedding.py`.
+
+## 1.5'. Paper C — must NOT assert
+
+- No claim that `σ(x)` is the gravitational load term `γ|dS_c/dτ|`, continuum `L(ρ,g)`, or any metric `G`.
+- No gravitational or spacetime content of any kind.
+- No claim that the **witnessed** rungs (2D convergence-to-bulk, continuum embedding) are proved theorems where they are numerical; no claim of a general hydrodynamic theorem (all gates/2D) — that is open.
+- No claim that the non-reset ⇒ non-atomic converse is proved (it is conjectural).
 
 ## 2. Paper B — may assert
 

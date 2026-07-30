@@ -34,6 +34,8 @@
 | C12 | M6: **not** framework equivalence; mechanisms and next-order structures diverge | **FAIL identity** | M6 §4 |
 | C13 | Next-order: GfE extras in metric EOM (\(D_{\mu\nu},\Lambda_G\)); our \(\gamma_L,\delta_L\) live in load **clock** unless promoted — **structural FAIL** | **structural** | [m6b-next-order-weak-field.md](m6b-next-order-weak-field.md) |
 | C14 | Prefer reading \(L\) as demand from **scale/rate of channel outcomes** (energy + entropy flux + boundary); active scrambling → **higher** \(L\) | **semantic** (program convention) | PROGRESS_REPORT §2.1, §4 |
+| C15 | **Decay algebra:** coupled export is extensive; the IDEM decay vector upper-bounds \(H(X\mid Y)\) (exact for product maps); the belief-transfer operator computes the coupled export density — **proved** for 1D (\(a=0.3007568\), m11f) and **general \(w\)/any gate** (Blackwell + reset-regeneration, m11g); 2D strip transfer (m11h) | **proved** (Paper C) | [RESULTS_LEDGER.md](RESULTS_LEDGER.md) R-O1a/b/c |
+| C16 | **Continuum density field:** the discrete export ledger admits a constructive continuum entropy-production density \(\sigma(x)=a(\theta(x))=h_2(\theta)-h_Y(\theta)\) via a local-equilibrium limit at \(O(1/N)\) (m11i) | **witnessed** (general theorem open) | RESULTS_LEDGER R-O1d |
 
 **Heat/PM residual dual program status:** settled enough to **stop as main open crisis**. Further pure-proof polishing is optional paper depth, not default work.
 
@@ -52,6 +54,7 @@ Do **not** assert without new work (mirror PROGRESS_REPORT §2.3):
 7. Lattice denoising = empirical gravity.  
 8. External GfE papers established on par with GR.  
 9. IDEM/decay fully constructs continuum \(L\) or \(G\) (open / deferred).
+10. **Continuum entropy-production density \(\sigma(x)\) (Paper C, m11i) \(\equiv\) gravitational load term \(\gamma\lvert dS_c/d\tau\rvert\)** — \(\sigma\) is a **classical** density; its identification with the load term is a labeled **semantic** step, **not** constructed.
 
 Also (dual write-up): no theorem-level multi-jump / 2D / continuum SPDE residual domination; toy \(H_c\) ≠ von Neumann \(S_c\) identity.
 
