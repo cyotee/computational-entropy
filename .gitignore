@@ -16,6 +16,10 @@ __pycache__/
 # MkDocs build output (deployed by CI artifact, not committed)
 site/
 
+# Generated PDF copies under docs/ (sync_site_docs.py copies them from the
+# committed source PDFs in papers/ at build time; avoid duplicating binaries)
+docs/pdf/
+
 # LaTeX intermediates (keep sources / intentional PDFs)
 *.aux
 *.fdb_latexmk

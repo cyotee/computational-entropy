@@ -36,6 +36,7 @@ theme:
 
 markdown_extensions:
   - admonition
+  - attr_list
   - footnotes
   - tables
   - toc:
@@ -62,6 +63,11 @@ nav:
   - Home: index.md
   - How to read: how-to-read.md
   - Non-claims: non-claims.md
+  - Downloads (PDF): downloads.md
+  - Standalone papers:
+      - Paper A — Computational entropy (solid core): papers/paper-a.md
+      - Paper B — Emergent gravity (conjecture): papers/paper-b.md
+      - Falsifiability of L vs GR: papers/falsifiability.md
   - The paper:
       - Title & abstract: papers/chapters/00-front-matter.md
       - 1. Introduction: papers/chapters/01-introduction.md
@@ -86,6 +92,7 @@ nav:
       - Channel, load, master equation: emergent-gravity/master-equation.md
       - Newtonian recovery: emergent-gravity/newtonian-recovery.md
       - Claims: synthesis/claims.md
+      - Results ledger: synthesis/results-ledger.md
       - Conclusions: synthesis/conclusions.md
       - Open avenues: synthesis/open-avenues.md
       - Glossary: glossary.md

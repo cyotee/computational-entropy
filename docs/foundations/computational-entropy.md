@@ -2,6 +2,8 @@
 
 **Status:** Canonical source of truth (extracted 2026-06-22).
 
+> **Positioning (2026-07-29):** The computational-entropy definition and its information-theoretic consequences (output-distribution entropy, export/load accounting) are the program's **solid, self-contained core** (Paper A). The gravitational reading further down this file is a **reformulation/conjecture** (Paper B) whose gravity claims are gated by [../../synthesis/CURRENT_CLAIMS.md](../../synthesis/CURRENT_CLAIMS.md).
+
 This file is the single authoritative version of the core definition. All other documents (including papers and the main `.tex`) should reference this file rather than duplicating the content.
 
 ---

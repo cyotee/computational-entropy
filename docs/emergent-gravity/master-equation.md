@@ -2,6 +2,8 @@
 
 **Status:** Canonical source of truth (extracted 2026-06-22).
 
+> **Positioning (2026-07-29):** This framework is an **information-theoretic reformulation** of thermodynamic/entropic gravity. It is a *reformulation* unless and until a **falsifiable departure from GR** is constructed — which is currently **open**. The master equation below is **postulated with a Jacobson-consistent shape**, not derived; Newton is recovered only via **Path J/M** (external Jacobson/Einstein input + on-shell calibration). See [../synthesis/CURRENT_CLAIMS.md](../synthesis/CURRENT_CLAIMS.md) for frozen may-assert / non-claims.
+
 This file consolidates the core definitions of the gravitational channel \(\Phi_g\), computational load \(L\), and master equation. It serves as the single reference for these concepts.
 
 All other documents should reference this file.
@@ -75,5 +77,10 @@ Globally, fine-grained entropy is conserved (unitary or CPTP evolution of the fu
 Locally, observers experience an apparent reduction in computational entropy because prior microstate details are irreversibly overwritten.
 This realizes the original intuition of constant entropy transferred from future potential to past reality, with the computational load enforcing the necessary time dilation to respect physical bounds.
 
-The master equation therefore provides a single, compact dynamical law that recovers Newtonian gravity, Schwarzschild geometry, black-hole horizons, cosmological expansion (including inflation), and both forms of time dilation as different regimes of the same computational process.
-It unifies Jacobson’s thermodynamic gravity, Verlinde’s entropic gravity, holographic duality, Susskind’s complexity conjectures, and Lloyd’s ultimate computational capacity under one information-theoretic framework.
+The master equation is intended as a single, compact dynamical law. **What is actually established** (see [../synthesis/CURRENT_CLAIMS.md](../synthesis/CURRENT_CLAIMS.md)) is narrower than the program's long-term aim:
+
+- **Newtonian weak field** is recovered only via **Path J/M** — importing Jacobson's Clausius→Einstein theorem and standard GR, then fixing \(\alpha\beta = 4\pi G/c^4\) as an **on-shell calibration**. This is *not* a free derivation of Newton or of \(G\).
+- Schwarzschild geometry, black-hole horizons, cosmological expansion / inflation, and Lloyd/Susskind capacity bounds are **aspirational targets**, not completed recoveries. They must not be asserted as derived (frozen non-claims N1, N7, N8).
+- The relation between this master equation and Bianconi continuum GfE is a **staged bridge**, not an identity (non-claim N1).
+
+The framework's **intended** unification of Jacobson's thermodynamic gravity, Verlinde's entropic gravity, holographic duality, Susskind's complexity conjectures, and Lloyd's computational bounds is a *research direction*, not a proven result. Prefer under-claiming; label every bridge mapping semantic / structural / constructive.

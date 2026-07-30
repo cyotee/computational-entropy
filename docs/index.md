@@ -2,7 +2,17 @@
 
 **Preliminary research.** Supporting constructions and numerical ledgers are real; **nothing here has GR-level certainty.**
 
-This site hosts the full integrated research paper **Computational Entropy and Emergent Gravity: From Output Distributions to Load-Gated Geometry**, plus short canonical reference pages.
+This site hosts the research program's papers plus short canonical reference pages.
+
+## Papers & downloads
+
+The program is split into a **solid core** and a **conjecture**:
+
+- **Paper A — Computational entropy (solid core):** output-distribution entropy, the export identity, Landauer-exactness, and path-dependence. **No gravity claims.** → [read online](papers/paper-a.md) · [PDF](pdf/computational-entropy-paper-A.pdf){:download}
+- **Paper B — Emergent gravity (conjecture):** an information-theoretic *reformulation* of thermodynamic gravity; channel + load as a Jacobson-shaped postulate. → [read online](papers/paper-b.md) · [PDF](pdf/emergent-gravity-conjecture-paper-B.pdf){:download}
+- **Integrated paper** (full manuscript, literature + theory). → [read online](papers/paper-full.md) · [PDF](pdf/computational-entropy-integrated-paper.pdf){:download}
+
+**All PDFs on one page → [Downloads](downloads.md).** Falsifiability verdict: **reformulation** ([analysis](papers/falsifiability.md)).
 
 ## Read the paper
 

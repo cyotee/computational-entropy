@@ -5,6 +5,7 @@
 **Branch:** `master` (as of report writing; working tree may have uncommitted synthesis).  
 **Stance:** All of this is **preliminary research**. Supporting constructions and evidence are real; nothing here has GR-level certainty.  
 **Claims freeze:** [synthesis/CURRENT_CLAIMS.md](synthesis/CURRENT_CLAIMS.md) · **Conclusions:** [synthesis/PROGRAM_CONCLUSIONS.md](synthesis/PROGRAM_CONCLUSIONS.md)  
+**Two-paper spine (2026-07-29):** [papers/DELIVERY_PLAN.md](papers/DELIVERY_PLAN.md) · [papers/DELIVERY_SCOPE.md](papers/DELIVERY_SCOPE.md) · consolidated status → [synthesis/RESULTS_LEDGER.md](synthesis/RESULTS_LEDGER.md) · falsifiability verdict (**reformulation**) → [papers/FALSIFIABILITY_L_vs_GR.md](papers/FALSIFIABILITY_L_vs_GR.md)  
 **Post-freeze avenues:** [synthesis/OPEN_AVENUES.md](synthesis/OPEN_AVENUES.md) · **Integrated paper:** [papers/06-synthesis/PAPER.md](papers/06-synthesis/PAPER.md) · **FINAL freeze:** [papers/06-synthesis/FINAL.md](papers/06-synthesis/FINAL.md)
 
 ---

@@ -2,6 +2,7 @@
 
 **Status:** Frozen 2026-07-15 · Preliminary research only  
 **Purpose:** What we may assert vs must not assert  
+**Consolidated entry point (2026-07-29):** [RESULTS_LEDGER.md](RESULTS_LEDGER.md) · **Two-paper spine:** [../papers/DELIVERY_SCOPE.md](../papers/DELIVERY_SCOPE.md) (Paper A solid core · Paper B conjecture)  
 **Authority:** [PROGRESS_REPORT.md](../PROGRESS_REPORT.md) §2 · dual [t1-prime-hybrid-writeup.md](t1-prime-hybrid-writeup.md) · Newton [emergent-gravity/recoveries/newtonian/README.md](../emergent-gravity/recoveries/newtonian/README.md) · M6 [m6-weak-field-plugtest.md](m6-weak-field-plugtest.md) · ACD-EW [action-channel-duality-euclidean.md](action-channel-duality-euclidean.md)
 
 ---

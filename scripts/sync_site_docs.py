@@ -15,6 +15,7 @@ Splits papers/06-synthesis/PAPER.md into chapter pages so the full manuscript
 from __future__ import annotations
 
 import re
+import shutil
 import sys
 from pathlib import Path
 
@@ -38,11 +39,24 @@ ALLOWLIST: list[tuple[str, str]] = [
     ("synthesis/CURRENT_CLAIMS.md", "synthesis/claims.md"),
     ("synthesis/PROGRAM_CONCLUSIONS.md", "synthesis/conclusions.md"),
     ("synthesis/OPEN_AVENUES.md", "synthesis/open-avenues.md"),
+    ("synthesis/RESULTS_LEDGER.md", "synthesis/results-ledger.md"),
+    ("papers/01-foundations/PAPER_A_computational_entropy.md", "papers/paper-a.md"),
+    ("papers/04-gravitational-channel/PAPER_B_emergent_gravity_conjecture.md", "papers/paper-b.md"),
+    ("papers/FALSIFIABILITY_L_vs_GR.md", "papers/falsifiability.md"),
     ("papers/06-synthesis/FINAL.md", "papers/final-report.md"),
     ("papers/06-synthesis/PUBLISHABLE.md", "papers/publishable.md"),
     ("papers/06-synthesis/PAPER.md", "papers/paper-full.md"),
     ("GLOSSARY.md", "glossary.md"),
     ("PROGRESS_REPORT.md", "progress.md"),
+]
+
+# Pre-built PDF assets (CI has no LaTeX): copied into docs/pdf/ for the site to
+# serve. Build the paper PDFs with scripts/build_paper_pdfs.py before syncing.
+# (source relative to repo root, destination relative to docs/)
+PDF_ASSETS: list[tuple[str, str]] = [
+    ("papers/01-foundations/PAPER_A_computational_entropy.pdf", "pdf/computational-entropy-paper-A.pdf"),
+    ("papers/04-gravitational-channel/PAPER_B_emergent_gravity_conjecture.pdf", "pdf/emergent-gravity-conjecture-paper-B.pdf"),
+    ("papers/06-synthesis/PAPER.pdf", "pdf/computational-entropy-integrated-paper.pdf"),
 ]
 
 PAPER_SRC = "papers/06-synthesis/PAPER.md"
@@ -195,6 +209,16 @@ def main() -> int:
         dst.parent.mkdir(parents=True, exist_ok=True)
         raw = src.read_text(encoding="utf-8")
         dst.write_text(normalize_math(raw), encoding="utf-8")
+        copied.append(f"{src_rel} -> docs/{dst_rel}")
+
+    for src_rel, dst_rel in PDF_ASSETS:
+        src = REPO_ROOT / src_rel
+        dst = DOCS / dst_rel
+        if not src.is_file():
+            missing.append(f"{src_rel} (run scripts/build_paper_pdfs.py)")
+            continue
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(src, dst)
         copied.append(f"{src_rel} -> docs/{dst_rel}")
 
     paper_path = REPO_ROOT / PAPER_SRC
