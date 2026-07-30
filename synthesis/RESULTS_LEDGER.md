@@ -35,7 +35,7 @@
 
 | ID | Missing theorem / construction | Bucket | Legacy |
 |----|-------------------------------|--------|--------|
-| O-1 | Continuum limit of **one** load slot (\(L_S\) density) — or obstruction. *Witnesses PASSED*: coupled-AND export extensive w/ well-defined bulk density, path-dependence subleading (`m11_lattice_export_density.py`, 2026-07-29); IDEM decay vector upper-bounds export, **exact for product maps** ⇒ \(O(N)\) enumeration-free density (`m11_idem_export_density.py`, 2026-07-30). Open: decay algebra under coupling + limit theorem. | B | O1, N9 |
+| O-1 | Continuum limit of **one** load slot (\(L_S\) density) — or obstruction. *Witnesses PASSED*: coupled-AND export extensive w/ well-defined bulk density, path-dependence subleading (`m11_lattice_export_density.py`, 2026-07-29); IDEM decay vector upper-bounds export, **exact for product maps** ⇒ \(O(N)\) enumeration-free density (`m11_idem_export_density.py`); **decay algebra** (boundary-belief transfer) closes the coupled gap for 1D nearest-neighbour, matching enumeration to \(<10^{-8}\) via a local \(O(R)\) recursion (`m11_decay_algebra.py`, 2026-07-30). Open: general graphs / range-\(r\) coupling + entropy-rate limit theorem. | B | O1, N9 |
 | O-2 | Γ-convergence / BV of warm-up action; continuum residual dual | B | O2 |
 | O-3 | Positive continuum/quantum \(S_c\) path (not \(H_c^{\rm toy}\equiv S_c\)) | B | O3 |
 | O-4 | Lorentzian GfE lift **or** extended no-go | B | O4, N1 |
