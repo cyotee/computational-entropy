@@ -138,6 +138,17 @@ def main() -> None:
     assert err < 1e-3, "decay algebra must reproduce enumerated density"
     assert a_alg < hard_bound, "algebra must tighten the naive bound"
 
+    # --- theorem constants (synthesis/m11f-decay-algebra-theorem.md) ---
+    pi_star = (3 - 5 ** 0.5) / 2  # root of pi^2 - 3 pi + 1 = 0
+    pis, _ = belief_run_lengths(400)
+    assert abs(pis[-1] - pi_star) < 1e-9, "belief must converge to pi* = (3-sqrt5)/2"
+    a200, _ = algebra_density(200)
+    a800, _ = algebra_density(800)
+    assert abs(a200 - a800) < 1e-11, "density series must be converged by R=200"
+    print(f"\n  theorem constants: pi* = (3-sqrt5)/2 = {pi_star:.10f}, "
+          f"p1* = {pi_star / 2:.10f}")
+    print(f"  series converged: a(R=200)={a200:.12f} == a(R=800)={a800:.12f}")
+
     # convergence of the enumerated density toward the algebra value
     print("\n  enumerated E(k)/k approaching the algebra density:")
     print(f"  {'k':>3}  {'E(k)/k':>9}  {'algebra a':>10}  {'gap':>9}")
