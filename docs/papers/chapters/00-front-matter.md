@@ -56,7 +56,8 @@ This report is **preliminary research**. Constructions and numerical ledgers are
 6. Next-order load terms $\gamma_L,\delta_L$ equal GfE extras $D_{\mu\nu},\Lambda_G$.  
 7. Lattice denoising as empirical gravity.  
 8. External GfE papers established on par with GR.  
-9. IDEM/decay fully constructs continuum $L$ or metric $G$.
+9. IDEM/decay fully constructs continuum $L$ or metric $G$.  
+10. The constructive continuum entropy-production density $\sigma(x)$ (decay algebra, §2.11) **is** the gravitational load term $\gamma\lvert dS_c/d\tau\rvert$ — $\sigma$ is a **classical** density; the identification is a labeled semantic step, **not** constructed.
 
 **Type safety (locked throughout):** load $L$ is a **dimensionless scalar**; structure-induced $G$ is a **metric** (or edgewise cousin). **$L \neq G$**. Discrete three-slot ledgers $L^{\mathrm{disc}}$ are **not** numerically equal to continuum $L(\rho,g)$. Entropy objects are tagged when ambiguous (M10: map $H_c$, $S_c$, $H_c^{\mathrm{toy}}$, $H_c^{\mathrm{game}}$, $H_c^{\mathrm{disc}}$).
 

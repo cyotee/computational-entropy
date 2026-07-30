@@ -41,8 +41,13 @@ ALLOWLIST: list[tuple[str, str]] = [
     ("synthesis/OPEN_AVENUES.md", "synthesis/open-avenues.md"),
     ("synthesis/RESULTS_LEDGER.md", "synthesis/results-ledger.md"),
     ("papers/01-foundations/PAPER_A_computational_entropy.md", "papers/paper-a.md"),
+    ("papers/02-computational-models/PAPER_C_decay_algebra.md", "papers/paper-c.md"),
     ("papers/04-gravitational-channel/PAPER_B_emergent_gravity_conjecture.md", "papers/paper-b.md"),
     ("papers/FALSIFIABILITY_L_vs_GR.md", "papers/falsifiability.md"),
+    ("synthesis/m11f-decay-algebra-theorem.md", "synthesis/m11f-theorem.md"),
+    ("synthesis/m11g-decay-algebra-general-w-theorem.md", "synthesis/m11g-theorem.md"),
+    ("synthesis/m11h-decay-algebra-2d.md", "synthesis/m11h-2d.md"),
+    ("synthesis/m11i-continuum-embedding.md", "synthesis/m11i-continuum.md"),
     ("papers/06-synthesis/FINAL.md", "papers/final-report.md"),
     ("papers/06-synthesis/PUBLISHABLE.md", "papers/publishable.md"),
     ("papers/06-synthesis/PAPER.md", "papers/paper-full.md"),
@@ -55,6 +60,7 @@ ALLOWLIST: list[tuple[str, str]] = [
 # (source relative to repo root, destination relative to docs/)
 PDF_ASSETS: list[tuple[str, str]] = [
     ("papers/01-foundations/PAPER_A_computational_entropy.pdf", "pdf/computational-entropy-paper-A.pdf"),
+    ("papers/02-computational-models/PAPER_C_decay_algebra.pdf", "pdf/decay-algebra-paper-C.pdf"),
     ("papers/04-gravitational-channel/PAPER_B_emergent_gravity_conjecture.pdf", "pdf/emergent-gravity-conjecture-paper-B.pdf"),
     ("papers/06-synthesis/PAPER.pdf", "pdf/computational-entropy-integrated-paper.pdf"),
 ]

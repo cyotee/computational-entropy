@@ -66,8 +66,15 @@ nav:
   - Downloads (PDF): downloads.md
   - Standalone papers:
       - Paper A — Computational entropy (solid core): papers/paper-a.md
+      - Paper C — The decay algebra (continuum density): papers/paper-c.md
       - Paper B — Emergent gravity (conjecture): papers/paper-b.md
       - Falsifiability of L vs GR: papers/falsifiability.md
+  - Decay algebra (theorems & witnesses):
+      - Paper C — full: papers/paper-c.md
+      - 1D density theorem (m11f): synthesis/m11f-theorem.md
+      - General-w theorem (m11g): synthesis/m11g-theorem.md
+      - 2D strip transfer (m11h): synthesis/m11h-2d.md
+      - Continuum embedding (m11i): synthesis/m11i-continuum.md
   - The paper:
       - Title & abstract: papers/chapters/00-front-matter.md
       - 1. Introduction: papers/chapters/01-introduction.md

@@ -48,4 +48,8 @@ $$
 
 1D/2D joint toys and a game-motivated belief dual report 6/6 SUPPORT scorecards for a Euclidean dual **pattern** (PM vs heat, load co-motion, etc.). These are **not** continuum gravity detections. Residual dual of PM vs heat is time-windowed on $U_\star=[1.36,2.40]$ under soft ensemble hypotheses (PCRH$_b$, $\rho_b=0.42$).
 
+## A.9 Decay algebra and continuum density (Paper C; m11f--i)
+
+Five exactly-reproducing witnesses (`simulations/classical/`): `m11_lattice_export_density.py` (coupled export extensive; shared-input $a\approx0.30076$); `m11_idem_export_density.py` (decay bound, exact for product maps); `m11_decay_algebra.py` (1D: $a=0.3007568$, $\pi_\star=(3-\sqrt5)/2$, matches enumeration $<10^{-8}$); `m11_decay_algebra_general.py` (general $w$; asserts dichotomy $\text{exact}\Leftrightarrow\text{reset}$; AND $a_w=0.30076/0.56568/0.74503$); `m11_decay_algebra_2d.py` (2D strip; $a_W$ matches enumeration $\sim10^{-3}$); `m11_continuum_embedding.py` (local equilibrium $\sigma(x)=a(\theta(x))$, $O(1/N)$, $\int\sigma=0.29937$). Full write-up: Paper C. **Non-claim:** $\sigma$ is classical, not the load term.
+
 ---

@@ -294,6 +294,27 @@ Do **not** assert from M11 Phase 1--2, composition, Landauer contact, or coupled
 
 ---
 
+## 2.11 Decay algebra and the continuum entropy-production density (Paper C)
+
+The M11 ledgers above establish that single-shot export $L_S=H(X\mid Y)$ is Landauer-exact but **path-dependent** ($\sum L_S$, §2.7) and **non-additive** ($L_B$). This raised a sharp question that the classical follow-on **Paper C** ([../02-computational-models/PAPER_C_decay_algebra.md](../02-computational-models/PAPER_C_decay_algebra.md)) now answers: does a *coupled* lattice of local maps have a well-defined export **density**, and can it be computed and taken to a continuum limit — **without** claiming any gravitational content?
+
+The ladder (canonical notes `synthesis/m11f`--`m11i`; witnesses `simulations/classical/m11_{idem,decay_algebra,decay_algebra_general,decay_algebra_2d,continuum_embedding}*.py`):
+
+| Rung | Result | Rigor |
+|------|--------|-------|
+| Extensivity | Coupled export is linear in system size; path-dependence saturates to an $O(1)$ boundary $\Rightarrow$ a bulk density exists | witnessed |
+| Decay bound | IDEM hard decay vector upper-bounds $H(X\mid Y)$, **exact iff product-preimage** $\Rightarrow$ $O(N)$ enumeration-free density | **proved** |
+| 1D theorem | Nearest-neighbour AND: $a=1-h_Y=0.3007568$, $\pi_\star=(3-\sqrt5)/2$, via a run-length belief chain | **proved** (m11f) |
+| General $w$ | Any gate/width: existence via $(w{-}1)$-dependence; Blackwell transfer on the $2^{w-1}$ boundary simplex; **reset gates regenerate** $\Rightarrow$ renewal-reward; dichotomy $\text{exact}\Leftrightarrow\text{reset}$ | **proved** (m11g) |
+| 2D strip | Density exists on $\mathbb Z^2$; width-$W$ transfer on the $2^W$ row-cut; exposes the $2^W$ wall | proved (existence, m11h) |
+| Continuum | Local equilibrium $\Rightarrow$ a **constructive continuum entropy-production density** $\sigma(x)=a(\theta(x))=h_2(\theta)-h_Y(\theta)$ at $O(1/N)$ | witnessed (m11i) |
+
+**Significance for the program.** This is the first constructive discrete$\to$continuum bridge on the computational side: the decay vector, promoted to a **belief transported across the coupling boundary** (the *decay algebra*), composes to give the exact coupled density, and a hydrodynamic limit yields a density **field** $\sigma(x)$. IDEM's decay vector thereby earns a *proved, load-bearing* role — its fully-recoverable-branch structure is exactly what makes the algebra finitely exact. The program's long-standing **central gap** (§1.1: gravity used high-level $H_c/S_c$ but never the IDEM/decay machinery) is now **bridged on the discrete side**.
+
+**Non-claim (locked; banner item 10).** $\sigma(x)$ is a **classical** entropy-production density for a specific lattice family. It is **not** the gravitational load term $\gamma\lvert dS_c/d\tau\rvert$, **not** continuum $L(\rho,g)$, and carries **no** gravitational content. Whether $\sigma$ is the load's entropy-production density is now a **well-posed but open semantic question** (§6, and the falsifiability discussion) — sharper than before, but not asserted.
+
+---
+
 ## Source map for Parts 0--2
 
 | Topic | Canonical / primary path |

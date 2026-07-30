@@ -7,6 +7,7 @@
 | Paper | Scope | Download | Read online |
 |-------|-------|----------|-------------|
 | **Paper A — Computational Entropy: Output-Distribution Entropy and Landauer-Exact Export** | Solid core: output-distribution entropy, export identity, Landauer-exactness, path-dependence. **No gravity claims.** | [PDF](pdf/computational-entropy-paper-A.pdf){:download} | [HTML](papers/paper-a.md) |
+| **Paper C — The Decay Algebra: From Export Ledgers to a Continuum Entropy-Production Density** | Classical, no gravity: coupled export density, the decay-algebra transfer operator (proved 1D & general-\(w\)), 2D strip, and a constructive continuum density field \(\sigma(x)\). | [PDF](pdf/decay-algebra-paper-C.pdf){:download} | [HTML](papers/paper-c.md) |
 | **Paper B — An Information-Theoretic Reformulation of Thermodynamic Gravity (Conjecture)** | Emergent gravity as a **reformulation/conjecture**: channel + load as a Jacobson-shaped postulate, Newton via Path J/M, falsifiability question. | [PDF](pdf/emergent-gravity-conjecture-paper-B.pdf){:download} | [HTML](papers/paper-b.md) |
 | **Integrated paper — Computational Entropy and Emergent Gravity** | Full standalone manuscript (literature + our theory). | [PDF](pdf/computational-entropy-integrated-paper.pdf){:download} | [HTML](papers/paper-full.md) |
 

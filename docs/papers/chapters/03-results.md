@@ -21,8 +21,9 @@ Aligned with Section 3 and Appendix B. One-line forms; body sections carry full 
 | **P9** | Layer W: PM descends matched warm-up energy (M5c); residual dual stays Layer D --- not ME $\Leftrightarrow$ GfE. | external lit + constructive | §5.5 · M5c |
 | **P10** | M6: **WEAK PASS** shared Poisson via Einstein/GR; **FAIL** framework identity (M6b next-order structural FAIL). | WEAK PASS / FAIL | §6 · C11--C13 |
 | **P11** | **R4a:** next-order $\gamma_L,\delta_L$ vs $D_{\mu\nu},\Lambda_G$ is a **promotion no-go** without extra structure. | structural no-go | §6.4, §8 · m6d |
+| **P12** | **Decay algebra (Paper C):** coupled export has a well-defined density, computed by a belief-transfer operator (**proved** 1D & general $w$); a hydrodynamic limit yields a constructive continuum entropy-production density $\sigma(x)$ ($O(1/N)$). $\sigma\neq$ load term. | proved + witnessed | §2.11 · C15--C16 · m11f--i |
 
-**Supporting freezes (CURRENT_CLAIMS):** C14 high-flux $L$ reading underwrites P5--P6; load-PM mild time-change dual (**C8**) sits under P8.
+**Supporting freezes (CURRENT_CLAIMS):** C14 high-flux $L$ reading underwrites P5--P6; load-PM mild time-change dual (**C8**) sits under P8; C15--C16 (decay algebra, continuum density) underwrite P12.
 
 ### Refuted / withdrawn (W1--W6)
 

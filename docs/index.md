@@ -9,10 +9,17 @@ This site hosts the research program's papers plus short canonical reference pag
 The program is split into a **solid core** and a **conjecture**:
 
 - **Paper A — Computational entropy (solid core):** output-distribution entropy, the export identity, Landauer-exactness, and path-dependence. **No gravity claims.** → [read online](papers/paper-a.md) · [PDF](pdf/computational-entropy-paper-A.pdf){:download}
+- **Paper C — The decay algebra (continuum density):** how the coupled export density is computed by a belief-transfer operator (proved 1D & general-width), and a constructive **continuum entropy-production density field** \(\sigma(x)\). **No gravity claims.** → [read online](papers/paper-c.md) · [PDF](pdf/decay-algebra-paper-C.pdf){:download}
 - **Paper B — Emergent gravity (conjecture):** an information-theoretic *reformulation* of thermodynamic gravity; channel + load as a Jacobson-shaped postulate. → [read online](papers/paper-b.md) · [PDF](pdf/emergent-gravity-conjecture-paper-B.pdf){:download}
 - **Integrated paper** (full manuscript, literature + theory). → [read online](papers/paper-full.md) · [PDF](pdf/computational-entropy-integrated-paper.pdf){:download}
 
 **All PDFs on one page → [Downloads](downloads.md).** Falsifiability verdict: **reformulation** ([analysis](papers/falsifiability.md)).
+
+## Latest research: the decay algebra
+
+Starting from Paper A's Landauer-exact export ledger, a **decay algebra** (a belief transported across the coupling boundary) computes the coupled export density — **proved** for 1D and general window widths — and a hydrodynamic limit yields a **constructive continuum entropy-production density field** \(\sigma(x)\). This bridges the program's long-standing gap between the classical IDEM/decay machinery and a continuum density, on the discrete side. See **[Paper C](papers/paper-c.md)** and the theorem notes ([m11f](synthesis/m11f-theorem.md), [m11g](synthesis/m11g-theorem.md), [m11h](synthesis/m11h-2d.md), [m11i](synthesis/m11i-continuum.md)).
+
+> **Honest boundary.** \(\sigma(x)\) is a **classical** entropy-production density — **not** the gravitational load term \(\gamma\lvert dS_c/d\tau\rvert\). Whether it *is* that term is now a well-posed but open question, not a claim.
 
 ## Read the paper
 

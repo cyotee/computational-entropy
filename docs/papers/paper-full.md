@@ -56,7 +56,8 @@ This report is **preliminary research**. Constructions and numerical ledgers are
 6. Next-order load terms $\gamma_L,\delta_L$ equal GfE extras $D_{\mu\nu},\Lambda_G$.  
 7. Lattice denoising as empirical gravity.  
 8. External GfE papers established on par with GR.  
-9. IDEM/decay fully constructs continuum $L$ or metric $G$.
+9. IDEM/decay fully constructs continuum $L$ or metric $G$.  
+10. The constructive continuum entropy-production density $\sigma(x)$ (decay algebra, §2.11) **is** the gravitational load term $\gamma\lvert dS_c/d\tau\rvert$ — $\sigma$ is a **classical** density; the identification is a labeled semantic step, **not** constructed.
 
 **Type safety (locked throughout):** load $L$ is a **dimensionless scalar**; structure-induced $G$ is a **metric** (or edgewise cousin). **$L \neq G$**. Discrete three-slot ledgers $L^{\mathrm{disc}}$ are **not** numerically equal to continuum $L(\rho,g)$. Entropy objects are tagged when ambiguous (M10: map $H_c$, $S_c$, $H_c^{\mathrm{toy}}$, $H_c^{\mathrm{game}}$, $H_c^{\mathrm{disc}}$).
 
@@ -297,8 +298,9 @@ Aligned with Section 3 and Appendix B. One-line forms; body sections carry full 
 | **P9** | Layer W: PM descends matched warm-up energy (M5c); residual dual stays Layer D --- not ME $\Leftrightarrow$ GfE. | external lit + constructive | §5.5 · M5c |
 | **P10** | M6: **WEAK PASS** shared Poisson via Einstein/GR; **FAIL** framework identity (M6b next-order structural FAIL). | WEAK PASS / FAIL | §6 · C11--C13 |
 | **P11** | **R4a:** next-order $\gamma_L,\delta_L$ vs $D_{\mu\nu},\Lambda_G$ is a **promotion no-go** without extra structure. | structural no-go | §6.4, §8 · m6d |
+| **P12** | **Decay algebra (Paper C):** coupled export has a well-defined density, computed by a belief-transfer operator (**proved** 1D & general $w$); a hydrodynamic limit yields a constructive continuum entropy-production density $\sigma(x)$ ($O(1/N)$). $\sigma\neq$ load term. | proved + witnessed | §2.11 · C15--C16 · m11f--i |
 
-**Supporting freezes (CURRENT_CLAIMS):** C14 high-flux $L$ reading underwrites P5--P6; load-PM mild time-change dual (**C8**) sits under P8.
+**Supporting freezes (CURRENT_CLAIMS):** C14 high-flux $L$ reading underwrites P5--P6; load-PM mild time-change dual (**C8**) sits under P8; C15--C16 (decay algebra, continuum density) underwrite P12.
 
 ### Refuted / withdrawn (W1--W6)
 
@@ -811,6 +813,27 @@ Do **not** assert from M11 Phase 1--2, composition, Landauer contact, or coupled
 10. Dual-toy residual $H_c^{\mathrm{toy}}$ equals gate export or Landauer bits.
 
 **Allowed claim form (program-level).** On finite classical models $\mathcal{M}$, we define constructive $H_c^{\mathrm{disc}}$ and a three-term discrete load ledger whose terms play the same *roles* as master-equation load slots under the locked high-flux reading; cumulative stage export $\sum L_S$ is path-dependent under circuits even when final $H(Z)$ is fixed; and single-shot $L_S=H(X\mid Y)$ is the information object bounded by Landauer heat under Protocol R. Continuum gravity remains deferred.
+
+---
+
+## 2.11 Decay algebra and the continuum entropy-production density (Paper C)
+
+The M11 ledgers above establish that single-shot export $L_S=H(X\mid Y)$ is Landauer-exact but **path-dependent** ($\sum L_S$, §2.7) and **non-additive** ($L_B$). This raised a sharp question that the classical follow-on **Paper C** ([../02-computational-models/PAPER_C_decay_algebra.md](../02-computational-models/PAPER_C_decay_algebra.md)) now answers: does a *coupled* lattice of local maps have a well-defined export **density**, and can it be computed and taken to a continuum limit — **without** claiming any gravitational content?
+
+The ladder (canonical notes `synthesis/m11f`--`m11i`; witnesses `simulations/classical/m11_{idem,decay_algebra,decay_algebra_general,decay_algebra_2d,continuum_embedding}*.py`):
+
+| Rung | Result | Rigor |
+|------|--------|-------|
+| Extensivity | Coupled export is linear in system size; path-dependence saturates to an $O(1)$ boundary $\Rightarrow$ a bulk density exists | witnessed |
+| Decay bound | IDEM hard decay vector upper-bounds $H(X\mid Y)$, **exact iff product-preimage** $\Rightarrow$ $O(N)$ enumeration-free density | **proved** |
+| 1D theorem | Nearest-neighbour AND: $a=1-h_Y=0.3007568$, $\pi_\star=(3-\sqrt5)/2$, via a run-length belief chain | **proved** (m11f) |
+| General $w$ | Any gate/width: existence via $(w{-}1)$-dependence; Blackwell transfer on the $2^{w-1}$ boundary simplex; **reset gates regenerate** $\Rightarrow$ renewal-reward; dichotomy $\text{exact}\Leftrightarrow\text{reset}$ | **proved** (m11g) |
+| 2D strip | Density exists on $\mathbb Z^2$; width-$W$ transfer on the $2^W$ row-cut; exposes the $2^W$ wall | proved (existence, m11h) |
+| Continuum | Local equilibrium $\Rightarrow$ a **constructive continuum entropy-production density** $\sigma(x)=a(\theta(x))=h_2(\theta)-h_Y(\theta)$ at $O(1/N)$ | witnessed (m11i) |
+
+**Significance for the program.** This is the first constructive discrete$\to$continuum bridge on the computational side: the decay vector, promoted to a **belief transported across the coupling boundary** (the *decay algebra*), composes to give the exact coupled density, and a hydrodynamic limit yields a density **field** $\sigma(x)$. IDEM's decay vector thereby earns a *proved, load-bearing* role — its fully-recoverable-branch structure is exactly what makes the algebra finitely exact. The program's long-standing **central gap** (§1.1: gravity used high-level $H_c/S_c$ but never the IDEM/decay machinery) is now **bridged on the discrete side**.
+
+**Non-claim (locked; banner item 10).** $\sigma(x)$ is a **classical** entropy-production density for a specific lattice family. It is **not** the gravitational load term $\gamma\lvert dS_c/d\tau\rvert$, **not** continuum $L(\rho,g)$, and carries **no** gravitational content. Whether $\sigma$ is the load's entropy-production density is now a **well-posed but open semantic question** (§6, and the falsifiability discussion) — sharper than before, but not asserted.
 
 ---
 
@@ -1844,13 +1867,17 @@ $$
 
 1D/2D joint toys and a game-motivated belief dual report 6/6 SUPPORT scorecards for a Euclidean dual **pattern** (PM vs heat, load co-motion, etc.). These are **not** continuum gravity detections. Residual dual of PM vs heat is time-windowed on $U_\star=[1.36,2.40]$ under soft ensemble hypotheses (PCRH$_b$, $\rho_b=0.42$).
 
+## A.9 Decay algebra and continuum density (Paper C; m11f--i)
+
+Five exactly-reproducing witnesses (`simulations/classical/`): `m11_lattice_export_density.py` (coupled export extensive; shared-input $a\approx0.30076$); `m11_idem_export_density.py` (decay bound, exact for product maps); `m11_decay_algebra.py` (1D: $a=0.3007568$, $\pi_\star=(3-\sqrt5)/2$, matches enumeration $<10^{-8}$); `m11_decay_algebra_general.py` (general $w$; asserts dichotomy $\text{exact}\Leftrightarrow\text{reset}$; AND $a_w=0.30076/0.56568/0.74503$); `m11_decay_algebra_2d.py` (2D strip; $a_W$ matches enumeration $\sim10^{-3}$); `m11_continuum_embedding.py` (local equilibrium $\sigma(x)=a(\theta(x))$, $O(1/N)$, $\int\sigma=0.29937$). Full write-up: Paper C. **Non-claim:** $\sigma$ is classical, not the load term.
+
 ---
 
 # Appendix B. Claim and non-claim checklist (standalone)
 
-**May assert (program-level):** P1--P11 as in Results (output entropy; export; Landauer contact; path-dependent $\sum L_S$; three load roles; continuum $L$ motivated not identified; Path J/M Newton; Euclidean dual $U_\star$; warm-up PM descent; M6 WEAK PASS/FAIL identity; promotion no-go).
+**May assert (program-level):** P1--P12 as in Results (output entropy; export; Landauer contact; path-dependent $\sum L_S$; three load roles; continuum $L$ motivated not identified; Path J/M Newton; Euclidean dual $U_\star$; warm-up PM descent; M6 WEAK PASS/FAIL identity; promotion no-go; **decay algebra + constructive continuum density $\sigma(x)$**).
 
-**Must not assert:** master equation $\Leftrightarrow$ continuum GfE; $L\equiv G$; residual dual for all $t\in(0,t_\star]$; pure T1$'$ with no soft hypotheses; Newton from pointwise $\Phi\propto\rho$; $\gamma_L,\delta_L=D_{\mu\nu},\Lambda_G$ without promotion; lattice denoising = empirical gravity; GfE literature as GR-peer foundation; IDEM constructs continuum $L$ or $G$.
+**Must not assert:** master equation $\Leftrightarrow$ continuum GfE; $L\equiv G$; residual dual for all $t\in(0,t_\star]$; pure T1$'$ with no soft hypotheses; Newton from pointwise $\Phi\propto\rho$; $\gamma_L,\delta_L=D_{\mu\nu},\Lambda_G$ without promotion; lattice denoising = empirical gravity; GfE literature as GR-peer foundation; IDEM constructs continuum $L$ or $G$; **$\sigma(x)$ is the load term $\gamma\lvert dS_c/d\tau\rvert$**.
 
 ---
 

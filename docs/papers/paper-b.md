@@ -3,7 +3,7 @@
 **Paper B (conjecture) — Draft**
 **Status:** 2026-07-29 · Preliminary research · position / research-programme paper
 **Scope contract:** [../DELIVERY_SCOPE.md](../DELIVERY_SCOPE.md) §2 (may assert B1–B7; non-claims N1–N9)
-**Depends on:** Paper A [../01-foundations/PAPER_A_computational_entropy.md](../01-foundations/PAPER_A_computational_entropy.md)
+**Depends on:** Paper A [../01-foundations/PAPER_A_computational_entropy.md](../01-foundations/PAPER_A_computational_entropy.md) · Paper C [../02-computational-models/PAPER_C_decay_algebra.md](../02-computational-models/PAPER_C_decay_algebra.md)
 **Falsifiability verdict:** [../FALSIFIABILITY_L_vs_GR.md](../FALSIFIABILITY_L_vs_GR.md)
 **Canonical dynamics:** [../../emergent-gravity/master-equation.md](../../emergent-gravity/master-equation.md) · **Newton:** [../../emergent-gravity/recoveries/newtonian/README.md](../../emergent-gravity/recoveries/newtonian/README.md)
 
@@ -93,9 +93,25 @@ Since the geometry is GR on-shell, any departure must come from \(L\) depending 
 
 **Central conjecture / missing theorem.** *Either* exhibit a regime in which \(dS_c/d\tau\) is **not** a function of \(T_{\mu\nu}\), compute the calibrated \(\gamma\)-residual, and derive a clock-rate prediction distinct from GR (→ a real experiment: precision timing across strongly irreversible / decoherence-heavy processes at fixed energy density); *or* prove a **degeneracy no-go** showing the three-term load is always reabsorbable into GR + effective source without promotion into the field equations. Either result closes the question and is acceptable.
 
-## 7. O1 seed — one-slot continuum limit (B7, optional)
+## 7. The discrete side is now built — a constructive continuum density (B7)
 
-The discrete load slots of Paper A (\(L_S=H(X\mid Y)\), extensive; \(L_E\), extensive; \(L_B\), non-additive) are finite classical objects. A first constructive step toward a continuum \(L\) is to take **one slot only** — export \(L_S\) — on a lattice of local maps with extensive export, and ask whether a scaling limit yields a local export *density*. We present this as an **open first step**, not a completed construction (non-claim N9: IDEM/decay does not yet construct continuum \(L\) or \(G\)). The target statement: *"there is a scaling limit under which discrete export density converges to a continuum entropy-production density, with stated topology and rate — or a precise obstruction."*
+The reformulation's weakest point used to be that the discrete export ledger and the continuum load term were joined only semantically, with no constructed continuum object on the discrete side. **That gap is now closed on the discrete side.** Paper C ([../02-computational-models/PAPER_C_decay_algebra.md](../02-computational-models/PAPER_C_decay_algebra.md)) shows, for the single load slot \(L_S=H(X\mid Y)\), that:
+
+- coupled export is **extensive** (a per-site density exists despite Paper A path-dependence, which saturates to an \(O(1)\) boundary);
+- a **decay algebra** — a belief transported across the coupling boundary — computes that density, **proved** for 1D (\(a=0.3007568\)) and for general window widths (Blackwell representation + reset-regeneration); and
+- a **hydrodynamic limit** yields a *constructive continuum entropy-production density field*
+
+
+$$
+\sigma(x) = a(\theta(x)) = h_2(\theta(x)) - h_Y(\theta(x)),\qquad \text{at rate } O(1/N).
+$$
+
+
+So the load's entropy-production slot now has a **concrete discrete-to-continuum construction** on the computational side. This sharpens the reformulation's open question from a vague hope to a **well-posed semantic bridge**:
+
+> **Central open bridge.** *Is the classical density \(\sigma(x)\) (Paper C) the continuum entropy-production density that appears in the load term \(\gamma\lvert dS_c/d\tau\rvert\)?*
+
+This is exactly the term (2) candidate of the falsifiability analysis ([../FALSIFIABILITY_L_vs_GR.md](../FALSIFIABILITY_L_vs_GR.md)). We do **not** assert the identification (non-claim N9, and non-claim 10: \(\sigma\) is a classical density, not the load term). What has changed is that the discrete side of the bridge is no longer aspirational — it is a proved/constructed density field, and the remaining step is precisely the labeled semantic one.
 
 ## 8. Non-claims (frozen)
 
