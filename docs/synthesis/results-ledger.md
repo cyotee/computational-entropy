@@ -43,7 +43,7 @@
 | O-2 | Γ-convergence / BV of warm-up action; continuum residual dual | B | O2 |
 | O-3 | Positive continuum/quantum \(S_c\) path (not \(H_c^{\rm toy}\equiv S_c\)) | B | O3 |
 | O-4 | Lorentzian GfE lift **or** extended no-go | B | O4, N1 |
-| O-5 | Central conjecture: departure regime for entropy-production term **or** degeneracy no-go | B→C | Phase 2 verdict |
+| O-5 | Central conjecture: departure regime for entropy-production term **or** degeneracy no-go. *Stage 1 DONE* — dephasing decouples (\(\kappa\approx0\)), reabsorption horn ruled out ([regime program](REGIME_...) · `regime_decoupling_witness.py`); **open:** \(\gamma\)-magnitude (Stage 2) then precision clocks (Stage 3) | B→C | Phase 2 verdict; regime program |
 | O-6 | Free \(G\)-from-bits, or no-go under program axioms | B | — |
 
 ## 3. Frozen non-claims (never assert without new work)
