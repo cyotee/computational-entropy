@@ -71,7 +71,7 @@ The sharp question: **is \(L\) a function of the stress-energy \(T_{\mu\nu}\) al
 
 Either of:
 
-1. **Constructive:** a physical or model regime with \(dS_c/d\tau \neq f(T_{\mu\nu})\), a computed non-negligible \(\gamma\)-residual, and a resulting clock/timing prediction that GR does not make (then bucket C: a real experiment — precision clocks near strongly irreversible processes, decoherence-heavy environments, etc.).
+1. **Constructive:** a physical or model regime with \(dS_c/d\tau \neq f(T_{\mu\nu})\), a computed non-negligible \(\gamma\)-residual, and a resulting clock/timing prediction that GR does not make (then bucket C: a real experiment — precision clocks near strongly irreversible processes, decoherence-heavy environments, etc.). **How to define such a regime and which experiments find or rule it out:** [REGIME_PROGRAM_dSc_decoupling.md](REGIME_PROGRAM_dSc_decoupling.md) (operational-\(S_c\) prerequisite; regimes R1 dephasing / R2 erasure / R3 scrambling; staged computational → magnitude → precision-clock experiments).
 2. **Structural no-go against reformulation:** a proof that the Jacobson generator is *incompatible* with the three-term load unless the load is promoted into the field equations — which would force new metric-level content (this is the R4a "promotion" theme).
 
 Until one of these lands, **the honest label is reformulation.** Either outcome was pre-accepted as acceptable.

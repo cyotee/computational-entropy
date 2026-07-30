@@ -141,6 +141,7 @@ Examples of claims that are **not** settled by pure math, and are **not** the sa
 | Experimental / observational claim | Prerequisite theory |
 |------------------------------------|----------------------|
 | Load-gated clocks appear in precision timing / GPS | Continuum \(L\) + weak-field prediction (O1 + Path M sharpened) |
+| **Entropy-production clock effect at fixed energy** (dephasing regime) | Regime program: [../papers/REGIME_PROGRAM_dSc_decoupling.md](../papers/REGIME_PROGRAM_dSc_decoupling.md) — R1 dephasing / R2 erasure / R3 scrambling; Stage-1 model witness → \(\gamma\)-magnitude → precision clocks |
 | Dual residual pattern appears in a physical imaging/thermal system | Map Layer D to a real apparatus (not automatic) |
 | Cosmological \(\Lambda_G\) or GfE BH corrections match data | Full continuum GfE + parameter map (O4 + external lit) |
 

@@ -113,6 +113,8 @@ So the load's entropy-production slot now has a **concrete discrete-to-continuum
 
 This is exactly the term (2) candidate of the falsifiability analysis ([../FALSIFIABILITY_L_vs_GR.md](../FALSIFIABILITY_L_vs_GR.md)). We do **not** assert the identification (non-claim N9, and non-claim 10: \(\sigma\) is a classical density, not the load term). What has changed is that the discrete side of the bridge is no longer aspirational — it is a proved/constructed density field, and the remaining step is precisely the labeled semantic one.
 
+**How this could be settled.** The concrete experimental path — how to *define* a regime where \(dS_c/d\tau\) decouples from \(T_{\mu\nu}\), why several regimes are needed (dephasing / erasure / scrambling), and the staged experiments (a computational model witness first, then the calibrated magnitude, then precision-clock tests) — is laid out in [../REGIME_PROGRAM_dSc_decoupling.md](../REGIME_PROGRAM_dSc_decoupling.md). Default expectation: a departure in principle (dephasing produces entropy at fixed energy) but a Planck-suppressed magnitude in practice — i.e. reformulation — pending the Stage-1 model witness.
+
 ## 8. Non-claims (frozen)
 
 N1 master eq ⇎ continuum GfE · N2 \(L\not\equiv G\), \(S_c\not\equiv\operatorname{Tr}g\ln G^{-1}\) · N5 no pointwise-\(\rho\) Newton · N6 \(\gamma_L,\delta_L\neq D_{\mu\nu},\Lambda_G\) · N7 lattice ≠ gravity · N8 GfE not on par with GR · N9 no continuum \(L\)/\(G\) from IDEM · no free \(G\)-from-bits. Full list: [../../synthesis/CURRENT_CLAIMS.md](../../synthesis/CURRENT_CLAIMS.md) §3.

@@ -44,6 +44,7 @@ ALLOWLIST: list[tuple[str, str]] = [
     ("papers/02-computational-models/PAPER_C_decay_algebra.md", "papers/paper-c.md"),
     ("papers/04-gravitational-channel/PAPER_B_emergent_gravity_conjecture.md", "papers/paper-b.md"),
     ("papers/FALSIFIABILITY_L_vs_GR.md", "papers/falsifiability.md"),
+    ("papers/REGIME_PROGRAM_dSc_decoupling.md", "papers/regime-program.md"),
     ("synthesis/m11f-decay-algebra-theorem.md", "synthesis/m11f-theorem.md"),
     ("synthesis/m11g-decay-algebra-general-w-theorem.md", "synthesis/m11g-theorem.md"),
     ("synthesis/m11h-decay-algebra-2d.md", "synthesis/m11h-2d.md"),
