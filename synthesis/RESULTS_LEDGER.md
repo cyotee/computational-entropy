@@ -29,6 +29,7 @@
 | R-B5 | ACD-EW Euclidean dual = **analogy/pattern only** (Perona–Malik prior art) | structural/hybrid | B | [action-channel-duality-euclidean.md](action-channel-duality-euclidean.md) |
 | R-B6 | Falsifiability **verdict: reformulation**; entropy-production term = sole candidate departure | analysis | B | [../papers/FALSIFIABILITY_L_vs_GR.md](../papers/FALSIFIABILITY_L_vs_GR.md) |
 | R-O1a | **1D decay-algebra density theorem**: for the nearest-neighbour AND lattice the export density \(a=\lim E(k)/k\) exists \(=1-h_Y=0.3007568\), computed by a local belief-transfer recursion; \(E(k)=ak+b+o(1)\) | **proved** | — (feeds B) | [m11f-decay-algebra-theorem.md](m11f-decay-algebra-theorem.md) · `m11_decay_algebra.py` |
+| R-O1b | **General-\(w\) decay-algebra theorem** (any gate, sliding window \(w\)): \(a=1-h_Y\) exists (\((w{-}1)\)-dependence), \(h_Y=\mathbb E_{\mu^\star}[H(Y\mid\pi)]\) via the \(2^{w-1}\)-state belief-transfer operator (Blackwell), and **reset gates regenerate** ⇒ exact renewal-reward. Dichotomy exact\(\Leftrightarrow\)reset. | **proved** (non-atomicity converse conjectural) | — (feeds B) | [m11g-decay-algebra-general-w-theorem.md](m11g-decay-algebra-general-w-theorem.md) · `m11_decay_algebra_general.py` |
 
 *(Legacy IDs: R-A* subsume P1–P4 + Paper A theorems; R-B3=P7; R-B4=P10/P11; R-B5=P8/P9.)*
 

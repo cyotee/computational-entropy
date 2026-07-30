@@ -69,6 +69,16 @@ def gate_threshold(t: int) -> Gate:
     return lambda x, t=t: int(sum(x) >= t)
 
 
+def is_reset_gate(g: Gate, w: int) -> bool:
+    """True iff some output value has a SINGLETON preimage in {0,1}^w — i.e. a
+    fully-recoverable ([0,..,0]) decay branch. Theorem m11g: reset ⇔ the filter
+    regenerates ⇔ the belief-chain is exactly finite (renewal-reward)."""
+    counts: Dict[int, int] = {}
+    for x in product((0, 1), repeat=w):
+        counts[g(x)] = counts.get(g(x), 0) + 1
+    return any(c == 1 for c in counts.values())
+
+
 # --- ground truth: exact enumerated density ---
 
 
@@ -254,12 +264,15 @@ def main() -> None:
         d = abs(a_enum - a_tr)
         if name == "AND" and w == 2:
             a_w2_and = a_tr
+        reset = is_reset_gate(g, w)
         print(
             f"{name:>13}  {w:2d}  {1 << (w - 1):7d}  "
             f"{a_enum:10.5f}  {a_tr:11.5f}  {d:9.1e}  {method:>7}  {nbel_s:>8}"
         )
-        tol = 5e-3 if method == "MC" else 5e-3
-        assert d < tol, f"{name} w={w}: transfer must match enumeration"
+        assert d < 5e-3, f"{name} w={w}: transfer must match enumeration"
+        # Theorem m11g dichotomy: exact-finite belief chain  ⇔  reset gate.
+        assert (method == "exact") == reset, \
+            f"{name} w={w}: finiteness must match singleton-preimage (reset) test"
 
     # tie to the proved 1D theorem constant
     assert a_w2_and is not None and abs(a_w2_and - 0.3007568) < 1e-4, \
