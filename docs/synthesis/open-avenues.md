@@ -68,9 +68,10 @@ Each row: **what we have**, **what we must not claim yet**, **missing theorem (s
 |--|--|
 | **Have** | Finite \(L^{\mathrm{disc}}\); composition laws; m11c **role** motivation; coupled-region ledgers |
 | **Have (2026-07-29 witness)** | **Fast-fail PASSED** (`simulations/classical/m11_lattice_export_density.py`): for coupled AND lattices the block export \(E(k)=H(X\mid Y)\) is **extensive** — linear in \(k\) with a well-defined bulk density (shared-input \(a\approx 0.301\) bits/site, residual \(\sim\!10^{-8}\); chained \(a\approx 0.999\), residual \(\sim\!10^{-4}\)). Publication-gauge / path-dependence surplus **saturates** to an \(O(1)\) boundary term (\(\approx 1.31\) bits), so per-site \(\to 0\) like \(1/k\). Discrete witness only — **not** a continuum-limit theorem. |
-| **Must not claim** | \(L^{\mathrm{disc}}=L(\rho,g)\); IDEM constructs continuum metric \(G\); that the witness above is the limit theorem |
-| **Missing theorem (target)** | *There exists a scaling limit* (graph → continuum, or many local maps → field \(\rho\)) *under which discrete work/export/capacity densities converge to the three continuum load terms*, with stated topology and rate—or a **precise obstruction** theorem. |
-| **Suggested first step** | ~~Define a lattice of local maps with extensive export~~ **(done — witness above)**. Next: (a) swap AND → **IDEM map family** and check the decay vector predicts the density; (b) prove the extensivity witness as an entropy-rate limit theorem (stochastic-thermodynamics / hydrodynamic-limit toolkit). |
+| **Have (2026-07-30 IDEM)** | **Decay↔export bound witnessed** (`simulations/classical/m11_idem_export_density.py`): for uniform inputs the IDEM hard decay vector gives \(H(X\mid Y)\le\sum_y p(y)\,\#\{\text{unrecoverable coords}\}\), **exact iff preimages are product subcubes**. ⇒ for product/erasure lattices the export density is read from local decay metadata in \(O(N)\), enumeration-free & exact; AND/majority/parity have a known strict gap. IDEM utility demonstrated; **not** a continuum claim. |
+| **Must not claim** | \(L^{\mathrm{disc}}=L(\rho,g)\); IDEM constructs continuum metric \(G\); that the witnesses above are the limit theorem |
+| **Missing theorem (target)** | *There exists a scaling limit* (graph → continuum, or many local maps → field \(\rho\)) *under which discrete work/export/capacity densities converge to the three continuum load terms*, with stated topology and rate—or a **precise obstruction** theorem. **Plus:** a compositional **decay algebra** tightening the decay bound under coupling (so IDEM metadata gives the coupled density, not just a bound). |
+| **Suggested first step** | ~~Define a lattice of local maps with extensive export~~ **(done)**; ~~swap AND → IDEM map family, check decay predicts density~~ **(done — bound, exact for products)**. Next: (a) **decay algebra** to tighten the bound under coupling; (b) prove the extensivity witness as an entropy-rate limit theorem (stochastic-thermodynamics / hydrodynamic-limit toolkit). |
 | **Experiment?** | Only after a sharp continuum prediction exists. Pure limit theorem is **theory-only**. |
 
 ### O2 — Full warm-up continuum (Γ-limit, BV jumps, residual dual continuum)
@@ -200,6 +201,7 @@ DO NOT: dual IC churn; L≡G; ME⇔GfE; lattice=gravity
 |------|--------|
 | 2026-07-15 | Initial OPEN_AVENUES: buckets A/B/C; O1–O5 missing theorems; priority for next cycle |
 | 2026-07-29 | O1 fast-fail witness PASSED (`m11_lattice_export_density.py`): coupled-AND export extensive with well-defined bulk density; path-dependence saturates to O(1) boundary (per-site → 0). Reframed as reformulation. Next: IDEM map family + entropy-rate limit theorem. |
+| 2026-07-30 | IDEM decay↔export bound witnessed (`m11_idem_export_density.py`): hard decay vector upper-bounds H(X\|Y), exact for product/erasure maps ⇒ O(N) enumeration-free density. IDEM utility shown. Next: decay algebra under coupling + limit theorem. |
 
 ---
 

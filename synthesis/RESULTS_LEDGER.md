@@ -35,7 +35,7 @@
 
 | ID | Missing theorem / construction | Bucket | Legacy |
 |----|-------------------------------|--------|--------|
-| O-1 | Continuum limit of **one** load slot (\(L_S\) density) — or obstruction. *Fast-fail witness PASSED 2026-07-29* (`m11_lattice_export_density.py`): coupled-AND export extensive, bulk density well-defined, path-dependence subleading. Theorem + IDEM still open. | B | O1, N9 |
+| O-1 | Continuum limit of **one** load slot (\(L_S\) density) — or obstruction. *Witnesses PASSED*: coupled-AND export extensive w/ well-defined bulk density, path-dependence subleading (`m11_lattice_export_density.py`, 2026-07-29); IDEM decay vector upper-bounds export, **exact for product maps** ⇒ \(O(N)\) enumeration-free density (`m11_idem_export_density.py`, 2026-07-30). Open: decay algebra under coupling + limit theorem. | B | O1, N9 |
 | O-2 | Γ-convergence / BV of warm-up action; continuum residual dual | B | O2 |
 | O-3 | Positive continuum/quantum \(S_c\) path (not \(H_c^{\rm toy}\equiv S_c\)) | B | O3 |
 | O-4 | Lorentzian GfE lift **or** extended no-go | B | O4, N1 |

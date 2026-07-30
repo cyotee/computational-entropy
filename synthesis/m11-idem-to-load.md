@@ -311,6 +311,7 @@ Arity \(2\); result dim \(1\); decay \(\mathbf{d}\) branch-dependent; \(d_f \app
 | \(H_c\) = entropy of declared channel output | **Constructive** (definition) | Canonical foundations |
 | Classical \(H_c\) generalizes to \(S_c = S(\Phi_g(\rho))\) | **Semantic** (stated) | Canonical; M10 for residual-toy vs von Neumann |
 | Decay flips ↔ local information export | **Structural candidate** | Strong classical analogy; not holographic theorem |
+| Hard decay vector **upper-bounds** export: \(H(X\mid Y)\le\sum_y p(y)\,\#\{\text{unrecoverable coords}\}\), **exact iff product-preimage** | **Constructive** | Witnessed `simulations/classical/m11_idem_export_density.py` (2026-07-30); gives \(O(N)\) enumeration-free density for erasure lattices |
 | \(L_S^{\mathrm{disc}} \leftrightarrow \gamma\|dS_c/d\tau\|\) role | **Structural** | Best discrete–continuum role match |
 | \(L_E^{\mathrm{disc}} \leftrightarrow\) energy-density term role | **Structural / analogical** | Needs chosen complexity measure |
 | \(L_B^{\mathrm{disc}} \leftrightarrow\) boundary/Bekenstein ratio role | **Structural soft / analogical** | \(d_f\) / residual ensemble entropy as proxy |
