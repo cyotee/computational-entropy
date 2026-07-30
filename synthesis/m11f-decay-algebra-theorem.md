@@ -130,7 +130,7 @@ The naive hard-decay bound was \(1.5\) bits/site; the theorem gives the exact \(
 
 **Explicitly still open (next ladder rungs):**
 
-1. **General couplings** — the same transfer/belief argument for 2D and range-\(r\) coupling (boundary becomes a finite set of bits; expect a transfer *operator* on a larger belief space). Not yet proved.
+1. **General couplings** — the same transfer/belief argument for 2D and range-\(r\) coupling (boundary becomes a finite set of bits; a transfer *operator* on a larger belief space). **Witnessed numerically** for range-\(r\) 1D (`simulations/classical/m11_decay_algebra_general.py`): the operator on the \(2^{w-1}\) window states reproduces the enumerated density for AND/OR/threshold, and is exactly finite **iff** the gate has a fully-recoverable decay branch (reset gate). A general-\(w\) **theorem** and 2D remain open.
 2. **Continuum embedding** — a scaling limit (lattice spacing \(h\to0\)) sending the discrete density \(a\) to a continuum **entropy-production density**, i.e. the actual bridge to the load term \(\gamma\lvert dS_c/d\tau\rvert\). **Not** attempted here; may carry an obstruction.
 
 **Non-claims (stand):** not continuum \(L(\rho,g)\); not \(dS_c/d\tau\) identity; not gravity; \(a\) is a discrete entropy-production density for one coupling family, **not** the continuum load term.
