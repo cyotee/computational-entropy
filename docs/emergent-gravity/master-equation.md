@@ -56,6 +56,8 @@ $$
 
 With \(\alpha\) fixed by the same Newtonian matching condition (\(\alpha\beta = 4\pi G / c^4\)).
 
+> **Dimensional caveat (2026-07-31) — see [load-dimensional-analysis.md](load-dimensional-analysis.md).** The relation \(\alpha\beta=4\pi G/c^4\) is **dimensionally invalid**: with dimensionless \(L\), the coefficients \(\alpha,\beta,\delta\) are dimensionless and \(\gamma\) has units of time, so \(\alpha\beta\) is dimensionless while \(4\pi G/c^4\) is dimensionful. The correct weak-field calibration is the on-shell identity \(\alpha L=-\Phi/c^2\), which fixes only the **sum** \(\alpha L\), not the individual coefficients. Moreover, a **no-go** holds: because the entropy-production term varies at fixed \(T_{\mu\nu}\) (pure dephasing) while \(\alpha L=-\Phi/c^2\) is fixed by \(T_{\mu\nu}\), the load **cannot** be both the gravitational clock and an independent entropy clock — it is a **diagnostic co-moving with the Path-J/M metric**, not a generator. Read \(L\) accordingly.
+
 The **master equation** governing the evolution is therefore
 
 

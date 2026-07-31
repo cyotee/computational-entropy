@@ -43,7 +43,7 @@
 | O-2 | Γ-convergence / BV of warm-up action; continuum residual dual | B | O2 |
 | O-3 | Positive continuum/quantum \(S_c\) path (not \(H_c^{\rm toy}\equiv S_c\)) | B | O3 |
 | O-4 | Lorentzian GfE lift **or** extended no-go | B | O4, N1 |
-| O-5 | Central conjecture: departure regime for entropy-production term **or** degeneracy no-go. *Stage 1 DONE* — dephasing decouples (\(\kappa\approx0\)), departure in principle; *Stage 2 DONE* — \(\alpha\gamma\) unfixed (dimensional gap), clocks bound \(\alpha\gamma\lesssim10^{-18}\)s ⇒ **reformulation in practice** ([regime program](../papers/REGIME_PROGRAM_dSc_decoupling.md) · `regime_decoupling_witness.py`, `regime_gamma_calibration.py`). **Open (theory):** dimensional completion of the load constants | B→C | Phase 2 verdict; regime program |
+| O-5 | Central conjecture: departure regime **or** no-go. **RESOLVED — NO-GO.** Stage 1: dephasing decouples (departure in principle); Stage 2: \(\alpha\gamma\) unfixed, unmeasurable; **dimensional rebuild**: correct calibration \(\alpha L=-\Phi/c^2\) is \(T_{\mu\nu}\)-fixed while the entropy term varies at fixed \(T_{\mu\nu}\) ⇒ load is a **diagnostic co-moving with the Path-J/M metric**, not an independent clock ⇒ **reformulation structurally** ([load-dim](../emergent-gravity/load-dimensional-analysis.md) · `regime_*` witnesses). A departure needs a different theory (R4a promotion). | closed (structural no-go) | Phase 2; regime program; PRD load rebuild |
 | O-6 | Free \(G\)-from-bits, or no-go under program axioms | B | — |
 
 ## 3. Frozen non-claims (never assert without new work)

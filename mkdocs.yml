@@ -98,6 +98,7 @@ nav:
   - Quick reference:
       - Computational entropy: foundations/computational-entropy.md
       - Channel, load, master equation: emergent-gravity/master-equation.md
+      - Load dimensional analysis (no-go): emergent-gravity/load-dimensional-analysis.md
       - Newtonian recovery: emergent-gravity/newtonian-recovery.md
       - Claims: synthesis/claims.md
       - Results ledger: synthesis/results-ledger.md

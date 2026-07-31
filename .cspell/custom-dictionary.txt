@@ -11,6 +11,10 @@ decoheres
 denoising
 dephasing
 Deprioritized
+diagnose
+diagnoses
+dimensionful
+dimensionlessness
 equipartition
 ergodic
 ergodicity
@@ -25,6 +29,7 @@ Kakkat
 Kumar
 Kähler
 Landauer
+Lindblad
 linearizes
 Liouvillian
 Malik
@@ -36,6 +41,7 @@ multisets
 neighbour
 neighbours
 nonequilibrium
+nonlocal
 Ostrogradsky
 pathwise
 PCRH

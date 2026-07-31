@@ -36,6 +36,10 @@ ALLOWLIST: list[tuple[str, str]] = [
         "emergent-gravity/recoveries/newtonian/README.md",
         "emergent-gravity/newtonian-recovery.md",
     ),
+    (
+        "emergent-gravity/load-dimensional-analysis.md",
+        "emergent-gravity/load-dimensional-analysis.md",
+    ),
     ("synthesis/CURRENT_CLAIMS.md", "synthesis/claims.md"),
     ("synthesis/PROGRAM_CONCLUSIONS.md", "synthesis/conclusions.md"),
     ("synthesis/OPEN_AVENUES.md", "synthesis/open-avenues.md"),
