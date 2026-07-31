@@ -40,6 +40,10 @@ ALLOWLIST: list[tuple[str, str]] = [
         "emergent-gravity/load-dimensional-analysis.md",
         "emergent-gravity/load-dimensional-analysis.md",
     ),
+    (
+        "emergent-gravity/r4a-promotion.md",
+        "emergent-gravity/r4a-promotion.md",
+    ),
     ("synthesis/CURRENT_CLAIMS.md", "synthesis/claims.md"),
     ("synthesis/PROGRAM_CONCLUSIONS.md", "synthesis/conclusions.md"),
     ("synthesis/OPEN_AVENUES.md", "synthesis/open-avenues.md"),

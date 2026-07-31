@@ -1,6 +1,7 @@
 Araki
 Assertable
 Bekenstein
+Bianchi
 Bianconi
 Bianconi’s
 Blackwell
@@ -19,6 +20,8 @@ equipartition
 ergodic
 ergodicity
 executably
+Friedmann
+FRW
 functionals
 Guica
 holographic
@@ -46,6 +49,7 @@ Ostrogradsky
 pathwise
 PCRH
 Perona
+phantom
 plaquette
 plaquettes
 pointwise
@@ -67,3 +71,4 @@ subcube
 subcubes
 Thattarampilly
 Zheng
+ΛCDM
