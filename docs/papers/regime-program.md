@@ -59,19 +59,26 @@ Built as an open-qubit Lindblad model: `simulations/regime/regime_decoupling_wit
 
 Rigor: **constructive model witness** (structural weights \(\alpha=\beta=\gamma=1\); no continuum/gravity claim).
 
-### Stage 2 — Compute the calibrated magnitude
+### Stage 2 — Calibrate \(\gamma\) and the magnitude — **DONE (2026-07-31)**
 
-If Stage 1 shows a departure, compute the **\(\gamma\)-residual**: the size of the clock effect given \(\gamma\) is fixed by Newtonian matching. This number decides whether nature could see it.
+Witness: `simulations/regime/regime_gamma_calibration.py`.
 
-### Stage 3 — Physical experiment (only if Stage 2's magnitude is non-negligible)
+- **Dimensional analysis (derivable):** \(\gamma\) has units of **time** (since \(\lvert dS_c/d\tau\rvert\sim1/\text{time}\) and \(L\) is dimensionless). Candidate fundamental times: Planck \(t_{\rm Pl}=5.4\times10^{-44}\,\)s, electron Compton \(1.3\times10^{-21}\,\)s, Margolus–Levitin (optical) \(5.8\times10^{-16}\,\)s.
+- **Structural gap (the real blocker):** the stated calibration \(\alpha\beta=4\pi G/c^4\) is **dimensionally inconsistent** with dimensionless \(\alpha,\beta,L\) (\(4\pi G/c^4\) is dimensionful, \(\sim10^{-43}\,\mathrm{s^2\,kg^{-1}\,m^{-1}}\)). So the master equation **does not fix** \(\gamma\) (nor \(\alpha\)).
+- **Observable:** the fractional dephasing clock shift depends only on \(\eta\equiv\alpha\gamma\) (time): \(\delta\sim\eta/T_2\).
+- **Empirical bound:** precision-clock null results (no dephasing-dependent shift at \(\sim10^{-18}\)) already require \(\alpha\gamma\lesssim10^{-18}\,\text{s}\) (for \(T_2\sim1\,\)s). This *already excludes* \(\gamma\sim\)ML-optical with \(\alpha\sim1\) (\(\delta\sim6\times10^{-16}\gg10^{-18}\)); \(\gamma\sim t_{\rm Pl}\) is unmeasurable (\(\delta\sim10^{-44}\)).
 
-**Precision atomic / optical-lattice clocks under controlled dephasing** (R1): compare the tick rate of a strongly-dephased clock against an isolated one of **identical energy**. Clocks reach \(\sim10^{-18}\) fractional sensitivity, so any effect above Planck-suppression is in principle detectable. If Stage 2 says the effect is Planck-suppressed, there is nothing to measure and the **reformulation is confirmed**.
+**Result.** For every *natural* parameter choice the effect is either **unmeasurable** (fundamental \(\gamma\)) or **already excluded** (order-unity \(\alpha\) with microscopic \(\gamma\)). No currently-observable prediction exists without an unmotivated, un-suppressed \(\alpha\gamma\). **Reformulation in practice** — the Stage-1 departure is real in principle but not observable. The genuine missing step is a **dimensionally-consistent completion of the load constants**, not a larger experiment.
+
+### Stage 3 — Physical experiment — **not warranted (as things stand)**
+
+Precision clocks under controlled dephasing would be the apparatus, and they *already* provide the bound in Stage 2. A dedicated experiment is not warranted until the theory supplies a \(\gamma\) (Stage-2 structural fix) predicting \(\alpha\gamma\) in the narrow, currently-unmotivated window \([\sim10^{-24},\sim10^{-18}]\,\)s that is both allowed and reachable.
 
 ## 5. Outcome so far
 
 **Stage 1 confirmed the "in principle" horn.** The model witness (above) shows the decoupling is *real*: pure dephasing produces \(S_c\) at fixed local energy with no heat flux, so the entropy-production term is not reabsorbable into stress-energy for R1. This is genuine progress — it **rules out** the possibility that the framework is a reformulation *purely by reabsorption*, at least for the dephasing regime.
 
-**What remains (Stage 2, blocked).** Whether the departure is *observable* depends entirely on the calibrated magnitude \(\alpha\gamma\), which the framework has **not** pinned (the master-equation constants are symbolic, "fixed by Bekenstein saturation"). Until \(\gamma\) is calibrated there is no number to compare to precision-clock sensitivity. Expected (not proven): the magnitude is Planck-suppressed, making it a departure in principle but a reformulation in practice — but this now hinges on a concrete missing calculation (\(\gamma\) calibration), not on the degeneracy question, which Stage 1 settled.
+**Stage 2 resolved the magnitude question — as a no-go for observability.** The observable depends only on \(\eta=\alpha\gamma\); the master equation cannot fix it (the \(\alpha\beta=4\pi G/c^4\) calibration is dimensionally inconsistent). Bounding \(\eta\) by existing precision-clock null results (\(\alpha\gamma\lesssim10^{-18}\,\)s) and by natural fundamental-time values of \(\gamma\), the effect is **unobservable for every natural parameter choice** (and an order-unity \(\alpha\) with microscopic \(\gamma\) is *already excluded* by clocks). **Net: reformulation in practice.** The remaining open item is now purely theoretical — a dimensionally-consistent completion of the load constants — not an experiment.
 
 ## 6. Non-claims (stand)
 
@@ -89,6 +96,7 @@ If Stage 1 shows a departure, compute the **\(\gamma\)-residual**: the size of t
 | [../synthesis/OPEN_AVENUES.md](../synthesis/OPEN_AVENUES.md) §5 | Experiment bucket (C) |
 | [../emergent-gravity/master-equation.md](../emergent-gravity/master-equation.md) | Load term \(\gamma\lvert dS_c/d\tau\rvert\) |
 | `simulations/regime/regime_decoupling_witness.py` | Stage-1 open-qubit witness (R1/R2/R3) |
+| `simulations/regime/regime_gamma_calibration.py` | Stage-2 \(\gamma\) calibration / clock-magnitude bound |
 
 ---
 
@@ -98,3 +106,4 @@ If Stage 1 shows a departure, compute the **\(\gamma\)-residual**: the size of t
 |------|-------|
 | 2026-07-30 | Initial program note: operational-\(S_c\) prerequisite; regime definition; regimes R1–R3 (dephasing / erasure / scrambling); staged experiments (computational → magnitude → precision clocks); reformulation default. |
 | 2026-07-30 | **Stage 1 DONE:** open-qubit witness shows pure dephasing decouples (\(\kappa\approx0\), \(E\) fixed, \(S_c\) rises); R2 coupled control (\(\kappa\approx0.42\)); R3 coarse-graining anchor. Reabsorption horn ruled out for dephasing; magnitude (\(\gamma\) calibration) now the open blocker. |
+| 2026-07-31 | **Stage 2 DONE:** \(\gamma\) has units of time but the master eq's \(\alpha\beta=4\pi G/c^4\) is dimensionally inconsistent ⇒ \(\alpha\gamma\) unfixed. Clock null-results bound \(\alpha\gamma\lesssim10^{-18}\,\)s; natural \(\gamma\) ⇒ unmeasurable, order-unity \(\alpha\) + microscopic \(\gamma\) ⇒ already excluded. **Reformulation in practice.** True blocker = dimensional completion of load constants. |
