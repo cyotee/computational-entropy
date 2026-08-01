@@ -28,7 +28,7 @@ with \(T^S\) built from the entropy-production density (Paper C's \(\sigma\), ca
 - **(a) Matter separately conserved** \(\Rightarrow \nabla^\mu T^S_{\mu\nu}=0\Rightarrow \partial_\nu\rho_S=0\Rightarrow \rho_S=\)const. The computational sector is just a **cosmological constant \(\Lambda\)** — **no new physics** (reproduces \(\Lambda\)CDM's \(\Lambda\), does not predict its value).
 - **(b) \(\rho_S\) dynamical (tracks entropy production)** \(\Rightarrow \nabla^\mu T^{\rm matter}_{\mu\nu}=-\nabla^\mu T^S_{\mu\nu}\neq0\): **energy \(Q\) is exchanged** between matter and the computational sector.
 
-**Branch (b) is physically motivated by Landauer (Paper A):** producing entropy costs energy, drawn from matter, so \(Q>0\) (matter → computational sector). This is a standard *interacting dark energy* structure — and the coupling is the Landauer power of cosmological entropy production. So the classical core (Landauer-exact export) supplies the promotion's coupling.
+**Branch (b) sign is *derived*, not merely "Landauer-motivated" (see §4c):** the framework's locked reading (load = entropy **flux**, not stockpile) plus the second law force \(Q\ge0\) (matter → computational sector), so \(\rho_S\) grows. This is a standard *interacting dark energy* structure whose coupling is the Landauer power of cosmological entropy production — the classical core supplies it. (An earlier version of this note said "sign fixed by Landauer"; the sharper statement is §4c.)
 
 ## 3. FRW model and results
 
@@ -85,6 +85,29 @@ starting at \(\Lambda\)CDM \((-1,0)\) and moving into the **phantom** quadrant. 
 **Verdict.** The natural (Landauer-sign) R4a prediction is **disfavored** by the current data hint; the model survives only in its \(\xi\to0\) (\(\Lambda\)CDM) limit — the *no-new-physics* branch. Honest nuances: (i) the DESI dynamical-DE preference is **not settled**, and \(\Lambda\)CDM (our \(\xi\to0\)) remains fully viable; (ii) the **opposite** energy-flow sign (\(\xi<0\), dark→matter) would give quintessence (\(w_0>-1\)) and *could match* DESI — so the data, if it holds, tells us which way the computational energy exchange must go.
 
 **Consequence for strategy (this validated doing the cheap test first):** do **not** invest in the first-principles coupling for the phantom branch now — it is the disfavored direction. Wait for firmer data (DESI DR2), or study the opposite-sign (quintessence) branch as the physically motivated alternative if \(w_0>-1\) solidifies.
+
+## 4c. Sign derivation — the framework predicts the *disfavored* sign
+
+The w(z) test disfavored the phantom branch and noted the opposite (quintessence) sign fits better. Can we **derive** which sign the framework predicts, *independently of the data*? If so, we must take it — we cannot flip the sign to fit. Witness: `simulations/gravity-toy/r4a_sign_derivation.py`.
+
+**The two signs are two thermodynamic readings of information change:**
+
+- **Flux / Landauer (loss):** the source is the entropy-production *flux* (irreversible loss). \(Q=+\lvert\text{flux}\rvert\Rightarrow\rho_S\) grows \(\Rightarrow\) **phantom** \((w_0\le-1)\).
+- **Stockpile / Szilard (gain):** the source is the *recording of identity* (information acquired), drawing down a reservoir. \(Q<0\Rightarrow\rho_S\) shrinks \(\Rightarrow\) **quintessence** \((w_0>-1)\).
+
+**The framework's locked reading selects the flux side.** From PROGRESS_REPORT §2.1 / `m11-idem-to-load.md`: *"Load \(L\) = demand from … entropy **flux**, **not** remaining identity stockpile; active loss/scrambling \(\Rightarrow\) **higher** \(L\)"*, and "Load = remaining … potential identity" is the **explicitly rejected** anti-pattern. The \(\rho_S\) source is therefore the entropy-production **flux**, which is non-negative (second law). Hence
+
+
+$$
+Q=+\lvert\text{flux}\rvert\ge0\ \Rightarrow\ \rho_S\ \text{grows}\ \Rightarrow\ \boxed{\text{PHANTOM}}.
+$$
+
+
+Cross-check: the second law (net entropy production \(>0\)) *is* the dissipative/Landauer direction — independently consistent with phantom.
+
+**Consequence.** The framework, on its own terms, **derives the phantom sign** — the *same* sign the w(z) test found disfavored. This is a clean, falsifiable prediction, not an ambiguity. The Szilard/quintessence sign (which the data prefers) sources gravity from the **recording/stockpile** side — the framework's **rejected** anti-pattern. Adopting it would be either a *different theory* (revising the locked reading for independent reasons) or *fitting to data* (illegitimate). **The quintessence rescue is not available within this theory.**
+
+So the honest, sharpened status: R4a's *natural* candidate is not just "one of two signs, one of which fits" — it is a **derived phantom prediction that current (unsettled) data disfavors**, with the tempting escape route rigorously closed. (Caveat: the locked reading is a program *convention* labeled "semantic"; the prediction is as firm as that convention plus the second law. It could be revised only for reasons independent of the data.)
 
 ## 5. What this changes
 

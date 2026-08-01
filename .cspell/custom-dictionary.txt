@@ -67,12 +67,14 @@ recontextualization
 regenerates
 regenerative
 renewal-reward
+reservoir
 Riemannian
 scrambling
 semigroup
 SPDE
 subcube
 subcubes
+Szilard
 Thattarampilly
 Zheng
 ΛCDM
