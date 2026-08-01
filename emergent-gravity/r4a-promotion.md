@@ -55,6 +55,22 @@ It is **not** a validated theory:
 - **One promotion among several.** Perfect-fluid, \(w_S=-1\), \(Q=\xi H\rho_m\), and the energy-flow sign are modeling choices. Other promotions exist; this is the minimal one.
 - **Toy consistency limit.** \(\rho_S>0\) fails in the past for the crude ansatz; a realistic entropy-production source is needed for early times.
 
+## 4b. w(z) survival test — the shape is disfavored by current data
+
+Before attempting the hard first-principles coupling, we tested the *shape* of the prediction against data (`simulations/gravity-toy/r4a_wz_survival.py`), mapping the model to the standard CPL plane \((w_0,w_a)\).
+
+**Key structural fact.** The Landauer sign forces the model onto the line
+$$
+w_0=-1-0.143\,\xi\le -1,\qquad w_a<0,
+$$
+starting at \(\Lambda\)CDM \((-1,0)\) and moving into the **phantom** quadrant. The model **can never reach \(w_0>-1\)**.
+
+**The data points the other way.** Representative DESI DR1 (2024) \(w_0w_a\)CDM fits — *approximate, unsettled (~2–3\(\sigma\)), sample-dependent* — all sit at \(w_0>-1\) (the **quintessence** side), \(\sim2.8\)–\(3.9\sigma\) from \(\Lambda\)CDM on the **opposite** side from our prediction (DESI+CMB+PantheonPlus \(\approx(-0.83,-0.75)\); +DESY5 \(\approx(-0.73,-1.05)\); +Union3 \(\approx(-0.65,-1.27)\)).
+
+**Verdict.** The natural (Landauer-sign) R4a prediction is **disfavored** by the current data hint; the model survives only in its \(\xi\to0\) (\(\Lambda\)CDM) limit — the *no-new-physics* branch. Honest nuances: (i) the DESI dynamical-DE preference is **not settled**, and \(\Lambda\)CDM (our \(\xi\to0\)) remains fully viable; (ii) the **opposite** energy-flow sign (\(\xi<0\), dark→matter) would give quintessence (\(w_0>-1\)) and *could match* DESI — so the data, if it holds, tells us which way the computational energy exchange must go.
+
+**Consequence for strategy (this validated doing the cheap test first):** do **not** invest in the first-principles coupling for the phantom branch now — it is the disfavored direction. Wait for firmer data (DESI DR2), or study the opposite-sign (quintessence) branch as the physically motivated alternative if \(w_0>-1\) solidifies.
+
 ## 5. What this changes
 
 - The gravity program is no longer a dead-ended reformulation: R4a opens a **concrete, falsifiable extension** (phantom interacting dark energy from computational entropy production), tied to the classical core via the Landauer coupling and kin to Bianconi \(\Lambda_G\) / entropy-inflation literature.

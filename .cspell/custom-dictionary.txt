@@ -6,12 +6,14 @@ Bianconi
 Bianconi’s
 Blackwell
 Chuang
+CPL
 decohere
 decoherence
 decoheres
 denoising
 dephasing
 Deprioritized
+DESI
 diagnose
 diagnoses
 dimensionful
@@ -46,6 +48,7 @@ neighbours
 nonequilibrium
 nonlocal
 Ostrogradsky
+Pantheon
 pathwise
 PCRH
 Perona
@@ -55,6 +58,7 @@ plaquettes
 pointwise
 preimage
 preimages
+quintessence
 reabsorb
 reabsorbable
 reabsorbed
