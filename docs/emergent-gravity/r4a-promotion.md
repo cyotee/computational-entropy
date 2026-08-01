@@ -116,6 +116,26 @@ Cross-check: the second law (net entropy production \(>0\)) *is* the dissipative
 
 **Consequence (honest, corrected).** The sign is **not** an airtight theorem — but it is **not** a free 50/50 either. **Every** identification that follows the entropy arrow (loss flux, output-entropy rise, structure accumulating) lands on **phantom**; the *only* quintessence route identifies \(\rho_S\) with the free-energy **reservoir** being drawn down — the framework's **explicitly rejected** "remaining stockpile/potential" anti-pattern. So **phantom is robustly favored**, and the Szilard/quintessence rescue is **not available within the framework** without a *new, independently-motivated* principle (that must not be chosen to fit the data). Absent such a principle, the honest prediction remains phantom (currently disfavored), and the escape is a **genuine open theory problem**, not a sign flip. (The locked reading is a program *convention* labeled "semantic"; the lean is as firm as that convention plus the second law.)
 
+## 4d. Vacuum-character (equation-of-state) test — the reservoir reading is *forced*, and it is quintessence
+
+§4c favored phantom *among readings that track the entropy arrow*. But a dark-energy sector must have \(w=p/(\rho c^2)\approx-1\). So ask, **data-independently**, what equation of state each end of the free-energy flow actually has (`simulations/gravity-toy/r4a_eos_test.py`):
+
+| \(\rho_S\) end | physical nature | equation of state | dark energy? |
+|----------------|-----------------|-------------------|--------------|
+| **dissipation** (Landauer heat) | thermalized heat | \(w\in[0,\tfrac13]\ge0\) | **no** (dilutes, decelerates) |
+| **reservoir** (latent free energy as a scalar potential) | slow-roll potential | \(w\to-1\) | **yes** (accelerates) |
+
+**This is decisive, and it cuts the other way from §4c.** The dissipation end — the one the entropy-arrow readings pick, and the one that gave **phantom** — is *thermal* (\(w\ge0\)) and **cannot be dark energy at all**. The original phantom branch quietly assumed \(w_S=-1\) for this heat, which is **equation-of-state inconsistent**. The *only* end that can be a \(w\approx-1\) dark sector is the **reservoir** — and consuming it (the field rolls) gives **thawing quintessence** \((w_0>-1,\ w_a<0)\).
+
+So requiring the sector to actually *be* dark energy (\(w\approx-1\)) — a physical demand, not a data fit — **forces the reservoir reading**, which gives quintessence. Structurally a rolling reservoir lands in the \((w_0>-1,\ w_a<0)\) thawing quadrant (Caldwell–Linder \(w_a\approx-1.5(1+w_0)\)) — the *same direction* current DESI hints point, but that is a **consistency remark, not the test** (the argument never used the data).
+
+**Honest caveats (a step, not a theory):**
+- It **revises** the framework's locked "flux, not stockpile" reading — *legitimate because motivated by EoS consistency, not by DESI*. The "phantom dark energy" of §3–4b was a category error (thermal energy mislabeled \(w=-1\)).
+- The reservoir has \(w\approx-1\) **only if** the computational free energy is stored as a scalar potential — a modeling choice still to be justified from the framework independently.
+- The **magnitude** (potential scale / coupling) is still **free**: this does **not** explain the observed dark-energy value.
+
+**Net:** the physically-consistent dark-energy version of R4a is **thawing quintessence** (reservoir, EoS-selected), consistent with the data *direction* and reached by a data-independent argument. The phantom prediction is retracted as EoS-inconsistent. The next legitimate step is to justify the reservoir-as-scalar storage from the framework, then extract an **independent** prediction (beyond the thawing quadrant) to test against data DESI did not fix.
+
 ## 5. What this changes
 
 - The gravity program is no longer a dead-ended reformulation: R4a opens a **concrete, falsifiable extension** (phantom interacting dark energy from computational entropy production), tied to the classical core via the Landauer coupling and kin to Bianconi \(\Lambda_G\) / entropy-inflation literature.

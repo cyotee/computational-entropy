@@ -5,6 +5,7 @@ Bianchi
 Bianconi
 Bianconi’s
 Blackwell
+Caldwell
 Chuang
 CPL
 decohere
@@ -35,6 +36,7 @@ Kumar
 Kähler
 Landauer
 Lindblad
+Linder
 linearizes
 Liouvillian
 Malik
@@ -76,5 +78,6 @@ subcube
 subcubes
 Szilard
 Thattarampilly
+thawing
 Zheng
 ΛCDM
