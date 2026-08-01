@@ -115,7 +115,19 @@ So requiring the sector to actually *be* dark energy (\(w\approx-1\)) — a phys
 - The reservoir has \(w\approx-1\) **only if** the computational free energy is stored as a scalar potential — a modeling choice still to be justified from the framework independently.
 - The **magnitude** (potential scale / coupling) is still **free**: this does **not** explain the observed dark-energy value.
 
-**Net:** the physically-consistent dark-energy version of R4a is **thawing quintessence** (reservoir, EoS-selected), consistent with the data *direction* and reached by a data-independent argument. The phantom prediction is retracted as EoS-inconsistent. The next legitimate step is to justify the reservoir-as-scalar storage from the framework, then extract an **independent** prediction (beyond the thawing quadrant) to test against data DESI did not fix.
+**Net (⚠ partly superseded by §4e).** The dissipation/phantom reading is retracted as EoS-inconsistent — that stands. But the further claim that the reservoir gives *thawing* quintessence *consistent with the DESI direction* was **over-optimistic**: §4e (Path 1) shows the framework's own dynamics ground \(w\approx-1\) only in the *idle* regime and lean toward **freezing** (\(w_a>0\)), the wrong direction. Read §4e for the corrected status.
+
+## 4e. Path 1 — does the framework *force* the reservoir to be \(w\approx-1\)? (Largely no)
+
+The §4d win rested on "the reservoir is a \(w\approx-1\) scalar potential." Path 1 tests whether the framework actually delivers that, data-independently (`simulations/gravity-toy/r4a_reservoir_eos.py`). The scalar equation of state is fixed by the kinetic/potential ratio \(r=K/V\):
+$$
+w(r)=\frac{r-1}{r+1};\qquad r\to0:\ w\to-1\ (\text{idle}),\quad r=\tfrac12:\ w=-\tfrac13\ (\text{DE threshold}),\quad r\to\infty:\ w\to+1\ (\text{stiff}).
+$$
+**The framework's own load identifies the kinetic term.** The "realization rate" is exactly the load's active flux \(\lvert dS_c/d\tau\rvert\), and the locked reading *emphasizes high flux / active scrambling* \(\Rightarrow\) **large \(r\)** \(\Rightarrow\) \(w\to+1\) — **stiff, not dark energy**. The reservoir is \(w\approx-1\) **only in the low-flux / idle regime** (\(r\to0\)) — i.e. the framework's *de-emphasized* "stockpile" once again.
+
+Worse, the **dynamics** (\(w_a\) sign) depend on the flux history: activity **declining** (the natural late-time reading — structure formation winds down as dark energy suppresses it) gives **freezing** (\(w\!\to\!-1\) late, \(w_a>0\)) — the **wrong** side of the DESI thawing hint. §4d's *thawing* assumed *rising* activity without justification, and is **retracted**.
+
+**Path 1 verdict (honest, leaning negative):** the framework does **not** force a \(w\approx-1\) dark sector through its own dynamics. Positive: the reservoir *can* be \(w\approx-1\), but **only when idle** — putting dark energy back in the low-flux "stockpile" the load reading de-emphasizes. Negatives: the active/high-flux regime the framework emphasizes is \(w\to+1\) (not dark energy), and the natural dynamics lean **freezing** (\(w_a>0\)), on the wrong side of the data. So reservoir-as-dark-energy remains a **posit**, now with a known tension (idle-only) and a likely wrong-sign \(w_a\) — **not grounded**. The clean "thawing quintessence consistent with DESI" is withdrawn.
 
 ## 5. What this changes
 
