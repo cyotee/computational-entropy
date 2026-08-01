@@ -105,9 +105,16 @@ $$
 
 Cross-check: the second law (net entropy production \(>0\)) *is* the dissipative/Landauer direction — independently consistent with phantom.
 
-**Consequence.** The framework, on its own terms, **derives the phantom sign** — the *same* sign the w(z) test found disfavored. This is a clean, falsifiable prediction, not an ambiguity. The Szilard/quintessence sign (which the data prefers) sources gravity from the **recording/stockpile** side — the framework's **rejected** anti-pattern. Adopting it would be either a *different theory* (revising the locked reading for independent reasons) or *fitting to data* (illegitimate). **The quintessence rescue is not available within this theory.**
+**Refinement (2026-07-31, `r4a_sign_analysis.py`).** An objection sharpened this: the load is built on the *output* entropy \(S_c\), and \(\lvert dS_c/d\tau\rvert\) is a **magnitude** (sign-neutral), so "derived phantom" was over-stated. Working the energy bookkeeping honestly: cosmic computation is a single **free-energy flow**, reservoir \(\to\) dissipation (2nd law). Which *end* is \(\rho_S\) fixes the sign. Enumerating the reasonable identifications:
 
-So the honest, sharpened status: R4a's *natural* candidate is not just "one of two signs, one of which fits" — it is a **derived phantom prediction that current (unsettled) data disfavors**, with the tempting escape route rigorously closed. (Caveat: the locked reading is a program *convention* labeled "semantic"; the prediction is as firm as that convention plus the second law. It could be revised only for reasons independent of the data.)
+| \(\rho_S\) identification | cosmic direction (independent principle) | branch | framework status |
+|---------------------------|------------------------------------------|--------|------------------|
+| loss-repository (erased-info heat) | grows (fed by entropy flux) | phantom | endorsed |
+| output-entropy flux (\(S_c\) rises) | grows (2nd law) | phantom | consistent |
+| generated-structure resource (records) | grows (structure accumulates) | phantom | consistent |
+| free-energy **reservoir** (initial potential) | shrinks (free energy consumed) | **quintessence** | **rejected** (stockpile anti-pattern) |
+
+**Consequence (honest, corrected).** The sign is **not** an airtight theorem — but it is **not** a free 50/50 either. **Every** identification that follows the entropy arrow (loss flux, output-entropy rise, structure accumulating) lands on **phantom**; the *only* quintessence route identifies \(\rho_S\) with the free-energy **reservoir** being drawn down — the framework's **explicitly rejected** "remaining stockpile/potential" anti-pattern. So **phantom is robustly favored**, and the Szilard/quintessence rescue is **not available within the framework** without a *new, independently-motivated* principle (that must not be chosen to fit the data). Absent such a principle, the honest prediction remains phantom (currently disfavored), and the escape is a **genuine open theory problem**, not a sign flip. (The locked reading is a program *convention* labeled "semantic"; the lean is as firm as that convention plus the second law.)
 
 ## 5. What this changes
 
