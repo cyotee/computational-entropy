@@ -73,6 +73,7 @@ nav:
       - "Overlap I(X;F|Y) at the 58 CE-6 failures (toy)": analysis-overlap-58.md
       - "Channel cost, Stage 2: accounting test (toy)": channel-cost-stage2.md
       - "Williams–Beer PID module (dormant, toy)": pid-williams-beer.md
+      - Stopping-time variants of the energy-bounded pool (toy): procedural-share-tstop.md
   - How to read: how-to-read.md
   - Non-claims: non-claims.md
   - Downloads (PDF): downloads.md

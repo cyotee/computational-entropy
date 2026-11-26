@@ -217,7 +217,7 @@ Per point (GAD, nested, ML − haar-matched normalised share; \* / \*\* = Holm-a
 **Untested conjectures, not supported here:**
 
 - that an energy (ML) bound on the candidate set lowers or raises the procedural share in a way that Haar pools do not;
-- any dependence on \(t_{\rm frac} < 1\), another Hamiltonian ensemble, or a reference state other than \(\sigma\) and \(I/4\).
+- any dependence on \(t_{\rm frac} < 1\), another Hamiltonian ensemble, or a reference state other than \(\sigma\) and \(I/4\). Surfaces at \(t_{\rm frac}\in\{1,2,4,8\}\) are in [procedural-share-tstop.md](procedural-share-tstop.md).
 
 ## 8. Scope
 
@@ -236,3 +236,5 @@ Tier 2 only. A two-qubit, two-use toy with one choice of Hamiltonian ensemble, c
 **Consequence for "the 58" (stated, not interpreted).** The failure set depends on the pool. On pool A-ml, the CE-6 one-bit run (variant (a), \(\varepsilon=0.05\), same grid) has **81 defined points**. The original form fails at **38** of them, for both the uniform and the capacity input. The corrected bound holds at 81/81. Deficits at the failures are 0.193 / 2.807 / 2.933 bits (min / median / max), and \(I(X;F\mid Y)\) covers 0 of them. On pool A the run gives 72 points and 58 failures, with deficits up to 3.076 bits. Both pools have 23 failures with deficit above 2 bits. So the 2-bit cap argument of CHANNEL_COST_STAGE1.md §8 applies to either pool.
 
 **Caveats.** The ML one-bit laws are not constrained to \(q_0 = 1-q_1\), because qubit B is traced out after an entangling \(U\). The single-qubit Haar laws of pool A are constrained this way. So the swap changes the candidate law family as well as the sampling criterion. Choosing "first 20" keeps the pool size, which matters because \(H(F\mid Y)\) grows with \(|C|\) (§5). It is a convention. At \(\varepsilon=0.05\) the clustering keeps every sample (200 of 200), so the pool is **not** saturated (§2). Toy model throughout. This is not evidence about hadronic or QCD physics.
+
+A later run holds this budget and clustering fixed and varies only the stopping time, \(t = k\,t_{\rm ML}\) for \(k\in\{1,2,4,8\}\): see [procedural-share-tstop.md](procedural-share-tstop.md).
