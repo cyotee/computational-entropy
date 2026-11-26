@@ -69,6 +69,7 @@ nav:
       - Procedural-share surface, noise × rank (toy): procedural-share-surface.md
       - Informed-input procedural share (toy): procedural-share-informed.md
       - Structured-pool informed-input gap (toy): procedural-share-structured.md
+      - Energy-bounded (Margolus-Levitin) candidate pool (toy): procedural-share-mlpool.md
   - How to read: how-to-read.md
   - Non-claims: non-claims.md
   - Downloads (PDF): downloads.md

@@ -7,6 +7,8 @@
 
 **Status:** 2026-11-26 · computed. Follow-up (CE-11) to the [informed-input procedural share](procedural-share-informed.md) (CE-10). There, the zero gap was partly a theorem, because of the Haar pool's symmetry. Here the Haar pool is replaced by **structured pools**, where a zero expected gap is no longer forced, and the blind vs informed comparison is rerun.
 
+Follow-up: [energy-bounded (Margolus–Levitin) candidate pool](procedural-share-mlpool.md) (CE-12) replaces the Haar pool by clustered ML-time evolutions and computes the overlap term \(I(X;F\mid Y)\).
+
 **Script:** [`simulations/classical/procedural_share_structured.py`](https://github.com/cyotee/computational-entropy/blob/master/simulations/classical/procedural_share_structured.py) (pure numpy; imports `procedural_share_informed.py` and `procedural_share_surface.py`; built-in self-checks; about 80 s for all pools at \(T=1,0,\infty\)). Every number below is printed by:
 
 ```
