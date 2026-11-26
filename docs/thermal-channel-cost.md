@@ -1,7 +1,7 @@
 # Thermal amplitude-damping channel: a toy cost of the ε-class (Tier 2 toy exploration)
 
 **Tier:** 2 of 3, **toy exploration (speculative)**. This note makes **no quantum or thermodynamic claim** beyond the Landauer pricing convention below, and pricing *retained* (not erased) bits at the Landauer rate is itself a modelling choice. The only quantum content is the classical output law of a one-qubit toy channel.  
-**Status:** 2026-11-26 · computed; verdict **inconclusive** (see §5).  
+**Status:** 2026-11-26 · computed. The ε-class verdict is **inconclusive** (§5). The joint encoding bound C_minus_K **falls** with T (§7).  
 **Script:** [`simulations/classical/thermal_channel_cost.py`](https://github.com/cyotee/computational-entropy/blob/master/simulations/classical/thermal_channel_cost.py) (pure numpy; built-in self-checks; runs in well under a second). Every number below is printed by that script.  
 **Parent:** [Tier 2: instruction persistence](tier2-instruction-persistence.md), which defines \(d_f^{\#} = \log_2\lvert[f]\rvert\).
 
@@ -143,3 +143,87 @@ So the curves neither support nor contradict the conjecture: the toy, as paramet
 - \(d^{\#}_{\varepsilon}\) is not a physical entropy. The cost is a pricing convention, not a derived heat bound.
 - The \(\gamma\leftrightarrow T\) map is a toy parametrization.
 - Nothing here bears on gravity, quantum thermodynamics, or the Tier 3 conjecture.
+
+## 7. Joint Encoding Bound
+
+*Added 2026-11-26. Same toy and same caveats as §2, including the same exclusion of the negative-T branch. Script: [`simulations/classical/joint_encoding_bound.py`](https://github.com/cyotee/computational-entropy/blob/master/simulations/classical/joint_encoding_bound.py), which imports the §2 script.*
+
+**Idea (Cyotee's framing).** The result and the instructions for the next stage are one joint encoding, not two separate strings. The quantity of interest is then the channel's capacity minus a description cost of the channel: how much of the output's capacity is used up by making the output self-executing.
+
+### 7.1 Construction
+
+**C(γ), the Holevo capacity** \(\chi^\*\) of \(\mathrm{AD}(\gamma)\), in bits per use. It is computed two ways that agree to \(3\times10^{-13}\):
+
+- Nelder–Mead over a general two-pure-state ensemble: two Bloch-sphere points plus a probability, 5 parameters, with random restarts.
+- The closed form \(\max_q\,[h_2((1-\gamma)q) - h_2(\tfrac12(1+\sqrt{1-4\gamma(1-\gamma)q^2}))]\) (Giovannetti & Fazio, *Phys. Rev. A* 71, 032314 (2005)).
+
+Checks: \(C(1/2)=0.4717\), matching the value Giovannetti & Fazio report; \(C(0)=1\); \(C(1)=0\). A 2026 preprint (Tang, Zhu, Bai & Wang, arXiv:2609.28592) states that this single-use value equals the unassisted classical capacity (additivity). We quote that result and do not reproduce it.
+
+**K, a description cost.** Two crude upper-bound proxies are used. **Neither is Kolmogorov complexity**, which is uncomputable and defined only up to an additive constant (invariance theorem).
+
+- \(K_\varepsilon=\log_2\lceil(\pi/2)/\varepsilon_K\rceil+\log_2 4\). The first term counts the \(\varepsilon_K\)-cells covering the AD family in the Kraus-operator (Frobenius) metric; the family's arc length is \(\pi/2\), checked numerically. The second term selects one of the 4 families in §2. At \(\varepsilon_K=0.05\), \(K_\varepsilon=7.00\) bits for every \(\gamma\).
+- \(K_{\rm circ}\) is the cost of writing down one known Stinespring circuit: system + 1 ancilla, 3 CNOT + 2 \(R_y\). It is not proved minimal; the script checks that it reproduces AD exactly. Its cost is 5 gates × 2 bits plus one angle at \(\log_2\lceil\pi/\varepsilon_K\rceil\) bits, which is 15.98 bits for \(\gamma>0\) and 0 at \(\gamma=0\).
+
+**Units and how they are combined.** \(C\) is in bits per use; \(K\) is a one-time cost in bits. The script reports three combinations:
+
+- (a) per single use: \(C-K\);
+- (b) amortized over \(n\) uses: \(nC-K\) in bits, or \(C-K/n\) in bits per use;
+- (c) the break-even \(n^\*=K/C\).
+
+The sign depends on the choice: \(C-K\) is negative at every \(\gamma\) (about −6 to −7 bits), while \(C-K/n\) is positive for \(n\gtrsim 15\). For a fixed parametrized family, \(K\) is (almost) independent of \(\gamma\), so **C_minus_K tracks \(C(\gamma)\) for every combination**. The only \(\gamma\)-dependence in \(K\) is \(K_{\rm circ}=0\) at \(\gamma=0\).
+
+**s for the 1/s comparison.** \(s\) is the output entropy for input \(|1\rangle\): \(s=S(\mathrm{AD}(|1\rangle\langle1|))=h_2(\gamma)\) bits per qubit.
+
+### 7.2 Results (\(T\ge0\) branch; \(K=K_\varepsilon\); amortized at \(n=100\); \(d^{\#}_{\varepsilon}\) and cost from §3)
+
+| gamma | T | branch | C (bits/use) | K (bits) | C - K (n=1) | C - K/n (n=100) | nC - K (n=100) | d#_eps | cost = d# T ln2 | s = h2(gamma) | 1/s |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 0.00 | 0.000 | T>=0 | 1.0000 | 7.00 | -6.000 | 0.9300 | 93.00 | 4.392 | 0.000 | 0.0000 | inf |
+| 0.05 | 0.340 | T>=0 | 0.9069 | 7.00 | -6.093 | 0.8369 | 83.69 | 4.585 | 1.079 | 0.2864 | 3.492 |
+| 0.10 | 0.455 | T>=0 | 0.8405 | 7.00 | -6.160 | 0.7705 | 77.05 | 2.322 | 0.732 | 0.4690 | 2.132 |
+| 0.15 | 0.577 | T>=0 | 0.7833 | 7.00 | -6.217 | 0.7133 | 71.33 | 2.807 | 1.122 | 0.6098 | 1.640 |
+| 0.20 | 0.721 | T>=0 | 0.7316 | 7.00 | -6.268 | 0.6616 | 66.16 | 3.170 | 1.585 | 0.7219 | 1.385 |
+| 0.25 | 0.910 | T>=0 | 0.6837 | 7.00 | -6.316 | 0.6137 | 61.37 | 3.459 | 2.183 | 0.8113 | 1.233 |
+| 0.30 | 1.180 | T>=0 | 0.6383 | 7.00 | -6.362 | 0.5683 | 56.83 | 3.170 | 2.593 | 0.8813 | 1.135 |
+| 0.35 | 1.615 | T>=0 | 0.5949 | 7.00 | -6.405 | 0.5249 | 52.49 | 2.807 | 3.143 | 0.9341 | 1.071 |
+| 0.40 | 2.466 | T>=0 | 0.5530 | 7.00 | -6.447 | 0.4830 | 48.30 | 2.322 | 3.969 | 0.9710 | 1.030 |
+| 0.45 | 4.983 | T>=0 | 0.5120 | 7.00 | -6.488 | 0.4420 | 44.20 | 3.807 | 13.151 | 0.9928 | 1.007 |
+| 0.50 | inf | T=inf | 0.4717 | 7.00 | -6.528 | 0.4017 | 40.17 | 3.459 | - | 1.0000 | 1.000 |
+
+The script also prints the negative-T rows (\(\gamma>1/2\)) for completeness. They are excluded from every statement about T.
+
+| combination | value at T=0 | value at gamma=0.49 (T~25) | monotone in T | direction |
+|---|---|---|---|---|
+| C (bits/use) | 1.0000 | 0.4797 | yes | falls |
+| C - K_eps/n, n=1 (bits/use) | -6.0000 | -6.5203 | yes | falls |
+| C - K_eps/n, n=10 (bits/use) | 0.3000 | -0.2203 | yes | falls |
+| C - K_eps/n, n=100 (bits/use) | 0.9300 | 0.4097 | yes | falls |
+| C - K_eps/n, n=1000 (bits/use) | 0.9930 | 0.4727 | yes | falls |
+| nC - K_eps, n=100 (bits) | 93.0000 | 40.9745 | yes | falls |
+| C - K_circ/n, n=100 (bits/use) | 1.0000 | 0.3200 | yes | falls |
+| s = h2(gamma) (bits) | 0.0000 | 0.9997 | yes | rises |
+| 1/s (finite part, gamma>0) | 12.3773 (gamma=0.01) | 1.0003 | yes | falls |
+
+### 7.3 Does C_minus_K behave as predicted?
+
+**C_minus_K falls with T.** For every combination above it falls monotonically on the \(T\ge0\) branch, from \(C=1\) at \(T=0\) to \(0.48\) at \(T\approx25\), approaching \(0.4717\) as \(T\to\infty\). Over the same range \(1/s\) also falls, and \(s\) rises. So C_minus_K does **not** rise in the region where \(1/s\) falls. This matches the expectation that AD capacity falls as \(\gamma\to1/2\).
+
+The monotonicity is proved, not just observed:
+
+- \(\mathrm{AD}(a)\circ\mathrm{AD}(b)=\mathrm{AD}(1-(1-a)(1-b))\). The script checks this identity numerically; it is standard.
+- So a larger \(\gamma\) is a post-processing of a smaller one, and the data-processing inequality for Holevo information gives that \(C\) is non-increasing in \(\gamma\).
+- \(\gamma(T)\) is increasing on \(T>0\), so \(C\) is non-increasing in \(T\).
+
+The Landauer cost in §3 rises with \(T\) only through its explicit factor \(T\). \(d^{\#}_{\varepsilon}\) shows no trend on this candidate set.
+
+### 7.4 Connection to capacity (a framing, not a theorem)
+
+Shannon/Holevo capacity is the ceiling on what an output can carry. Any self-executing overhead can therefore only use up part of that ceiling, not add to it. The one precise version we can state is a direct use of the standard capacity converse, not a new result:
+
+- Suppose the instructions are one of \(2^K\) equally likely descriptions that the receiver does not already know.
+- Suppose they are sent jointly with \(nR\) payload bits over \(n\) uses.
+- Then reliable decoding requires \(nR+K\le nC+o(n)\).
+
+A description the receiver already knows costs no capacity. So "capacity used up by self-execution" is meaningful only when the description itself carries information. The proxies \(K_\varepsilon\) and \(K_{\rm circ}\) are not shown to be the right \(K\) for that statement.
+
+For a physics reframing, see the Tier 3 conjecture note: [Tier 3 note (conjecture)](qcd-entropy-density-note.md).
