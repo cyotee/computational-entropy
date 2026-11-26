@@ -126,7 +126,7 @@ $$
 d\tau=dt/(1+\alpha L)
 $$
 
-; Clausius on $\mathcal{L}_g$ | IDEM / decay / games (discrete ledgers); Euclidean observation toys | **Path J/M only**: Clausius $\to$ Einstein (imported) $\to$ Poisson; $\alpha\beta=4\pi G/c^4$ on-shell calibration |
+; Clausius on $\mathcal{L}_g$ | IDEM / decay / games (discrete ledgers); Euclidean observation toys | **Path J/M only**: Clausius $\to$ Einstein (imported) $\to$ Poisson; $\alpha L=-\Phi/c^2$ on-shell calibration (C17) |
 
 **What we share.** With Jacobson, we take thermodynamic consistency on local horizons as the bridge from information bookkeeping to Einstein gravity (imported, not re-proved). With Verlinde and holography, we accept that boundary information capacity and screen-like terms organize strong-field demand. With Bianconi GfE, we share the broad program that geometry is co-determined with matter's information structure, that low demand recovers Einstein/Newton, and that a Euclidean relative-entropy warm-up has an algorithmic dual in anisotropic diffusion. With Kumar, we share interest in nonequilibrium entropy production as a route to semiclassical gravitational equations. With classical information theory, we share output-centric entropy and Landauer contact for irreversible export.
 

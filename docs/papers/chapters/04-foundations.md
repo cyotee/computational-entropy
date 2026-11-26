@@ -178,7 +178,7 @@ STAGE 3 --- Continuum GfE (macro target)
 
 1. **$L$ is a dimensionless scalar.** **$G$ is a metric.** Never write $L\equiv G$.  
 2. **$H_c$ / $S_c$ are entropies of declared outputs**, not internal AST size alone (AST size may enter **energy-like** load proxies).  
-3. **$L^{\mathrm{disc}}\neq L(\rho,g)$** and discrete bookkeeping weights $\beta',\gamma',\delta'$ are not Newton-calibrated $\alpha\beta=4\pi G/c^4$.  
+3. **$L^{\mathrm{disc}}\neq L(\rho,g)$** and discrete bookkeeping weights $\beta',\gamma',\delta'$ are not Newton-calibrated (the only valid calibration, $\alpha L=-\Phi/c^2$, fixes the continuum sum on shell; C17).  
 4. Dual-toy lattice field $\phi$ is a **test signal**, not spacetime geometry and not the M11 microstate of continuum $\rho$.
 
 ## 1.7 Entropy object tags (M10, brief)

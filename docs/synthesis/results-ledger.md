@@ -24,7 +24,7 @@
 | R-A4 | **Landauer-exactness:** \(L_S=H(X\mid Y)\) = erased-bit count in \(Q\ge kT\ln2\,H(X\mid Y)\) | proved | A | Paper A §4 · `m11_landauer_and_ledger.py` |
 | R-A5 | **Path-dependence** of cumulative \(\sum L_S\) (1.189 vs 2.189; gap 1 bit) | proved | A | Paper A §5 · `m11_composition_ledger.py` |
 | R-A6 | Invariant carrier = \(I(X;Y)\)/KL; differential entropy illustrative only | proved/semantic | A | Paper A §6 |
-| R-B3 | Newton via **Path J/M** only; \(\alpha\beta=4\pi G/c^4\) on-shell | imported + calibration | B | [../emergent-gravity/recoveries/newtonian/README.md](../emergent-gravity/recoveries/newtonian/README.md) |
+| R-B3 | Newton via **Path J/M** only; \(\alpha L=-\Phi/c^2\) on-shell (fixes the sum \(\alpha L\) only). *Corrected 2026-07-31 per C17:* the former \(\alpha\beta=4\pi G/c^4\) is dimensionally invalid and withdrawn | imported + calibration | B | [../emergent-gravity/recoveries/newtonian/README.md](../emergent-gravity/recoveries/newtonian/README.md) |
 | R-B4 | M6: shared leading Poisson (**WEAK PASS**); **FAIL** framework identity; next-order structural FAIL | analytic/structural | B | [m6-weak-field-plugtest.md](m6-weak-field-plugtest.md) |
 | R-B5 | ACD-EW Euclidean dual = **analogy/pattern only** (Perona–Malik prior art) | structural/hybrid | B | [action-channel-duality-euclidean.md](action-channel-duality-euclidean.md) |
 | R-B6 | Falsifiability **verdict: reformulation**; entropy-production term = sole candidate departure | analysis | B | [../papers/FALSIFIABILITY_L_vs_GR.md](../papers/FALSIFIABILITY_L_vs_GR.md) |

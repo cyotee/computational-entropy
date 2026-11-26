@@ -48,7 +48,7 @@ Heat-vs-PM residual dual work is **settled enough to stop as the default open pr
 
 #### Path J/M Newton and calibration
 
-- **C9--C10:** Newtonian Poisson only via **Path J** (Clausius → import Jacobson → Einstein → weak-field GR) and **Path M** (on-shell load-clock match; $\alpha\beta=4\pi G/c^4$ calibration). Pointwise $\Phi\propto\rho\Rightarrow\nabla^2$ is **withdrawn**.
+- **C9--C10:** Newtonian Poisson only via **Path J** (Clausius → import Jacobson → Einstein → weak-field GR) and **Path M** (on-shell load-clock match; $\alpha L=-\Phi/c^2$ calibration --- former $\alpha\beta=4\pi G/c^4$ dimensionally invalid per C17). Pointwise $\Phi\propto\rho\Rightarrow\nabla^2$ is **withdrawn**.
 
 #### M6 / M6b continuum contact
 

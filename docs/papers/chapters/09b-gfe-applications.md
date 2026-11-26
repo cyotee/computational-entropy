@@ -56,7 +56,7 @@ Historical drafts in the broader computational-entropy / load-channel narrative 
 |------------------------|-----------------------------------------------|
 | Explicit external theorem or derivation chain | Newton: Jacobson + weak-field GR. BH/cosmo: not rebuilt at that standard |
 | Clear modeling assumptions (what $\mathcal{L}_g$ must satisfy) | Stated for Clausius-on-horizons setup; not closed for full dynamical BH evaporation or inflationary matching |
-| On-shell calibration honesty ($\alpha\beta=4\pi G/c^4$ class) | Path M for Newton only; no peer calibration for $r,n_s$ or $\dot M$ laws |
+| On-shell calibration honesty ($\alpha L=-\Phi/c^2$ class; C17) | Path M for Newton only; no peer calibration for $r,n_s$ or $\dot M$ laws |
 | Separation from withdrawn shortcuts | Pointwise Laplacian withdrawn for Newton; analogous algebraic shortcuts for BH/cosmo not re-validated |
 
 **What would be needed for peer recovery** (program checklist, not a claim of completion):
@@ -77,7 +77,7 @@ Beyond leading Newton, endpoints diverge in packaging: GfE places corrections in
 
 | Phenomenon | GfE literature status (external) | Our program status | Shared Newton/GR endpoint? |
 |------------|----------------------------------|--------------------|----------------------------|
-| Leading weak-field Poisson $\nabla^2\Phi=4\pi G\rho_m$ | Low-coupling GfE $\to$ Einstein/GR [Bianconi, PRD **111**, 066001 (2025)] | Path J/M only; calibration $\alpha\beta=4\pi G/c^4$; pointwise path withdrawn | **Yes (WEAK PASS)** --- via GR on both sides; **not** framework identity |
+| Leading weak-field Poisson $\nabla^2\Phi=4\pi G\rho_m$ | Low-coupling GfE $\to$ Einstein/GR [Bianconi, PRD **111**, 066001 (2025)] | Path J/M only; calibration $\alpha L=-\Phi/c^2$ (C17); pointwise path withdrawn | **Yes (WEAK PASS)** --- via GR on both sides; **not** framework identity |
 | Vacuum / early-universe inflation without inflaton | Reported in GfE cosmology [Thattarampilly & Zheng, arXiv:2509.23987]; CMB window under slow-roll map | Historical narrative only; **not** Path J/M rigor; no peer $(n_s,r)$ derivation from $L$ | **Not established** as shared; GR inflation is a different standard story |
 | FLRW expansion / effective $\Lambda$ | $\Lambda_G$ and modified Friedmann structure in GfE family | Load boundary/capacity terms **semantic** cosmology sketch; no frozen reduction | Possible **analogical** co-class with GR+$\Lambda$ only after maps exist |
 | Schwarzschild exterior | Recovered with $O(r^{-4})$-class corrections [Thattarampilly et al., arXiv:2602.13694] | Historical sketches; **not** rebuilt at Path J/M honesty | Schwarzschild limit is GR; **corrections not shared** |

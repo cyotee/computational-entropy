@@ -10,7 +10,7 @@
 
 ## Abstract
 
-We define **computational entropy** as the entropy of the *output distribution* induced by a map or channel on a random input, independent of the map's internal mechanics. Under this definition, maps that induce the same output distribution are informationally equivalent. We then give a clean thermodynamic account of the apparent local entropy reduction produced by an irreversible computation: the drop is exactly the **export** \(H(X\mid Y)\) (the chain-rule remainder), which for a single evaluation coincides with the **Landauer** erased-bit count. We show this export bookkeeping is **path-dependent** — two circuits computing the same overall map can pay different total export — and we identify the coordinate-invariant carrier of "information imparted" as mutual information / relative entropy, with differential entropy retained only as an illustrative (coordinate-dependent) special case. All quantitative claims are backed by short, exactly-reproducing reference computations. **No gravitational or continuum claims are made in this paper.**
+We define **computational entropy** as the entropy of the *output distribution* induced by a map or channel on a random input, independent of the map's internal mechanics. Under this definition, maps that induce the same output distribution are informationally equivalent. We then give a clean thermodynamic account of the apparent local entropy reduction produced by an irreversible computation: for a deterministic map the drop is exactly the **export** \(H(X\mid Y)\) (the chain-rule remainder), which for a single evaluation coincides with the **Landauer** erased-bit count; for a stochastic channel the drop is \(H(X\mid Y)-H(Y\mid X)\). We show that the stage-wise export **ledger** is **path-dependent** — two circuits computing the same overall map can be charged different total export — and that this gap is an accounting quantity of the ledger convention, not a difference in minimum dissipated heat; and we identify the coordinate-invariant carrier of "information imparted" as mutual information / relative entropy, with differential entropy retained only as an illustrative (coordinate-dependent) special case. All quantitative claims are backed by short, exactly-reproducing reference computations. **No gravitational or continuum claims are made in this paper.**
 
 ---
 
@@ -72,7 +72,15 @@ and the chain rule \(H(X)=H(Y)+H(X\mid Y)\) holds exactly (reference computation
 
 ## 3. The export identity (A3)
 
-**Theorem 1 (export = chain-rule remainder).** *For any map \(X\to Y\), the reduction of visible entropy from the joint input to the output is accounted for exactly by the conditional entropy of the input given the output:*
+**Theorem 1 (export = chain-rule remainder).** *Let \(X\sim p_X\) and let \(Y\) be produced from \(X\) by any channel \(p(y\mid x)\) (a deterministic map \(Y=f(X)\) is the special case \(p(y\mid x)\in\{0,1\}\)). Then the change of visible entropy from input to output is*
+
+
+$$
+H(X) - H(Y) = H(X\mid Y) - H(Y\mid X).
+$$
+
+
+*If the map is deterministic, \(H(Y\mid X)=0\) and this reduces to*
 
 
 $$
@@ -80,7 +88,9 @@ $$
 $$
 
 
-*Proof.* Immediate from the chain rule \(H(X,Y)=H(X)=H(Y)+H(X\mid Y)\), using \(H(X,Y)=H(X)\) because \(Y\) is a function of \(X\) (deterministic case) or by the definition of conditional entropy (stochastic case). \(\square\)
+*Proof.* Apply the chain rule to the joint law \(p_X(x)\,p(y\mid x)\) in both orders: \(H(X,Y)=H(X)+H(Y\mid X)=H(Y)+H(X\mid Y)\). Rearranging gives \(H(X)-H(Y)=H(X\mid Y)-H(Y\mid X)\). If \(Y=f(X)\), then \(H(Y\mid X)=0\) (equivalently \(H(X,Y)=H(X)\)), which gives the reduced form. \(\square\)
+
+*Remark (stochastic channels).* For a stochastic channel the visible drop \(H(X)-H(Y)\) equals the export \(H(X\mid Y)\) minus the channel noise \(H(Y\mid X)\), and it can be negative. The export \(H(X\mid Y)\) remains well defined in both cases. *(Corrected 2026-11-26: the earlier statement asserted \(H(X)-H(Y)=H(X\mid Y)\) for any map; that holds only when \(H(Y\mid X)=0\).)*
 
 Define the **single-shot export/load slot** \(L_S := H(X\mid Y)\). It is the information the environment must absorb for the computation to be realized irreversibly.
 
@@ -88,7 +98,7 @@ Define the **single-shot export/load slot** \(L_S := H(X\mid Y)\). It is the inf
 
 ## 4. Landauer-exactness (A4)
 
-**Theorem 2 (Landauer coincidence).** *The single-shot export \(L_S=H(X\mid Y)\) equals the number of bits whose erasure Landauer's principle charges: the minimum dissipated heat to realize the irreversible map at temperature \(T\) is*
+**Theorem 2 (Landauer coincidence, deterministic maps).** *For a deterministic map \(Y=f(X)\), the single-shot export \(L_S=H(X\mid Y)\) equals the number of bits whose erasure Landauer's principle charges: the minimum dissipated heat to realize the irreversible map at temperature \(T\) is*
 
 
 $$
@@ -98,13 +108,15 @@ $$
 
 For the AND gate, \(L_S = 1.188722\) bits, so \(Q\ge 1.188722\,kT\ln 2\). This is not a coincidence of numerics: the erased distinguishability *is* the conditional entropy, so the export ledger and the Landauer bound are the same quantity written twice. (Reference: `m11_landauer_and_ledger.py`.)
 
+*Stochastic channels.* The coincidence uses Theorem 1 in its deterministic form \(H(X)-H(Y)=H(X\mid Y)\). For a stochastic channel the standard generalized (Shannon-entropy) form of Landauer's bound charges the entropy drop of the information-bearing state, \(Q\ge kT\ln 2\cdot[H(X)-H(Y)] = kT\ln 2\cdot[H(X\mid Y)-H(Y\mid X)]\), so the export \(H(X\mid Y)\) is then an upper bound on the Landauer charge rather than equal to it.
+
 ---
 
 ## 5. Path-dependence of cumulative export (A5)
 
-The *final* map's export \(H(X\mid Z)\) is path-independent (it depends only on the overall input–output relation). The **cumulative** export paid along a pipeline is **not**.
+The *final* map's export \(H(X\mid Z)\) is path-independent (it depends only on the overall input–output relation). The **cumulative** export charged by the stage-wise ledger along a pipeline is **not**.
 
-**Theorem 3 (path-dependence).** *There exist two pipelines computing the same overall map with equal final \(H_c\) but different total export \(\sum L_S\).*
+**Theorem 3 (path-dependence of the export ledger).** *Under the stage-wise ledger convention — each stage is charged \(L_S=H(\text{declared stage inputs}\mid\text{stage output})\) and a pipeline's cost is the sum of its stage charges — there exist two pipelines computing the same overall map, with equal final \(H_c\) and equal final export \(H(X\mid Z)\), whose cumulative ledger export \(\sum L_S\) differs. The difference is an export-accounting quantity of the ledger convention, not a difference in minimum dissipated heat.*
 
 *Witness.* Compare a **direct** AND against a **circuit** that first publishes an intermediate wire then ANDs. Both realize the same final law (\(H_{\text{final}}=0.811278\), \(H(X\mid Z)=1.188722\)), yet
 
@@ -114,9 +126,9 @@ $$
 $$
 
 
-the extra bit being the published intermediate wire \(H(X\mid Y)=1\). (Reference: `m11_composition_ledger.py`; composition also verifies \(H(X\mid Y)+H(Y\mid Z)=H(X\mid Z)\) exactly and the data-processing inequality.) The active-work slot is likewise extensive (\(\sum L_E\): direct 1, circuit 2), and a soft-recoverability slot \(L_B\) is non-additive across independent regions.
+the extra bit being the ledger's stage-1 charge for publishing \(Y=X_1\): the convention charges \(H(X\mid Y)=H(X_2\mid X_1)=1\) bit there although \(X_2\) is still held on a wire and is read by the stage-2 AND. No information is erased at stage 1 (the stage leaves \((Y,X_2)=(X_1,X_2)\) on wires, from which \(X\) is recoverable), so Theorem 2 assigns it no heat; on both paths the only erasure is the overall map \((X_1,X_2)\mapsto Z\), and the minimum dissipated heat is the same, \(Q\ge kT\ln 2\cdot H(X\mid Z)=1.188722\,kT\ln 2\). The 1-bit gap is therefore an export-accounting quantity (the ledger's convention), not a thermodynamic heat difference. (Reference: `m11_composition_ledger.py`; composition also verifies \(H(X\mid Y)+H(Y\mid Z)=H(X\mid Z)\) exactly and the data-processing inequality.) The active-work slot is likewise extensive (\(\sum L_E\): direct 1, circuit 2), and a soft-recoverability slot \(L_B\) is non-additive across independent regions.
 
-**Interpretation.** Irreversibility is charged where information is *made public / overwritten*, not merely by the abstract final function. Refactoring a computation to expose intermediates costs export even when the answer is unchanged — a discrete, exact analogue of "the way you compute matters, not just what you compute."
+**Interpretation.** The ledger charges export where information is *declared public* at a stage boundary, not merely by the abstract final function, so its cumulative total depends on how a computation is factored into stages even when the answer is unchanged — a discrete, exact statement that "the way you compute matters" *to the export ledger*. It is not a claim that refactoring changes the thermodynamic cost: by Theorem 2, heat is bounded by what is actually erased, which in the witness is the same on both paths. *(Corrected 2026-11-26: an earlier wording read the 1-bit gap as irreversibility "charged where information is made public / overwritten", i.e. as a physical cost; it is a ledger-counting effect.)*
 
 ---
 
@@ -161,7 +173,7 @@ All numeric claims reproduce exactly (rational arithmetic on finite models):
 | export \(H(X\mid Y)\) | 1.188722 bits | AND ledger |
 | chain error | \(<10^{-12}\) | AND ledger |
 | \(\sum L_S\) direct / circuit | 1.188722 / 2.188722 | composition ledger |
-| path-dependence gap | 1.000000 bit | composition ledger |
+| path-dependence gap (ledger convention; not a heat difference) | 1.000000 bit | composition ledger |
 | differential \(h_c\) of \(2y\) | \(-0.27865\) bits | §1.1 (illustrative) |
 
 ---
@@ -171,3 +183,4 @@ All numeric claims reproduce exactly (rational arithmetic on finite models):
 | Date | Entry |
 |------|-------|
 | 2026-07-29 | Initial draft: Def + Prop 1, Thm 1 (export), Thm 2 (Landauer), Thm 3 (path-dep), invariant framing, reproducibility. |
+| 2026-11-26 | Thm 1 restated for any channel (\(H(X)-H(Y)=H(X\mid Y)-H(Y\mid X)\); deterministic case unchanged) with two-sided chain-rule proof; Thm 2 scoped to deterministic maps plus stochastic note; Thm 3 reworded so the 1-bit gap is a ledger-convention (export-accounting) quantity, not a heat difference. No numbers changed. |

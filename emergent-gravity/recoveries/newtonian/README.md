@@ -1,6 +1,7 @@
 # Newtonian / Weak-Field Recovery (Path J/M)
 
 **Status:** Canonical recovery note (rewritten 2026-07-14)  
+**Correction (2026-07-31 per C17):** Path M restated. The former calibration \(\alpha\beta=4\pi G/c^4\) is dimensionally invalid and withdrawn; the surviving statement is \(\alpha L=-\Phi/c^2\) (`emergent-gravity/load-dimensional-analysis.md` Q1–Q3).  
 **Canonical dynamics:** [master-equation.md](../../master-equation.md)  
 **Audit of the old sketch:** [synthesis/m8-newton-recovery-audit.md](../../../synthesis/m8-newton-recovery-audit.md)  
 **Narrative twin:** [quantum/Newton.md](../../../quantum/Newton.md)  
@@ -17,7 +18,7 @@ Newtonian gravity is recovered as a **calibrated low-load regime** of the master
 | Master equation + load definitions | Canonical |
 | Clausius on \(\mathcal{L}_g\) \(\Rightarrow\) Einstein (Jacobson 1995) | **External theorem + modeling assumption** |
 | Einstein weak field \(\Rightarrow\) Poisson \(\nabla^2\Phi=4\pi G\rho\) | Standard GR |
-| Matching \(\alpha\beta=4\pi G/c^4\) so load clock agrees with Newtonian \(\Phi\) **on shell** | **Calibration** (Path M) |
+| On-shell identification \(\alpha L=-\Phi/c^2\) so load clock agrees with Newtonian \(\Phi\) **on shell** (fixes the sum \(\alpha L\) only; former \(\alpha\beta=4\pi G/c^4\) withdrawn as dimensionally invalid, C17) | **Calibration** (Path M) |
 | \(\Phi\propto\rho\) pointwise \(\Rightarrow\nabla^2\Phi\propto\nabla^2\rho\Rightarrow\) Poisson | **Invalid** — removed |
 
 ---
@@ -174,21 +175,17 @@ Matching the **order of magnitude** for a characteristic scale \(R\sim R_\star\)
 \frac{2\pi G\,R_\star^2\,\epsilon_0}{c^4}
 \]
 
-for a **single-scale** match. The **repo-standard product** used throughout the project,
+for a **single-scale** match only: it depends on \(R_\star\), because the calibration is nonlocal (below). In general, equating the load expansion \(d\tau/dt-1\approx-\alpha L\) with Step M2 gives the **only** dimensionally valid calibration,
 
 \[
-\alpha\beta = \frac{4\pi G}{c^4},
+\alpha L = -\frac{\Phi}{c^2}=\frac{GM}{rc^2}\qquad(\Phi<0,\ \alpha L>0),
 \]
 
-is the **convention that absorbs \(\epsilon_0\) and the geometric scale into the definitions of \(\beta\) and \(\epsilon_0\)** so that the product \(\alpha\beta/\epsilon_0\) produces the correct Newtonian redshift for the reference matching problem (constant-density ball / weak exterior field). Explicitly: once \(\epsilon_0\) is chosen (Planck-scale density bookkeeping), \(\beta\) is fixed so that
+which is dimensionless on both sides and fixes the **sum** \(\alpha L\) on shell, not the individual coefficients. At the center of the ball it reads \(\alpha L(0)=2\pi G\rho_m R^2/c^2\), which depends on \(R\): the calibration is nonlocal and \(T_{\mu\nu}\)-sourced, so it is not reproduced pointwise by the local energy term \(\alpha\beta\rho_m c^2/\epsilon_0\) (`emergent-gravity/load-dimensional-analysis.md` Q3).
 
-\[
-\alpha\cdot\beta\cdot\frac{c^2}{\epsilon_0}
-\]
+> *Corrected 2026-07-31 per C17:* earlier versions of this step stated a “repo-standard product” \(\alpha\beta=4\pi G/c^4\), obtained by absorbing \(\epsilon_0\) and geometric scale into \(\beta\). That relation is **dimensionally invalid**: \(\alpha\beta\) is dimensionless, but \(4\pi G/c^4\) has units \(\mathrm{s^2\,kg^{-1}\,m^{-1}}\) (Q1). It is withdrawn and replaced by \(\alpha L=-\Phi/c^2\) (Q2). Under that identification \(L\) is a **diagnostic** constrained to equal \(-\Phi/c^2\) on shell: it co-moves with the Path-J/M metric and is not a source of the geometry (Q3; C17).
 
-reproduces \(\lvert\Phi\rvert/c^2\) **for the calibrated family of solutions**, not for arbitrary pointwise \(\rho_m\).
-
-**Honest reading of \(\alpha\beta=4\pi G/c^4\):** it is a **matching condition** between load bookkeeping and Newtonian \(\Phi\), **conditional on Path J already supplying Poisson**. It is **not** a free derivation of \(G\) from first principles independent of Newton/GR.
+**Honest reading of \(\alpha L=-\Phi/c^2\):** it is a **matching condition** between load bookkeeping and Newtonian \(\Phi\), **conditional on Path J already supplying Poisson**. It is **not** a free derivation of \(G\) from first principles independent of Newton/GR.
 
 ### Step M4 — What the load clock then means
 
@@ -196,7 +193,7 @@ With Path J + M:
 
 - Geometry / \(\Phi\) is fixed by Einstein thermodynamics (Jacobson) + weak field.  
 - Load \(L\approx\beta\rho_m c^2/\epsilon_0\) raises computational demand where energy density is high.  
-- \(d\tau=dt/(1+\alpha L)\) **tracks** the same slowing of clocks that GR encodes in \(g_{00}\), once \(\alpha\beta\) is calibrated.  
+- \(d\tau=dt/(1+\alpha L)\) **tracks** the same slowing of clocks that GR encodes in \(g_{00}\), once the on-shell identification \(\alpha L=-\Phi/c^2\) is imposed (a diagnostic co-moving with the metric, not a source of it; C17).  
 - Newtonian force \(\mathbf{F}=-m\nabla\Phi\) remains the effective description for slow massive probes; no extra force postulate is needed **beyond** the Einstein/Poisson content of Path J.
 
 ---
@@ -226,8 +223,8 @@ is **not** Poisson unless \(\nabla^2\rho_m\propto-\rho_m\).
 
 | Symbol | Role in Newton recovery |
 |--------|-------------------------|
-| \(\epsilon_0\) | Reference energy density making \(L\) dimensionless; absorbed into \(\beta\) bookkeeping under Path M |
-| \(\alpha,\beta\) | Fixed only as product \(\alpha\beta\) (with \(\epsilon_0\)) by Path M matching |
+| \(\epsilon_0\) | Reference (Planck) energy density making \(L\) dimensionless, so \(\beta\) is dimensionless (load-dimensional-analysis Q1) |
+| \(\alpha,\beta\) | Not fixed separately: Path M fixes only the on-shell sum \(\alpha L=-\Phi/c^2\), not \(\alpha\beta\) or the split among the three terms (C17; load-dimensional-analysis Q2, Q4) |
 | \(\gamma\) | Entropy-production weight — **dropped** at leading Newton (L3); re-enters next-order / nonequilibrium corrections |
 | \(\delta\) | Holographic boundary weight — **dropped** at leading Newton (L3); relevant near horizons / cosmology |
 
@@ -248,12 +245,12 @@ Clausius on L_g  ──(Jacobson)──►  Einstein equation
                                       │
                                       ▼
                     match load clock dτ/dt ≈ 1+Φ/c²
-                    on shell  ⇒  αβ = 4πG/c⁴     (Path M)
+                    on shell  ⇒  αL = −Φ/c²      (Path M)
 ```
 
 **Allowed one-liner:**
 
-> In the low-load regime the energy-density term dominates \(L\). With \(\mathcal{L}_g\) constrained by the Clausius relation, the Einstein equation (Jacobson) and its weak-field Poisson limit are available; matching the load-induced proper-time factor to the Newtonian potential fixes \(\alpha\beta=4\pi G/c^4\). Newtonian gravity is thus a **calibrated low-load regime** of the framework.
+> In the low-load regime the energy-density term dominates \(L\). With \(\mathcal{L}_g\) constrained by the Clausius relation, the Einstein equation (Jacobson) and its weak-field Poisson limit are available; matching the load-induced proper-time factor to the Newtonian potential fixes \(\alpha L=-\Phi/c^2\) on shell (the sum \(\alpha L\), not \(\alpha\beta\) separately; C17). Newtonian gravity is thus a **calibrated low-load regime** of the framework.
 
 **Disallowed one-liner:**
 

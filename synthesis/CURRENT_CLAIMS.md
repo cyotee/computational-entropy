@@ -3,6 +3,7 @@
 **Status:** Frozen 2026-07-15 · Preliminary research only  
 **Purpose:** What we may assert vs must not assert  
 **Consolidated entry point (2026-07-29):** [RESULTS_LEDGER.md](RESULTS_LEDGER.md) · **Two-paper spine:** [../papers/DELIVERY_SCOPE.md](../papers/DELIVERY_SCOPE.md) (Paper A solid core · Paper B conjecture)  
+**Correction (2026-07-31 per C17):** C10 and §4 Path M restated. The former calibration \(\alpha\beta=4\pi G/c^4\) is dimensionally invalid and withdrawn; the surviving statement is \(\alpha L=-\Phi/c^2\) ([../emergent-gravity/load-dimensional-analysis.md](../emergent-gravity/load-dimensional-analysis.md) Q1–Q2).  
 **Authority:** [PROGRESS_REPORT.md](../PROGRESS_REPORT.md) §2 · dual [t1-prime-hybrid-writeup.md](t1-prime-hybrid-writeup.md) · Newton [emergent-gravity/recoveries/newtonian/README.md](../emergent-gravity/recoveries/newtonian/README.md) · M6 [m6-weak-field-plugtest.md](m6-weak-field-plugtest.md) · ACD-EW [action-channel-duality-euclidean.md](action-channel-duality-euclidean.md)
 
 ---
@@ -29,7 +30,7 @@
 | C7 | Short-\(t\) heat win explained by noise race: \(\mathbb{E}(R_{\mathrm{heat}}-R_{\mathrm{PM}})=R_{\mathrm{blur}}-\Delta_{\mathrm{noise}}\); crossover \(\sim 1.2\) | **analytic identity** + **hybrid-experimental** | Claim C |
 | C8 | Load-PM ≈ mild time change of PM (\(\tau/t\sim 0.95\text{–}0.98\)); residual dual vs heat on dual window | **hybrid-experimental** (time-change defn. constructive) | Claim D · [m2-t1-load.md](m2-t1-load.md) |
 | C9 | Newton recovery = **Path J/M only** (Clausius → Einstein → Poisson; load-clock on-shell match) | Path J: **external theorem + assumption**; Path M: **calibration** | [newtonian/README.md](../emergent-gravity/recoveries/newtonian/README.md) |
-| C10 | \(\alpha\beta=4\pi G/c^4\) is **on-shell calibration**, not free derivation of \(G\) | **calibration** | Path M |
+| C10 | Load-clock calibration is the on-shell weak-field identification \(\alpha L=-\Phi/c^2=GM/(rc^2)\): dimensionless on both sides, it fixes the **sum** \(\alpha L\), not the individual coefficients, and is **not** a free derivation of \(G\); \(L\) is a diagnostic co-moving with the Path-J/M metric, not a source of the geometry. *Corrected 2026-07-31 per C17:* the former statement \(\alpha\beta=4\pi G/c^4\) is **dimensionally invalid** (\(\alpha\beta\) dimensionless; \(4\pi G/c^4\) has units \(\mathrm{s^2\,kg^{-1}\,m^{-1}}\)) and is withdrawn | **calibration** (on-shell \(\alpha L\) only; \(\alpha\beta=4\pi G/c^4\) **withdrawn**, dimensionally invalid per C17) | Path M · [../emergent-gravity/load-dimensional-analysis.md](../emergent-gravity/load-dimensional-analysis.md) Q1–Q2 |
 | C11 | M6: both frameworks → \(\nabla^2\Phi=4\pi G\rho_m\) via Einstein/GR at leading weak field | **WEAK PASS** (shared Poisson end) | [m6-weak-field-plugtest.md](m6-weak-field-plugtest.md) |
 | C12 | M6: **not** framework equivalence; mechanisms and next-order structures diverge | **FAIL identity** | M6 §4 |
 | C13 | Next-order: GfE extras in metric EOM (\(D_{\mu\nu},\Lambda_G\)); our \(\gamma_L,\delta_L\) live in load **clock** unless promoted — **structural FAIL** | **structural** | [m6b-next-order-weak-field.md](m6b-next-order-weak-field.md) |
@@ -69,7 +70,7 @@ Canonical: [emergent-gravity/recoveries/newtonian/README.md](../emergent-gravity
 | Path | Content | Rigor |
 |------|---------|-------|
 | **J** | Clausius on local horizons for \(\mathcal{L}_g\) → **Einstein** (Jacobson 1995, imported) → weak-field GR → \(\nabla^2\Phi=4\pi G\rho_m\) | **external theorem + modeling assumption** + standard GR |
-| **M** | Load clock \(d\tau=dt/(1+\alpha L)\) matches Newtonian redshift **on shell** for calibrated family of solutions; repo convention \(\alpha\beta=4\pi G/c^4\) | **calibration** (conditional on Path J) |
+| **M** | Load clock \(d\tau=dt/(1+\alpha L)\) matches Newtonian redshift **on shell** via \(\alpha L=-\Phi/c^2\) (fixes the sum \(\alpha L\) only). *Corrected 2026-07-31 per C17:* the former repo convention \(\alpha\beta=4\pi G/c^4\) is dimensionally invalid and withdrawn | **calibration** (conditional on Path J) |
 
 **Withdrawn:** pointwise \(\Phi\propto\rho\Rightarrow\nabla^2\Phi\propto\nabla^2\rho\Rightarrow\) Poisson. Invalid; do not revive.
 

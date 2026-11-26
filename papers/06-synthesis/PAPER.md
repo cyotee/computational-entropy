@@ -11,7 +11,7 @@
 
 ## Abstract
 
-Computational entropy is defined as the entropy of a map or channel's **output** distribution: classical Shannon (or differential) $H_c$, and quantum/gravity von Neumann $S_c$. In this program, gravity is modeled as a CPTP channel $\Phi_g$ whose instantaneous demand is a dimensionless **load** $L$ that reparameterizes proper time via $$d\tau=dt/(1+\alpha L)$$. Newtonian Poisson is recovered only through **Path J/M** (Clausius on local horizons → Einstein → weak-field GR, with on-shell load-clock calibration $\alpha\beta=4\pi G/c^4$), not a withdrawn pointwise Laplacian identity. A constructive Euclidean dual (**ACD-EW**) links Bianconi's Gravity-from-Entropy **warm-up** (induced structure metric $G[\phi]$, Perona--Malik flow) to an observation channel with split load and load clock; residual dual of PM versus heat is **time-windowed** (T1′ / unified pure window $U_\star$), and joint toys serve as **pattern witnesses**, not continuum gravity confirmation. Weak-field contact with continuum GfE is a **WEAK PASS** on shared Poisson and a **FAIL** of framework identity (M6/M6b).
+Computational entropy is defined as the entropy of a map or channel's **output** distribution: classical Shannon (or differential) $H_c$, and quantum/gravity von Neumann $S_c$. In this program, gravity is modeled as a CPTP channel $\Phi_g$ whose instantaneous demand is a dimensionless **load** $L$ that reparameterizes proper time via $$d\tau=dt/(1+\alpha L)$$. Newtonian Poisson is recovered only through **Path J/M** (Clausius on local horizons → Einstein → weak-field GR, with the on-shell load-clock identification $\alpha L=-\Phi/c^2$; the earlier calibration $\alpha\beta=4\pi G/c^4$ is dimensionally invalid and withdrawn, C17), not a withdrawn pointwise Laplacian identity. A constructive Euclidean dual (**ACD-EW**) links Bianconi's Gravity-from-Entropy **warm-up** (induced structure metric $G[\phi]$, Perona--Malik flow) to an observation channel with split load and load clock; residual dual of PM versus heat is **time-windowed** (T1′ / unified pure window $U_\star$), and joint toys serve as **pattern witnesses**, not continuum gravity confirmation. Weak-field contact with continuum GfE is a **WEAK PASS** on shared Poisson and a **FAIL** of framework identity (M6/M6b).
 
 This document is an honest **program report**: it freezes settled claims, marks rigor labels (constructive / structural / semantic / calibration / external theorem), and states explicit non-claims. Classical IDEM/decay machinery is connected by a design dictionary plus constructive discrete ledgers (Phase 1 AND-gate; Phase 2 multi-step Boolean, tiny SKI, minimal shoe). Relationship witnesses (D13) include **path-dependent** cumulative export cost $\sum L_S$ under circuit composition (Direct $\sum L_S\approx 1.189$ vs Circuit $\approx 2.189$, same final $H(Z)$) and **Landauer contact** in which single-shot $L_S=H(X\mid Y)$ is the bit-count bounded by heat $Q\ge k_B T\ln 2\cdot H(X\mid Y)$. Discrete load $L^{\mathrm{disc}}$ is **not** continuum $L$; scalar $L$ is **not** metric $G$; the master equation is **not** continuum GfE.
 
@@ -87,7 +87,7 @@ This paper reports a frozen research program. Contributions, with rigor labels, 
   \]
   so that the master dynamics reparameterize a Liouvillian by demand. Continuum $L$ is multi-axial (energy-like, entropy-flux, boundary/capacity roles), motivated by---but **not identified with**---discrete three-slot ledgers $L^{\mathrm{disc}}$. **Rigor:** framework-canonical definitions; continuum role match is structural motivation only.
 
-- **Newtonian recovery only via Path J/M.** Path **J** imports Jacobson's Clausius→Einstein argument on local horizons for the gravitational sector, then standard weak-field GR to Poisson $\nabla^2\Phi=4\pi G\rho_m$. Path **M** matches the load clock on shell to Newtonian redshift for a calibrated solution family, with the convention $\alpha\beta=4\pi G/c^4$ as **calibration**, not a free derivation of Newton's constant from bits alone. A pointwise Laplacian path $\Phi\propto\rho\Rightarrow\nabla^2\Phi\propto\nabla^2\rho$ is **withdrawn**. **Rigor:** external theorem + modeling assumption (J); calibration (M).
+- **Newtonian recovery only via Path J/M.** Path **J** imports Jacobson's Clausius→Einstein argument on local horizons for the gravitational sector, then standard weak-field GR to Poisson $\nabla^2\Phi=4\pi G\rho_m$. Path **M** matches the load clock on shell to Newtonian redshift via the weak-field identification $\alpha L=-\Phi/c^2$ as **calibration** (corrected 2026-07-31 per C17: the earlier convention $\alpha\beta=4\pi G/c^4$ is dimensionally invalid), not a free derivation of Newton's constant from bits alone. A pointwise Laplacian path $\Phi\propto\rho\Rightarrow\nabla^2\Phi\propto\nabla^2\rho$ is **withdrawn**. **Rigor:** external theorem + modeling assumption (J); calibration (M).
 
 - **Discrete load: path dependence and Landauer contact.** Cumulative export $\sum L_S$ is path-dependent under circuit composition at fixed final output entropy. Single-shot $L_S^{\mathrm{disc}}:=H(X\mid Y)$ is the Landauer bit-count under a residual-reset protocol ($Q\ge k_B T\ln 2\cdot H(X\mid Y)$). Monist $L\propto H_c$ fails on irreversible gates with low output entropy and high export. **Rigor:** constructive finite ledgers + external Landauer inequality.
 
@@ -229,7 +229,7 @@ The table below summarizes primary entropy objects, dynamics, microstructure, an
 | Verlinde (2010/2011) | Holographic screen information / entropy gradients | Entropic force from screen equipartition and information density | Screen microstates (schematic) | Emergent $F=ma$ / Newtonian limit from entropy gradients |
 | Bianconi GfE (2025+) | Relative entropy of metrics, $\operatorname{Tr}\,g\ln G^{-1}$ (Araki-related) | Variational EL / modified Einstein; G-field; $\Lambda_G$; PM as warm-up gradient flow | Topological / Dirac--Kähler matter; network precursors | Low coupling $\to$ EH $\to$ weak-field Poisson via GR |
 | Kumar $S_{\mathrm{gen}}$ (arXiv:2404.16912) | Generalized entropy $S_{\mathrm{gen}}$ | Nonequilibrium thermodynamic recovery of semiclassical Einstein | Quantum expansion / QFT degrees of freedom | Semiclassical Einstein $\Rightarrow$ weak-field GR limits |
-| Present work: $\Phi_g + L + H_c/S_c$ | Output Shannon $H_c$ / von Neumann $S_c$ of channel outputs; export $H(X\mid Y)$ classically | CPTP channel + load $L$; $$d\tau=dt/(1+\alpha L)$$; Clausius on $\mathcal{L}_g$ | IDEM / decay / games (discrete ledgers); Euclidean observation toys | **Path J/M only**: Clausius $\to$ Einstein (imported) $\to$ Poisson; $\alpha\beta=4\pi G/c^4$ on-shell calibration |
+| Present work: $\Phi_g + L + H_c/S_c$ | Output Shannon $H_c$ / von Neumann $S_c$ of channel outputs; export $H(X\mid Y)$ classically | CPTP channel + load $L$; $$d\tau=dt/(1+\alpha L)$$; Clausius on $\mathcal{L}_g$ | IDEM / decay / games (discrete ledgers); Euclidean observation toys | **Path J/M only**: Clausius $\to$ Einstein (imported) $\to$ Poisson; $\alpha L=-\Phi/c^2$ on-shell calibration (C17) |
 
 **What we share.** With Jacobson, we take thermodynamic consistency on local horizons as the bridge from information bookkeeping to Einstein gravity (imported, not re-proved). With Verlinde and holography, we accept that boundary information capacity and screen-like terms organize strong-field demand. With Bianconi GfE, we share the broad program that geometry is co-determined with matter's information structure, that low demand recovers Einstein/Newton, and that a Euclidean relative-entropy warm-up has an algorithmic dual in anisotropic diffusion. With Kumar, we share interest in nonequilibrium entropy production as a route to semiclassical gravitational equations. With classical information theory, we share output-centric entropy and Landauer contact for irreversible export.
 
@@ -255,7 +255,7 @@ Aligned with Section 3 and Appendix B. One-line forms; body sections carry full 
 | **P4** | $\sum L_S$ is **path-dependent**: Direct $\approx 1.189$ vs Circuit $\approx 2.189$ at same final $H(Z)$. | constructive | §2.7 · T3 · Appendix A.2 |
 | **P5** | Three load **axes** required: $L_E$ (work), $L_S$ (export flux), $L_B$ (capacity); monist $L\propto H_c^{\mathrm{disc}}$ fails on AND. | structural bookkeeping | §2.3, §2.9 · M11/M11c |
 | **P6** | Continuum $L(\rho,g)$ is **role-motivated** by $L^{\mathrm{disc}}$, **not identified** with it; $L\neq G$. | structural motivation | §2.9--2.10, §3.2 · M11c |
-| **P7** | Newton only via **Path J/M** (Clausius→Einstein→Poisson; $\alpha\beta=4\pi G/c^4$ calibration); pointwise Laplacian **withdrawn**. | external thm + assumption / calibration | §4 · C9--C10 |
+| **P7** | Newton only via **Path J/M** (Clausius→Einstein→Poisson; $\alpha L=-\Phi/c^2$ on-shell calibration --- former $\alpha\beta=4\pi G/c^4$ withdrawn as dimensionally invalid, C17); pointwise Laplacian **withdrawn**. | external thm + assumption / calibration | §4 · C9--C10 |
 | **P8** | ACD-EW Euclidean dual constructive; residual dual **time-windowed** $U_\star=[1.36,2.40]$ (PCRH$_b$ soft); toys **6/6** pattern only. | constructive + analytic + hybrid | §5 · C1--C5 · M1g |
 | **P9** | Layer W: PM descends matched warm-up energy (M5c); residual dual stays Layer D --- not ME $\Leftrightarrow$ GfE. | external lit + constructive | §5.5 · M5c |
 | **P10** | M6: **WEAK PASS** shared Poisson via Einstein/GR; **FAIL** framework identity (M6b next-order structural FAIL). | WEAK PASS / FAIL | §6 · C11--C13 |
@@ -452,7 +452,7 @@ STAGE 3 --- Continuum GfE (macro target)
 
 1. **$L$ is a dimensionless scalar.** **$G$ is a metric.** Never write $L\equiv G$.  
 2. **$H_c$ / $S_c$ are entropies of declared outputs**, not internal AST size alone (AST size may enter **energy-like** load proxies).  
-3. **$L^{\mathrm{disc}}\neq L(\rho,g)$** and discrete bookkeeping weights $\beta',\gamma',\delta'$ are not Newton-calibrated $\alpha\beta=4\pi G/c^4$.  
+3. **$L^{\mathrm{disc}}\neq L(\rho,g)$** and discrete bookkeeping weights $\beta',\gamma',\delta'$ are not Newton-calibrated (the only valid calibration, $\alpha L=-\Phi/c^2$, fixes the continuum sum on shell; C17).  
 4. Dual-toy lattice field $\phi$ is a **test signal**, not spacetime geometry and not the M11 microstate of continuum $\rho$.
 
 ## 1.7 Entropy object tags (M10, brief)
@@ -873,13 +873,16 @@ d\tau
 $$
 
 
-The product $\alpha\beta$ that appears when the energy-density term dominates is fixed by on-shell Newtonian matching as a **calibration** (C10; detail in §4.3):
+Only the product $\alpha L$ enters the clock. It is fixed by on-shell Newtonian matching as a **calibration** (C10; detail in §4.4), via the weak-field identification
 
 
 $$
-\alpha\beta = \frac{4\pi G}{c^4}
-\quad\text{(matching convention; not free derivation of $G$).}
+\alpha L = -\frac{\Phi}{c^2}
+\quad\text{(fixes the sum $\alpha L$, not the individual coefficients; not free derivation of $G$).}
 $$
+
+
+*Corrected 2026-07-31 per C17:* earlier versions stated the calibration here as $\alpha\beta=4\pi G/c^4$. That relation is **dimensionally invalid**: $\alpha\beta$ is dimensionless, but $4\pi G/c^4$ has units $\mathrm{s^2\,kg^{-1}\,m^{-1}}$ (`emergent-gravity/load-dimensional-analysis.md` Q1). It is withdrawn and replaced by $\alpha L=-\Phi/c^2$ (Q2).
 
 
 The **master equation** governing laboratory-time evolution is
@@ -934,7 +937,7 @@ Newtonian gravity is recovered as a **calibrated low-load regime** of the master
 | Master equation + load definitions | Canonical (Part 3) |
 | Clausius on $\mathcal{L}_g$ $\Rightarrow$ Einstein (Jacobson 1995) | **External theorem + modeling assumption** |
 | Einstein weak field $\Rightarrow$ $\nabla^2\Phi=4\pi G\rho_m$ | Standard GR |
-| Matching $\alpha\beta=4\pi G/c^4$ so load clock agrees with Newtonian $\Phi$ **on shell** | **Calibration** (Path M; **C10**) |
+| On-shell identification $\alpha L=-\Phi/c^2$ so load clock agrees with Newtonian $\Phi$ **on shell** (fixes the sum $\alpha L$ only; former $\alpha\beta=4\pi G/c^4$ withdrawn as dimensionally invalid, C17) | **Calibration** (Path M; **C10**) |
 | Pointwise $\Phi\propto\rho_m\Rightarrow\nabla^2\Phi\propto\nabla^2\rho_m\Rightarrow$ Poisson | **Invalid / withdrawn** |
 
 **What is not claimed.** We do not derive Newton independently of Jacobson/Einstein input. We do not claim free derivation of Newton's constant $G$ from load bookkeeping alone. We do not claim that $\gamma=\delta=0$ is proved---only that those contributions are modeled as subdominant in the leading weak-field regime.
@@ -1037,19 +1040,21 @@ $$
 $$
 
 
-At the center, $\Phi_{\mathrm{in}}(0)/c^2=-2\pi G\rho_m R^2/c^2$. The load expansion at the center gives $d\tau/dt-1\approx-\alpha\beta\rho_m c^2/\epsilon_0$. Matching order of magnitude for a characteristic scale $R\sim R_\star$ (or equating coefficients after fixing a reference geometry where $\Phi$ is proportional to $\rho_m R^2$) calibrates $\alpha\beta$ relative to $\epsilon_0$. The **standard product used in this program**
+At the center, $\Phi_{\mathrm{in}}(0)/c^2=-2\pi G\rho_m R^2/c^2$. The load expansion gives $d\tau/dt-1\approx-\alpha L$. Equating with M2 gives the **only** dimensionally valid calibration,
 
 
 $$
-\alpha\beta = \frac{4\pi G}{c^4}
+\alpha L = -\frac{\Phi}{c^2}=\frac{GM}{rc^2}\qquad(\Phi<0,\ \alpha L>0),
 $$
 
 
-is the convention that absorbs $\epsilon_0$ and geometric scale into the definitions of $\beta$ and $\epsilon_0$ so that $\alpha\cdot\beta\cdot c^2/\epsilon_0$ reproduces $\lvert\Phi\rvert/c^2$ **for the calibrated family of solutions**, not for arbitrary pointwise $\rho_m$.
+which is dimensionless on both sides and fixes the **sum** $\alpha L$ on shell, not the individual coefficients. At the center of the ball it reads $\alpha L(0)=2\pi G\rho_m R^2/c^2$, which depends on $R$: the calibration is nonlocal and $T_{\mu\nu}$-sourced, so it is not reproduced pointwise by the local energy term $\alpha\beta\rho_m c^2/\epsilon_0$ (`emergent-gravity/load-dimensional-analysis.md` Q3).
 
-**Honest reading of $\alpha\beta=4\pi G/c^4$:** it is a **matching condition** between load bookkeeping and Newtonian $\Phi$, **conditional on Path J already supplying Poisson**. It is **not** a free derivation of $G$ from first principles independent of Newton/GR (**C10**).
+> *Corrected 2026-07-31 per C17:* earlier versions of this step stated a "standard product" $\alpha\beta=4\pi G/c^4$, obtained by absorbing $\epsilon_0$ and geometric scale into $\beta$. That relation is **dimensionally invalid**: $\alpha\beta$ is dimensionless, but $4\pi G/c^4$ has units $\mathrm{s^2\,kg^{-1}\,m^{-1}}$ (Q1). It is withdrawn and replaced by $\alpha L=-\Phi/c^2$ (Q2). Under that identification $L$ is a **diagnostic** constrained to equal $-\Phi/c^2$ on shell: it co-moves with the Path-J/M metric and is not a source of the geometry (Q3; C17).
 
-**Step M4 --- What the load clock then means.** With Path J + M: geometry / $\Phi$ is fixed by Einstein thermodynamics (Jacobson) + weak field; $L\approx\beta\rho_m c^2/\epsilon_0$ raises demand where energy density is high; $$d\tau=dt/(1+\alpha L)$$ **tracks** the same slowing of clocks that GR encodes in $g_{00}$, once $\alpha\beta$ is calibrated; Newtonian force $\mathbf{F}=-m\nabla\Phi$ remains the effective description for slow massive probes---no extra force postulate beyond Path J's Einstein/Poisson content.
+**Honest reading of $\alpha L=-\Phi/c^2$:** it is a **matching condition** between load bookkeeping and Newtonian $\Phi$, **conditional on Path J already supplying Poisson**. It is **not** a free derivation of $G$ from first principles independent of Newton/GR (**C10**).
+
+**Step M4 --- What the load clock then means.** With Path J + M: geometry / $\Phi$ is fixed by Einstein thermodynamics (Jacobson) + weak field; $L\approx\beta\rho_m c^2/\epsilon_0$ raises demand where energy density is high; $$d\tau=dt/(1+\alpha L)$$ **tracks** the same slowing of clocks that GR encodes in $g_{00}$, once the on-shell identification $\alpha L=-\Phi/c^2$ is imposed (a diagnostic co-moving with the metric, not a source of it; C17); Newtonian force $\mathbf{F}=-m\nabla\Phi$ remains the effective description for slow massive probes---no extra force postulate beyond Path J's Einstein/Poisson content.
 
 ### 4.5 Withdrawn path (do not revive)
 
@@ -1074,7 +1079,7 @@ is **not** Poisson unless $\nabla^2\rho_m\propto-\rho_m$.
 
 > **Disallowed one-liner:** "Taking the Laplacian of $\Phi\propto\rho$ yields $\nabla^2\Phi=4\pi G\rho$."
 
-> **Allowed one-liner:** In the low-load regime the energy-density term dominates $L$. With $\mathcal{L}_g$ constrained by the Clausius relation, the Einstein equation (Jacobson) and its weak-field Poisson limit are available; matching the load-induced proper-time factor to the Newtonian potential fixes $\alpha\beta=4\pi G/c^4$. Newtonian gravity is thus a **calibrated low-load regime** of the framework.
+> **Allowed one-liner:** In the low-load regime the energy-density term dominates $L$. With $\mathcal{L}_g$ constrained by the Clausius relation, the Einstein equation (Jacobson) and its weak-field Poisson limit are available; matching the load-induced proper-time factor to the Newtonian potential fixes $\alpha L=-\Phi/c^2$ on shell (the sum $\alpha L$, not $\alpha\beta$ separately; C17). Newtonian gravity is thus a **calibrated low-load regime** of the framework.
 
 ### 4.6 Recovery chain (allowed language)
 
@@ -1089,10 +1094,10 @@ Clausius on L_g  --(Jacobson)--->  Einstein equation
                                       |
                                       v
                     match load clock dτ/dt ≈ 1+Φ/c²
-                    on shell  ⇒  αβ = 4πG/c⁴     (Path M)
+                    on shell  ⇒  αL = −Φ/c²      (Path M)
 ```
 
-**Role of coefficients at leading Newton.** $\epsilon_0$ is reference energy density making $L$ dimensionless (absorbed into $\beta$ bookkeeping under Path M). The product $\alpha\beta$ (with $\epsilon_0$) is fixed by Path M. Weights $\gamma$ and $\delta$ are **dropped** at leading Newton under L3; they re-enter next-order / nonequilibrium / near-horizon regimes and must not be silently equated with GfE extras $D_{\mu\nu},\Lambda_G$ (that identification is a **structural FAIL** at next order---Part 6 / M6b; not claimed here).
+**Role of coefficients at leading Newton.** $\epsilon_0$ is reference (Planck) energy density making $L$ dimensionless, so $\beta$ is dimensionless. Path M fixes only the on-shell sum $\alpha L=-\Phi/c^2$; it does not fix $\alpha\beta$ (or the split among the three terms) separately (C17; `emergent-gravity/load-dimensional-analysis.md` Q1, Q2, Q4). Weights $\gamma$ and $\delta$ are **dropped** at leading Newton under L3; they re-enter next-order / nonequilibrium / near-horizon regimes and must not be silently equated with GfE extras $D_{\mu\nu},\Lambda_G$ (that identification is a **structural FAIL** at next order---Part 6 / M6b; not claimed here).
 
 ### 4.7 Other recoveries --- status only (deferred)
 
@@ -1105,7 +1110,7 @@ Black-hole horizons, cosmological expansion (including inflation narratives), Ll
 | ID | Statement used | Where | Rigor |
 |----|----------------|-------|-------|
 | **C9** | Newton recovery = Path J/M only (Clausius → Einstein → Poisson; load-clock on-shell match) | §4 | Path J: external thm + assumption; Path M: calibration |
-| **C10** | $\alpha\beta=4\pi G/c^4$ is on-shell calibration, not free derivation of $G$ | §3.3 preview; §4.4 | **calibration** |
+| **C10** | Load-clock calibration is the on-shell weak-field identification $\alpha L=-\Phi/c^2$ (fixes the sum $\alpha L$ only), not free derivation of $G$; former $\alpha\beta=4\pi G/c^4$ is dimensionally invalid (corrected 2026-07-31 per C17) | §3.3 preview; §4.4 | **calibration** |
 | **C14** | Prefer $L$ as demand from scale/rate of channel outcomes (energy + entropy flux + boundary); active scrambling → higher $L$ | §3.2 | **semantic** (program convention) |
 
 **Structural (not claim-ID frozen as C-number):** three-term continuum $L$ **roles** align with discrete $L_E,L_S,L_B$ (M11c)---**not** continuum equality.
@@ -1318,11 +1323,11 @@ Structural reasons (definitional, no MC needed): $H_c^{\mathrm{toy}}$ is a **per
 
 ### 6.1 Shared weak-field problem
 
-Parts 3--4 recover Newtonian Poisson on **our** side (layer **M**) via **Path J/M** only (Clausius → Einstein → weak-field GR; load-clock on-shell calibration $\alpha\beta=4\pi G/c^4$). Continuum Bianconi GfE (layer **G**) is a **different** upper theory: relative entropy of metrics, low-coupling Einstein--Hilbert limit, and modified equations with $\Lambda_G$, $D_{\mu\nu}$, dressed $R^G$ away from strict low coupling. M6 asks only whether the two frameworks agree on a **shared weak-field problem**, not whether they are the same theory. Layers **W** / **D** dual success does not transfer automatically to **G** or **M**.
+Parts 3--4 recover Newtonian Poisson on **our** side (layer **M**) via **Path J/M** only (Clausius → Einstein → weak-field GR; load-clock on-shell calibration $\alpha L=-\Phi/c^2$, C17). Continuum Bianconi GfE (layer **G**) is a **different** upper theory: relative entropy of metrics, low-coupling Einstein--Hilbert limit, and modified equations with $\Lambda_G$, $D_{\mu\nu}$, dressed $R^G$ away from strict low coupling. M6 asks only whether the two frameworks agree on a **shared weak-field problem**, not whether they are the same theory. Layers **W** / **D** dual success does not transfer automatically to **G** or **M**.
 
 **Shared problem (static weak field).** Background Minkowski plus static Newtonian potential $\Phi\ll c^2$; classical mass density $\rho_m(\mathbf{x})$ (perfect fluid at rest, $T_{00}\approx\rho_m c^2$). Ask for the **leading** equation determining $\Phi$.
 
-**Side A --- ours (Path J/M).** Assume $\mathcal{L}_g$ satisfies Clausius on local horizons so that the Einstein equation holds (Jacobson 1995 imported), or take Einstein as the thermodynamic fixed point of the channel generator. Weak-field GR yields $\nabla^2\Phi=4\pi G\rho_m$. Load $L\approx\beta_L\rho_m c^2/\epsilon_0$ calibrates the proper-time factor to the same $\Phi$ via on-shell matching $\alpha_L\beta_L=4\pi G/c^4$ (**Path M calibration**), not via the withdrawn pointwise Laplacian identity $\Phi\propto\rho\Rightarrow\nabla^2\Phi\propto\nabla^2\rho$.
+**Side A --- ours (Path J/M).** Assume $\mathcal{L}_g$ satisfies Clausius on local horizons so that the Einstein equation holds (Jacobson 1995 imported), or take Einstein as the thermodynamic fixed point of the channel generator. Weak-field GR yields $\nabla^2\Phi=4\pi G\rho_m$. Load $L\approx\beta_L\rho_m c^2/\epsilon_0$ calibrates the proper-time factor to the same $\Phi$ via the on-shell identification $\alpha_L L=-\Phi/c^2$ (**Path M calibration**; the former $\alpha_L\beta_L=4\pi G/c^4$ is dimensionally invalid, C17), not via the withdrawn pointwise Laplacian identity $\Phi\propto\rho\Rightarrow\nabla^2\Phi\propto\nabla^2\rho$.
 
 **Side B --- Bianconi GfE (documented low coupling).** At low coupling the entropic action reduces to Einstein--Hilbert with zero cosmological constant (external paper claim). Standard GR weak-field linearization on that EH theory again yields $\nabla^2\Phi=4\pi G\rho_m$. Newton here is **via GR**, not via a load clock. Away from strict low coupling, modified equations involve $\Lambda_G(\tilde{\mathcal{G}})$, dressed $R^G$, and $D_{\mu\nu}$.
 
@@ -1353,7 +1358,7 @@ Parts 3--4 recover Newtonian Poisson on **our** side (layer **M**) via **Path J/
 
 **Mechanisms differ.** Ours: Clausius constraint on a channel generator, Einstein as fixed point, load as scalar demand clock. GfE: relative entropy of metrics as primary action, low-coupling EH, then GR. Shared Poisson is shared **GR linearization**, not shared primary entropy object.
 
-**Constant refusal.** Do **not** assert $\alpha_L\beta_L=\alpha_B/\beta_B$ (or $\alpha_L\beta_L\equiv\alpha_B/\beta_B$). The product $\alpha_L\beta_L$ is an **on-shell calibration** of our load clock to Newtonian redshift (Path M). The ratio $\alpha_B/\beta_B$ is a **coupling constant in Bianconi's field equations** (schematic $\kappa=\alpha_B/\beta_B$). Different roles; identification is refused without a new OPEN_MATH decision and an explicit continuum map. Also refuse $L\equiv G$ and $S_c\equiv\operatorname{Tr} g\ln G^{-1}$.
+**Constant refusal.** Do **not** assert $\alpha_L\beta_L=\alpha_B/\beta_B$ (or $\alpha_L\beta_L\equiv\alpha_B/\beta_B$). The product $\alpha_L\beta_L$ is a dimensionless coefficient of our load clock; Path M calibrates only the on-shell sum $\alpha_L L=-\Phi/c^2$ to Newtonian redshift (C17). The ratio $\alpha_B/\beta_B$ is a **coupling constant in Bianconi's field equations** (schematic $\kappa=\alpha_B/\beta_B$). Different roles; identification is refused without a new OPEN_MATH decision and an explicit continuum map. Also refuse $L\equiv G$ and $S_c\equiv\operatorname{Tr} g\ln G^{-1}$.
 
 ---
 
@@ -1484,7 +1489,7 @@ Historical drafts in the broader computational-entropy / load-channel narrative 
 |------------------------|-----------------------------------------------|
 | Explicit external theorem or derivation chain | Newton: Jacobson + weak-field GR. BH/cosmo: not rebuilt at that standard |
 | Clear modeling assumptions (what $\mathcal{L}_g$ must satisfy) | Stated for Clausius-on-horizons setup; not closed for full dynamical BH evaporation or inflationary matching |
-| On-shell calibration honesty ($\alpha\beta=4\pi G/c^4$ class) | Path M for Newton only; no peer calibration for $r,n_s$ or $\dot M$ laws |
+| On-shell calibration honesty ($\alpha L=-\Phi/c^2$ class; C17) | Path M for Newton only; no peer calibration for $r,n_s$ or $\dot M$ laws |
 | Separation from withdrawn shortcuts | Pointwise Laplacian withdrawn for Newton; analogous algebraic shortcuts for BH/cosmo not re-validated |
 
 **What would be needed for peer recovery** (program checklist, not a claim of completion):
@@ -1505,7 +1510,7 @@ Beyond leading Newton, endpoints diverge in packaging: GfE places corrections in
 
 | Phenomenon | GfE literature status (external) | Our program status | Shared Newton/GR endpoint? |
 |------------|----------------------------------|--------------------|----------------------------|
-| Leading weak-field Poisson $\nabla^2\Phi=4\pi G\rho_m$ | Low-coupling GfE $\to$ Einstein/GR [Bianconi, PRD **111**, 066001 (2025)] | Path J/M only; calibration $\alpha\beta=4\pi G/c^4$; pointwise path withdrawn | **Yes (WEAK PASS)** --- via GR on both sides; **not** framework identity |
+| Leading weak-field Poisson $\nabla^2\Phi=4\pi G\rho_m$ | Low-coupling GfE $\to$ Einstein/GR [Bianconi, PRD **111**, 066001 (2025)] | Path J/M only; calibration $\alpha L=-\Phi/c^2$ (C17); pointwise path withdrawn | **Yes (WEAK PASS)** --- via GR on both sides; **not** framework identity |
 | Vacuum / early-universe inflation without inflaton | Reported in GfE cosmology [Thattarampilly & Zheng, arXiv:2509.23987]; CMB window under slow-roll map | Historical narrative only; **not** Path J/M rigor; no peer $(n_s,r)$ derivation from $L$ | **Not established** as shared; GR inflation is a different standard story |
 | FLRW expansion / effective $\Lambda$ | $\Lambda_G$ and modified Friedmann structure in GfE family | Load boundary/capacity terms **semantic** cosmology sketch; no frozen reduction | Possible **analogical** co-class with GR+$\Lambda$ only after maps exist |
 | Schwarzschild exterior | Recovered with $O(r^{-4})$-class corrections [Thattarampilly et al., arXiv:2602.13694] | Historical sketches; **not** rebuilt at Path J/M honesty | Schwarzschild limit is GR; **corrections not shared** |
@@ -1562,7 +1567,7 @@ Heat-vs-PM residual dual work is **settled enough to stop as the default open pr
 
 #### Path J/M Newton and calibration
 
-- **C9--C10:** Newtonian Poisson only via **Path J** (Clausius → import Jacobson → Einstein → weak-field GR) and **Path M** (on-shell load-clock match; $\alpha\beta=4\pi G/c^4$ calibration). Pointwise $\Phi\propto\rho\Rightarrow\nabla^2$ is **withdrawn**.
+- **C9--C10:** Newtonian Poisson only via **Path J** (Clausius → import Jacobson → Einstein → weak-field GR) and **Path M** (on-shell load-clock match; $\alpha L=-\Phi/c^2$ calibration --- former $\alpha\beta=4\pi G/c^4$ dimensionally invalid per C17). Pointwise $\Phi\propto\rho\Rightarrow\nabla^2$ is **withdrawn**.
 
 #### M6 / M6b continuum contact
 
@@ -1635,7 +1640,7 @@ Heat-vs-PM residual dual work is **settled enough to stop as the default open pr
 
 This report freezes a **program**, not a derivation of Einstein from bits alone.
 
-**Under-claimed thesis.** Computational entropy is the entropy of a map or channel's **output** distribution (classical $H_c$, quantum/gravity $S_c$). Gravity is modeled as a CPTP channel $\Phi_g$ whose instantaneous demand is a dimensionless **load** $L$ that reparameterizes proper time via $$d\tau=dt/(1+\alpha L)$$. Newtonian Poisson is recovered only via **Path J/M** (Clausius → Einstein → weak-field GR, then on-shell load-clock calibration $\alpha\beta=4\pi G/c^4$), not a withdrawn pointwise Laplacian identity. A **constructive Euclidean dual (ACD-EW)** links Bianconi's GfE **warm-up** (induced $G[\phi]$, Perona--Malik flow) to an observation channel with split load and load clock; residual dual of PM vs heat is **time-windowed (T1′ / $U_\star$)**, with joint toys as **pattern witnesses**, not continuum gravity. Weak-field contact with continuum GfE is a **WEAK PASS** on shared Poisson and a **FAIL** of framework identity (M6/M6b), reinforced by a next-order **promotion no-go** (R4a). Classical IDEM/decay machinery is connected by a **design dictionary** plus **constructive discrete ledgers** (Phase 1--2; T1--T5 composition and Landauer theorems) for $H_c^{\mathrm{disc}}$ and three-slot $L^{\mathrm{disc}}$ --- **not** a continuum derivation of $L$ or metric $G$.
+**Under-claimed thesis.** Computational entropy is the entropy of a map or channel's **output** distribution (classical $H_c$, quantum/gravity $S_c$). Gravity is modeled as a CPTP channel $\Phi_g$ whose instantaneous demand is a dimensionless **load** $L$ that reparameterizes proper time via $$d\tau=dt/(1+\alpha L)$$. Newtonian Poisson is recovered only via **Path J/M** (Clausius → Einstein → weak-field GR, then the on-shell load-clock identification $\alpha L=-\Phi/c^2$; the earlier $\alpha\beta=4\pi G/c^4$ is dimensionally invalid and withdrawn, C17), not a withdrawn pointwise Laplacian identity. A **constructive Euclidean dual (ACD-EW)** links Bianconi's GfE **warm-up** (induced $G[\phi]$, Perona--Malik flow) to an observation channel with split load and load clock; residual dual of PM vs heat is **time-windowed (T1′ / $U_\star$)**, with joint toys as **pattern witnesses**, not continuum gravity. Weak-field contact with continuum GfE is a **WEAK PASS** on shared Poisson and a **FAIL** of framework identity (M6/M6b), reinforced by a next-order **promotion no-go** (R4a). Classical IDEM/decay machinery is connected by a **design dictionary** plus **constructive discrete ledgers** (Phase 1--2; T1--T5 composition and Landauer theorems) for $H_c^{\mathrm{disc}}$ and three-slot $L^{\mathrm{disc}}$ --- **not** a continuum derivation of $L$ or metric $G$.
 
 Nothing in this conclusion upgrades the stance above preliminary research. Type safety remains locked: **$L\neq G$** and $L^{\mathrm{disc}}\neq L(\rho,g)$. Master equation $\Leftrightarrow$ continuum GfE is **not** asserted.
 

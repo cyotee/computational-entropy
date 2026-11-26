@@ -49,7 +49,9 @@ We recover the Newtonian weak field along one route, with rigor labels (canonica
 |------|---------|-------|
 | J | Clausius on \(\mathcal{L}_g\) ⇒ Einstein equations | **imported theorem** (Jacobson) + modeling assumption |
 | — | Einstein weak field ⇒ \(\nabla^2\Phi=4\pi G\rho_m\) | standard GR |
-| M | Load clock \(d\tau=dt/(1+\alpha L)\) matches Newtonian redshift **on shell**; \(\alpha\beta=4\pi G/c^4\) | **calibration** |
+| M | Load clock \(d\tau=dt/(1+\alpha L)\) matches Newtonian redshift **on shell** via the weak-field identification \(\alpha L=-\Phi/c^2\) (fixes the sum \(\alpha L\), not the individual coefficients) | **calibration** |
+
+*Corrected 2026-07-31 per C17:* an earlier draft stated the Path-M calibration as \(\alpha\beta=4\pi G/c^4\). That relation is **dimensionally invalid**: \(\alpha\beta\) is dimensionless, but \(4\pi G/c^4\) has units \(\mathrm{s^2\,kg^{-1}\,m^{-1}}\). It is withdrawn; the only dimensionally valid calibration is \(\alpha L=-\Phi/c^2\), under which \(L\) is a **diagnostic** constrained to equal \(-\Phi/c^2\) on shell, co-moving with the Path-J/M metric rather than a source of the geometry (`emergent-gravity/load-dimensional-analysis.md` Q1–Q3).
 
 **Explicitly not claimed (N5):** the withdrawn pointwise identification \(\Phi\propto\rho\Rightarrow\nabla^2\Phi\propto\nabla^2\rho\). **Not claimed:** a free first-principles value of \(G\), or Newton independent of the Jacobson/Einstein import.
 
@@ -112,3 +114,4 @@ N1 master eq ⇎ continuum GfE · N2 \(L\not\equiv G\), \(S_c\not\equiv\operator
 | Date | Entry |
 |------|-------|
 | 2026-07-29 | Initial draft: reformulation stance; channel/load postulate; Path J/M; M6 WEAK PASS/FAIL; ACD-EW as analogy; falsifiability verdict + central conjecture; O1 seed. |
+| 2026-11-26 | §3 Path M: replaced the dimensionally invalid \(\alpha\beta=4\pi G/c^4\) with \(\alpha L=-\Phi/c^2\) (corrected per C17, 2026-07-31 negative results). |

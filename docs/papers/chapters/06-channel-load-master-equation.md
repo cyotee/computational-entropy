@@ -74,13 +74,16 @@ d\tau
 $$
 
 
-The product $\alpha\beta$ that appears when the energy-density term dominates is fixed by on-shell Newtonian matching as a **calibration** (C10; detail in §4.3):
+Only the product $\alpha L$ enters the clock. It is fixed by on-shell Newtonian matching as a **calibration** (C10; detail in §4.4), via the weak-field identification
 
 
 $$
-\alpha\beta = \frac{4\pi G}{c^4}
-\quad\text{(matching convention; not free derivation of $G$).}
+\alpha L = -\frac{\Phi}{c^2}
+\quad\text{(fixes the sum $\alpha L$, not the individual coefficients; not free derivation of $G$).}
 $$
+
+
+*Corrected 2026-07-31 per C17:* earlier versions stated the calibration here as $\alpha\beta=4\pi G/c^4$. That relation is **dimensionally invalid**: $\alpha\beta$ is dimensionless, but $4\pi G/c^4$ has units $\mathrm{s^2\,kg^{-1}\,m^{-1}}$ (`emergent-gravity/load-dimensional-analysis.md` Q1). It is withdrawn and replaced by $\alpha L=-\Phi/c^2$ (Q2).
 
 
 The **master equation** governing laboratory-time evolution is

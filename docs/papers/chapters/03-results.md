@@ -16,7 +16,7 @@ Aligned with Section 3 and Appendix B. One-line forms; body sections carry full 
 | **P4** | $\sum L_S$ is **path-dependent**: Direct $\approx 1.189$ vs Circuit $\approx 2.189$ at same final $H(Z)$. | constructive | §2.7 · T3 · Appendix A.2 |
 | **P5** | Three load **axes** required: $L_E$ (work), $L_S$ (export flux), $L_B$ (capacity); monist $L\propto H_c^{\mathrm{disc}}$ fails on AND. | structural bookkeeping | §2.3, §2.9 · M11/M11c |
 | **P6** | Continuum $L(\rho,g)$ is **role-motivated** by $L^{\mathrm{disc}}$, **not identified** with it; $L\neq G$. | structural motivation | §2.9--2.10, §3.2 · M11c |
-| **P7** | Newton only via **Path J/M** (Clausius→Einstein→Poisson; $\alpha\beta=4\pi G/c^4$ calibration); pointwise Laplacian **withdrawn**. | external thm + assumption / calibration | §4 · C9--C10 |
+| **P7** | Newton only via **Path J/M** (Clausius→Einstein→Poisson; $\alpha L=-\Phi/c^2$ on-shell calibration --- former $\alpha\beta=4\pi G/c^4$ withdrawn as dimensionally invalid, C17); pointwise Laplacian **withdrawn**. | external thm + assumption / calibration | §4 · C9--C10 |
 | **P8** | ACD-EW Euclidean dual constructive; residual dual **time-windowed** $U_\star=[1.36,2.40]$ (PCRH$_b$ soft); toys **6/6** pattern only. | constructive + analytic + hybrid | §5 · C1--C5 · M1g |
 | **P9** | Layer W: PM descends matched warm-up energy (M5c); residual dual stays Layer D --- not ME $\Leftrightarrow$ GfE. | external lit + constructive | §5.5 · M5c |
 | **P10** | M6: **WEAK PASS** shared Poisson via Einstein/GR; **FAIL** framework identity (M6b next-order structural FAIL). | WEAK PASS / FAIL | §6 · C11--C13 |
