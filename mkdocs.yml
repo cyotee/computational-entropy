@@ -74,6 +74,7 @@ nav:
       - "Channel cost, Stage 2: accounting test (toy)": channel-cost-stage2.md
       - "Williams–Beer PID module (dormant, toy)": pid-williams-beer.md
       - Stopping-time variants of the energy-bounded pool (toy): procedural-share-tstop.md
+      - "Slack of the corrected bound at ranks 2–16 (toy)": analysis-slack-per-rank.md
   - How to read: how-to-read.md
   - Non-claims: non-claims.md
   - Downloads (PDF): downloads.md
