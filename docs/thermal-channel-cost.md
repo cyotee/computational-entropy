@@ -227,3 +227,5 @@ Shannon/Holevo capacity is the ceiling on what an output can carry. Any self-exe
 A description the receiver already knows costs no capacity. So "capacity used up by self-execution" is meaningful only when the description itself carries information. The proxies \(K_\varepsilon\) and \(K_{\rm circ}\) are not shown to be the right \(K\) for that statement.
 
 For a physics reframing, see the Tier 3 conjecture note: [Tier 3 note (conjecture)](qcd-entropy-density-note.md).
+
+A follow-up toy with a candidate pool fixed independently of the channel, on the generalized amplitude damping channel, is in [Procedural share H(F|Y)](procedural-share.md).

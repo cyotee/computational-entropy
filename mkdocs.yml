@@ -65,6 +65,7 @@ nav:
   - "Tier 2 — Instruction persistence (research avenue)":
       - Instruction persistence: tier2-instruction-persistence.md
       - Thermal channel cost (toy, speculative): thermal-channel-cost.md
+      - Procedural share H(F|Y) (toy): procedural-share.md
   - How to read: how-to-read.md
   - Non-claims: non-claims.md
   - Downloads (PDF): downloads.md
