@@ -130,6 +130,7 @@ Findings, all from the script:
 1. Extend the search to class-generic realizations, where the layout serves all of \([f]\) with stored selector bits, and to \(T\ge2\) stages. Then compare \(\max_t b_t\) against \(\lceil\log_2|\mathrm{im}\,F_t|\rceil + \lceil d^{\#}_{f_{t+1}}\rceil\).
 2. Search \(n=3\) at \(w=4\) (about \(5\times10^8\) states, which needs a smarter search than plain BFS).
 3. Handle stochastic channels: \([f]\) is then a continuum, and a measure-based replacement for \(\log|[f]|\) is needed.
+   A speculative ε-ball toy (\(d^{\#}_{\varepsilon}\), a relaxation of \(d_f^{\#}\)) on a thermally parametrized amplitude-damping channel is in [thermal-channel-cost.md](https://github.com/cyotee/computational-entropy/blob/master/docs/thermal-channel-cost.md). Its verdict is inconclusive.
 4. Do a literature search on reversible synthesis with stored programs, to test the "to the author's knowledge" statement in §5.
 
 ## 8. Status and non-claims

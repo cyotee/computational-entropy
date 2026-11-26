@@ -62,7 +62,9 @@ plugins:
 nav:
   - Home: index.md
   - "Tier 1 — Core: channel-level entropy (start here)": core.md
-  - "Tier 2 — Instruction persistence (research avenue)": tier2-instruction-persistence.md
+  - "Tier 2 — Instruction persistence (research avenue)":
+      - Instruction persistence: tier2-instruction-persistence.md
+      - Thermal channel cost (toy, speculative): thermal-channel-cost.md
   - How to read: how-to-read.md
   - Non-claims: non-claims.md
   - Downloads (PDF): downloads.md
