@@ -1,5 +1,5 @@
 site_name: Computational Entropy
-site_description: Computational entropy, load, and emergent-gravity research (preliminary)
+site_description: Channel-level entropy for a Boltzmann–Shannon unification; finite-substrate instruction persistence; emergent-gravity conjecture (preliminary)
 site_url: https://cyotee.github.io/computational-entropy/
 repo_url: https://github.com/cyotee/computational-entropy
 repo_name: cyotee/computational-entropy
@@ -61,22 +61,25 @@ plugins:
 
 nav:
   - Home: index.md
+  - "Tier 1 — Core: channel-level entropy (start here)": core.md
+  - "Tier 2 — Instruction persistence (research avenue)": tier2-instruction-persistence.md
   - How to read: how-to-read.md
   - Non-claims: non-claims.md
   - Downloads (PDF): downloads.md
-  - Standalone papers:
-      - Paper A — Computational entropy (solid core): papers/paper-a.md
-      - Paper C — The decay algebra (continuum density): papers/paper-c.md
-      - Paper B — Emergent gravity (conjecture): papers/paper-b.md
-      - Falsifiability of L vs GR: papers/falsifiability.md
-      - Regime program (experiments): papers/regime-program.md
-  - Decay algebra (theorems & witnesses):
+  - Tier 1 papers:
+      - Paper A — Computational entropy (core): papers/paper-a.md
+      - Paper C — The decay algebra (core): papers/paper-c.md
+  - Tier 1 — Decay algebra (theorems & witnesses):
       - Paper C — full: papers/paper-c.md
       - 1D density theorem (m11f): synthesis/m11f-theorem.md
       - General-w theorem (m11g): synthesis/m11g-theorem.md
       - 2D strip transfer (m11h): synthesis/m11h-2d.md
       - Continuum embedding (m11i): synthesis/m11i-continuum.md
-  - The paper:
+  - Tier 3 — Conjecture (open, rests on Tier 1):
+      - Paper B — Emergent gravity (conjecture): papers/paper-b.md
+      - Falsifiability of L vs GR: papers/falsifiability.md
+      - Regime program (experiments): papers/regime-program.md
+  - Tier 3 — The integrated paper (conjecture):
       - Title & abstract: papers/chapters/00-front-matter.md
       - 1. Introduction: papers/chapters/01-introduction.md
       - 2. Related work: papers/chapters/02-related-work.md

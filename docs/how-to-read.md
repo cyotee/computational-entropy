@@ -3,9 +3,17 @@
 **Audience:** human visitors (not agent bootstrap).  
 **Stance:** preliminary research — see [Non-claims](non-claims.md).
 
-## Primary path: the integrated paper
+## Primary path: Tier 1, the core
 
-The site’s main content is **`papers/06-synthesis/PAPER.md`**, split into chapters under **The paper** in the left nav (and available as one page: [Full paper](papers/paper-full.md)).
+Start with **[Core: channel-level entropy](core.md)**. It covers the Boltzmann–Shannon unification motivator, the definition (output entropy and export \(H(X\mid Y)\)), the theorems with proof pointers, an explicit genuinely-new vs standard split, and an honest answer to "Is this more than Shannon entropy?". Then read [Paper A](papers/paper-a.md) and [Paper C](papers/paper-c.md).
+
+## Secondary path: Tier 2
+
+[Instruction persistence on a finite substrate](tier2-instruction-persistence.md) covers the log-cardinality \(d_f^{\#}\), an exact composition rule, open Problem T2, and a Toffoli toy. No gravity.
+
+## Tier 3 (conjecture) path: the integrated paper
+
+Everything below is published as **open conjecture resting on the core result**, not as supported claims. The integrated manuscript is **`papers/06-synthesis/PAPER.md`**, split into chapters under **Tier 3 — The integrated paper (conjecture)** in the left nav (and available as one page: [Full paper](papers/paper-full.md)).
 
 | Order | Chapter | Content |
 |-------|---------|---------|
@@ -48,7 +56,7 @@ Canonical extracts (same core formulas as the paper):
 | **Constructive** | Explicit construction or executable ledger |
 | **Structural** | Correspondence of form without full derivation |
 | **Semantic** | Conceptual mapping only |
-| **Calibration** | On-shell matching of constants (e.g. \(\alpha\beta\)) |
+| **Calibration** | On-shell matching (e.g. \(\alpha L=-\Phi/c^2\); the former \(\alpha\beta=4\pi G/c^4\) is withdrawn, C17) |
 | **External theorem** | Cited result from published literature |
 
 ## Source of truth

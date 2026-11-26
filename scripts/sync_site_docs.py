@@ -24,6 +24,9 @@ DOCS = REPO_ROOT / "docs"
 
 # (source relative to repo root, destination relative to docs/)
 ALLOWLIST: list[tuple[str, str]] = [
+    # Core-first restructure (2026-11-26): the publishable core leads the site.
+    ("CORE.md", "core.md"),
+    ("TIER2_INSTRUCTION_PERSISTENCE.md", "tier2-instruction-persistence.md"),
     (
         "foundations/computational-entropy/definition.md",
         "foundations/computational-entropy.md",

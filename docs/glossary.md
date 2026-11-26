@@ -2,13 +2,25 @@
 
 **Purpose**: Shared notation and term correspondences between classical computational models and emergent gravity concepts.
 
+## Lead-document terms (three-tier restructure, 2026-11-26)
+
+Terms used by README, THEORY, CORE and the Tier 2 note. They are consistent with `synthesis/CURRENT_CLAIMS.md` (export \(H(X\mid Y)\), single-shot slot \(L_S\), non-claims §3).
+
+- **Boltzmann–Shannon unification**: the programme's driving *intent*, a single notion of entropy that reads both as Shannon uncertainty and as Boltzmann's \(k_B\ln W\) count of compatible microstates. It is a research motivation, **not** a result. The only in-repo contact is the formal split \(\log_2 N = H(Y)+\sum_y p_Y(y)\log_2|f^{-1}(y)|\) for uniform inputs and deterministic maps (CORE §2.3) and the external Landauer theorem.
+- **Channel-level entropy**: entropy defined on a channel's action on its input distribution, rather than on a static distribution. Concretely it is the pair \(\big(H_c(f;p_X),\,H(X\mid Y)\big)\) for a channel \(p(y\mid x)\) acting on \(X\sim p_X\), linked by \(H(X)-H(Y)=H(X\mid Y)-H(Y\mid X)\) (Paper A Thm 1). Both entries are standard Shannon functionals of the joint law (CORE §5).
+- **Export \(H(X\mid Y)\)**: the input distinguishability discarded by the channel. It equals the visible entropy drop \(H(X)-H(Y)\) only for deterministic maps; for stochastic channels the drop is export minus noise \(H(Y\mid X)\). The ledger name is the single-shot slot \(L_S\). The Landauer-coincident bit count holds for deterministic maps (Paper A Thm 2).
+- **Stage-wise export ledger**: the convention that charges each pipeline stage \(H(\text{declared inputs}\mid\text{stage output})\) and sums the charges. Its path-dependence (Paper A Thm 3, 1-bit AND witness) is a property of the convention, **not** a heat difference.
+- **Informational equivalence**: \(f\) and \(g\) are informationally equivalent on \(p_X\) iff they induce the same output law \(p_Y\) (for channels, the same output state). Equal law implies equal \(H_c\), but **not conversely**: \(\min(U_1,U_2)\) has the same differential entropy and the same variance \(1/18\) as \(\max(U_1,U_2)\), but a different density, mean and tail. See CORE P1 and pitfall 1 in `AGENTS.md`.
+- **Tier 1 / Tier 2 / Tier 3 (labels)**: **Tier 1** (primary result) is computational entropy as a proposed mathematical object (CORE.md; Papers A and C). **Tier 2** (secondary result, no gravity) is instruction persistence on a finite substrate (`TIER2_INSTRUCTION_PERSISTENCE.md`). Tiers 1–2 are backed by in-repo derivations or computations, with open problems labelled. **Tier 3 = Conjecture** marks material published as open conjecture resting on the core result, not as a supported claim: the gravitational programme (Paper B, load \(L\), \(\alpha L=-\Phi/c^2\) with \(\alpha\beta=4\pi G/c^4\) withdrawn per C17, R4a, Path J/M) and the quantum-channel / von Neumann layer (AI-proposed scaffolding, not derived).
+
 ## Core Terms
 
 ### Classical / Lambda Side
 - **Computational Entropy (H_c)**: Entropy of the induced output distribution of a function/map. Depends only on the statistical pattern of outputs, not internal mechanics.
 - **IDEM Function**: Expanded identity function that pairs output with metadata (arity, result dim, decay vector, d_f).
 - **Decay Vector**: Component of IDEM metadata indicating which inputs are (ir)recoverable from the output.
-- **d_f**: Probability or measure of function unidentifiability.
+- **d_f** (legacy, Bayesian): function unidentifiability \(d_f = 1-P_{\max}\in[0,1]\) of a posterior over candidate functions. Under a uniform prior conditioned on the output law it equals \(1-2^{-d_f^{\#}}\); see \(d_f^{\#}\) below.
+- **\(d_f^{\#}\)** (log-cardinality, Tier 2): \(d_f^{\#} := \log_2\lvert[f]\rvert\), where \([f]\) is the class of maps with the same output law as \(f\). For uniform input on \(N\) points, \(\lvert[f]\rvert = N!/\prod_y W_y!\). It is read as the substrate's obligation to preserve reconstructability, not as observer ignorance (that reading is a hypothesis). Exact composition: \(d_f^{\#} = d_{g\circ f}^{\#} + R(g\mid f)\). See `TIER2_INSTRUCTION_PERSISTENCE.md`.
 - **Infinite Reduction Paths**: Used to model underivability and preserve entropy for hidden variables.
 
 ### Gravity / Master Equation Side

@@ -1,5 +1,7 @@
 # Computational Entropy and Emergent Gravity: From Output Distributions to Load-Gated Geometry
 
+> **Tier 3: conjecture, resting on the core (banner added 2026-11-26).** This integrated manuscript is published as **open conjecture resting on the core result**, not as a set of supported claims. The publishable core is channel-level entropy, stated with its proofs and a new-vs-standard split in [CORE.md](https://github.com/cyotee/computational-entropy/blob/master/CORE.md) (Papers A and C). The gravitational programme ($\Phi_g$, load $L$, $\alpha L=-\Phi/c^2$ with $\alpha\beta$ withdrawn per C17, Path J/M, ACD-EW, GfE contact) and the quantum / von Neumann layer in this document are conjecture. The text below has not been restructured internally. Programme motivation: a **Boltzmann–Shannon unification** ([README](https://github.com/cyotee/computational-entropy/blob/master/README.md)).
+
 **Authors:** cyotee doge
 **Affiliation:** Independent
 **Version:** Integrated research paper draft v1.0 (2026-07-15)  

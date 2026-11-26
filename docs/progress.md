@@ -1,12 +1,17 @@
 # Progress Report — Computational Entropy / Emergent Gravity / GfE Dual
 
-**Date:** 2026-07-15 (updated D15: FINAL program report + conclusion freeze)  
+**Date:** 2026-07-15 (updated D15: FINAL program report + conclusion freeze; restructure note 2026-11-26)  
 **Purpose:** Bootstrap a **new session or agent context**. Read this document first; follow links only for depth.  
 **Branch:** `master` (as of report writing; working tree may have uncommitted synthesis).  
 **Stance:** All of this is **preliminary research**. Supporting constructions and evidence are real; nothing here has GR-level certainty.  
 **Claims freeze:** [synthesis/CURRENT_CLAIMS.md](synthesis/CURRENT_CLAIMS.md) · **Conclusions:** [synthesis/PROGRAM_CONCLUSIONS.md](synthesis/PROGRAM_CONCLUSIONS.md)  
 **Two-paper spine (2026-07-29):** [papers/DELIVERY_PLAN.md](papers/DELIVERY_PLAN.md) · [papers/DELIVERY_SCOPE.md](papers/DELIVERY_SCOPE.md) · consolidated status → [synthesis/RESULTS_LEDGER.md](synthesis/RESULTS_LEDGER.md) · falsifiability verdict (**reformulation**) → [papers/FALSIFIABILITY_L_vs_GR.md](papers/FALSIFIABILITY_L_vs_GR.md)  
 **Post-freeze avenues:** [synthesis/OPEN_AVENUES.md](synthesis/OPEN_AVENUES.md) · **Integrated paper:** [papers/06-synthesis/PAPER.md](papers/06-synthesis/PAPER.md) · **FINAL freeze:** [papers/06-synthesis/FINAL.md](papers/06-synthesis/FINAL.md)
+
+> **Note (2026-11-26): three-tier restructure and provenance of the quantum layer.**
+> The von Neumann entropy connection was proposed by an AI agent during exploration and is scaffolding, not a derived result. The defensible contribution is the channel-level entropy definition itself.
+>
+> The lead docs are now organised in three tiers. **Tier 1** (primary result) opens with the **Boltzmann–Shannon unification** motivator and presents channel-level entropy ([CORE.md](https://github.com/cyotee/computational-entropy/blob/master/CORE.md): definition, theorems with proof pointers, genuinely-new vs standard split, and a dated note on independent convergence with Baez–Fritz–Leinster and Fullwood–Parzygnat). **Tier 2** (secondary result, no gravity) covers instruction persistence on a finite substrate ([TIER2_INSTRUCTION_PERSISTENCE.md](https://github.com/cyotee/computational-entropy/blob/master/TIER2_INSTRUCTION_PERSISTENCE.md): log-cardinality \(d_f^{\#}\), an exact composition rule, open Problem T2, and a Toffoli toy in `simulations/classical/tier2_instruction_persistence.py`). **Tier 3** (conjecture only) holds the gravitational programme and the quantum / von Neumann layer. Papers A and C are Tier 1. Paper B and the integrated paper (`papers/06-synthesis/PAPER.md`) are Tier 3. Since the 2026-07-15 snapshot below, the repo has also gained Paper C (decay algebra; `papers/02-computational-models/PAPER_C_decay_algebra.md`), the load no-go (C17; `emergent-gravity/load-dimensional-analysis.md`), and the R4a promotion analysis (C18; `emergent-gravity/r4a-promotion.md`). The sections below are otherwise the 2026-07-15 snapshot.
 
 ---
 
@@ -59,7 +64,7 @@ STAGE 3 — Continuum entropic gravity (GfE MACRO)
 | **Residual dual is time-windowed (T1′)** | Ultra-short \(t\): heat can win residual (noise race). Intermediate: PM wins. Not “duality breaks” |
 | **Unified pure residual window \(U_\star=[1.36,2.40]\)** | Under PCRH\(_b\) with \(\rho_b=0.42\); covers former hybrid \(I_\star\) + late pure window ([m1g](synthesis/m1g-unified-pure-window.md)) |
 | **Load clock dual (M2) hybrid** | Load-PM ≈ mild time change of PM (\(\tau/t\sim 0.95\)); still beats heat on dual window |
-| **Newton = Path J/M only** | Clausius → Einstein (Jacobson) → Poisson; \(\alpha\beta=4\pi G/c^4\) = on-shell **calibration**. Pointwise \(\Phi\propto\rho\Rightarrow\nabla^2\) **withdrawn** |
+| **Newton = Path J/M only** | Clausius → Einstein (Jacobson) → Poisson; on-shell load-clock **calibration** \(\alpha L=-\Phi/c^2\) (fixes the sum \(\alpha L\) only). *Corrected 2026-07-31 per C17:* the former \(\alpha\beta=4\pi G/c^4\) is dimensionally invalid and withdrawn. Pointwise \(\Phi\propto\rho\Rightarrow\nabla^2\) **withdrawn** |
 | **M6 WEAK PASS / FAIL identity** | Both frameworks → \(\nabla^2\Phi=4\pi G\rho_m\) via Einstein/GR; **not** framework equivalence |
 | **Next-order structural FAIL** | GfE extras live in metric EOM (\(D_{\mu\nu},\Lambda_G\)); our \(\gamma_L,\delta_L\) live in load **clock** unless promoted |
 | **\(L\) reading** | Prefer: demand from **scale/rate of possible channel outcomes** (energy + entropy production + boundary), not “stockpile of identity left to compute.” Active identity loss / scrambling → **higher** \(L\), not lower |
@@ -330,5 +335,6 @@ KEY PATHS:
 | 2026-07-15 | D8–D14 dual freeze through first DRAFT + R1–R4a |
 | 2026-07-15 | **D15:** PROGRAM_CONCLUSIONS; FINAL.md; M5b lemma polish; conclusion freeze |
 | 2026-07-15 | **OPEN_AVENUES.md:** concluded vs new theory vs experiment; missing theorems for O1–O5 |
+| 2026-11-26 | Three-tier restructure note (Tier 1 CORE.md with Boltzmann–Shannon unification lead; Tier 2 instruction persistence; Tier 3 conjecture); von Neumann layer recorded as AI-proposed scaffolding; §2.1 Path J/M row brought in line with C17 (\(\alpha L=-\Phi/c^2\); \(\alpha\beta\) withdrawn). |
 
 *Append further changelog only if a new cycle (D16+) reopens the program.*

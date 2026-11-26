@@ -1,5 +1,7 @@
 # An Information-Theoretic Reformulation of Thermodynamic Gravity (Conjecture)
 
+> **Tier 3: conjecture, resting on the core (banner added 2026-11-26).** This paper is published as **open conjecture resting on the core result**, not as a supported claim of the programme. The core is channel-level entropy: [CORE.md](https://github.com/cyotee/computational-entropy/blob/master/CORE.md), with Paper A and Paper C. The gravitational content here (the gravitational channel \(\Phi_g\), the load \(L\), the on-shell identification \(\alpha L=-\Phi/c^2\), Path J/M, and R4a) is conjecture. The former calibration \(\alpha\beta=4\pi G/c^4\) is withdrawn (C17). Programme motivation: a **Boltzmann–Shannon unification** ([README](https://github.com/cyotee/computational-entropy/blob/master/README.md)).
+
 **Paper B (conjecture) — Draft**
 **Status:** 2026-07-29 · Preliminary research · position / research-programme paper
 **Scope contract:** [../DELIVERY_SCOPE.md](../DELIVERY_SCOPE.md) §2 (may assert B1–B7; non-claims N1–N9)

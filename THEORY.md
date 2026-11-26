@@ -1,14 +1,97 @@
-# THEORY.md — Explicit Bridge Architecture and Cohesion Document
+# THEORY.md — Boltzmann–Shannon Unification: Tier 1 → Tier 2 → Tier 3
 
-**Status**: Living bridge architecture (seeded 2026-06-22; **Euclidean dual freeze 2026-07-15+**; **two-paper split 2026-07-29**).
+**Status**: Living architecture document (seeded 2026-06-22; Euclidean dual freeze 2026-07-15; two-paper split 2026-07-29; **three-tier restructure 2026-11-26**).
 
-> **Positioning (2026-07-29):** The program is now split into **Paper A** (solid core: computational entropy + Landauer-exact export — [papers/01-foundations/PAPER_A_computational_entropy.md](papers/01-foundations/PAPER_A_computational_entropy.md)) and **Paper B** (emergent-gravity **conjecture** — [papers/04-gravitational-channel/PAPER_B_emergent_gravity_conjecture.md](papers/04-gravitational-channel/PAPER_B_emergent_gravity_conjecture.md)). Falsifiability verdict = **reformulation** with the entropy-production term flagged as the sole candidate departure ([papers/FALSIFIABILITY_L_vs_GR.md](papers/FALSIFIABILITY_L_vs_GR.md)). Consolidated status: [synthesis/RESULTS_LEDGER.md](synthesis/RESULTS_LEDGER.md).
+> **How this document is ordered (2026-11-26).** **Tier 1** (primary result, §1–§4) opens with the research motivator and then presents the proposed mathematical object, channel-level entropy (full statements and proofs in [CORE.md](CORE.md)). **Tier 2** (secondary result, no gravity) covers instruction persistence on a finite substrate ([TIER2_INSTRUCTION_PERSISTENCE.md](TIER2_INSTRUCTION_PERSISTENCE.md)). **[Tier 3: Conjecture](#tier-3-conjecture)** quarantines everything gravitational or quantum, as open conjecture resting on Tier 1 rather than supported claims. The author has no formal training in information theory or statistical mechanics, so each Tier 1–2 assertion carries a pointer to an in-repo derivation or computation.
+
+**Claims sheet:** [synthesis/CURRENT_CLAIMS.md](synthesis/CURRENT_CLAIMS.md) · **Tier 1:** [CORE.md](CORE.md) · **Tier 2:** [TIER2_INSTRUCTION_PERSISTENCE.md](TIER2_INSTRUCTION_PERSISTENCE.md) · **Progress:** [PROGRESS_REPORT.md](PROGRESS_REPORT.md) · **Plan:** [PLAN.md](PLAN.md)
+
+---
+
+## Tier 1: Computational entropy (primary result)
+
+A proposed mathematical object for consideration, with no GR-level certainty and no gravitational connection. *Relation to prior work:* the repo reached \(H(X\mid Y)\) by its own route, years after Baez–Fritz–Leinster (2011) and Fullwood–Parzygnat (2021). This is independent convergence, not priority ([CORE §4.1](CORE.md#41-relation-to-prior-work-independent-convergence-added-2026-11-26)).
+
+### 1. Motivation: a Boltzmann–Shannon unification
+
+The driving intent is a **Boltzmann–Shannon unification**: one notion of entropy that reads, on the same object, both as Shannon's uncertainty about a signal and as Boltzmann's logarithmic count \(k_B\ln W\) of the microstates compatible with an observed macrostate. Shannon entropy is normally attached to a static distribution and does not measure what a computation does to random inputs ([foundations/computational-entropy/definition.md](foundations/computational-entropy/definition.md), Premise).
+
+The proposed mathematical object is **entropy defined on a channel's action on its input distribution**, rather than on a static distribution. An output value plays the role of a macrostate, and its preimage plays the role of the compatible microstates ([CORE §2.3](CORE.md#23-the-boltzmann-form-reading-uniform-inputs-deterministic-maps)).
+
+### 2. The core object: channel-level entropy
+
+Full definitions, theorems and proofs: **[CORE.md](CORE.md)**. Summary:
+
+| Item | Statement | Pointer |
+|------|-----------|---------|
+| Object | channel \(p(y\mid x)\) acting on \(X\sim p_X\); deterministic \(Y=f(X)\) is the special case | CORE §2.1 |
+| Computational entropy | \(H_c(f;p_X) := H(Y)\) | CORE Def. 1 · [Paper A](papers/01-foundations/PAPER_A_computational_entropy.md) §1 |
+| Informational equivalence | same output law \(p_Y\) (equal \(H_c\) is **not** sufficient: \(\min(U_1,U_2)\) vs \(\max(U_1,U_2)\)) | CORE P1 · [AGENTS.md](AGENTS.md) pitfall 1 |
+| Export | \(H(X\mid Y)\) (single-shot slot \(L_S\)) | CORE Def. 2 · Paper A §3 |
+| Export identity | \(H(X)-H(Y)=H(X\mid Y)-H(Y\mid X)\); \(=H(X\mid Y)\) if deterministic | Paper A Thm 1 · `simulations/classical/m11_and_gate_ledger.py` |
+| Boltzmann-form split (uniform input, deterministic) | \(\log_2 N = H(Y) + \sum_y p_Y(y)\log_2\lvert f^{-1}(y)\rvert\) (formal only) | CORE §2.3 · [Paper C](papers/02-computational-models/PAPER_C_decay_algebra.md) §2 |
+| Landauer coincidence | \(Q\ge kT\ln 2\cdot H(X\mid Y)\) for deterministic maps (external theorem) | Paper A Thm 2 · `m11_landauer_and_ledger.py` |
+| Stage-wise ledger | path-dependent \(\sum L_S\) (1-bit gap); a **convention**, not heat | Paper A Thm 3 · `m11_composition_ledger.py` |
+| Decay algebra | 1D density \(a=0.3007568\); general-\(w\) existence, Blackwell form, reset ⇒ exact finite algebra; 2D strip; continuum \(\sigma(x)\) (witnessed) | Paper C Thms 1–2, §5–§6 · `m11_decay_algebra*.py`, `m11_continuum_embedding.py` |
+
+### 3. Genuinely new vs standard
+
+See the two-column table in [CORE §4](CORE.md#4-genuinely-new-vs-standard). In short:
+- **Candidate new (literature not yet checked):** the *framing* (channel–input pair, export); composition rules and path accounting *as a framework*, with the identities themselves standard and the 1-bit path gap a convention rather than heat; the decay algebra (Paper C: \(a=0.3007568\), and the general-\(w\) reset-gate ⇒ exact-finite criterion); and the Tier 2 resource-bound conjecture.
+- **Standard (attributed):** conditional entropy \(H(X\mid Y)\) and its characterization as the information loss of a map (Baez–Fritz–Leinster 2011; Fullwood–Parzygnat 2021); Shannon entropy, the chain rule and data processing; Landauer-type bounds (Landauer; Bennett; Sagawa–Ueda; Sagawa); Blackwell's representation; the grouping property and type-class counting behind the Boltzmann-form split. \(H(X\mid Y)\) is **not** claimed as a new principle.
+
+### 4. Open problems on the core
+
+From [CORE §5](CORE.md#5-is-this-more-than-shannon-entropy) ("Is this more than Shannon entropy?"):
+- **OP1 (separation):** a channel-level quantity that is not a functional of \(p_{XY}\) yet carries a proved operational meaning.
+- **OP2 (Boltzmann–Shannon unification proper):** derive, for an explicit physical model, that the preimage count is a thermodynamic microstate count.
+- **OP3 (decay algebra):** literature check, the converse of the reset criterion, and a general hydrodynamic theorem for \(\sigma(x)\).
+
+---
+
+## Tier 2: Instruction persistence on a finite substrate (secondary result)
+
+Full text: **[TIER2_INSTRUCTION_PERSISTENCE.md](TIER2_INSTRUCTION_PERSISTENCE.md)** · script `simulations/classical/tier2_instruction_persistence.py`. No gravity, no quantum layer.
+
+| Item | Statement | Status |
+|------|-----------|--------|
+| \(d_f^{\#}\) | \(d_f^{\#} := \log_2\lvert[f]\rvert\), where \([f]\) is the class of maps with the same output law (law-based equivalence, CORE P1). For uniform input, \(\lvert[f]\rvert = N!/\prod_y W_y!\) and \(d_f^{\#}/N\to H(Y)\). The legacy Bayesian \(d_f = 1-2^{-d_f^{\#}}\) under a uniform prior. | definition; standard counting |
+| Composition | \(d_f^{\#} = d_{g\circ f}^{\#} + R(g\mid f)\) exactly; naive \(d_f^{\#}+d_g^{\#}\) additivity is false | **proved**; script part B |
+| Problem T2 | joint minimum of output capacity + instruction persistence on a finite register with gates NOT/CNOT/Toffoli | **open** |
+| Conjecture T2 | on a finite, non-free substrate, persistence scales with class log-cardinality \(d^{\#}\), not with one representative's \(K(f)\) | **open** |
+| Toy | one stage, \(n=2\): \(d_f^{\#}\) does not order register need (XOR: 0 ancillas; AND: 1) | computed |
+
+---
+
+## Tier 3: Conjecture
+
+> **Published as open conjecture resting on the core result, not as supported claims.** Everything in this section depends on Tier 1 (§2, the foundation) and possibly Tier 2, *plus* hypotheses that the repository has not proved. Rigor labels (semantic / structural / calibration / external theorem / constructive-toy) still apply item by item; see [synthesis/CURRENT_CLAIMS.md](synthesis/CURRENT_CLAIMS.md). Nothing here should be cited as a result of the programme.
+
+### C.1 Gravitational programme
+
+- **Gravitational channel and load.** Gravity is modelled as a CPTP channel \(\Phi_g\), with a dimensionless **load** \(L(\rho,g)\) and the load clock \(d\tau = dt/(1+\alpha L)\). Canonical: [emergent-gravity/master-equation.md](emergent-gravity/master-equation.md). Paper B (conjecture): [papers/04-gravitational-channel/PAPER_B_emergent_gravity_conjecture.md](papers/04-gravitational-channel/PAPER_B_emergent_gravity_conjecture.md). Integrated paper (conjecture): [papers/06-synthesis/PAPER.md](papers/06-synthesis/PAPER.md).
+- **Jacobson path (Path J/M).** Newton is recovered only via Clausius on local horizons → Einstein (Jacobson 1995, imported) → weak-field GR → Poisson, plus the on-shell load-clock identification \(\alpha L = -\Phi/c^2\). That identification fixes the sum \(\alpha L\) only. The former calibration \(\alpha\beta = 4\pi G/c^4\) is **withdrawn** because it is dimensionally invalid (C17). Pointwise \(\Phi\propto\rho\) Newton is withdrawn. See [emergent-gravity/recoveries/newtonian/README.md](emergent-gravity/recoveries/newtonian/README.md).
+- **Load no-go (C17).** The entropy term varies at fixed \(T_{\mu\nu}\) while \(\alpha L = -\Phi/c^2\) is \(T_{\mu\nu}\)-fixed. So \(L\) is a diagnostic co-moving with the Path-J/M metric, not an independent clock, and the falsifiability verdict is **reformulation**. See [emergent-gravity/load-dimensional-analysis.md](emergent-gravity/load-dimensional-analysis.md) and [papers/FALSIFIABILITY_L_vs_GR.md](papers/FALSIFIABILITY_L_vs_GR.md).
+- **R4a promotion.** Entropy production promoted into the field equations is Bianchi-consistent and reduces to ΛCDM. Its derived phantom sign is retracted (EoS-inconsistent), and reservoir dark energy is not framework-grounded (C18). See [emergent-gravity/r4a-promotion.md](emergent-gravity/r4a-promotion.md).
+- **GfE contact and Euclidean dual.** M6 gives a WEAK PASS on shared Poisson and a FAIL on framework identity. ACD-EW is a constructive Euclidean warm-up dual at toy/pattern level only (C1–C13).
+- **Classical → gravity bridge.** Paper C's \(\sigma(x)\) is a classical density. Identifying it with the load term \(\gamma\lvert dS_c/d\tau\rvert\) is a labelled semantic step, not a construction (non-claim 10).
+- **Type safety (locked):** \(L\) is a dimensionless scalar, \(G\) is a metric, and \(L \neq G\).
+
+### C.2 Quantum channel / von Neumann layer
+
+- \(S_c(\Phi;\rho) := S(\Phi(\rho))\) is a definition carried over from the classical case ([foundations/computational-entropy/definition.md](foundations/computational-entropy/definition.md), Quantum Generalization).
+- **Provenance (2026-11-26):** the von Neumann entropy connection was proposed by an AI agent during exploration and is scaffolding, not a derived result ([PROGRESS_REPORT.md](PROGRESS_REPORT.md)). No theorem in Papers A or C uses \(S_c\).
+- Entropy-object tags (A–E) and the non-identities toy \(H_c\neq S_c\) and \(H_c^{\mathrm{disc}}\neq S_c\) stay in force: [GLOSSARY.md](GLOSSARY.md) and [synthesis/m10-sc-vs-toy-hc.md](synthesis/m10-sc-vs-toy-hc.md).
+
+### Bridge architecture (pre-restructure material, kept for reference)
+
+> **Positioning (2026-07-29, historical):** The program is now split into **Paper A** (solid core: computational entropy + Landauer-exact export — [papers/01-foundations/PAPER_A_computational_entropy.md](papers/01-foundations/PAPER_A_computational_entropy.md)) and **Paper B** (emergent-gravity **conjecture** — [papers/04-gravitational-channel/PAPER_B_emergent_gravity_conjecture.md](papers/04-gravitational-channel/PAPER_B_emergent_gravity_conjecture.md)). Falsifiability verdict = **reformulation** with the entropy-production term flagged as the sole candidate departure ([papers/FALSIFIABILITY_L_vs_GR.md](papers/FALSIFIABILITY_L_vs_GR.md)). Consolidated status: [synthesis/RESULTS_LEDGER.md](synthesis/RESULTS_LEDGER.md).
 
 This is the living source of truth for the conceptual bridge between:
 - The **lambda calculus / computational models** thread (IDEM functions, decay vectors, output distribution entropy, games as models, etc.)
 - The **emergent gravity** thread (gravitational channel \(\Phi_g\), computational load \(L\), master equation, and recoveries)
 
-### Active research focus (2026-07-15+)
+#### Active research focus (historical snapshot, 2026-07-15; superseded by the 2026-11-26 core-first restructure)
 
 | Layer | Status | Notes |
 |-------|--------|--------|
@@ -18,7 +101,7 @@ This is the living source of truth for the conceptual bridge between:
 
 **Claims sheet:** [synthesis/CURRENT_CLAIMS.md](synthesis/CURRENT_CLAIMS.md) · **M11 design:** [synthesis/m11-idem-to-load.md](synthesis/m11-idem-to-load.md) · **Progress:** [PROGRESS_REPORT.md](PROGRESS_REPORT.md)
 
-## Purpose
+#### Purpose of the bridge architecture
 - Define explicit mappings between concepts.
 - Document the current level of rigor for each mapping (analogy / structural / constructive).
 - Provide worked examples and correspondence tables.
@@ -29,16 +112,16 @@ See [PLAN.md](PLAN.md) for the overall reorganization and paper plan.
 
 ---
 
-## 1. Current State Diagnosis
+### C.3 Current state diagnosis (bridge, pre-restructure §1)
 
 The repository contains two substantial but only loosely connected research threads:
 
-### Lambda / Classical Computational Entropy Thread
+#### Lambda / classical computational entropy thread
 - Rich formal machinery: IDEM functions (with arity, decay vectors \([d_1 \dots d_n], d_f\)), combinatorics from lambda expressions, infinite reduction paths for underivability, vectorial lambda calculus.
 - Concrete examples: Blackjack and other games modeled as functions that reduce entropy / increase predictive accuracy.
 - Early drafts explicitly attempted to ground entropy calculations in lambda calculus (system entropy ≈ log |AST size of normal form|, potential via unreduced paths).
 
-### Emergent Gravity Thread
+#### Emergent gravity thread
 - Core construction: gravitational quantum channel \(\Phi_g\) (CPTP map), output **computational entropy** \(S_c = S(\Phi_g(\rho))\), dimensionless **computational load** \(L\), and the master equation.
 - Recoveries of Newtonian gravity, time dilation, Schwarzschild + horizons, Hawking/Page curve, FLRW + inflation, Lloyd capacity.
 - Unification claims with Jacobson, Verlinde, Susskind, holography, Lloyd.
@@ -56,7 +139,7 @@ The repository contains two substantial but only loosely connected research thre
 
 ---
 
-## 2. Vision for Cohesion
+### C.4 Vision for cohesion (pre-restructure §2)
 
 A cohesive theory requires explicit connections at increasing levels:
 
@@ -72,19 +155,19 @@ A cohesive theory requires explicit connections at increasing levels:
 
 ---
 
-## 3. Key Correspondence Tables (Initial)
+### C.5 Key correspondence tables (pre-restructure §3)
 
-### 3.1 Core Entropy Concepts
+#### C.5.1 Core entropy concepts
 
 | Classical / Lambda Side                  | Gravity Side                  | Current Rigor     | Notes / Next Work |
 |------------------------------------------|-------------------------------|-------------------|-------------------|
 | Computational entropy \(H_c\) = entropy of output distribution | \(S_c = S(\Phi_g(\rho))\)    | Semantic          | Direct generalization stated in canonical definition. |
-| Different functions can produce identical output distributions (e.g. \(\sqrt{U}\) vs \(\max(U_1,U_2)\)) | Different microstate evolutions can produce equivalent \(S_c\) | Semantic / Structural | "Informationally equivalent" language already used. |
+| Different functions can produce identical output distributions (e.g. \(\sqrt{U}\) vs \(\max(U_1,U_2)\)) | Different microstate evolutions can produce the same output state (hence equal \(S_c\); equal \(S_c\) alone is not equivalence, see AGENTS.md pitfall 1) | Semantic / Structural | "Informationally equivalent" language already used. |
 | Decay vector + irreversible overwriting  | Exported entropy to holographic screen / Hawking radiation | Structural (candidate) | Strong analogy; decay vector components flipping ≈ information loss term. |
 | Infinite reduction paths for underivability | Information inaccessible to external observers | Analogical        | Promising for black-hole information problem. |
 | AST size / reduction cost as complexity  | Energy-density term in \(L\)  | Candidate         | Needs toy model. |
 
-### 3.2 Load \(L\) Terms
+#### C.5.2 Load \(L\) terms
 
 | Term in \(L\)                            | Possible Lambda / Computational Origin                  | Status |
 |------------------------------------------|---------------------------------------------------------|--------|
@@ -92,7 +175,7 @@ A cohesive theory requires explicit connections at increasing levels:
 | \(\gamma \| dS_c / d\tau \|_{reg}\)     | Rate of output entropy reduction or number of decay-vector flips per reduction step | Strong candidate |
 | \(\delta S_{boundary} / S_{BH}(A)\)     | Global distinguishability / total registerable normal forms (related to \(d_f\) across ensemble) | To develop |
 
-### 3.3 External continuum bridge: Bianconi (2025)
+#### C.5.3 External continuum bridge: Bianconi (2025)
 
 A closely related continuum theory is Bianconi’s *Gravity from entropy* (Phys. Rev. D **111**, 066001 (2025); arXiv:2408.14391). Bianconi derives modified Einstein equations from an **entropic action**: the quantum relative entropy between the spacetime metric \(g\) (treated as a local quantum operator / effective density matrix) and a **matter-induced metric** \(G\). An auxiliary **G-field** rewrites the theory as a dressed Einstein–Hilbert action with an **emergent small positive cosmological constant** \(\Lambda_G\) depending only on the G-field; equations remain second order. Low coupling recovers Einstein gravity with zero \(\Lambda\).
 
@@ -111,9 +194,9 @@ This sits in the same research family as our emergent-gravity thread (Jacobson �
 
 ---
 
-## 4. Toy Models
+### C.6 Toy models (pre-restructure §4)
 
-### 4.1 Joint GfE ↔ load toy (settled pattern layer)
+#### C.6.1 Joint GfE ↔ load toy (settled pattern layer)
 
 - 1D observation channel + classical PM + split load; scorecard **6/6 SUPPORT (PROMISING)**.
 - 2D Catte PM lift and blackjack-belief IC also **6/6** (belief = pattern only).
@@ -121,7 +204,7 @@ This sits in the same research family as our emergent-gravity thread (Jacobson �
 - Paths: `simulations/bridging/gfe_load_joint_toy.ipynb`, `_joint_toy_v2_core.py`, `DESIGN_gfe_load_joint_toy.md`.
 - **Not** continuum gravity confirmation; re-run for regression only.
 
-### 4.2 Next constructive work (primary)
+#### C.6.2 Constructive work toward IDEM → load (historical; M11 has since advanced into Paper C)
 
 - **M11 IDEM → load:** design and (later) implement decay / recoverability contributions to \(L\) or \(H_c\) — [synthesis/m11-idem-to-load.md](synthesis/m11-idem-to-load.md).
 - Prefer: high entropy flux / many open outcomes ⇒ **higher** \(L\) (not “identity stockpile left to compute”).
@@ -129,33 +212,7 @@ This sits in the same research family as our emergent-gravity thread (Jacobson �
 
 ---
 
-## 5. Progress Log
-
-- **2026-06-22**: Duplication audit completed and added to PLAN.md.
-- **2026-06-22**: Directory skeleton created.
-- **2026-06-22**: First canonicals extracted:
-  - `foundations/computational-entropy/definition.md`
-  - `emergent-gravity/master-equation.md`
-- Old copies marked with "Historical / superseded" headers (non-destructive).
-- This THEORY.md seeded with audit findings and initial tables.
-- **2026-07-14**: Bianconi (2025) *Gravity from entropy* added under `papers/external/`; bridge note in `synthesis/bridge-bianconi-relative-entropy.md`; §3.3 correspondence table seeded; bibliography entry in main `.tex`.
-- **2026-07-14**: Joint toy v2 (P0–P2) → 6/6 SUPPORT; formalized **ACD-EW** in `synthesis/action-channel-duality-euclidean.md`.
-- **2026-07-14**: ACD-EW §10 T1 sketch; main `.tex` unification paragraph; **2D joint toy 6/6 SUPPORT**.
-- **2026-07-14**: Parallel synthesis pack — continuum transfer dictionary, weak-field GfE vs load, T1 standalone proof plan, blackjack-belief dual toy (6/6 pattern only). All preliminary; no continuum equivalence claimed.
-- **2026-07-14**: `synthesis/PACK_INDEX.md` + `synthesis/OPEN_MATH_DECISION_LOG.md` (M1–M12 board; default next math: M1 then M6 prep via M8/M7).
-- **2026-07-14**: D1 M-series **executed** — M1 C′/T1′; M5 continuum bridge; M8 Newton gap N1; M7 map; M6 WEAK PASS Poisson / FAIL identity; M2–M4 deferred; M9–M12 deferred. See OPEN_MATH D2.
-- **2026-07-15**: **Euclidean dual freeze** — residual dual program closed at research-program level (\(U_\star\), toys 6/6×3, ACD-EW). Primary track switches to **M11 IDEM→load** (+ continuum hygiene M5/M10, claim freeze / paper outline). Do not default-chase heat/PM residual. Claims: [synthesis/CURRENT_CLAIMS.md](synthesis/CURRENT_CLAIMS.md); M11: [synthesis/m11-idem-to-load.md](synthesis/m11-idem-to-load.md). Central gap remains **IDEM ↔ gravity**.
-- **2026-07-15 (D9)**: M11 design note landed; Phase 1 constructive AND-gate ledger (`simulations/classical/m11_and_gate_ledger.py`) with exact \(H_c\), export \(H(X\mid Y)\), discrete \(L_E,L_S,L_B\). Continuum \(L\)/\(G\) from IDEM still **not** claimed.
-- **2026-07-15 (D10–D11)**: Continuum hygiene M5/M10 dictionaries; M11 Phase 2 (multi-step Boolean, tiny SKI, minimal shoe); paper outline at [papers/06-synthesis/OUTLINE.md](papers/06-synthesis/OUTLINE.md). Default next = draft paper, not residual dual.
-- **2026-07-15 (D12)**: Failure-mode [CLAIM_GATE](synthesis/CLAIM_GATE.md); [m11c continuum motivation](synthesis/m11c-continuum-motivation.md); coupled-regions ledger; M10 P1 non-identity \(H_c^{\mathrm{toy}}\neq H(Z)\); M5b smooth action \(O(h)\) sketch.
-- **2026-07-15 (D13)**: Relationships — [m11d composition](synthesis/m11d-composition-laws.md) (path-dep \(\sum L_S\)); [m11e Landauer](synthesis/m11e-landauer-export.md); [m5c warm-up/PM](synthesis/m5c-warmup-pm-gradient-flow.md).
-- **2026-07-15 (D14)**: First program paper draft; R4a [m6d-promotion-nogo.md](synthesis/m6d-promotion-nogo.md).
-- **2026-07-15 (D15)**: Conclusion freeze — [FINAL.md](papers/06-synthesis/FINAL.md); [PROGRAM_CONCLUSIONS.md](synthesis/PROGRAM_CONCLUSIONS.md) P1–P11; M5b lemma polish.
-- **2026-07-15**: [OPEN_AVENUES.md](synthesis/OPEN_AVENUES.md) — post-freeze map: concluded vs **new theory** (missing theorems) vs experiment; O1–O5 checklist.
-
----
-
-## 6. Open Questions
+### C.7 Open questions on the conjecture side (pre-restructure §6)
 
 **Still central (IDEM ↔ gravity — dual toys do not answer these):**
 - What is the precise representation of local quantum microstates \(\rho\) using lambda terms (or is it only motivational)?
@@ -174,4 +231,31 @@ See also the "Open Questions" section in PLAN.md and [PROGRESS_REPORT.md](PROGRE
 
 ---
 
-*This document should be updated whenever new mappings are articulated or canonical files are added.*
+## Progress log
+
+- **2026-06-22**: Duplication audit completed and added to PLAN.md.
+- **2026-06-22**: Directory skeleton created.
+- **2026-06-22**: First canonicals extracted:
+  - `foundations/computational-entropy/definition.md`
+  - `emergent-gravity/master-equation.md`
+- Old copies marked with "Historical / superseded" headers (non-destructive).
+- This THEORY.md seeded with audit findings and initial tables.
+- **2026-07-14**: Bianconi (2025) *Gravity from entropy* added under `papers/external/`; bridge note in `synthesis/bridge-bianconi-relative-entropy.md`; §3.3 (now §C.5.3) correspondence table seeded; bibliography entry in main `.tex`.
+- **2026-07-14**: Joint toy v2 (P0–P2) → 6/6 SUPPORT; formalized **ACD-EW** in `synthesis/action-channel-duality-euclidean.md`.
+- **2026-07-14**: ACD-EW §10 T1 sketch; main `.tex` unification paragraph; **2D joint toy 6/6 SUPPORT**.
+- **2026-07-14**: Parallel synthesis pack — continuum transfer dictionary, weak-field GfE vs load, T1 standalone proof plan, blackjack-belief dual toy (6/6 pattern only). All preliminary; no continuum equivalence claimed.
+- **2026-07-14**: `synthesis/PACK_INDEX.md` + `synthesis/OPEN_MATH_DECISION_LOG.md` (M1–M12 board; default next math: M1 then M6 prep via M8/M7).
+- **2026-07-14**: D1 M-series **executed** — M1 C′/T1′; M5 continuum bridge; M8 Newton gap N1; M7 map; M6 WEAK PASS Poisson / FAIL identity; M2–M4 deferred; M9–M12 deferred. See OPEN_MATH D2.
+- **2026-07-15**: **Euclidean dual freeze** — residual dual program closed at research-program level (\(U_\star\), toys 6/6×3, ACD-EW). Primary track switches to **M11 IDEM→load** (+ continuum hygiene M5/M10, claim freeze / paper outline). Do not default-chase heat/PM residual. Claims: [synthesis/CURRENT_CLAIMS.md](synthesis/CURRENT_CLAIMS.md); M11: [synthesis/m11-idem-to-load.md](synthesis/m11-idem-to-load.md). Central gap remains **IDEM ↔ gravity**.
+- **2026-07-15 (D9)**: M11 design note landed; Phase 1 constructive AND-gate ledger (`simulations/classical/m11_and_gate_ledger.py`) with exact \(H_c\), export \(H(X\mid Y)\), discrete \(L_E,L_S,L_B\). Continuum \(L\)/\(G\) from IDEM still **not** claimed.
+- **2026-07-15 (D10–D11)**: Continuum hygiene M5/M10 dictionaries; M11 Phase 2 (multi-step Boolean, tiny SKI, minimal shoe); paper outline at [papers/06-synthesis/OUTLINE.md](papers/06-synthesis/OUTLINE.md). Default next = draft paper, not residual dual.
+- **2026-07-15 (D12)**: Failure-mode [CLAIM_GATE](synthesis/CLAIM_GATE.md); [m11c continuum motivation](synthesis/m11c-continuum-motivation.md); coupled-regions ledger; M10 P1 non-identity \(H_c^{\mathrm{toy}}\neq H(Z)\); M5b smooth action \(O(h)\) sketch.
+- **2026-07-15 (D13)**: Relationships — [m11d composition](synthesis/m11d-composition-laws.md) (path-dep \(\sum L_S\)); [m11e Landauer](synthesis/m11e-landauer-export.md); [m5c warm-up/PM](synthesis/m5c-warmup-pm-gradient-flow.md).
+- **2026-07-15 (D14)**: First program paper draft; R4a [m6d-promotion-nogo.md](synthesis/m6d-promotion-nogo.md).
+- **2026-07-15 (D15)**: Conclusion freeze — [FINAL.md](papers/06-synthesis/FINAL.md); [PROGRAM_CONCLUSIONS.md](synthesis/PROGRAM_CONCLUSIONS.md) P1–P11; M5b lemma polish.
+- **2026-07-15**: [OPEN_AVENUES.md](synthesis/OPEN_AVENUES.md) — post-freeze map: concluded vs **new theory** (missing theorems) vs experiment; O1–O5 checklist.
+- **2026-11-26**: Core-first restructure. Lead is now the **Boltzmann–Shannon unification** motivator, then the channel-level entropy core ([CORE.md](CORE.md); Papers A and C), then **Conjecture** (gravitational programme + quantum / von Neumann layer); reorganised the same day into Tier 1 → Tier 2 (instruction persistence) → Tier 3 (conjecture). Pre-restructure §§1–4 and §6 moved under Conjecture as §C.3–§C.7, with content unchanged apart from headings.
+
+---
+
+*This document should be updated whenever new mappings are articulated or canonical files are added. Tier 1 results go in [CORE.md](CORE.md), Tier 2 in [TIER2_INSTRUCTION_PERSISTENCE.md](TIER2_INSTRUCTION_PERSISTENCE.md); bridge, gravity and quantum material stays under **Tier 3: Conjecture**.*

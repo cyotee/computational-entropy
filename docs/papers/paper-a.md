@@ -1,5 +1,7 @@
 # Computational Entropy: Output-Distribution Entropy and Landauer-Exact Export
 
+> **Tier 1 paper (banner added 2026-11-26).** Paper A belongs to Tier 1, the programme's primary result: channel-level entropy ([CORE.md](https://github.com/cyotee/computational-entropy/blob/master/CORE.md)), the mathematical object proposed for a **Boltzmann–Shannon unification**. The non-classical line \(S_c\) in §1 is scaffolding from Tier 3 (conjecture). No theorem in this paper uses it. For which results here are standard and which are candidates for new, see [CORE.md §4](https://github.com/cyotee/computational-entropy/blob/master/CORE.md#4-genuinely-new-vs-standard).
+
 **Paper A (solid core) — Draft**
 **Status:** 2026-07-29 · Preliminary research · self-contained, no gravitational claims
 **Scope contract:** [../DELIVERY_SCOPE.md](../DELIVERY_SCOPE.md) §1 (may assert A1–A6; must not assert gravity)
