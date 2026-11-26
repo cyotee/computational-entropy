@@ -17,6 +17,8 @@ Run:
     python simulations/classical/procedural_share_mlpool.py --eps 0.1 --n-samples 500
     python simulations/classical/procedural_share_mlpool.py --channel gad --T 0 --seeds 20
     python simulations/classical/procedural_share_mlpool.py --markdown
+    python simulations/classical/procedural_share_mlpool.py --write-pool     # (re)write the Stage 2 pool record
+    python simulations/classical/procedural_share_mlpool.py --stage2-pool    # check it; CE-6 run on pool A-ml
 
 MODEL (conventions of this toy, fixed here)
 -------------------------------------------
@@ -98,6 +100,17 @@ THE OVERLAP TERM (theorem; checked numerically)
   pool A, eps = 0.05, alphabet 2, 72 defined grid points, the ORIGINAL form
   fails at 58. This script recomputes that run and I(X;F|Y) at those points.
 
+STAGE 2 POOL (CE-15). The channel-cost Stage 2 candidate pool is this ML pool,
+  saved as simulations/classical/data/ce15_ml_pool.json (STAGE2_SETTINGS: draw
+  2026, 200 samples, eps 0.05, budget 1, tfrac 1, ref blind; same sampler,
+  clustering and noiseless law; hash re-checked on load and against a fresh
+  regeneration). For the CE-6 one-bit run, ce6_overlap(pool_source="ml"),
+  now the default, uses "pool A-ml": pool A with its 20 Haar single-qubit
+  members replaced by the one-bit laws (q0, q1) = P(qubit A reads 1 | |x 0>)
+  of the first 20 ML representatives (same size, 50). pool_source="A" keeps
+  CE-6 pool A, and the CE-12 report below still uses it (the "58"). The Haar
+  arms of the ensemble comparison are unchanged.
+
 STATISTICS. Canonical draw s = 2026; ensemble s = 1..--seeds (default 40),
   each with an ML pool, a Haar pool of the same size (draw_pool(K, 10^5+s))
   and the CE-9 Haar-50 pool (draw_pool(50, s)). Per draw, paired difference
@@ -110,6 +123,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import json
 import math
 import os
 import sys
@@ -186,6 +200,73 @@ def ml_pool(seed: int, n: int, eps: float, budget=1.0, tfrac=1.0, ref="blind"):
     pool = np.ascontiguousarray(Us[reps])
     pool.setflags(write=False)
     return pool
+
+
+# ---------------------------------------------------------------------------
+# Saved ML pool for channel-cost Stage 2 (CE-15). Same sampler, clustering and
+# noiseless law as above; only the Stage 2 default pool source changes.
+# ---------------------------------------------------------------------------
+
+DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
+STAGE2_POOL_PATH = os.path.join(DATA_DIR, "ce15_ml_pool.json")
+STAGE2_POOL_SOURCE = "ml"       # "ml" (default) or "A" (CE-6 pool A, with its 20 Haar members)
+STAGE2_SETTINGS = dict(seed=2026, n_samples=200, eps=0.05, budget=1.0, tfrac=1.0, ref="blind", n_one_bit=20)
+
+
+def one_bit_laws(pool: np.ndarray) -> np.ndarray:
+    """(q0, q1) per candidate: P(qubit A reads 1 | input |x 0>), x in {0, 1}, noiseless.
+
+    The single-use, rank-2 nested-Z marginal of noiseless_law (index 2a+b, so a = 1 is y in {2, 3}).
+    """
+    L = noiseless_law(np.asarray(pool))
+    return L[:, :, 2] + L[:, :, 3]
+
+
+def pool_record(seed, n_samples, eps, budget=1.0, tfrac=1.0, ref="blind", n_one_bit=20) -> dict:
+    """Deterministic record of an ML pool: metadata, representative unitaries, one-bit laws."""
+    Us, rej = sample_unitaries(n_samples, seed, budget, tfrac, ref)
+    reps = leader_cluster(noiseless_law(Us), eps)
+    pool = np.ascontiguousarray(Us[reps])
+    q = one_bit_laws(pool[:n_one_bit])
+    return {
+        "label": "TOY MODEL (Tier 2). Two-qubit proof-of-concept; NOT evidence about hadronic or QCD physics.",
+        "source": "simulations/classical/procedural_share_mlpool.py (sample_unitaries, leader_cluster, noiseless_law)",
+        "hamiltonians": "GUE 4x4, ground energy shifted to 0, <E - E0>_ref = budget; U = exp(-i H tfrac t_ML)",
+        "seed": seed, "rng": f"numpy default_rng([seed, {TAG}])", "n_samples": n_samples, "rejected": rej,
+        "budget": budget, "t_ML": math.pi / (2 * budget), "tfrac": tfrac, "ref": ref, "eps": eps,
+        "cluster_distance": "max_m TV(L_U(.|m), L_V(.|m)), L_U(y|m) = |<y|U|m 0>|^2, leader clustering in draw order",
+        "n_clusters": len(reps), "representative_indices": [int(i) for i in reps],
+        "pool_sha256": pss.pool_hash(pool), "numpy": np.__version__,
+        "pool": [[[[float(z.real), float(z.imag)] for z in row] for row in U] for U in pool],
+        "one_bit": {"n": int(len(q)), "rule": "first n representatives (draw order); q_x = P(A=1 | |x 0>), noiseless",
+                    "laws": [[float(a), float(b)] for a, b in q]},
+    }
+
+
+def save_pool(path: str, rec: dict) -> None:
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as fh:
+        json.dump(rec, fh, indent=1)
+        fh.write("\n")
+
+
+def load_pool(path: str = STAGE2_POOL_PATH):
+    """(pool, record) from a saved record; the pool hash is re-checked."""
+    with open(path, encoding="utf-8") as fh:
+        rec = json.load(fh)
+    a = np.array(rec["pool"], dtype=float)
+    pool = np.ascontiguousarray(a[..., 0] + 1j * a[..., 1])
+    pool.setflags(write=False)
+    assert pss.pool_hash(pool) == rec["pool_sha256"], f"pool hash mismatch in {path}"
+    return pool, rec
+
+
+def pool_A_ml(rec: dict | None = None) -> list[tuple[str, float, float]]:
+    """CE-6 pool A with its 20 Haar single-qubit members replaced by 20 ML one-bit laws (same size, 50)."""
+    if rec is None:
+        rec = load_pool()[1] if os.path.exists(STAGE2_POOL_PATH) else pool_record(**STAGE2_SETTINGS)
+    base = [c for c in ps.pool_A() if not c[0].startswith("haar")]
+    return base + [(f"ml{i}", q0, q1) for i, (q0, q1) in enumerate(rec["one_bit"]["laws"])]
 
 
 # ---------------------------------------------------------------------------
@@ -310,9 +391,15 @@ def self_checks():
 # CE-6 "58"
 # ---------------------------------------------------------------------------
 
-def ce6_overlap(eps=0.05, dg=0.05, dp=0.05):
+def ce6_overlap(eps=0.05, dg=0.05, dp=0.05, pool_source=STAGE2_POOL_SOURCE):
+    """CE-6 one-bit run. pool_source "A" reproduces CE-6 (the "58"); "ml" is the Stage 2 default."""
     ps.USES = 1
-    pool = ps.pool_A()
+    if pool_source == "A":
+        pool = ps.pool_A()
+    elif pool_source == "ml":
+        pool = pool_A_ml()
+    else:
+        raise ValueError(pool_source)
     gs = np.round(np.arange(0, 1 + dg / 2, dg), 10)
     pvals = np.round(np.arange(1.0, 0.5 - dp / 2, -dp), 10)
     out = {}
@@ -346,6 +433,28 @@ def ce6_overlap(eps=0.05, dg=0.05, dp=0.05):
 # ---------------------------------------------------------------------------
 # Output helpers
 # ---------------------------------------------------------------------------
+
+def print_ce6(res) -> None:
+    print("| input | defined pts | original fails | corrected holds | max \\|I(X;F)\\| | I(X;F\\|Y) at failures "
+          "(min / median / max) | deficit H(F\\|Y)-H(Y\\|X) at failures (min / median / max) | failures with I(X;F\\|Y) >= deficit | max \\|identity\\| |")
+    print("|---|---|---|---|---|---|---|---|---|")
+    for inp, rows in res.items():
+        fails = [r for r in rows if r["deficit"] > 1e-12]
+        corr = sum(r["slack"] >= -1e-12 for r in rows)
+        a = np.array([r["IXFgY"] for r in fails])
+        d = np.array([r["deficit"] for r in fails])
+        resc = int((a >= d).sum())
+        print(f"| {inp} | {len(rows)} | {len(fails)} | {corr}/{len(rows)} | {max(abs(r['IXF']) for r in rows):.1e} | "
+              f"{fz(a.min())} / {fz(np.median(a))} / {fz(a.max())} | {d.min():.3f} / {np.median(d):.3f} / {d.max():.3f} | "
+              f"{resc} | {max(abs(r['ident']) for r in rows):.1e} |")
+        if inp == "uniform":
+            slack_f = np.array([r["slack"] for r in fails])
+            pos = slack_f > 1e-9
+            print(f"\n(uniform: at the failures the corrected-bound slack H(Y)-I(X;Y)-I(F;Y) ranges "
+                  f"{fz(slack_f.min())} to {fz(slack_f.max())} ({int((~pos).sum())} failures have zero slack, i.e. "
+                  f"I(X;F|Y) = 0 there); where the slack is positive, I(X;F|Y)/slack ranges "
+                  f"{fz((a[pos] / slack_f[pos]).min(), 3)} to {fz((a[pos] / slack_f[pos]).max(), 3)}.)\n")
+
 
 def table(title, gammas, ranks, M, nd=3, md=False, marks=None):
     print(f"\n{title}")
@@ -382,6 +491,29 @@ def stars(p):
 # Main
 # ---------------------------------------------------------------------------
 
+def stage2_pool_main(path: str | None) -> int:
+    """Write and/or check the saved Stage 2 pool; print the CE-6 one-bit run on pool A-ml. No channel cost."""
+    S2 = STAGE2_SETTINGS
+    if path:
+        save_pool(path, pool_record(**S2))
+        print(f"wrote {os.path.relpath(path)} ({os.path.getsize(path)} bytes)")
+    pool, rec = load_pool(path or STAGE2_POOL_PATH)
+    regen = ml_pool(S2["seed"], S2["n_samples"], S2["eps"], S2["budget"], S2["tfrac"], S2["ref"])
+    assert np.array_equal(pool, regen) and pss.pool_hash(regen) == rec["pool_sha256"], "saved pool != regeneration"
+    assert np.allclose(one_bit_laws(pool[:S2["n_one_bit"]]), np.array(rec["one_bit"]["laws"]), atol=0, rtol=0)
+    print(f"Stage 2 ML pool: seed {rec['seed']}, {rec['n_samples']} Hamiltonians sampled ({rec['rejected']} rejected), "
+          f"budget {rec['budget']}, t_ML {rec['t_ML']:.6f}, tfrac {rec['tfrac']}, ref {rec['ref']}, eps {rec['eps']}: "
+          f"{rec['n_clusters']} representatives (two-qubit pool); sha256 {rec['pool_sha256'][:16]}; "
+          f"regeneration bit-identical.")
+    pa = pool_A_ml(rec)
+    print(f"One-bit Stage 2 pool (pool A-ml): {len(pa)} candidates = 30 CE-6 pool A non-Haar members + "
+          f"{rec['one_bit']['n']} ML one-bit laws (replacing pool A's 20 Haar members).")
+    print("\n## CE-6 one-bit run on pool A-ml (variant (a), eps=0.05): original-form failure set only; "
+          "no channel cost computed\n")
+    print_ce6(ce6_overlap(pool_source="ml"))
+    return 0
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--budget", type=float, default=1.0, help="<E-E0>_ref (cancels at t = t_ML)")
@@ -398,6 +530,10 @@ def main() -> int:
     ap.add_argument("--boot", type=int, default=10000)
     ap.add_argument("--no-size-table", action="store_true")
     ap.add_argument("--markdown", action="store_true")
+    ap.add_argument("--write-pool", nargs="?", const=STAGE2_POOL_PATH, default=None, metavar="PATH",
+                    help="write the Stage 2 ML pool record (fixed STAGE2_SETTINGS) and exit")
+    ap.add_argument("--stage2-pool", action="store_true",
+                    help="load the saved Stage 2 pool, print its CE-6 one-bit run (no channel cost), and exit")
     args = ap.parse_args()
     t0 = time.time()
     md = args.markdown
@@ -413,6 +549,8 @@ def main() -> int:
     self_checks()
     print("Self-checks passed: fast random readout = CE-9 loop; GAD path = CE-9; dephasing TP and")
     print("Z-invisible; budget cancels at t_ML; overlap identity and X-indep-F slack on random laws.\n")
+    if args.write_pool or args.stage2_pool:
+        return stage2_pool_main(args.write_pool)
     print(f"Settings: budget={args.budget} tfrac={args.tfrac} ref={args.ref} eps={args.eps} "
           f"n_samples={args.n_samples} T={args.T} (p={p:.4f}) dg={args.dg} channels={channels}")
 
@@ -493,25 +631,7 @@ def main() -> int:
 
     # ---- CE-6 "58" ----
     print("\n## The '58': CE-6 one-bit run (docs/procedural-share.md section 4), variant (a), pool A, eps=0.05\n")
-    print("| input | defined pts | original fails | corrected holds | max \\|I(X;F)\\| | I(X;F\\|Y) at failures "
-          "(min / median / max) | deficit H(F\\|Y)-H(Y\\|X) at failures (min / median / max) | failures with I(X;F\\|Y) >= deficit | max \\|identity\\| |")
-    print("|---|---|---|---|---|---|---|---|---|")
-    for inp, rows in ce6_overlap().items():
-        fails = [r for r in rows if r["deficit"] > 1e-12]
-        corr = sum(r["slack"] >= -1e-12 for r in rows)
-        a = np.array([r["IXFgY"] for r in fails])
-        d = np.array([r["deficit"] for r in fails])
-        resc = int((a >= d).sum())
-        print(f"| {inp} | {len(rows)} | {len(fails)} | {corr}/{len(rows)} | {max(abs(r['IXF']) for r in rows):.1e} | "
-              f"{fz(a.min())} / {fz(np.median(a))} / {fz(a.max())} | {d.min():.3f} / {np.median(d):.3f} / {d.max():.3f} | "
-              f"{resc} | {max(abs(r['ident']) for r in rows):.1e} |")
-        if inp == "uniform":
-            slack_f = np.array([r["slack"] for r in fails])
-            pos = slack_f > 1e-9
-            print(f"\n(uniform: at the failures the corrected-bound slack H(Y)-I(X;Y)-I(F;Y) ranges "
-                  f"{fz(slack_f.min())} to {fz(slack_f.max())} ({int((~pos).sum())} failures have zero slack, i.e. "
-                  f"I(X;F|Y) = 0 there); where the slack is positive, I(X;F|Y)/slack ranges "
-                  f"{fz((a[pos] / slack_f[pos]).min(), 3)} to {fz((a[pos] / slack_f[pos]).max(), 3)}.)\n")
+    print_ce6(ce6_overlap(pool_source="A"))
 
     if args.seeds <= 0:
         print(f"\nDone in {time.time() - t0:.0f}s.")

@@ -14,7 +14,7 @@ python simulations/classical/procedural_share_mlpool.py                         
 python simulations/classical/procedural_share_mlpool.py --eps 0.2 --n-samples 1000 --no-size-table
 ```
 
-Options: `--budget`, `--tfrac`, `--ref {blind,mixed}`, `--eps`, `--n-samples`, `--seeds`, `--canonical`, `--channel gad,dephasing`, `--T`, `--dg`, `--markdown`.
+Options: `--budget`, `--tfrac`, `--ref {blind,mixed}`, `--eps`, `--n-samples`, `--seeds`, `--canonical`, `--channel gad,dephasing`, `--T`, `--dg`, `--markdown`, `--write-pool`, `--stage2-pool` (§9).
 
 ## Summary
 
@@ -222,3 +222,17 @@ Per point (GAD, nested, ML − haar-matched normalised share; \* / \*\* = Holm-a
 ## 8. Scope
 
 Tier 2 only. A two-qubit, two-use toy with one choice of Hamiltonian ensemble, clustering rule, encoding, channel family and readout. Nothing here bears on gravity, black holes or QCD. The Boltzmann–Shannon unification programme is not advanced or tested by this run beyond the information-theoretic bookkeeping above.
+
+## 9. Saved pool for channel-cost Stage 2 (CE-15)
+
+**Status:** 2026-11-26 · pool saved; **no channel cost computed.** This section only fixes which candidate pool the channel-cost Stage 2 ([CHANNEL_COST_STAGE1.md](https://github.com/cyotee/computational-entropy/blob/master/CHANNEL_COST_STAGE1.md) §8) will use. Stage 2 itself is not run.
+
+**What changed.** The pool-generation code is unchanged: `sample_unitaries` (GUE, energy budget above the ground state, ML time), `leader_cluster` (\(\varepsilon\)-TV) and `noiseless_law`. Only the **default pool source for Stage 2** is changed, from Haar to ML:
+
+- **Two-qubit pool (saved).** `simulations/classical/data/ce15_ml_pool.json` holds the canonical ML pool of §3 together with its metadata. That is draw 2026 with `default_rng([2026, 12])`, 200 Hamiltonians sampled (0 rejected), budget 1, \(t_{\rm ML}=\pi/2\), \(t_{\rm frac}=1\), ref = blind and \(\varepsilon=0.05\). It gives **200 representatives**, with sha256 `d11fa3d1ec4594b7…`. The file is about 220 kB of JSON. `--write-pool` rewrites it bit-identically from the seed, and `--stage2-pool` checks it against a fresh regeneration.
+- **One-bit pool for the CE-6 run ("pool A-ml").** The Stage 2 hook `ce6_overlap` now defaults to `pool_source="ml"`. This uses CE-6 pool A with its 20 Haar single-qubit members replaced by 20 ML candidates, so the pool size stays at 50. Each ML candidate is reduced to the one-bit law \((q_0,q_1)\), \(q_x = P(\text{qubit A reads }1 \mid |x\,0\rangle)\), noiseless. That is the single-use, rank-2 nested-Z marginal of `noiseless_law`, and the candidates are the first 20 representatives in draw order. `pool_source="A"` keeps the original pool A. The CE-12 report in §5 still uses it, so every number above is unchanged.
+- **Haar paths kept.** The Haar arms of §6, `procedural_share_surface.draw_pool` (CE-9 to CE-11) and pool A itself are untouched and remain selectable.
+
+**Consequence for "the 58" (stated, not interpreted).** The failure set depends on the pool. On pool A-ml, the CE-6 one-bit run (variant (a), \(\varepsilon=0.05\), same grid) has **81 defined points**. The original form fails at **38** of them, for both the uniform and the capacity input. The corrected bound holds at 81/81. Deficits at the failures are 0.193 / 2.807 / 2.933 bits (min / median / max), and \(I(X;F\mid Y)\) covers 0 of them. On pool A the run gives 72 points and 58 failures, with deficits up to 3.076 bits. Both pools have 23 failures with deficit above 2 bits. So the 2-bit cap argument of CHANNEL_COST_STAGE1.md §8 applies to either pool.
+
+**Caveats.** The ML one-bit laws are not constrained to \(q_0 = 1-q_1\), because qubit B is traced out after an entangling \(U\). The single-qubit Haar laws of pool A are constrained this way. So the swap changes the candidate law family as well as the sampling criterion. Choosing "first 20" keeps the pool size, which matters because \(H(F\mid Y)\) grows with \(|C|\) (§5). It is a convention. At \(\varepsilon=0.05\) the clustering keeps every sample (200 of 200), so the pool is **not** saturated (§2). Toy model throughout. This is not evidence about hadronic or QCD physics.

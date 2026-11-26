@@ -239,6 +239,8 @@ At each of the 58 points, compute \(D\) and \(c_{\rm ch}\) via the hooks of §7.
 
 None of this is run.
 
+**Pool source for Stage 2 (CE-15, added after review request t21u).** The Stage 2 candidate pool is now ML-derived by default. `procedural_share_mlpool.ce6_overlap(pool_source="ml")` uses pool A with its 20 Haar members replaced by 20 Margolus–Levitin one-bit laws, drawn from the saved pool `simulations/classical/data/ce15_ml_pool.json`. `pool_source="A"` reproduces the 58. On the ML-derived pool the original form fails at 38 of 81 defined points, with deficits up to 2.933 bits. The cap argument above is unchanged. Details are in [docs/procedural-share-mlpool.md](docs/procedural-share-mlpool.md) §9. No channel cost is computed.
+
 ---
 
 ## 9. Labels and non-claims
