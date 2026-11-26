@@ -62,6 +62,8 @@ The question is what a finite, non-free substrate must keep so that the next com
 
 **Quantum channel / von Neumann layer.** \(S_c(\Phi;\rho) := S(\Phi(\rho))\) is a *definition* carried over from the classical case. An AI agent proposed it during exploration. It is scaffolding, not a derived result, and no core theorem uses it ([PROGRESS_REPORT](PROGRESS_REPORT.md), note 2026-11-26).
 
+**Ranked black-hole / cosmology conjectures.** Three author proposals are recorded in [THEORY.md §C.8](THEORY.md#c8-three-linked-conjectures-ranked-by-testability), labelled *conjecture: not derived, not tested*. In order of testability they are: a residual undecodable component in final Hawking radiation; a capacity-saturation reading of the singularity, with the Page curve proposed as a corollary; and an "alphabet cascade" reading of the Big Bang and horizons. Only the first could be falsified on its own, and only after a quantitative prediction exists. "Alphabet" has no physical definition yet.
+
 **Type safety:** load \(L\) is a dimensionless **scalar**; structure metric \(G\) is a **metric**. \(L \neq G\).
 
 **Non-claims (summary).** Do not assert any of the following without new work: master equation \(\Leftrightarrow\) continuum GfE; \(L \equiv G\); the residual dual for all \(t\); pointwise Laplacian Newton (withdrawn); \(\alpha\beta = 4\pi G/c^4\) (withdrawn, C17); lattice denoising as empirical gravity; IDEM fully constructing continuum \(L\) or \(G\); \(\sigma(x)\) equal to the gravitational load term. The full list is on the site: [Non-claims](https://cyotee.github.io/computational-entropy/non-claims/).

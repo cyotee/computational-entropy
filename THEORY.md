@@ -229,6 +229,47 @@ This sits in the same research family as our emergent-gravity thread (Jacobson �
 
 See also the "Open Questions" section in PLAN.md and [PROGRESS_REPORT.md](PROGRESS_REPORT.md) §7.
 
+### C.8 Three linked conjectures ranked by testability
+
+> **Conjecture: not derived, not tested.** This subsection records three proposals by the programme author, ranked in his order by how testable they are. None of them is derived in this repository, none has been tested, and none is a claim of the programme. They rest on Tier 1 plus hypotheses that are not yet defined, let alone proved (see *Status of the ingredients* and *Open definitional gap* below). Nothing in Tier 1 or Tier 2 uses them.
+
+**Falsifiability, stated up front.** Only claim 1 could be falsified on its own. Claim 2 is a proposed theoretical derivation that could be checked against existing holographic calculations. Claim 3 cannot be confirmed or ruled out on its own; it is an interpretive scaffold for claims 1 and 2.
+
+**Status of the ingredients.** The repository's own toy results do not currently support the mechanism these proposals lean on:
+
+- **No saturation seen.** The procedural-share runs on the generalized amplitude-damping (GAD) toy ([docs/procedural-share.md](docs/procedural-share.md); commits 26b3589 and b12882d, binary and 16-symbol readouts) found **no** concave rise or saturation of the procedural share. The one slice that resembles that shape is not robust.
+- **The motivating inequality is false in general.** \(I(X;Y) + H(F\mid Y) \le H(Y)\) fails in general. The bound that does hold is \(I(X;Y) + I(F;Y) \le H(Y)\).
+- **"100 % procedural share" is undefined at a horizon.** Given the two points above, the phrase has no worked-out definition for a horizon and no in-repo derivation.
+- **The joint encoding bound falls with temperature.** The joint encoding bound C_minus_K **falls** monotonically with \(T\) on the thermal toy ([docs/thermal-channel-cost.md](docs/thermal-channel-cost.md) §7).
+- **"Alphabet" is defined only for a toy.** In the repository it means the output alphabet size of a classical readout of a toy channel (e.g. 2 or 16 symbols in the procedural-share runs). Nothing defines a physical alphabet for a black hole, the early universe or "our" universe.
+
+**Open definitional gap (blocks claims 1–3).** The physical meaning of "a wider alphabet than ours", "a larger prior alphabet" and "a region where one alphabet size prevails" is **undefined**. Defining it is the first open problem. It would need to say what object has an alphabet, how its size is measured, and how it maps onto quantities in Hawking or holographic calculations.
+
+**Claim 1: radiation signature (ranked most testable; load-bearing).** *Author's statement:* the final Hawking radiation spectrum contains a residual component that cannot be decoded, because the final evaporation burst may need a wider alphabet than ours.
+
+- *Why it ranks first.* In principle it could be compared with quantum-gravity-corrected Hawking spectra, so it is the only one of the three that could be falsified on its own.
+- *Why it is not falsifiable yet.* That needs a **quantitative** prediction: which spectral feature, at what magnitude, and how it differs from which QG-corrected spectrum. No such prediction exists. Producing one is the required next step, and it depends on closing the definitional gap above.
+- *Regime caveat.* The final stage of evaporation is the Planck regime, where semiclassical calculations break down. Page (1993) describes Hawking's information-loss argument as assuming the semiclassical approximation holds only until the hole nears the Planck mass. So the comparison spectrum is itself not settled.
+- *Observational caveat.* Hawking radiation from black holes has not been observed.
+
+**Claim 2: capacity-saturation reading of the singularity (ranked middle).** *Author's statement:* at the horizon the procedural share reaches 100 % (capacity saturation). The Page curve is *proposed to follow as a corollary; derivation not done*: as inflow drops, capacity is released back to the semantic side.
+
+- *What a derivation would have to do.* Reproduce the Page time (Page 1993) and the quantum-extremal-surface / island results that yield the Page curve in holographic and semiclassical gravity models (Penington 2019; Almheiri–Engelhardt–Marolf–Maxfield 2019).
+- *What "middle testability" means.* Checkable against **existing calculations**, not against experiment.
+- *Status in the repository.* The pre-restructure drafts [quantum/Blackhole_Evaporation.md](quantum/Blackhole_Evaporation.md) and [quantum/Blackholes.md](quantum/Blackholes.md) describe a Page-curve shape from the load terms qualitatively. They do not compute the Page time or a quantum extremal surface, so they are not the derivation required here.
+- *Undefined ingredient.* As listed under *Status of the ingredients*, "100 % procedural share" itself is not yet defined at a horizon.
+
+**Claim 3: direction of the alphabet cascade (ranked least testable; interpretive).** *Author's statement:* the Big Bang was a contraction from a larger prior alphabet, horizons are further contractions, and the universe is the region where one alphabet size prevails.
+
+- *Status.* This is an interpretation, stated as such. It makes no independent prediction and cannot be confirmed or ruled out on its own. It serves as a scaffold that motivates claims 1 and 2.
+
+**Dependencies.** Claims 1 and 2 rest on Tier 1 and on the physical alphabet notion, which is still undefined. Claim 2 also rests on a horizon definition of the procedural share that does not yet exist. Claim 3 is a scaffold only. None of the three is a resolution of the black-hole information problem or a prediction that has been checked.
+
+**References (verified 2026-11-26).**
+- D. N. Page, "Information in black hole radiation," *Phys. Rev. Lett.* **71**, 3743 (1993); arXiv:hep-th/9306083.
+- G. Penington, "Entanglement wedge reconstruction and the information paradox," arXiv:1905.08255 (2019); *JHEP* **09** (2020) 002.
+- A. Almheiri, N. Engelhardt, D. Marolf, H. Maxfield, "The entropy of bulk quantum fields and the entanglement wedge of an evaporating black hole," arXiv:1905.08762 (2019); *JHEP* **12** (2019) 063.
+
 ---
 
 ## Progress log
@@ -255,6 +296,7 @@ See also the "Open Questions" section in PLAN.md and [PROGRESS_REPORT.md](PROGRE
 - **2026-07-15 (D15)**: Conclusion freeze — [FINAL.md](papers/06-synthesis/FINAL.md); [PROGRAM_CONCLUSIONS.md](synthesis/PROGRAM_CONCLUSIONS.md) P1–P11; M5b lemma polish.
 - **2026-07-15**: [OPEN_AVENUES.md](synthesis/OPEN_AVENUES.md) — post-freeze map: concluded vs **new theory** (missing theorems) vs experiment; O1–O5 checklist.
 - **2026-11-26**: Core-first restructure. Lead is now the **Boltzmann–Shannon unification** motivator, then the channel-level entropy core ([CORE.md](CORE.md); Papers A and C), then **Conjecture** (gravitational programme + quantum / von Neumann layer); reorganised the same day into Tier 1 → Tier 2 (instruction persistence) → Tier 3 (conjecture). Pre-restructure §§1–4 and §6 moved under Conjecture as §C.3–§C.7, with content unchanged apart from headings.
+- **2026-11-26**: Added Tier 3 §C.8, which ranks three author conjectures by testability (radiation signature, capacity-saturation reading, alphabet cascade). It is labelled *conjecture: not derived, not tested*.
 
 ---
 
