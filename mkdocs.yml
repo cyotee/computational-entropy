@@ -67,6 +67,7 @@ nav:
       - Thermal channel cost (toy, speculative): thermal-channel-cost.md
       - Procedural share H(F|Y) (toy): procedural-share.md
       - Procedural-share surface, noise × rank (toy): procedural-share-surface.md
+      - Informed-input procedural share (toy): procedural-share-informed.md
   - How to read: how-to-read.md
   - Non-claims: non-claims.md
   - Downloads (PDF): downloads.md

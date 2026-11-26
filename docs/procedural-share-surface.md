@@ -8,6 +8,8 @@
 
 **Status:** 2026-11-26 · computed. Follow-up to [Procedural share H(F|Y)](procedural-share.md) (CE-6/CE-7), fixing the contamination flag raised there: the candidate pool is now drawn before, and independently of, the channel.
 
+Follow-up: [informed-input procedural share](procedural-share-informed.md) (CE-10) tests inputs that depend on the selected unitary.
+
 **Script:** [`simulations/classical/procedural_share_surface.py`](https://github.com/cyotee/computational-entropy/blob/master/simulations/classical/procedural_share_surface.py) (pure numpy; imports `procedural_share.py` for the GAD Kraus operators and the \(p\leftrightarrow T\) convention; built-in self-checks; about 2 s, or about 8 s with `--robust 20`). Every number below is printed by
 
 ```
