@@ -192,3 +192,5 @@ B′ varies across candidates by up to about 0.7 bits per block. That makes it t
 ## 7. Scope
 
 Tier 2 only. One-qubit GAD toy, one clustering rule and two candidate pools. Nothing here bears on gravity, black holes or QCD. The Boltzmann–Shannon unification programme is not advanced or tested by this run beyond the information-theoretic bookkeeping above.
+
+**Future (dormant).** A Williams–Beer \(I_{\min}\) PID module on entropy exchange (B′) and complementary-channel entropy (C±) versus the deficit \(D\) is drafted in [pid-williams-beer.md](pid-williams-beer.md). It has not been run on these points.
