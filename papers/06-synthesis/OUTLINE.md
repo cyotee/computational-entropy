@@ -89,7 +89,7 @@ Use as **extraction targets after** the primary draft freezes claims:
 
 - **Content bullets**
   - One-paragraph definition: \(H_c(f;p_X)=H(Y)\) for \(Y=f(X)\); continuous differential form; quantum \(S_c(\Phi;\rho)=S(\Phi(\rho))\).
-  - Key property: informational equivalence of maps with identical output entropy (mechanics do not matter).
+  - Key property: informational equivalence of maps with identical output law, hence identical output entropy (mechanics do not matter).
   - Worked classical example: \(\sqrt{U}\) vs \(\max(U_1,U_2)\) shared \(H_c\) (from foundations; optional density).
   - Global conservation + local transfer: AND-gate sketch \(H(Y)\approx 0.811\), export \(\approx 1.189\) via chain rule \(H(X)=H(Y)+H(X\mid Y)\).
   - Three-stage mental model: computational induction → geometric imprint → continuum GfE macro (**do not** collapse stages).

@@ -34,7 +34,7 @@ S\bigl(\Phi_g(\rho)\bigr)
 -\operatorname{Tr}\bigl(\Phi_g(\rho)\log_2\Phi_g(\rho)\bigr).
 \]
 
-This is the direct quantum/gravity counterpart of classical computational entropy \(H_c(f;p_X)=H(Y)\) for \(Y=f(X)\): entropy of the **realized output distribution**, independent of the internal mechanics of the map. Informational equivalence of channels that produce the same output entropy remains the foundational reading from Part 1; \(\Phi_g\) is simply the channel whose output statistics we treat as the gravitational computational process.
+This is the direct quantum/gravity counterpart of classical computational entropy \(H_c(f;p_X)=H(Y)\) for \(Y=f(X)\): entropy of the **realized output distribution**, independent of the internal mechanics of the map. Informational equivalence of channels that produce the same output state (hence the same output entropy) remains the foundational reading from Part 1; \(\Phi_g\) is simply the channel whose output statistics we treat as the gravitational computational process.
 
 ### 3.2 Computational load \(L\)
 

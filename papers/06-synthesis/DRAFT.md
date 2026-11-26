@@ -114,7 +114,7 @@ In the gravity thread, the gravitational channel \(\Phi_g\) acts on a local dens
 
 ## 1.2 Informational equivalence of maps
 
-**Key property.** Two or more different maps — whether deterministic, probabilistic, or quantum — are **informationally equivalent** if they induce output distributions with the same computational entropy. The internal mechanics (algorithm, intermediate randomness, or quantum circuit layout) do not enter the definition; only the final statistical pattern of possible outputs does.
+**Key property.** Two or more different maps — whether deterministic, probabilistic, or quantum — are **informationally equivalent** if they induce the same output distribution (law) \(p_Y\); they then share the same computational entropy and every probability functional of the output. Equal computational entropy alone is not sufficient (see the \(\min(U_1,U_2)\) remark below). The internal mechanics (algorithm, intermediate randomness, or quantum circuit layout) do not enter the definition; only the final statistical pattern of possible outputs does.
 
 This property is what makes computational entropy a unifying measure across classical gates, lambda reduction, games-as-maps, and CPTP channels: any probability-based prediction that depends only on \(p_Y\) is shared by all maps with that \(p_Y\).
 
@@ -137,7 +137,7 @@ and therefore the same differential computational entropy
 H_c(Y)=-\int_0^1 2y\log_2(2y)\,dy = -1+\frac{1}{2\ln 2}\approx -0.27865\ \mathrm{bits}.
 \]
 
-(The reflected map \(Y_3=\min(U_1,U_2)\) is informationally equivalent under the substitution \(z=1-y\).) Despite completely different internal operations, any prediction that depends only on the law of \(Y\) — e.g. \(\mathbb{P}(Y>0.7)\), mean, variance — is identical. This is the exact content of informational equivalence for continuous classical maps (see foundations definition file).
+(The reflected map \(Y_3=\min(U_1,U_2)\) has density \(2(1-y)\): it has the same differential entropy under the substitution \(z=1-y\), but a different output law — mean \(1/3\) vs \(2/3\), \(\mathbb{P}(Y>0.7)=0.09\) vs \(0.51\) (the variances coincide at \(1/18\)) — so it is **not** informationally equivalent to \(Y_1,Y_2\).) Despite completely different internal operations, any prediction that depends only on the law of \(Y\) — e.g. \(\mathbb{P}(Y>0.7)\), mean, variance — is identical for \(Y_1\) and \(Y_2\). This is the exact content of informational equivalence for continuous classical maps (see foundations definition file).
 
 ## 1.4 Global conservation and local transfer: the AND-gate ledger
 
@@ -561,7 +561,7 @@ S\bigl(\Phi_g(\rho)\bigr)
 -\operatorname{Tr}\bigl(\Phi_g(\rho)\log_2\Phi_g(\rho)\bigr).
 \]
 
-This is the direct quantum/gravity counterpart of classical computational entropy \(H_c(f;p_X)=H(Y)\) for \(Y=f(X)\): entropy of the **realized output distribution**, independent of the internal mechanics of the map. Informational equivalence of channels that produce the same output entropy remains the foundational reading from Part 1; \(\Phi_g\) is simply the channel whose output statistics we treat as the gravitational computational process.
+This is the direct quantum/gravity counterpart of classical computational entropy \(H_c(f;p_X)=H(Y)\) for \(Y=f(X)\): entropy of the **realized output distribution**, independent of the internal mechanics of the map. Informational equivalence of channels that produce the same output state (hence the same output entropy) remains the foundational reading from Part 1; \(\Phi_g\) is simply the channel whose output statistics we treat as the gravitational computational process.
 
 ### 3.2 Computational load \(L\)
 

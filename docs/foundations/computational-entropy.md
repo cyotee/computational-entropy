@@ -60,8 +60,10 @@ $$
 
 ## Key Property
 
-Two (or more) different maps — whether deterministic, probabilistic, or quantum — are informationally equivalent if they induce output distributions with the same computational entropy.
+Two (or more) different maps — whether deterministic, probabilistic, or quantum — are informationally equivalent if they induce the same output distribution (output law) $  p_Y  $ (for quantum channels, the same output state). They then necessarily have the same computational entropy, and every probability functional of the output (moments, tail probabilities, quantiles) agrees.
 The internal mechanics (algorithm, randomness, or quantum operations) do not matter; only the final statistical pattern of possible outputs does.
+
+**Note (why equivalence is defined by the output law, not by entropy).** This is the operative definition, matching Paper A, Proposition 1. Equal output law implies equal computational entropy, but not conversely: $  \max(U_1, U_2)  $ and $  \min(U_1, U_2)  $ below have the same differential entropy yet different distributions (different means and tail probabilities). Proposition 1's guarantee that all moments, tails, and quantiles agree holds only when the laws are equal, so "same computational entropy" alone is not sufficient for informational equivalence.
 
 ## Classical Examples (Demonstrating the General Definition)
 
@@ -109,9 +111,10 @@ H_c = -1 + \frac{1}{2 \ln 2} \approx -0.27865 \text{ bits}.
 $$
 
 
-(The same result holds for the reflected case $  Y_3 = \min(U_1, U_2)  $ because differential entropy is invariant under the substitution $  z = 1 - y  $.)
+(The reflected case $  Y_3 = \min(U_1, U_2)  $ has the **same differential entropy**, because differential entropy is invariant under the substitution $  z = 1 - y  $ — but it does **not** have the same output distribution: its PDF is $  f(y) = 2(1-y)  $.)
 
-Thus, despite completely different internal operations, all three functions are informationally equivalent: any probability-based prediction (e.g., $  P(Y > 0.7)  $, expected value, variance) is identical for all three.
+Thus, despite completely different internal operations, $  Y_1  $ and $  Y_2  $ are informationally equivalent: any probability-based prediction is identical for both (e.g., $  P(Y > 0.7) = 0.51  $, expected value $  2/3  $, variance $  1/18  $).
+$  Y_3 = \min(U_1, U_2)  $ is **not** informationally equivalent to them: despite equal differential entropy, its law differs ($  P(Y_3 > 0.7) = 0.09  $, expected value $  1/3  $; the variance happens to coincide at $  1/18  $).
 This is the exact property that makes computational entropy a powerful unifying measure.
 
 ### Probabilistic (stochastic) extension

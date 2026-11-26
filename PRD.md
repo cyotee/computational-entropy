@@ -105,7 +105,7 @@ Canonical: `foundations/computational-entropy/definition.md`
 
 - Classical: \(H_c(f;p_X) = H(Y)\) or differential \(h(Y)\) of **output** distribution only.
 - Quantum: \(S_c(\Phi;\rho_X) = S(\Phi(\rho_X))\) (von Neumann).
-- **Key property:** maps with the same output entropy are **informationally equivalent** (e.g. \(\sqrt{U}\) vs \(\max(U_1,U_2)\)).
+- **Key property:** maps that induce the same output distribution are **informationally equivalent** (e.g. \(\sqrt{U}\) vs \(\max(U_1,U_2)\), both density \(2y\)); equal output entropy alone is not sufficient.
 - Global conservation + local transfer (AND-gate example).
 
 ### 3.2 Master equation and load

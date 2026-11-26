@@ -40,7 +40,7 @@ Or: `bash scripts/build_site.sh` then open `site/index.html`.
 
 ## Premise (one paragraph)
 
-Any map that transforms inputs induces an output distribution. **Computational entropy** measures that output entropy (Shannon / differential \(H_c\), or von Neumann \(S_c\) for channels), independent of internal algorithm. Two maps with the same output entropy are informationally equivalent for that measure. Gravity work in this repo models demand via load \(L\) and a master equation with load-gated proper time \(d\tau = dt/(1+\alpha L)\). See the [canonical definition](foundations/computational-entropy/definition.md) and [master equation](emergent-gravity/master-equation.md) rather than historical root drafts.
+Any map that transforms inputs induces an output distribution. **Computational entropy** measures that output entropy (Shannon / differential \(H_c\), or von Neumann \(S_c\) for channels), independent of internal algorithm. Two maps that induce the same output distribution are informationally equivalent (and so have the same output entropy); equal output entropy alone does not imply equivalence. Gravity work in this repo models demand via load \(L\) and a master equation with load-gated proper time \(d\tau = dt/(1+\alpha L)\). See the [canonical definition](foundations/computational-entropy/definition.md) and [master equation](emergent-gravity/master-equation.md) rather than historical root drafts.
 
 ## Non-claims (summary)
 

@@ -20,7 +20,7 @@ The gap is not a shortage of either language; it is the lack of an **integrated*
 
 This paper reports a frozen research program. Contributions, with rigor labels, are:
 
-- **Definitions of computational entropy.** Classical $H_c(f;p_X):=H(Y)$ (Shannon or differential entropy of the output of a map $f$ under input law $p_X$); quantum/gravity $S_c(\Phi;\rho):=S(\Phi(\rho))$ (von Neumann entropy of a channel output). Informational equivalence: maps that induce the same output entropy are interchangeable for any prediction depending only on that output law. **Rigor:** constructive (standard information theory).
+- **Definitions of computational entropy.** Classical $H_c(f;p_X):=H(Y)$ (Shannon or differential entropy of the output of a map $f$ under input law $p_X$); quantum/gravity $S_c(\Phi;\rho):=S(\Phi(\rho))$ (von Neumann entropy of a channel output). Informational equivalence: maps that induce the same output law are interchangeable for any prediction depending only on that law (equal output entropy alone is not sufficient). **Rigor:** constructive (standard information theory).
 
 - **Gravitational channel, load, and master equation.** Gravity is modeled as a CPTP channel $\Phi_g$ with dimensionless computational load $L$ and load clock
   \[
