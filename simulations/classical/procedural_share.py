@@ -48,6 +48,15 @@ Inequality under test (VERIFIED, not assumed): I(X;Y) + H(F|Y) <= H(Y),
   equivalently H(F|Y) <= H(Y|X).
 Correct statements reported separately: H(Y) = I(X;Y) + H(Y|X) (identity);
   in (a), since F is independent of X, I(X;Y) + I(F;Y) <= I(X,F;Y) <= H(Y).
+
+OUTPUT ALPHABET (CE-7). --alphabet M (a power of 2; default 16) realizes M
+  output symbols as k = log2 M independent uses of the channel: GAD^{(x)k} with a
+  product Z readout, Y in {0,1}^k, X in {0,1}^k with i.i.d. input law (uniform,
+  or the 1-use Blahut-Arimoto law on every use), and every candidate acting as
+  F^{(x)k}. A single qubit read out with ANY POVM gives at most 1 bit of
+  accessible information (Holevo), so a 16-outcome measurement on one qubit
+  could not lift the 1-bit cap; independent uses can. --alphabet 2 (k = 1)
+  reproduces the CE-6 run exactly.
 """
 
 from __future__ import annotations
@@ -207,11 +216,37 @@ def input_law(kind: str, g: float, p: float) -> np.ndarray:
 # Variants
 # ---------------------------------------------------------------------------
 
+USES = 1  # channel uses per symbol; alphabet = 2**USES (set in main)
+_TENSOR_CACHE: dict = {}
+
+
+def kpow(m: np.ndarray, k: int) -> np.ndarray:
+    """k-fold Kronecker power (vectors or matrices)."""
+    out = m
+    for _ in range(k - 1):
+        out = np.kron(out, m)
+    return out
+
+
+def law_matrix(q0: float, q1: float) -> np.ndarray:
+    return np.array([[1 - q0, q0], [1 - q1, q1]])
+
+
+def pool_tensor(pool, k: int) -> np.ndarray:
+    """N x 2^k x 2^k array of k-use conditional laws P_F(y|x) = prod_i P_F(y_i|x_i)."""
+    key = (id(pool), k)
+    if key not in _TENSOR_CACHE:
+        _TENSOR_CACHE[key] = np.array([kpow(law_matrix(c[1], c[2]), k) for c in pool])
+    return _TENSOR_CACHE[key]
+
+
 def tv_max(c, Q) -> float:
     return max(abs(c[1] - Q[0]), abs(c[2] - Q[1]))
 
 
 def variant_a(pool, g, p, eps, pi):
+    if USES > 1:
+        return variant_a_k(pool, g, p, eps, pi, USES)
     Q = gad_law(g, p)
     cls = [c for c in pool if tv_max(c, Q) <= eps + TOL]
     k = len(cls)
@@ -239,6 +274,8 @@ def variant_a(pool, g, p, eps, pi):
 
 
 def variant_b(pool, g, p, pi):
+    if USES > 1:
+        return variant_b_k(pool, g, p, pi, USES)
     q = np.array([[c[1], c[2]] for c in pool])
     n = len(pool)
     pfy1 = q @ pi                       # P_F(Y=1)
@@ -255,6 +292,94 @@ def variant_b(pool, g, p, pi):
     HYgX = float(sum(pi[x] * H(W[x]) for x in (0, 1)))
     return {"size": n, "HY": HY, "HYgX": HYgX, "IXY": HY - HYgX, "HFgY": HFgY,
             "logk": math.log2(n), "hpost": hpost}
+
+
+def variant_a_k(pool, g, p, eps, pi, k):
+    """Variant (a) over k independent uses (alphabet 2^k); same eps-class (1-use TV)."""
+    Q = gad_law(g, p)
+    idx = [i for i, c in enumerate(pool) if tv_max(c, Q) <= eps + TOL]
+    n = len(idx)
+    if n == 0:
+        return {"size": 0}
+    W = pool_tensor(pool, k)[idx]                      # n x X x Y
+    pik = kpow(np.asarray(pi, float), k)
+    P = (1.0 / n) * pik[None, :, None] * W              # joint P(f, x, y)
+    Py, Pxy, Pfy = P.sum((0, 1)), P.sum(0), P.sum(1)
+    HY = H(Py)
+    HYgX = H(Pxy) - H(pik)
+    HFgY = H(Pfy) - HY
+    HXFY = H(P)
+    pf_ent = math.log2(n)
+    # Hamming-weight statistic of y (sufficient for F when X is unobserved and i.i.d.)
+    wt = np.array([bin(y).count("1") for y in range(2 ** k)])
+    Pfw = np.zeros((n, k + 1))
+    for w in range(k + 1):
+        Pfw[:, w] = Pfy[:, wt == w].sum(1)
+    IFW = pf_ent + H(Pfw.sum(0)) - H(Pfw)
+    return {"size": n, "HY": HY, "HYgX": HYgX, "IXY": HY - HYgX, "HFgY": HFgY,
+            "IFY": pf_ent - HFgY, "IXF_Y": H(pik) + pf_ent + HY - HXFY, "logk": pf_ent,
+            "HFgXY": HXFY - H(Pxy), "IFW": IFW}
+
+
+def variant_b_k(pool, g, p, pi, k):
+    """Variant (b) over k uses: full pool, uniform prior, likelihood posterior, y ~ GAD^{(x)k}."""
+    W = pool_tensor(pool, k)
+    n = len(pool)
+    pik = kpow(np.asarray(pi, float), k)
+    lik = np.einsum("x,fxy->fy", pik, W)                # P_F(y)
+    Gk = kpow(law_matrix(*gad_law(g, p)), k)
+    py_true = pik @ Gk
+    tot = lik.sum(0)
+    post = lik / np.where(tot > 0, tot, 1)
+    with np.errstate(divide="ignore", invalid="ignore"):
+        hpost = -np.sum(np.where(post > 0, post * np.log2(np.where(post > 0, post, 1)), 0), axis=0)
+    hpost = np.where(tot > 0, hpost, math.log2(n))
+    HFgY = float(py_true @ hpost)
+    HY = H(py_true)
+    HYgX = float(sum(pik[x] * H(Gk[x]) for x in range(2 ** k)))
+    return {"size": n, "HY": HY, "HYgX": HYgX, "IXY": HY - HYgX, "HFgY": HFgY,
+            "logk": math.log2(n), "hpost": list(hpost), "gain": math.log2(n) - HFgY}
+
+
+def law_counts(pool, pi=None):
+    """Distinct 1-use conditional laws, and distinct output marginals under input law pi."""
+    cond: dict = {}
+    marg: dict = {}
+    pi = np.array([0.5, 0.5]) if pi is None else pi
+    for _, q0, q1 in pool:
+        kc = (round(q0, 9), round(q1, 9))
+        cond[kc] = cond.get(kc, 0) + 1
+        km = round(pi[0] * q0 + pi[1] * q1, 9)
+        marg[km] = marg.get(km, 0) + 1
+    return cond, marg
+
+
+def floor_bits(counts: dict) -> float:
+    """H(F | law label) for a uniform prior over the pool: sum_L (n_L/N) log2 n_L."""
+    n = sum(counts.values())
+    return sum(v / n * math.log2(v) for v in counts.values())
+
+
+def self_checks_k(poolA, k) -> None:
+    pi = np.array([0.5, 0.5])
+    r = variant_a_k(poolA, 0.0, 1.0, 0.25, pi, k)
+    assert abs(r["HY"] - (r["IXY"] + r["HYgX"])) < 1e-9
+    assert r["IXY"] + r["IFY"] <= r["IXF_Y"] + 1e-9 <= r["HY"] + 2e-9
+    assert abs(r["IFY"] - r["IFW"]) < 1e-9, "Hamming weight not sufficient?"
+    assert r["IFY"] <= math.log2(k + 1) + 1e-9
+    b = variant_b_k(poolA, 0.3, 0.8, pi, k)
+    b1 = variant_b_k(poolA, 0.3, 0.8, pi, 1)
+    assert abs(b["IXY"] - k * b1["IXY"]) < 1e-9  # memoryless GAD, product input
+    # (b), uniform input: H(F|Y) depends on (g, p) only through the GAD output marginal
+    # r = 1/2 - g(2p-1)/2;  (0.4, 1.0) and (0.8, 0.75) both give r = 0.3
+    assert abs(variant_b_k(poolA, 0.4, 1.0, pi, k)["HFgY"] - variant_b_k(poolA, 0.8, 0.75, pi, k)["HFgY"]) < 1e-9
+    # k = 1 general path agrees with the original CE-6 code path
+    global USES
+    saved, USES = USES, 1
+    a1 = variant_a(poolA, 0.5, 1.0, 0.25, pi)
+    USES = saved
+    a1k = variant_a_k(poolA, 0.5, 1.0, 0.25, pi, 1)
+    assert abs(a1["HFgY"] - a1k["HFgY"]) < 1e-9 and abs(a1["IXY"] - a1k["IXY"]) < 1e-9
 
 
 # ---------------------------------------------------------------------------
@@ -401,15 +526,71 @@ def fmt(v, nd=3):
     return f"{v:.{nd}f}"
 
 
+def print_bottleneck(pA, pB, k, gs, ps, eps) -> None:
+    print(f"\n## Identifiability bottleneck and alphabet estimate (k = {k} uses)\n")
+    print("With X unobserved and i.i.d., P_F(y) = prod_i r_F(y_i), r_F(1) = pi0 q0 + pi1 q1: Y enters only")
+    print("through its Hamming weight W, so I(F;Y) = I(F;W) <= log2(k+1), and candidates with equal r_F")
+    print("are indistinguishable from Y for every k: H(F|Y) >= floor = sum_L (n_L/N) log2 n_L.")
+    print("Given X as well, F enters through the (x_i, y_i) type counts; the floor uses conditional laws.\n")
+    print("| pool | N | log2 N | distinct cond. laws | distinct output marginals (uniform pi) | floor H(F\\|marginal) | floor H(F\\|cond. law) | max I(F;Y) any k = log2N - floor | cap now log2(k+1) | min gap between marginals |")
+    print("|---|---|---|---|---|---|---|---|---|---|")
+    est = {}
+    for pn, pool in (("A", pA), ("B", pB)):
+        cond, marg = law_counts(pool)
+        n = len(pool)
+        fm, fc = floor_bits(marg), floor_bits(cond)
+        mv = sorted(marg)
+        gap = min(b - a for a, b in zip(mv, mv[1:])) if len(mv) > 1 else math.nan
+        est[pn] = (len(marg), gap, math.log2(n) - fm)
+        print(f"| {pn} | {n} | {math.log2(n):.3f} | {len(cond)} | {len(marg)} | {fm:.3f} | {fc:.3f} | "
+              f"{math.log2(n) - fm:.3f} | {math.log2(k + 1):.3f} | {gap:.4f} |")
+    print("\nEstimate (NOT run). Merge output marginals closer than a resolution delta; separating the")
+    print("rest needs about k ~ ln(M)/gap^2 uses (gap = closest merged pair, >= delta; Chernoff-type")
+    print("rule of thumb, order of magnitude only), and at least k+1 >= M weight values.")
+    print("Ceiling at that resolution = log2 N - floor(merged).")
+    print("Cost: with the weight statistic ~ N (k+1) per grid point; naive tensor ~ N 4^k per point.\n")
+    print("| pool | delta | merged marginals M | k needed | alphabet 2^k | I(F;Y) ceiling at delta (bits) | weight-statistic cost per 231-pt sweep | naive tensor cost per sweep |")
+    print("|---|---|---|---|---|---|---|---|")
+    for pn, pool in (("A", pA), ("B", pB)):
+        _, marg = law_counts(pool)
+        n = len(pool)
+        for delta in (0.05, 0.01):
+            groups: list[list[float]] = []
+            for v in sorted(marg):
+                if groups and v - groups[-1][0] < delta:
+                    groups[-1].append(v)
+                else:
+                    groups.append([v])
+            merged = {tuple(gv): sum(marg[v] for v in gv) for gv in groups}
+            m = len(merged)
+            reps = [gv[0] for gv in groups]
+            gap_m = min((b - a for a, b in zip(reps, reps[1:])), default=1.0)
+            k_need = max(m - 1, math.ceil(math.log(max(m, 2)) / gap_m ** 2))
+            ceil_bits = math.log2(n) - floor_bits(merged)
+            npts = len(gs) * len(ps)
+            w_ops = n * (k_need + 1) * npts
+            naive_log10 = math.log10(n * npts) + k_need * math.log10(4)
+            print(f"| {pn} | {delta} | {m} | {k_need} | 2^{k_need} | {ceil_bits:.2f} | ~{w_ops:.1e} ops ({'< 1 s' if w_ops < 1e8 else 'seconds'}) | ~10^{naive_log10:.0f} ops ({'infeasible' if naive_log10 > 12 else 'feasible'}) |")
+    print("\nNo alphabet size lifts I(F;Y) above log2 N - floor: candidates with the same output law stay")
+    print("indistinguishable. The bottleneck is the pool's distinct laws, not the alphabet.")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--eps", type=float, default=0.05)
     ap.add_argument("--dg", type=float, default=0.05, help="g grid step")
     ap.add_argument("--dp", type=float, default=0.05, help="p grid step (2D grid)")
+    ap.add_argument("--alphabet", type=int, default=16,
+                    help="output alphabet size, a power of 2, realized as log2(M) channel uses (2 = CE-6 run)")
     args = ap.parse_args()
+    k = int(round(math.log2(args.alphabet)))
+    if k < 1 or 2 ** k != args.alphabet:
+        ap.error("--alphabet must be a power of 2 (>= 2)")
 
     pA, pB = pool_A(), pool_B()
     self_checks(pA, pB)
+    global USES
+    USES = k
     print("Self-checks passed: GAD TP; law (1-p)g, 1-pg; fixed point diag(p,1-p); p=1 is AD;")
     print("T<->p round trip; pools fixed (A=50, B=296), no AD/GAD members;")
     print("H(Y)=I(X;Y)+H(Y|X) and I(X;Y)+I(F;Y) <= I(XF;Y) <= H(Y) in variant (a).\n")
@@ -417,6 +598,13 @@ def main() -> int:
     distinctA = len({(round(a, 9), round(b, 9)) for _, a, b in pA})
     distinctB = len({(round(a, 9), round(b, 9)) for _, a, b in pB})
     print(f"distinct conditional laws: pool A {distinctA}, pool B {distinctB}\n")
+    if k > 1:
+        self_checks_k(pA, k)
+        print(f"OUTPUT ALPHABET {args.alphabet} = {k} independent uses of GAD, product Z readout, Y in {{0,1}}^{k};")
+        print(f"candidates act as F^(x){k}; i.i.d. input law; I(X;Y) and H(Y) below are per {k} uses unless marked.")
+        print("(One qubit with any POVM carries at most 1 bit (Holevo); a 16-outcome POVM on one qubit would not help.)")
+        print(f"Extra self-checks passed (k={k}): identity, corrected bound, Hamming weight of y sufficient for F")
+        print(f"(I(F;Y) = I(F;W) <= log2(k+1)), GAD I(X;Y) = k x 1-use value; k=1 general path = CE-6 path.\n")
 
     gs = np.round(np.arange(0, 1 + args.dg / 2, args.dg), 10)
     ps = np.round(np.arange(1.0, 0.5 - args.dp / 2, -args.dp), 10)
@@ -496,6 +684,26 @@ def main() -> int:
             cells.append(f"{a['size']}, {fmt(a.get('HFgY', math.nan), 2)}, {fmt(b['HFgY'], 2)}, {fmt(b['IXY'], 2)}")
         print(f"| {p:.2f} | {fmt(T_of_p(p), 3)} | " + " | ".join(cells) + " |")
 
+    if USES > 1:
+        print(f"\n## {USES}-use detail (uniform input, eps = {args.eps}): |C|, H(F|Y) (a), I(F;Y) (a), "
+              "H(F|X,Y) (a), H(F|Y) (b), log2N - H(F|Y) (b), I(X;Y) per use (GAD), H(Y) (GAD, k uses)\n")
+        for pn, pool in (("A", pA), ("B", pB)):
+            print(f"Pool {pn} (log2 N = {math.log2(len(pool)):.3f}):\n")
+            print("| g | " + " | ".join(f"T={fmt(T, 1)}" for T in (0.0, 1.0, math.inf)) + " |")
+            print("|---|---|---|---|")
+            for g in np.round(np.arange(0, 1.0001, 0.1), 10):
+                cells = []
+                for T in (0.0, 1.0, math.inf):
+                    pp = p_of_T(T)
+                    pi = input_law("uniform", g, pp)
+                    a = variant_a(pool, g, pp, args.eps, pi)
+                    b = variant_b(pool, g, pp, pi)
+                    cells.append(f"{a['size']}, {fmt(a.get('HFgY', math.nan), 2)}, {fmt(a.get('IFY', math.nan), 2)}, "
+                                 f"{fmt(a.get('HFgXY', math.nan), 2)}, {fmt(b['HFgY'], 3)}, {fmt(b['gain'], 3)}, "
+                                 f"{fmt(b['IXY'] / USES, 3)}, {fmt(b['HY'], 2)}")
+                print(f"| {g:.1f} | " + " | ".join(cells) + " |")
+            print()
+
     # ---- shape analysis ----
     print("\n## Shape of H(F|Y) along 1D slices (prediction: monotone, concave, saturating)\n")
     print("Interior discrete 2nd derivative signs; saturation = first point after which the curve stays")
@@ -568,8 +776,22 @@ def main() -> int:
         if np.ptp(B[:, 0]) < FLAT_BITS:
             print(f"| (b) | {pn} | n/a (fixed pool) | n/a | H(F\\|Y) range {np.ptp(B[:, 0]):.2e} bit: correlations not meaningful | | | |")
             continue
-        cells = [f"n/a (fixed pool; H(F|Y) range {np.ptp(B[:, 0]):.4f} bit)", "n/a"] + [f"{spearman(B[:, 0], B[:, j]):.2f} ({pearson(B[:, 0], B[:, j]):.2f})" for j in range(1, 5)]
+        cells = [f"n/a (fixed pool; H(F\\|Y) range {np.ptp(B[:, 0]):.4f} bit)", "n/a"] + [f"{spearman(B[:, 0], B[:, j]):.2f} ({pearson(B[:, 0], B[:, j]):.2f})" for j in range(1, 5)]
         print(f"| (b) | {pn} | " + " | ".join(cells) + " |")
+
+    if USES > 1:
+        print("\nVariant (b), uniform input: H(F|Y) is a function of the GAD output bias b = |r - 1/2| = g(2p-1)/2")
+        print("alone (self-checked). Spearman of H(F|Y) (b) vs b over the 2D grid:")
+        for pn, pool in pools.items():
+            yb, bias = [], []
+            for g in gs:
+                for p in ps:
+                    yb.append(variant_b(pool, float(g), float(p), np.array([0.5, 0.5]))["HFgY"])
+                    bias.append(float(g) * (2 * float(p) - 1) / 2)
+            print(f"  pool {pn}: {spearman(yb, bias):.3f} (Pearson {pearson(yb, bias):.3f})")
+        print_bottleneck(pA, pB, USES, gs, ps, args.eps)
+        print("No physics claim is drawn from this toy.")
+        return 0
 
     # ---- analytic notes ----
     hp = variant_b(pA, 0.3, 0.8, np.array([0.5, 0.5]))["hpost"]

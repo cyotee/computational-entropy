@@ -10,8 +10,9 @@
 
 - Accounting inequality: **fails at most points** (§4).
 - Predicted concave, saturating shape: **not observed** (§5).
+- 16-symbol rerun (§8): the original inequality now holds at 44/72 points (pool A) and 60/103 (pool B). The share now moves with \(g\), but it falls with damping and tracks output bias. The bottleneck is the pool's distinct output laws, not the alphabet.
 
-**Script:** [`simulations/classical/procedural_share.py`](https://github.com/cyotee/computational-entropy/blob/master/simulations/classical/procedural_share.py) (pure numpy; imports the [thermal-channel-cost](thermal-channel-cost.md) script for its Kraus helpers; built-in self-checks; about 20 s). Every number below is printed by the script.
+**Script:** [`simulations/classical/procedural_share.py`](https://github.com/cyotee/computational-entropy/blob/master/simulations/classical/procedural_share.py) (pure numpy; imports the [thermal-channel-cost](thermal-channel-cost.md) script for its Kraus helpers; built-in self-checks; about 20 s). Every number below is printed by the script. §3–§6 are the CE-6 one-bit run, reproduced with `--alphabet 2`; §8 is the 16-symbol run, which is now the default.
 
 ## 1. Definitions under test
 
@@ -173,3 +174,183 @@ Correlations over the 2D grid (uniform input, \(\varepsilon=0.05\)), Spearman wi
 - The inequality \(I(X;Y)+H(F\mid Y)\le H(Y)\) is **false in general** and false at most points here. The correct bound is \(I(X;Y)+I(F;Y)\le H(Y)\) when \(F\) is independent of \(X\).
 - Nothing here bears on hadronic or QCD physics, on gravity, or on whether noise "is" anything. The conjecture remains Cyotee's framing.
 - **Tier placement:** GAD is a quantum channel, but only the classical output laws of a single qubit read out in Z are used. As in the [thermal-channel-cost](thermal-channel-cost.md) note, this is labelled a Tier 2 toy.
+
+## 8. 16-symbol output alphabet: 4 channel uses (added 2026-11-26)
+
+*Run: `python simulations/classical/procedural_share.py` (now the default, `--alphabet 16`, about 22 s). `--alphabet 2` reproduces §3–§6 byte-for-byte. The pools, the GAD channel, the grid, ε, and the shape and correlation tests are unchanged.*
+
+### 8.1 Realization
+
+One qubit read out with **any** measurement, however many outcomes it has, carries at most 1 bit of accessible information (Holevo bound). A 16-outcome measurement on a single qubit therefore cannot lift the 1-bit cap.
+
+The 16 symbols are instead realized as **4 independent uses** of the channel:
+
+- the channel is \(\mathrm{GAD}^{\otimes4}\), read out by a product Z measurement, so \(Y\in\{0,1\}^4\);
+- the input \(X\in\{0,1\}^4\) is i.i.d., either uniform or with the 1-use Blahut–Arimoto law on each use;
+- each candidate acts as \(F^{\otimes4}\), so its law factorizes over the uses and the script uses that product directly.
+
+\(I(X;Y)\) and \(H(Y)\) below are per 4 uses unless marked "per use". For the GAD channel, \(I(X;Y)\) per 4 uses is exactly 4 × the 1-use value (self-checked).
+
+A single 16-level system would be a different channel, not GAD, so it was not added.
+
+### 8.2 Why the alphabet is not the main bottleneck (analytic, self-checked)
+
+- **Only the count of 1s in \(Y\) matters.** With \(X\) unobserved and i.i.d., \(P_F(y)=\prod_i r_F(y_i)\), where \(r_F(1)=\pi_0q_0+\pi_1q_1\) is the candidate's 1-use output marginal. \(Y\) therefore enters only through its Hamming weight \(W\in\{0,\dots,4\}\), so \(I(F;Y)=I(F;W)\le\log_2 5=2.32\) bits, not 4.
+- **Candidates with the same output marginal can never be told apart from \(Y\), for any number of uses.** \(H(F\mid Y)\) therefore has a floor of \(\sum_L (n_L/N)\log_2 n_L\), where \(L\) runs over distinct marginals.
+- If \(X\) is observed as well, \(F\) enters through the counts of each \((x_i,y_i)\) pair, and the floor uses the distinct *conditional* laws instead.
+
+| pool | N | log2 N | distinct cond. laws | distinct output marginals (uniform pi) | floor H(F\|marginal) | floor H(F\|cond. law) | max I(F;Y) any k = log2N - floor | cap now log2(k+1) | min gap between marginals |
+|---|---|---|---|---|---|---|---|---|---|
+| A | 50 | 5.644 | 29 | 5 | 4.233 | 1.135 | 1.411 | 2.322 | 0.2500 |
+| B | 296 | 8.209 | 65 | 49 | 4.719 | 3.406 | 3.491 | 2.322 | 0.0001 |
+
+- **Pool A:** only 5 distinct output marginals (0, ¼, ½, ¾, 1; every Haar unitary gives ½). So from \(Y\) alone, \(I(F;Y)\le1.41\) bits whatever the alphabet. That is already below the 4-use cap of 2.32, so **for pool A the distinct-law count is the bottleneck, not the alphabet.**
+- **Pool B:** 49 distinct marginals, with a ceiling of 3.49 bits, above 2.32. Here 4 uses are still partly limiting, but the floor of 4.72 bits (57 % of \(\log_2 296\)) can never be beaten.
+
+### 8.3 Inequalities: pass rates vs CE-6
+
+| variant | pool | input | eps | defined pts | holds | fails | fails when log2\|class\| > H(Y)+H(Y\|X) (sufficient) | max violation (bits) | I(X;Y)+I(F;Y) <= H(Y) holds |
+|---|---|---|---|---|---|---|---|---|---|
+| (a) eps-class | A | uniform | 0.02 | 34 | 22 | 12 | 1 | 2.807 | yes |
+| (a) eps-class | A | uniform | 0.05 | 72 | 44 | 28 | 3 | 2.868 | yes |
+| (a) eps-class | A | uniform | 0.1 | 128 | 68 | 60 | 6 | 2.802 | yes |
+| (b) full pool | A | uniform | - | 231 | 0 | 231 | - | 5.274 | n/a |
+| (a) eps-class | A | capacity | 0.02 | 34 | 22 | 12 | 1 | 2.807 | yes |
+| (a) eps-class | A | capacity | 0.05 | 72 | 44 | 28 | 3 | 2.868 | yes |
+| (a) eps-class | A | capacity | 0.1 | 128 | 68 | 60 | 6 | 2.802 | yes |
+| (b) full pool | A | capacity | - | 231 | 0 | 231 | - | 5.274 | n/a |
+| (a) eps-class | B | uniform | 0.02 | 25 | 17 | 8 | 0 | 1.170 | yes |
+| (a) eps-class | B | uniform | 0.05 | 103 | 60 | 43 | 0 | 1.209 | yes |
+| (a) eps-class | B | uniform | 0.1 | 218 | 89 | 129 | 0 | 1.319 | yes |
+| (b) full pool | B | uniform | - | 231 | 0 | 231 | - | 7.965 | n/a |
+| (a) eps-class | B | capacity | 0.02 | 25 | 17 | 8 | 0 | 1.170 | yes |
+| (a) eps-class | B | capacity | 0.05 | 103 | 60 | 43 | 0 | 1.209 | yes |
+| (a) eps-class | B | capacity | 0.1 | 218 | 89 | 129 | 0 | 1.319 | yes |
+| (b) full pool | B | capacity | - | 231 | 0 | 231 | - | 7.965 | n/a |
+
+| Check | CE-6 (1 bit) | CE-7 (16 symbols) |
+|---|---|---|
+| original, (a), pool A, ε = 0.05 | 14 / 72 | **44 / 72** |
+| original, (a), pool B, ε = 0.05 | 60 / 103 | **60 / 103** |
+| original, (b), both pools | 0 / 231 | **0 / 231** |
+| corrected \(I(X;Y)+I(F;Y)\le H(Y)\), (a) | all points | **all points** |
+
+**Why (a) improves.** In (a), \(I(F;Y)=0.00\) at every point. The ε-class members share their output marginal: they are law-duplicates such as I, Z, S, dephasing, Z-measurement and the Boolean identity at \(g=0\). So \(H(F\mid Y)=\log_2\lvert C\rvert\) exactly, and the original inequality holds iff \(\log_2\lvert C\rvert\le H(Y\mid X)\). The right-hand side can now reach 4 bits instead of 1, so more points pass.
+
+**Why (b) still fails everywhere.** \(H(F\mid Y)\ge\log_2N-I(F;Y)\ge\log_2N-2.32\), which exceeds \(H(Y\mid X)\) at every grid point.
+
+### 8.4 Results (uniform input, ε = 0.05)
+
+Each cell lists: \(\lvert C\rvert\); \(H(F\mid Y)\), \(I(F;Y)\) and \(H(F\mid X,Y)\) for (a); \(H(F\mid Y)\) and \(\log_2N-H(F\mid Y)\) for (b); \(I(X;Y)\) per use; and \(H(Y)\) per 4 uses.
+
+Pool A:
+
+| g | T=0.0 | T=1.0 | T=inf |
+|---|---|---|---|
+| 0.0 | 8, 3.00, 0.00, 2.96, 5.274, 0.370, 1.000, 4.00 | 8, 3.00, 0.00, 2.96, 5.274, 0.370, 1.000, 4.00 | 8, 3.00, 0.00, 2.96, 5.274, 0.370, 1.000, 4.00 |
+| 0.1 | 0, -, -, -, 5.266, 0.377, 0.758, 3.97 | 1, 0.00, 0.00, 0.00, 5.272, 0.371, 0.720, 3.99 | 9, 3.17, 0.00, 3.06, 5.274, 0.370, 0.714, 4.00 |
+| 0.2 | 0, -, -, -, 5.244, 0.400, 0.610, 3.88 | 0, -, -, -, 5.268, 0.376, 0.543, 3.98 | 4, 2.00, 0.00, 1.98, 5.274, 0.370, 0.531, 4.00 |
+| 0.3 | 0, -, -, -, 5.205, 0.438, 0.493, 3.74 | 0, -, -, -, 5.259, 0.384, 0.404, 3.94 | 4, 2.00, 0.00, 1.99, 5.274, 0.370, 0.390, 4.00 |
+| 0.4 | 0, -, -, -, 5.151, 0.493, 0.396, 3.53 | 0, -, -, -, 5.248, 0.396, 0.293, 3.90 | 1, 0.00, 0.00, 0.00, 5.274, 0.370, 0.278, 4.00 |
+| 0.5 | 2, 1.00, 0.00, 1.00, 5.080, 0.564, 0.311, 3.25 | 0, -, -, -, 5.233, 0.410, 0.203, 3.84 | 0, -, -, -, 5.274, 0.370, 0.189, 4.00 |
+| 0.6 | 0, -, -, -, 4.990, 0.654, 0.236, 2.89 | 0, -, -, -, 5.215, 0.428, 0.130, 3.78 | 0, -, -, -, 5.274, 0.370, 0.119, 4.00 |
+| 0.7 | 0, -, -, -, 4.882, 0.762, 0.169, 2.44 | 0, -, -, -, 5.194, 0.450, 0.074, 3.69 | 3, 1.58, 0.00, 1.58, 5.274, 0.370, 0.066, 4.00 |
+| 0.8 | 0, -, -, -, 4.753, 0.891, 0.108, 1.88 | 0, -, -, -, 5.169, 0.475, 0.034, 3.60 | 4, 2.00, 0.00, 2.00, 5.274, 0.370, 0.029, 4.00 |
+| 0.9 | 0, -, -, -, 4.602, 1.042, 0.052, 1.15 | 0, -, -, -, 5.141, 0.503, 0.009, 3.49 | 6, 2.58, 0.00, 2.57, 5.274, 0.370, 0.007, 4.00 |
+| 1.0 | 3, 1.58, 0.00, 1.58, 4.426, 1.218, 0.000, 0.00 | 0, -, -, -, 5.109, 0.535, 0.000, 3.36 | 5, 2.32, 0.00, 2.32, 5.274, 0.370, 0.000, 4.00 |
+
+Pool B:
+
+| g | T=0.0 | T=1.0 | T=inf |
+|---|---|---|---|
+| 0.0 | 1, 0.00, 0.00, 0.00, 7.965, 0.245, 1.000, 4.00 | 1, 0.00, 0.00, 0.00, 7.965, 0.245, 1.000, 4.00 | 1, 0.00, 0.00, 0.00, 7.965, 0.245, 1.000, 4.00 |
+| 0.1 | 0, -, -, -, 7.958, 0.251, 0.758, 3.97 | 0, -, -, -, 7.963, 0.246, 0.720, 3.99 | 1, 0.00, 0.00, 0.00, 7.965, 0.245, 0.714, 4.00 |
+| 0.2 | 4, 2.00, 0.00, 2.00, 7.940, 0.269, 0.610, 3.88 | 0, -, -, -, 7.959, 0.251, 0.543, 3.98 | 0, -, -, -, 7.965, 0.245, 0.531, 4.00 |
+| 0.3 | 4, 2.00, 0.00, 2.00, 7.911, 0.299, 0.493, 3.74 | 0, -, -, -, 7.952, 0.257, 0.404, 3.94 | 1, 0.00, 0.00, 0.00, 7.965, 0.245, 0.390, 4.00 |
+| 0.4 | 0, -, -, -, 7.870, 0.339, 0.396, 3.53 | 1, 0.00, 0.00, 0.00, 7.944, 0.266, 0.293, 3.90 | 16, 4.00, 0.00, 4.00, 7.965, 0.245, 0.278, 4.00 |
+| 0.5 | 6, 2.58, 0.00, 2.58, 7.818, 0.392, 0.311, 3.25 | 0, -, -, -, 7.932, 0.277, 0.203, 3.84 | 16, 4.00, 0.00, 4.00, 7.965, 0.245, 0.189, 4.00 |
+| 0.6 | 0, -, -, -, 7.754, 0.456, 0.236, 2.89 | 0, -, -, -, 7.919, 0.291, 0.130, 3.78 | 17, 4.09, 0.00, 4.08, 7.965, 0.245, 0.119, 4.00 |
+| 0.7 | 4, 2.00, 0.00, 2.00, 7.677, 0.532, 0.169, 2.44 | 0, -, -, -, 7.902, 0.307, 0.074, 3.69 | 0, -, -, -, 7.965, 0.245, 0.066, 4.00 |
+| 0.8 | 4, 2.00, 0.00, 2.00, 7.589, 0.621, 0.108, 1.88 | 1, 0.00, 0.00, 0.00, 7.884, 0.326, 0.034, 3.60 | 1, 0.00, 0.00, 0.00, 7.965, 0.245, 0.029, 4.00 |
+| 0.9 | 0, -, -, -, 7.488, 0.722, 0.052, 1.15 | 0, -, -, -, 7.863, 0.347, 0.009, 3.49 | 37, 5.21, 0.00, 5.21, 7.965, 0.245, 0.007, 4.00 |
+| 1.0 | 1, 0.00, 0.00, 0.00, 7.374, 0.836, 0.000, 0.00 | 16, 4.00, 0.00, 4.00, 7.839, 0.370, 0.000, 3.36 | 36, 5.17, 0.00, 5.17, 7.965, 0.245, 0.000, 4.00 |
+
+### 8.5 Shape
+
+The tally over all slices:
+
+> Shape tally over all slices above: (a) other: 5; (a) step artifact: 59; (a) undefined (empty classes): 8; (b) concave & monotone: 7; (b) constant/flat: 4; (b) other: 9
+
+The (b) slices:
+
+| variant | pool | input | eps | grid | slice | shape | start → end (min..max) | saturates at | plateau vs log2\|pool\| |
+|---|---|---|---|---|---|---|---|---|---|
+| (b) | A | uniform | - | dg=0.01 | vs g, T=0.0 | non-increasing, concave | 5.274 → 4.426 (4.426..5.274) | 1.00 | 0.934 of 5.64 |
+| (b) | A | uniform | - | dg=0.01 | vs g, T=1.0 | non-increasing, concave | 5.274 → 5.109 (5.109..5.274) | 1.00 | 0.934 of 5.64 |
+| (b) | A | uniform | - | dg=0.01 | vs g, T=inf | constant | 5.274 → 5.274 (5.274..5.274) | - | 0.934 of 5.64 |
+| (b) | A | uniform | - | dp=0.01 | vs T, g=0.5 | non-decreasing, mixed curvature (42 concave / 6 convex interior pts) | 5.080 → 5.274 (5.080..5.274) | 3.55 | 0.934 of 5.64 |
+| (b) | A | uniform | - | dp=0.01 | vs T, g=1.0 | non-decreasing, mixed curvature (43 concave / 5 convex interior pts) | 4.426 → 5.274 (4.426..5.274) | 3.55 | 0.934 of 5.64 |
+| (b) | A | capacity | - | dg=0.01 | vs g, T=0.0 | non-increasing, concave | 5.274 → 4.426 (4.426..5.274) | 1.00 | 0.934 of 5.64 |
+| (b) | A | capacity | - | dg=0.01 | vs g, T=1.0 | non-increasing, concave | 5.274 → 5.109 (5.109..5.274) | 1.00 | 0.934 of 5.64 |
+| (b) | A | capacity | - | dg=0.01 | vs g, T=inf | constant | 5.274 → 5.274 (5.274..5.274) | - | 0.934 of 5.64 |
+| (b) | A | capacity | - | dp=0.01 | vs T, g=0.5 | non-decreasing, mixed curvature (44 concave / 4 convex interior pts) | 4.981 → 5.274 (4.981..5.274) | 3.10 | 0.934 of 5.64 |
+| (b) | A | capacity | - | dp=0.01 | vs T, g=1.0 | non-decreasing, mixed curvature (43 concave / 5 convex interior pts) | 4.426 → 5.274 (4.426..5.274) | 3.55 | 0.934 of 5.64 |
+| (b) | B | uniform | - | dg=0.01 | vs g, T=0.0 | non-increasing, concave | 7.965 → 7.374 (7.374..7.965) | 1.00 | 0.970 of 8.21 |
+| (b) | B | uniform | - | dg=0.01 | vs g, T=1.0 | non-increasing, concave | 7.965 → 7.839 (7.839..7.965) | 0.99 | 0.970 of 8.21 |
+| (b) | B | uniform | - | dg=0.01 | vs g, T=inf | constant | 7.965 → 7.965 (7.965..7.965) | - | 0.970 of 8.21 |
+| (b) | B | uniform | - | dp=0.01 | vs T, g=0.5 | non-decreasing, mixed curvature (42 concave / 6 convex interior pts) | 7.818 → 7.964 (7.818..7.964) | 4.15 | 0.970 of 8.21 |
+| (b) | B | uniform | - | dp=0.01 | vs T, g=1.0 | non-decreasing, mixed curvature (42 concave / 6 convex interior pts) | 7.374 → 7.964 (7.374..7.964) | 4.15 | 0.970 of 8.21 |
+| (b) | B | capacity | - | dg=0.01 | vs g, T=0.0 | non-monotone, mixed curvature (96 concave / 3 convex interior pts) | 7.965 → 7.374 (7.353..7.965) | 1.00 | 0.970 of 8.21 |
+| (b) | B | capacity | - | dg=0.01 | vs g, T=1.0 | non-increasing, concave | 7.965 → 7.839 (7.839..7.965) | 0.99 | 0.970 of 8.21 |
+| (b) | B | capacity | - | dg=0.01 | vs g, T=inf | constant | 7.965 → 7.965 (7.965..7.965) | - | 0.970 of 8.21 |
+| (b) | B | capacity | - | dp=0.01 | vs T, g=0.5 | non-decreasing, mixed curvature (44 concave / 4 convex interior pts) | 7.742 → 7.964 (7.742..7.964) | 3.55 | 0.970 of 8.21 |
+| (b) | B | capacity | - | dp=0.01 | vs T, g=1.0 | non-decreasing, mixed curvature (42 concave / 6 convex interior pts) | 7.374 → 7.964 (7.374..7.964) | 4.15 | 0.970 of 8.21 |
+
+**(a) Does the share now move with g?** Variant (b) does, but in the **opposite direction** to the prediction.
+
+- At \(T=0\) it **falls** with damping: pool A goes from 5.274 to 4.426 bits, pool B from 7.965 to 7.374. The curve is concave and non-increasing, and it starts at 0.934 (A) and 0.970 (B) of \(\log_2N\).
+- At \(T=\infty\) it is constant.
+- **Exact reason** (self-checked): with uniform input, \(H(F\mid Y)\) in (b) is a function of the GAD output bias \(b=g(2p-1)/2\) alone. Its Spearman correlation with \(b\) over the grid is −0.999 (A) and −1.000 (B). Damping biases the outputs toward 0, and more biased outputs separate the pool's marginals better.
+
+**(b) Concave rise or saturation?**
+
+- Against \(T\), (b) rises and is mostly concave (42–44 concave vs 4–6 convex interior points). It saturates near \(T\approx3\)–\(4\) at the unbiased-output value of 0.934 or 0.970 of \(\log_2N\).
+- This is the \(p(T)\) logistic map driving the bias \(b\) to 0. It is the same kind of built-in mapping artifact as in CE-4, not class growth. The plateau is the "output unbiased" value, not \(\log_2N\) and not a full function space.
+- Variant (a) is still a **step artifact** in 59 of 72 slices, with 8 undefined because of empty classes. The other 5 slices have few points and none is concave and monotone.
+- Measured against \(g\), the 7 "(b) concave & monotone" slices are all **decreasing**, the opposite of the predicted rise.
+
+### 8.6 Correlation with noise measures
+
+| variant | pool | vs log2\|class\| | vs \|class\| | vs 1 - C_bin | vs purity loss (\|+>) | vs 1 - sqrt(1-g) | vs g |
+|---|---|---|---|---|---|---|---|
+| (a) | A | 1.00 (1.00) | 1.00 (0.96) | -0.52 (-0.50) | -0.53 (-0.30) | -0.54 (-0.21) | -0.54 (-0.32) |
+| (b) | A | n/a (fixed pool; H(F\|Y) range 0.8478 bit) | n/a | -0.55 (-0.44) | -0.23 (0.08) | -0.63 (-0.57) | -0.63 (-0.56) |
+| (a) | B | 1.00 (1.00) | 1.00 (0.91) | 0.30 (0.39) | 0.34 (0.39) | 0.31 (0.34) | 0.31 (0.36) |
+| (b) | B | n/a (fixed pool; H(F\|Y) range 0.5910 bit) | n/a | -0.55 (-0.45) | -0.23 (0.07) | -0.62 (-0.58) | -0.62 (-0.56) |
+
+- **Variant (a)** is unchanged from CE-6 and sign-unstable across pools: −0.52 to −0.54 on A, +0.30 to +0.34 on B. Its perfect correlation with \(\log_2\lvert C\rvert\) is still true by definition, because \(I(F;Y)=0\) here.
+- **Variant (b)** is now defined and **sign-stable**: about −0.55 against 1 − C, and about −0.63 against \(1-\sqrt{1-g}\) and against \(g\), on both pools. It is weak against purity loss (−0.23).
+- It is **negative**: the share falls as damping noise rises, because it tracks the output bias. That is a property of noise amplitude, not of branching width.
+
+### 8.7 Was 16 enough? Estimate for a larger run (not run)
+
+**No**, and a larger alphabet would not fix the main problem. The share now moves, by up to 0.85 bit (A) and 0.59 bit (B), but it stays at or above 0.78 (A) and about 0.90 (B) of \(\log_2N\). Its ceiling is set by the pool's **distinct output marginals**. For pool A that ceiling is 1.41 bits of identifiable information, already reachable in principle with 4 uses.
+
+The table below estimates what a bigger run would need (rule-of-thumb uses count \(k\sim\ln M/\text{gap}^2\), order of magnitude only):
+
+| pool | delta | merged marginals M | k needed | alphabet 2^k | I(F;Y) ceiling at delta (bits) | weight-statistic cost per 231-pt sweep | naive tensor cost per sweep |
+|---|---|---|---|---|---|---|---|
+| A | 0.05 | 5 | 26 | 2^26 | 1.41 | ~3.1e+05 ops (< 1 s) | ~10^20 ops (infeasible) |
+| A | 0.01 | 5 | 26 | 2^26 | 1.41 | ~3.1e+05 ops (< 1 s) | ~10^20 ops (infeasible) |
+| B | 0.05 | 14 | 1021 | 2^1021 | 2.85 | ~7.0e+07 ops (< 1 s) | ~10^620 ops (infeasible) |
+| B | 0.01 | 29 | 32176 | 2^32176 | 3.24 | ~2.2e+09 ops (seconds) | ~10^19377 ops (infeasible) |
+
+Using the Hamming-weight statistic, such a run costs seconds. The naive \(2^k\times2^k\) tensor is infeasible beyond \(k\approx12\). Even at very large \(k\), identifiable information is capped at \(\log_2N-\text{floor}\): 1.41 bits (A) and about 3.5 bits (B), not \(\log_2N\). Giving the class room to breathe needs a pool with more distinct output laws, or a model where \(X\) is observed (conditional-law floors 1.14 and 3.41 bits). It does not need more symbols.
+
+### 8.8 Non-claims (unchanged)
+
+This is a toy proof-of-concept for the shape of a curve.
+
+- It is not evidence about hadronic or QCD physics.
+- It makes no claim that noise is optionality, which remains Cyotee's conjecture.
+- Using 4 channel uses is a modelling choice; correlated (entangled) inputs or adaptive readout were not considered.
