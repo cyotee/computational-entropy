@@ -90,6 +90,7 @@ The site hosts Tier 1 ([CORE.md](CORE.md), Papers A and C), Tier 2, and, labelle
 | Final freeze report | [`papers/06-synthesis/FINAL.md`](papers/06-synthesis/FINAL.md) |
 | Session bootstrap | [`PROGRESS_REPORT.md`](PROGRESS_REPORT.md) |
 | Site plan | [`GITHUB_PAGES_PLAN.md`](GITHUB_PAGES_PLAN.md) |
+| Paper plan (corrected accounting bound; decision 2026-11-26) | [`PAPER_PLAN.md`](PAPER_PLAN.md) |
 
 ## Local site preview
 
