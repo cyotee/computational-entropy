@@ -225,7 +225,7 @@ Tier 2 only. A two-qubit, two-use toy with one choice of Hamiltonian ensemble, c
 
 ## 9. Saved pool for channel-cost Stage 2 (CE-15)
 
-**Status:** 2026-11-26 · pool saved; **no channel cost computed.** This section only fixes which candidate pool the channel-cost Stage 2 ([CHANNEL_COST_STAGE1.md](https://github.com/cyotee/computational-entropy/blob/master/CHANNEL_COST_STAGE1.md) §8) will use. Stage 2 itself is not run.
+**Status:** 2026-11-26 · pool saved; no channel cost is computed in this section. This section only fixes which candidate pool the channel-cost Stage 2 ([CHANNEL_COST_STAGE1.md](https://github.com/cyotee/computational-entropy/blob/master/CHANNEL_COST_STAGE1.md) §8) uses. The Stage 2 results are in [channel-cost-stage2.md](channel-cost-stage2.md).
 
 **What changed.** The pool-generation code is unchanged: `sample_unitaries` (GUE, energy budget above the ground state, ML time), `leader_cluster` (\(\varepsilon\)-TV) and `noiseless_law`. Only the **default pool source for Stage 2** is changed, from Haar to ML:
 

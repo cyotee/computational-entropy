@@ -2,7 +2,7 @@
 
 **Tier:** 2 of 3 (channel-level research avenue). This file makes **no gravitational and no quantum-gravity claims**, and no claim about hadronic or QCD physics. Where it touches the simulations, those are **toy models** (proof-of-concept for the shape of a curve in a one- or two-qubit setting), as their own headers say.
 
-**Status:** 2026-11-26 · **definitional stage only.** The definition below is a **proposal**. It is untested against the accounting question. No new simulation was run. The only computation was a tiny inline check of the closed forms in §5, listed in §5.4 and not committed. Stage 2 (the accounting test against the 58 failure points) is **not started**. It waits on review of this file.
+**Status:** 2026-11-26 · **definitional stage only.** The definition below is a **proposal**. It is untested against the accounting question. No new simulation was run. The only computation was a tiny inline check of the closed forms in §5, listed in §5.4 and not committed. **Update:** after review, Stage 2 (the accounting test) was run; results are in [docs/channel-cost-stage2.md](docs/channel-cost-stage2.md). All definitions were tested and rejected as rescues of the original form. The only change to this file is the zero-damping correction in §8 (2.967 bits, not 3.00).
 
 **Scope of the question (Cyotee, 2026-11-26).** Define the channel cost as an operational quantity. The leading candidate is the von Neumann entropy of the channel's own mediating subsystem: the bath, or whatever degrees of freedom implement the map. It is computed directly from that subsystem's density matrix, independent of any input or output distribution. This file reviews the code to answer three questions: (1) is the internal state accessible; (2) what changes would expose it; (3) a precise definition.
 
@@ -14,7 +14,7 @@
 \[
 c_{\rm ch}(g,p) = H\!\Big(\tfrac{a+s}{2},\ \tfrac{a-s}{2},\ \tfrac{pg}{2},\ \tfrac{(1-p)g}{2}\Big),\qquad a = 1-\tfrac g2,\quad s=\sqrt{a^2-p(1-p)g^2}.
 \]
-- **Definitional consequence for Stage 2 (§8).** This quantity is bounded by 2 bits per qubit use and is exactly 0 at \(g=0\). Added to the original form, it **cannot** close the CE-6 deficits. Those deficits reach 3.076 bits, and at the 11 grid points with \(g=0\) they are 3.00 bits against a cost of 0. So the rescue reading of channel cost is ruled out by definition before Stage 2 runs. What Stage 2 can still test is narrower (§8).
+- **Definitional consequence for Stage 2 (§8).** This quantity is bounded by 2 bits per qubit use and is exactly 0 at \(g=0\). Added to the original form, it **cannot** close the CE-6 deficits. Those deficits reach 3.076 bits, and at the 11 grid points with \(g=0\) they are 2.967 bits against a cost of 0. So the rescue reading of channel cost is ruled out by definition before Stage 2 runs. What Stage 2 can still test is narrower (§8).
 
 The quantity proposed here is **standard, not new.** It is the *map entropy* of Roga, Fannes and Życzkowski (arXiv:1101.4105, Int. J. Quantum Inf. 9, 1031 (2011)), which is the entropy of the Jamiołkowski state. It is also Schumacher's *entropy exchange* (Phys. Rev. A 54, 2614 (1996)) evaluated at the maximally mixed input. What is proposed here is only the **choice** to use it as this programme's "channel cost", and the conventions.
 
@@ -211,7 +211,7 @@ There is no per-trial stochastic channel: every run is an exact computation over
 
 ---
 
-## 8. Stage 2 plan (described only; **not run**) and the bound-size check
+## 8. Stage 2 plan (described at Stage 1; since run, see docs/channel-cost-stage2.md) and the bound-size check
 
 **The 58 failure points.** These come from CE-6 ([docs/procedural-share.md](docs/procedural-share.md) §4): the one-bit run, variant (a), pool A, \(\varepsilon=0.05\), uniform or capacity input, on the \(21\times11\) \((g,p)\) grid. It has 72 defined points, and the original form \(I(X;Y)+H(F\mid Y)\le H(Y)\), i.e. \(H(F\mid Y)\le H(Y\mid X)\), fails at 58. CE-12 reproduced this exactly. Deficits \(D:=H(F\mid Y)-H(Y\mid X)\) at the failures range over 0.047 / 1.455 / 3.076 bits (min / median / max).
 
@@ -226,20 +226,20 @@ At each of the 58 points, compute \(D\) and \(c_{\rm ch}\) via the hooks of §7.
 **Bound-size check (a definitional consequence, decided before Stage 2).**
 
 - **Cap.** \(c_{\rm ch}\le\log_2 d^2=2\) bits for a qubit channel, and the same cap holds for (B′) and (C), since all are entropies on an environment of dimension at most 4. The maximum deficit is \(3.076>2\), so the planned test **cannot pass at all 58 points, for any \((g,p)\)**.
-- **The \(g=0\) row.** There GAD is the identity at every \(p\), so \(c_{\rm ch}=0\). The published slice table (procedural-share.md §3) shows \(|C|=8\), \(H(F\mid Y)=3.00\) and \(H(Y\mid X)=0\), so \(D=3.00\) bits at each of the 11 \(p\) values of the grid. These are among the 58, because the class is nonempty and the original form fails. At those points the cost-augmented form demands \(H(F\mid Y)=0\), which is false.
+- **The \(g=0\) row.** There GAD is the identity at every \(p\), so \(c_{\rm ch}=0\). The class has \(|C|=8\), so \(\log_2|C|=3.00\) bits; this is the 3.00 in the published slice table (procedural-share.md §3). The conditional entropy is \(H(F\mid Y)=2.967\) bits, with \(H(Y\mid X)=0\), so \(D=2.967\) bits at each of the 11 \(p\) values of the grid. An earlier version of this file gave \(D=3.00\), which mistook \(\log_2|C|\) for \(H(F\mid Y)\). These are among the 58, because the class is nonempty and the original form fails. At those points the cost-augmented form demands \(H(F\mid Y)=0\), which is false.
 - **Structural reason (consistent with CE-12).** CE-12 showed \(H(F\mid Y)\ge\log_2|C|-H(Y)\), which grows with the class size, while every correction term capped by \(H(X)\) or \(H(Y)\) is bounded. \(c_{\rm ch}\) is not capped by \(H(X)\) or \(H(Y)\), but it is capped by \(2\log_2 d\) and is **independent of the pool**. So the same argument applies to it: enlarging the pool or \(\varepsilon\) raises \(D\) at fixed \(c_{\rm ch}\). No channel-only term can track a pool-size-driven deficit.
 - **Relation to the paper plan.** [PAPER_PLAN.md](PAPER_PLAN.md) §4 demotes the overlap-first repair and says to revisit it only if a channel-cost definition supplies a term that grows with the pool. The proposed \(c_{\rm ch}\) does not grow with the pool, so it does **not** meet that revisit condition. Channel cost remains parallel research and is not a dependency of the paper.
 - **Verdict by definition:** under (B), (B′) or (C), channel cost **cannot rescue the original identity** on the CE-6 failures. This is a consequence of the definition and of already-published numbers, not a Stage 2 result.
 
 **What Stage 2 could still usefully measure (if reviewed and approved).**
 
-- (i) How many of the 58 have \(D\le c_{\rm ch}\), i.e. the size of the residual. That gives the exact count of points with \(D>2\); at least the 11 \(g=0\) points have \(D=3.00>c_{\rm ch}=0\).
+- (i) How many of the 58 have \(D\le c_{\rm ch}\), i.e. the size of the residual. That gives the exact count of points with \(D>2\); at least the 11 \(g=0\) points have \(D=2.967>c_{\rm ch}=0\).
 - (ii) Whether \(c_{\rm ch}\) is useful as a **separate ledger entry** next to the corrected bound \(I(X;Y)+I(F;Y)\le H(Y)\). An example is comparing \(c_{\rm ch}\) with \(H(Y\mid X)\) along the grid. That is a comparison, not a rescue, and no relation between them is claimed here.
 - (iii) Whether the model-level (A) adds anything once (B) is in hand.
 
-None of this is run.
+None of this was run at Stage 1. The Stage 2 results are in [docs/channel-cost-stage2.md](docs/channel-cost-stage2.md).
 
-**Pool source for Stage 2 (CE-15, added after review request t21u).** The Stage 2 candidate pool is now ML-derived by default. `procedural_share_mlpool.ce6_overlap(pool_source="ml")` uses pool A with its 20 Haar members replaced by 20 Margolus–Levitin one-bit laws, drawn from the saved pool `simulations/classical/data/ce15_ml_pool.json`. `pool_source="A"` reproduces the 58. On the ML-derived pool the original form fails at 38 of 81 defined points, with deficits up to 2.933 bits. The cap argument above is unchanged. Details are in [docs/procedural-share-mlpool.md](docs/procedural-share-mlpool.md) §9. No channel cost is computed.
+**Pool source for Stage 2 (CE-15, added after review request t21u).** The Stage 2 candidate pool is now ML-derived by default. `procedural_share_mlpool.ce6_overlap(pool_source="ml")` uses pool A with its 20 Haar members replaced by 20 Margolus–Levitin one-bit laws, drawn from the saved pool `simulations/classical/data/ce15_ml_pool.json`. `pool_source="A"` reproduces the 58. On the ML-derived pool the original form fails at 38 of 81 defined points, with deficits up to 2.933 bits. The cap argument above is unchanged. Details are in [docs/procedural-share-mlpool.md](docs/procedural-share-mlpool.md) §9. The pool swap itself computes no channel cost.
 
 ---
 
@@ -250,4 +250,4 @@ None of this is run.
 - **Not \(S_c\).** \(c_{\rm ch}\) is not the computational entropy \(S_c=S(\Phi(\rho))\), and the two are not identified.
 - **Not a heat.** The priced form \(c_{\rm ch}k_BT\ln2\) is a convention, as in CE-4. No equality with CE-4's \(d^{\#}_\varepsilon k_BT\ln2\) or with any thermodynamic quantity is claimed.
 - **Toy scope.** Every simulation referenced is a one- or two-qubit toy (proof-of-concept for curve shapes). It is not evidence about hadronic or QCD physics.
-- **Stage 2 not started.** The accounting test waits on review of this file.
+- **Stage 2 run after review.** Results are in [docs/channel-cost-stage2.md](docs/channel-cost-stage2.md): A0, B′, C± and their linear combinations were all tested and rejected as rescues of the original form.

@@ -70,6 +70,7 @@ nav:
       - Informed-input procedural share (toy): procedural-share-informed.md
       - Structured-pool informed-input gap (toy): procedural-share-structured.md
       - Energy-bounded (Margolus-Levitin) candidate pool (toy): procedural-share-mlpool.md
+      - "Channel cost, Stage 2: accounting test (toy)": channel-cost-stage2.md
   - How to read: how-to-read.md
   - Non-claims: non-claims.md
   - Downloads (PDF): downloads.md

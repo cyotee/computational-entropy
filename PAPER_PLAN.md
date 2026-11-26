@@ -99,6 +99,8 @@ The author has no formal credentials in this field. Every statement in the paper
    - the dependent-input failure counts.
 
    Present the by-construction trends as sanity checks, not findings.
+
+   Optional pointer, not a dependency (§2): the channel-cost Stage 2 null is in [docs/channel-cost-stage2.md](docs/channel-cost-stage2.md). The map entropy, the entropy exchange at the actual input, the min/max complementary output entropy and their non-negative linear combinations each fail to cover the original-form deficits, so they could appear as a remark that channel-only costs do not rescue the original form.
 3. **Prior-art check** (pre-submission, required):
    - Baez, Fritz & Leinster, *Entropy* 13 (2011) 1945, and Fullwood & Parzygnat, *Entropy* 23 (2021) 1021 (see [CORE.md §4.1](CORE.md), "independent convergence");
    - Cover & Thomas, *Elements of Information Theory* (chain rule; \(I(X,F;Y)\));
