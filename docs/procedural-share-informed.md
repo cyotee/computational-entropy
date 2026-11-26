@@ -7,6 +7,8 @@
 
 **Status:** 2026-11-26 · computed. Follow-up (CE-10) to the [procedural-share surface](procedural-share-surface.md) (CE-9). The CE-9 trends in rank and in damping were guaranteed by construction. Here the lever is different: let the **input depend on the selected unitary \(f\)**, and measure whether that lowers the procedural share \(H(F\mid Y)\).
 
+Follow-up: [structured-pool informed-input gap](procedural-share-structured.md) (CE-11) reruns this on shared-eigenbasis and Clifford pools, where a zero gap is no longer a theorem.
+
 **Script:** [`simulations/classical/procedural_share_informed.py`](https://github.com/cyotee/computational-entropy/blob/master/simulations/classical/procedural_share_informed.py) (pure numpy; imports `procedural_share_surface.py`; built-in self-checks; about 10 s). Every number below is printed by:
 
 ```
