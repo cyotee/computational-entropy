@@ -11,6 +11,7 @@
 - Accounting inequality: **fails at most points** (§4).
 - Predicted concave, saturating shape: **not observed** (§5).
 - 16-symbol rerun (§8): the original inequality now holds at 44/72 points (pool A) and 60/103 (pool B). The share now moves with \(g\), but it falls with damping and tracks output bias. The bottleneck is the pool's distinct output laws, not the alphabet.
+- Follow-up: [procedural-share surface over noise × readout rank](procedural-share-surface.md), a two-qubit toy whose candidate pool is drawn independently of the channel.
 
 **Script:** [`simulations/classical/procedural_share.py`](https://github.com/cyotee/computational-entropy/blob/master/simulations/classical/procedural_share.py) (pure numpy; imports the [thermal-channel-cost](thermal-channel-cost.md) script for its Kraus helpers; built-in self-checks; about 20 s). Every number below is printed by the script. §3–§6 are the CE-6 one-bit run, reproduced with `--alphabet 2`; §8 is the 16-symbol run, which is now the default.
 
