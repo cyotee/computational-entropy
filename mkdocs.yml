@@ -76,6 +76,7 @@ nav:
       - Stopping-time variants of the energy-bounded pool (toy): procedural-share-tstop.md
       - "Slack of the corrected bound at ranks 2–16 (toy)": analysis-slack-per-rank.md
       - "Williams–Beer PID binning sensitivity (toy)": analysis-pid-binning-sensitivity.md
+      - "Candidate-pool de-duplication null (toy)": analysis-pool-dedup-null.md
   - How to read: how-to-read.md
   - Non-claims: non-claims.md
   - Downloads (PDF): downloads.md
