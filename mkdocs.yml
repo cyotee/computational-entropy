@@ -80,6 +80,7 @@ nav:
       - "Channel cost, Stage 3: compilation-cost design (pre-registered, toy)": design-stage3-compilation-cost.md
       - "Channel cost, Stage 3: compilation-cost null (Sweep P, toy)": analysis-stage3-compilation-null.md
       - "Channel cost, Stage 3b: measurement back-action design (pre-registered, toy)": design-stage3b-measurement-backaction.md
+      - "Channel cost, Stage 3b: measurement back-action null (Sweep P, toy)": analysis-stage3b-measurement-null.md
   - How to read: how-to-read.md
   - Non-claims: non-claims.md
   - Downloads (PDF): downloads.md
