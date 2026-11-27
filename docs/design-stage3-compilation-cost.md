@@ -6,11 +6,22 @@
 - It makes no gravitational, quantum-gravity or thermodynamic claim. A "cost" here is an entropy in bits. Pricing it at \(k_BT\ln2\) would be a convention only.
 - The von Neumann entropies below are standard entropies of a toy register's reduced density matrices, used the same way as the entropy exchange of Stages 1–2. No claim about any quantum layer of the programme is made.
 
-**Status:** 2026-11-26 · **design only, pre-registered, nothing run.** No simulation code has been written for this stage, and no sweep has been run. Cyotee fixed the parameters in §2 before any result exists. **The kill criterion (§4) is binding.** The items in §7 must be recorded before the first run. Numbers labelled *spot check* come from a scratch exact-linear-algebra check (16×16 matrices, a few \(\theta\) values, no sweep). It is not committed, and none of its numbers is a result of this experiment (§8).
+**Status:** 2026-11-26 · **design only, pre-registered, nothing run.** No simulation code for this stage is committed, and no sweep has been run. A scratch code-validation pilot (not committed, not a result) preceded Amendment 1. Cyotee fixed the parameters in §2 before any result exists. **The kill criterion (§4) is binding.** The items in §7 must be recorded before the first run. Numbers labelled *spot check* come from a scratch exact-linear-algebra check (16×16 matrices, a few \(\theta\) values, no sweep). It is not committed, and none of its numbers is a result of this experiment (§8).
 
 **What is being tested, and its label.** The *compilation reading* is Cyotee's conjecture: the deficit of the original form is tracked by an entropy cost paid in the channel's own register, namely input information the interaction moves into the register that the output does not carry. The repository does not label this reading anywhere else. It sits inside the Tier 2 channel-cost line, whose Stage 2 definitions were all **tested and rejected** as rescues of the original form ([channel-cost-stage2.md](channel-cost-stage2.md) §6). Here it is a **conjecture under test, not a claim**. Nothing in this file is a result.
 
 **Revision note (from the ZZ draft).** The first draft used a \(Z\otimes Z\) Ising coupling. Under ZZ, the evolution is controlled by the inputs' Z values. So the computational-basis output law, every deficit built from it, and the cost are all independent of the coupling strength. In addition, with pure inputs, a pure register and full readout, the per-input cost is identically zero for any coupling. The draft's kill criterion could therefore only fail by construction. Cyotee adopted a revised design ("FS-2"): XY coupling, the cost taken over an input ensemble, K = 20 pre-registered priors as the sample unit, a fixed pool for \(F\), a fixed time at the Margolus–Levitin bound of a stated reference state, and mandatory tautology controls. This file is that revision.
+
+**Amendment 1 (2026-11-26, Cyotee).** Approved by Cyotee after a scratch pilot (code-path validation only: 3 strengths, 10 pool members, not committed, no result) exposed three gaps. These are formal amendments to the pre-registration. They were made before any full sweep was run, and they are applied inline in §4, §5 and §7.
+
+1. **Partial-correlation critical value: 0.412 (df = 15).** The four controls of §4 control 1 overlap mathematically, because \(I(X;Y)=H(X)-H(X\mid Y)\). Only three are linearly independent. So df \(=20-2-3=15\), and the one-sided 5% critical value is \(r_c=0.412\), not 0.426.
+2. **Carry rule for a flagged hit (cost-level shuffle baseline).** A strength flagged by control 2 (\(R^2\ge0.95\)) stands as a hit only if the orientation-shuffle control (control 4) loses the correlation once its \(J=0\) value is removed at the cost level. Define, per prior \(\pi_k\), \(\Delta\kappa_{\rm shuf}(\theta_j;\pi_k)=\kappa_{\rm shuf}(\theta_j;\pi_k)-\kappa_{\rm shuf}(0;\pi_k)\), and \(r_{\Delta\rm shuf}(\theta_j)=\) the Pearson correlation of \(\Delta\kappa_{\rm shuf}(\theta_j;\cdot)\) with \(D(\theta_j;\cdot)\) across the 20 priors. A flagged hit stands only if \(r_{\Delta\rm shuf}(\theta_j)<0.412\). An undefined \(r_{\Delta\rm shuf}\) means the flagged hit does not stand. The dephased-register control (control 3) is still mandatory and reported, but a flagged hit stands solely on this shuffle condition.
+3. **Shuffle baseline.** Random rotations alone make the shuffled cost non-zero at \(J=0\). The baseline is subtracted from the shuffled **cost** \(\kappa_{\rm shuf}\), prior by prior, within the same sweep, the same 20 priors, the same pool and the same pre-registered rotations, and the subtraction is applied **before** hits are evaluated (in the carry rule), not only in reporting. A strong interaction that merely preserves what random rotations already create must not read as a hit. The raw shuffle correlation \(r_{\rm shuf}(\theta_j)=r(\kappa_{\rm shuf}(\theta_j),D(\theta_j))\) is still reported as a diagnostic.
+   - *Replaced version (r-level).* An earlier form of this amendment subtracted the correlation instead: \(r_{\rm shuf}(\theta_j)-r_{\rm shuf}(0)<0.412\). It was replaced before any full-sweep run because it was vacuous. The \(J=0\) baseline was about 0.75 (pilot: 0.753 in Sweep P, 0.734 in Sweep M), so the condition held for every possible \(r_{\rm shuf}\le1\). The scratch pilot (strengths \(j=1,10,20\), pool members 0–9, not a result) gave \(r_{\Delta\rm shuf}=0.596\) and \(-0.190\) in Sweep P and \(0.665\) and \(-0.220\) in Sweep M at \(j=10\) and \(j=20\). Cyotee approved the cost-level form.
+4. **Defaults locked as written.** \(t_\ast=1\) (\(\hbar=1\), \(J\) in units of \(1/t_\ast\), so \(J_{\max}=\pi/8\)); control 4 seed `202611264`; control 3 dephasing in the register's computational basis; Sweep M \(p=0.7311\), the value in this document.
+5. **Run order confirmed.** Sweep P (pure \(\lvert00\rangle\) register) is primary. Sweep M (mixed register) runs only if Sweep P lands in the 10–14 band.
+
+*Open note (not adopted).* Whether a baseline subtraction should also apply to the main \(r(\kappa,D)\) is left open. As written, it does not: the main \(r\) is undefined at \(J=0\) (\(\kappa=0\) there), so it has no \(J=0\) baseline to subtract.
 
 **Naming.** "Stage 3" means the third stage of the channel-cost line. It is unrelated to the "Stage 3" of the three-stage workflow in [PROGRESS_REPORT.md](https://github.com/cyotee/computational-entropy/blob/master/PROGRESS_REPORT.md).
 
@@ -102,25 +113,29 @@ Each term is evaluated on the classical–quantum state \(\sum_{x,o}\pi(x)P(o\mi
 1. **Variance decomposition and partial correlations.**
    - Write \(D\) in its terms. With \(F\) uniform on the pool, \(D=\log_2\lvert\text{pool}\rvert-I(F;Y)-H(Y\mid X)\).
    - Report the shares \(\operatorname{Cov}(D,T_i)/\operatorname{Var}D\) and the same for \(\kappa\), over \(T_i\in\{H(Y),I(X;Y),H(X\mid Y),H(X),I(F;Y),H(Y\mid X)\}\).
-   - Report the partial correlation \(r(\kappa,D\mid H(Y),I(X;Y),H(X\mid Y),H(X))\). With 4 controls, df = 14, and the one-sided 5% critical value is 0.426.
+   - Report the partial correlation \(r(\kappa,D\mid H(Y),I(X;Y),H(X\mid Y),H(X))\). Because \(I(X;Y)=H(X)-H(X\mid Y)\), only three of the four controls are independent, so df = 15 and the one-sided 5% critical value is **0.412** (Amendment 1).
 2. **Sufficiency check.**
    - Across the 20 priors at each strength, fit \(\kappa\) linearly (with intercept) on features of the classical law alone: \(H(X\mid Y)\), \(H(X)\) and \(H(Y)\).
-   - **Locked tolerance (Cyotee): \(R^2\ge0.95\).** At or above it, the classical output law is taken to predict the cost, and the hit is flagged as **potentially definitional**. A flagged hit stands only if controls 3 and 4 carry the result independently.
-3. **Dephased classical-copy register.** Replace each \(\rho_{C\mid x,o,f}\) by its diagonal in the register's computational basis, recompute \(\kappa\) and \(r_j\), and report both. This isolates any coherent contribution from Shannon-level bookkeeping.
-4. **Register-orientation shuffle.** Replace each \(\rho_{C\mid x,o,f}\) by \(W\rho W^\dagger\), with \(W\) Haar-random and drawn independently per \((x,o,f)\) from a pre-registered seed. Recompute \(\kappa\) and \(r_j\). This keeps per-branch spectra and destroys the overlaps the interaction created.
+   - **Locked tolerance (Cyotee): \(R^2\ge0.95\).** At or above it, the classical output law is taken to predict the cost, and the hit is flagged as **potentially definitional**. A flagged hit stands only if the carry rule below holds (Amendment 1).
+3. **Dephased classical-copy register.** Replace each \(\rho_{C\mid x,o,f}\) by its diagonal in the register's computational basis, recompute \(\kappa\) and \(r_j\), and report both. This isolates any coherent contribution from Shannon-level bookkeeping. It is mandatory and reported, but it does not enter the carry rule (Amendment 1).
+4. **Register-orientation shuffle.** Replace each \(\rho_{C\mid x,o,f}\) by \(W\rho W^\dagger\), with \(W\) Haar-random and drawn independently per \((x,o,f)\) from a pre-registered seed. Recompute \(\kappa_{\rm shuf}\) and \(r_{\rm shuf}(\theta_j)\). This keeps per-branch spectra and destroys the overlaps the interaction created.
+   - **Seed and scheme (LOCKED, Amendment 1).** Seed `202611264`. For pool member \(f\) in sweep \(s\) (P = 1, M = 2), `numpy.random.default_rng([202611264, s, f])` draws 20 Haar \(4\times4\) unitaries in \((x,o)\) order. The same \(W\) is used at every strength.
+   - **Baseline (Amendment 1, cost level).** \(\Delta\kappa_{\rm shuf}(\theta_j;\pi_k)=\kappa_{\rm shuf}(\theta_j;\pi_k)-\kappa_{\rm shuf}(0;\pi_k)\), same sweep, priors, pool and rotations, and \(r_{\Delta\rm shuf}(\theta_j)=r(\Delta\kappa_{\rm shuf}(\theta_j),D(\theta_j))\) across the 20 priors. Both \(r_{\Delta\rm shuf}\) and the raw \(r_{\rm shuf}\) (diagnostic) are reported at every strength.
+
+**Carry rule (Amendment 1).** A strength with \(r_j\ge0.8\) and \(R^2\ge0.95\) stands as a hit only if \(r_{\Delta\rm shuf}(\theta_j)<0.412\). If \(r_{\Delta\rm shuf}(\theta_j)\) is undefined, the flagged hit does not stand. The hit count compared with the 15 / 10–14 / ≤ 9 rule counts unflagged hits plus flagged hits that stand. The raw count of \(r_j\ge0.8\) is reported alongside it.
 
 **Labels.**
 
 - A hit that survives the controls is reported as a hit.
-- A hit flagged by control 2 (\(R^2\ge0.95\)) is reported as "hit, potentially definitional". It counts as a hit only if controls 3 and 4 carry it independently.
+- A hit flagged by control 2 (\(R^2\ge0.95\)) is reported as "hit, potentially definitional". It counts as a hit only if the carry rule holds: the correlation of the baseline-subtracted shuffled cost with \(D\) is below 0.412 (Amendment 1).
 - Below the hit rule, the compilation reading is dead for this architecture, and that is reported as a null in the same way as the earlier channel-cost nulls.
 
-The criterion is fixed before any run and will not be revised after results are seen.
+The criterion is fixed before any run and will not be revised after results are seen. Amendment 1 was made after a code-validation pilot and before any full sweep.
 
 ## 5. Two-sweep structure and run order
 
-1. **Sweep P (pure register start \(\lvert00\rangle\)) runs first.** The induced channel is amplitude damping with \(\gamma=\sin^22\theta\le\tfrac12\) over the window. Every bit of \(\kappa\) comes from the interaction.
-2. **Sweep M (register \(\mathrm{diag}(0.7311,0.2689)^{\otimes2}\)) runs only if Sweep P's hit count lies in the ambiguity band 10–14.** The value \(p=0.7311=1/(1+e^{-1})\) is the repository's \(T=1\) value, so the induced channel is \(\mathrm{GAD}(\gamma,0.7311)\). The same rule, controls and labels apply. Sweep M tests whether a cost signal comes from the interaction or from the register's own disorder. Because \(\kappa\) subtracts \(S(C\mid X,O,F)\), the initial disorder is not counted as cost.
+1. **Sweep P (pure register start \(\lvert00\rangle\)) is primary and runs first** (confirmed in Amendment 1). The induced channel is amplitude damping with \(\gamma=\sin^22\theta\le\tfrac12\) over the window. Every bit of \(\kappa\) comes from the interaction.
+2. **Sweep M (register \(\mathrm{diag}(0.7311,0.2689)^{\otimes2}\)) runs only if Sweep P's hit count lies in the ambiguity band 10–14.** The value \(p=0.7311\approx1/(1+e^{-1})=0.73106\) is the repository's \(T=1\) value, rounded; the literal 0.7311 is locked (Amendment 1), so the induced channel is \(\mathrm{GAD}(\gamma,0.7311)\). The same rule, controls and labels apply. Sweep M tests whether a cost signal comes from the interaction or from the register's own disorder. Because \(\kappa\) subtracts \(S(C\mid X,O,F)\), the initial disorder is not counted as cost.
 3. **Combination.** Sweep P at 15 or more is a hit and at 9 or fewer is dead; Sweep M does not run in either case. How a Sweep M outcome resolves an ambiguous Sweep P is a pre-registration item (§7).
 
 Every run logs:
@@ -129,7 +144,7 @@ Every run logs:
 - \(t\), the \(\theta\) grid, and the register start;
 - the 20 priors (seed and rule) and the pool hash;
 - per strength and prior: \(\kappa\), \(D\) and all terms of §4;
-- the four controls and the hit count.
+- the four controls, including \(r_{\Delta\rm shuf}\) and the raw \(r_{\rm shuf}\), and both hit counts (raw and after the carry rule).
 
 Both sweeps are reported whenever they are run.
 
@@ -220,13 +235,15 @@ This affine map keeps the Dirichlet draw's diversity and guarantees every prior 
 
 ## 7. Pre-registration items (to be recorded before the first run)
 
-1. **Energy convention:** total energy of both pairs (not per pair), on \(\sigma=\bar\rho_A\otimes\rho_{C,0}\); \(\theta_{\max}=\pi/8\); 20 equal steps including \(J=0\); \(t_\ast\) and its units.
+Items 1, 5 and 7 were updated by Amendment 1.
+
+1. **Energy convention:** total energy of both pairs (not per pair), on \(\sigma=\bar\rho_A\otimes\rho_{C,0}\); \(\theta_{\max}=\pi/8\); 20 equal steps including \(J=0\); \(t_\ast=1\) with \(\hbar=1\) and \(J\) in units of \(1/t_\ast\), so \(J_{\max}=\pi/8\) (**LOCKED**, Amendment 1).
 2. **Priors:** \(K=20\); seed `20261126`; the rule \(\pi_k=0.9\,d_k+0.1\,e_{\Phi^+}\) with \(d_k\sim\mathrm{Dirichlet}(\mathbf 1)\).
 3. **Bell-weight minimum:** \(w_{\min}=0.10\).
 4. **Ambiguity band:** 10–14 of 20 (≥ 15 hit, ≤ 9 dead), with the undefined \(r\) at \(J=0\) counted as a non-hit.
-5. **Sweep M:** \(p=0.7311\) (\(T=1\)), and how its outcome resolves an ambiguous Sweep P. Proposal: a Sweep M hit is reported as a conditional hit; anything else is dead.
+5. **Sweep M:** \(p=0.7311\) (\(T=1\), **LOCKED**, Amendment 1); it runs only if Sweep P lands in 10–14 (Amendment 1). Still to record: how its outcome resolves an ambiguous Sweep P. Proposal: a Sweep M hit is reported as a conditional hit; anything else is dead.
 6. **Pool (LOCKED):** the existing CE-15 Margolus–Levitin pool, 200 members, seed 2026, SHA-256 `d11fa3d1ec4594b7d1235759fde33b8b98689646b44efd163fffba97084618e2`. No new pool.
-7. **Controls:** sufficiency tolerance **LOCKED** at \(R^2\ge0.95\) for the linear fit on \(H(X\mid Y)\), \(H(X)\), \(H(Y)\) (flag as potentially definitional; controls 3 and 4 must then carry the result independently); still to record: the seed for the Haar draws in control 4 and the dephasing basis for control 3 (the register's computational basis).
+7. **Controls:** sufficiency tolerance **LOCKED** at \(R^2\ge0.95\) for the linear fit on \(H(X\mid Y)\), \(H(X)\), \(H(Y)\) (flag as potentially definitional); partial-correlation critical value **0.412** (df = 15); carry rule **LOCKED**: a flagged hit stands only if \(r(\kappa_{\rm shuf}(\theta_j)-\kappa_{\rm shuf}(0),\,D(\theta_j))<0.412\) across the 20 priors (cost-level baseline; undefined means it does not stand); control 4 seed **LOCKED** at `202611264` (scheme in §4); control 3 dephasing basis **LOCKED** as the register's computational basis (Amendment 1).
 8. **Bell state:** \(\lvert\Phi^+\rangle\).
 
 ## 8. Spot checks used in this design
@@ -235,4 +252,4 @@ Scratch only and not committed: exact 16×16 linear algebra at \(\theta\in\{0,\p
 
 ## 9. Scope
 
-Tier 2 only: a four-qubit toy with one coupling, one readout and five input states under 20 priors. Nothing here bears on gravity, black holes or QCD. The Boltzmann–Shannon unification programme is not advanced or tested by this design beyond the information-theoretic bookkeeping above. No simulation output exists for this stage. Once run, the results will be reported against §4 as written here, including a null.
+Tier 2 only: a four-qubit toy with one coupling, one readout and five input states under 20 priors. Nothing here bears on gravity, black holes or QCD. The Boltzmann–Shannon unification programme is not advanced or tested by this design beyond the information-theoretic bookkeeping above. No committed simulation output exists for this stage. Once run, the results will be reported against §4 as written here, including a null.
